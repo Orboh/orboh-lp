@@ -147,7 +147,7 @@ export const translations = {
           description:
             '狭い足場の階段を自在に移動。資材運搬や高所作業の際も、人間と同じ動線で作業エリアにアクセスできます。',
           imageAlt: '足場の階段',
-          imageSrc: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80',
+          imageSrc: scaffoldStairsImage,
           features: [
             { icon: 'mdi:stairs', title: '人間と同じ動線', description: '既存の足場でアクセス。' },
             { icon: 'mdi:package-variant', title: '資材運搬', description: '作業エリアまで運搬。' },
@@ -161,7 +161,7 @@ export const translations = {
           description:
             '重い資材も、人間とロボットの協働で安全に運搬。足場の外から内部まで、木材や建材を効率よく移動させます。',
           imageAlt: '資材運搬',
-          imageSrc: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+          imageSrc: transportingMaterialsImage,
           features: [
             { icon: 'mdi:handshake', title: '協働運搬', description: '作業者と一緒に搬送。' },
             { icon: 'mdi:weight', title: '重い荷物', description: '木材・建材を扱う。' },
@@ -175,7 +175,7 @@ export const translations = {
           description:
             'スマートフォンで木材のネジ打ち部分を撮影するなど、細かな点検作業も実施。現場の品質管理をサポートします。',
           imageAlt: '清掃点検',
-          imageSrc: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80',
+          imageSrc: constructionInspectionImage,
           features: [
             { icon: 'mdi:camera', title: '撮影記録', description: '点検内容を撮影。' },
             { icon: 'mdi:clipboard-check', title: '品質チェック', description: '現場QCを支援。' },
