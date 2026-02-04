@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+html,
+body {
+  overscroll-behavior: none;
+}
+
+@keyframes scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.25rem);
+  }
+}
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes card-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-card-up {
+  animation: card-up 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.animate-card-down {
+  animation: card-down 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (max-width: 767px) {
+  .animate-card-up,
+  .animate-card-down {
+    animation: none;
+  }
+}
