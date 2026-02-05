@@ -33,7 +33,7 @@ export function Header() {
   }, []);
 
   const handleBookDemo = () => {
-    const url = 'https://calendly.com/your-link';
+    const url = 'https://calendly.com/soutamiyajima/30min';
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 

@@ -1,7 +1,7 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 
-const DEFAULT_MEETING_URL = 'https://calendly.com/your-link';
+const DEFAULT_MEETING_URL = 'https://calendly.com/soutamiyajima/30min';
 
 interface CTASectionProps {
   meetingUrl?: string;
@@ -12,7 +12,7 @@ export function CTASection({ meetingUrl = DEFAULT_MEETING_URL }: CTASectionProps
   const t = translations[locale].cta;
 
   return (
-    <section className="px-8 md:px-16 lg:px-24 py-28 bg-stone-200 text-stone-50">
+    <section className="px-8 md:px-16 lg:px-24 py-28 bg-stone-100 text-stone-50">
       <div className="max-w-4xl mx-auto w-full text-center relative overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 px-6 sm:px-10 py-16 sm:py-20">
         {/* subtle background cross pattern */}
         <div
