@@ -1,8 +1,7 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 
-const TELEOP_VIDEO_URL =
-  'https://www.youtube.com/embed/pNjr2f_XHoo?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&fs=0&disablekb=1&loop=1&playlist=pNjr2f_XHoo';
+import teleoperationVideo from '@/assets/videos/teleoperation.mp4';
 
 export function TeleoperationSection() {
   const { locale } = useLocale();
@@ -30,15 +29,18 @@ export function TeleoperationSection() {
             </div>
           </div>
 
-          {/* Right: embedded teleoperation video, frameless inside its border */}
+          {/* Right: teleoperation video (local) */}
           <div className="border border-stone-300 md:border md:rounded-2xl overflow-hidden">
-            <div className="relative w-full aspect-video">
-              <iframe
-                src={TELEOP_VIDEO_URL}
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Teleoperation video"
+            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+              <video
+                src={teleoperationVideo}
+                className="absolute inset-0 h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls={false}
+                aria-label="Teleoperation demo"
               />
             </div>
           </div>
