@@ -41,8 +41,8 @@ export function DemoVideoSection({
           ) : (
             <iframe
               src={videoUrl}
-              className="absolute inset-0 w-full h-full pointer-events-none"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              className="absolute inset-0 w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               title="Demo video"
             />
