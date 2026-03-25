@@ -6,5 +6,6 @@ export { CaseStudyCard } from './CaseStudyCard';
 export type { CaseStudyCardProps } from './CaseStudyCard';
 export { TeleoperationSection } from './HowItWorks';
 export { DemoVideoSection } from './DemoVideo';
+export { WhitepaperSection } from './Whitepaper';
 export { CTASection } from './CTA';
 export { Footer } from './Footer/Footer';

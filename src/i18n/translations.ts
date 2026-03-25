@@ -89,6 +89,12 @@ export const translations = {
       placeholder: 'Video embed will go here',
       placeholderHint: 'Set your YouTube URL',
     },
+    whitepaper: {
+      eyebrow: 'WHITEPAPER',
+      title: 'RoboNet: Humanoid Robotics for Construction',
+      subtitle: 'Learn about our approach to construction site automation, teleoperation, and human-robot collaboration.',
+      downloadButton: 'Download PDF',
+    },
     cta: {
       title: 'Bring robots to your construction site',
       subtitle: 'We offer live demos and adoption support for construction teams.',
@@ -196,6 +202,12 @@ export const translations = {
       title: 'ロボットの動作を見てみましょう',
       placeholder: '動画をここに埋め込み',
       placeholderHint: 'YouTube URLを設定してください',
+    },
+    whitepaper: {
+      eyebrow: 'ホワイトペーパー',
+      title: 'RoboNet：建設現場のためのヒューマノイドロボティクス',
+      subtitle: '建設現場の自動化、テレオペレーション、人間とロボットの協働について詳しく学べます。',
+      downloadButton: 'PDFをダウンロード',
     },
     cta: {
       title: 'デモを見てみませんか？',
