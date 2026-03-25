@@ -93,6 +93,7 @@ export const translations = {
       title: 'Bring robots to your construction site',
       subtitle: 'We offer live demos and adoption support for construction teams.',
       button: 'Book a demo',
+      whitepaper: 'Download Whitepaper',
     },
     footer: {
       tagline: 'HUMANOID ROBOTICS FOR CONSTRUCTION.',
@@ -200,6 +201,7 @@ export const translations = {
       title: 'デモを見てみませんか？',
       subtitle: 'ロボットの動作デモや、導入についてのご相談を承ります。',
       button: 'デモを予約する',
+      whitepaper: 'ホワイトペーパーをダウンロード',
     },
     footer: {
       tagline: '建設現場のためのヒューマノイドロボティクス。',

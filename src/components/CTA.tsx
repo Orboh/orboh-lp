@@ -34,14 +34,23 @@ export function CTASection({ meetingUrl = DEFAULT_MEETING_URL }: CTASectionProps
           <p className="text-stone-300 text-sm md:text-base mb-10 max-w-2xl mx-auto">
             {t.subtitle}
           </p>
-          <a
-            href={meetingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-stone-400 text-stone-50 text-sm font-medium tracking-wide hover:border-stone-100 hover:bg-stone-50 hover:text-stone-900 transition-colors rounded-md"
-          >
-            {t.button}
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={meetingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-stone-400 text-stone-50 text-sm font-medium tracking-wide hover:border-stone-100 hover:bg-stone-50 hover:text-stone-900 transition-colors rounded-md"
+            >
+              {t.button}
+            </a>
+            <a
+              href="/RoboNet_WhitePaper.pdf"
+              download
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-stone-400 text-stone-50 text-sm font-medium tracking-wide hover:border-stone-100 hover:bg-stone-50 hover:text-stone-900 transition-colors rounded-md"
+            >
+              {t.whitepaper}
+            </a>
+          </div>
         </div>
       </div>
     </section>
