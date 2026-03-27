@@ -8,16 +8,16 @@ export type Locale = 'en' | 'ja';
 export const translations = {
   en: {
     hero: {
-      eyebrow: 'HUMANOID ROBOTICS FOR CONSTRUCTION',
-      title: 'Building the future of\nconstruction sites,\nwith robots.',
+      eyebrow: 'VLA-POWERED PHYSICAL LABOR',
+      title: 'Redefining physical labor\nwith intelligent\nhumanoid robots.',
       subtitle:
-        'Scaffolding assembly, material transport, inspection work.\nReducing the burden on workers and accelerating site setup.',
+        'Construction, manufacturing, logistics, agriculture.\nNo CapEx. 24/7. Smarter with every shift.',
       scroll: 'Scroll',
       scrollAria: 'Scroll to next section',
     },
     caseStudy: {
-      eyebrow: 'Our Capabilities',
-      title: 'What we can do on the construction site.',
+      eyebrow: 'CONSTRUCTION — FIRST VERTICAL',
+      title: 'What robots can do on a construction site.',
       demos: [
         {
           number: '01',
@@ -77,32 +77,57 @@ export const translations = {
         },
       ],
     },
-    howItWorks: {
-      eyebrow: 'HOW IT WORKS',
-      title: 'Teleoperation',
-      para:
-        'A human wearing a VR headset and controllers streams their motion to the robot in real time. By repeating the same actions, the robot learns patterns that can later be automated.',
+    raas: {
+      eyebrow: 'PHASE 1 — ROBOT-AS-A-SERVICE',
+      title: 'Deploy robots. Pay for labor hours. Nothing else.',
+      subtitle: 'No hardware purchase. No maintenance overhead. No facility modification. Orboh robots operate 24/7 in human-designed environments — the same scaffolding, stairs, and passageways your workers already use.',
+      cards: [
+        { icon: 'mdi:clock-outline', title: 'No CapEx', description: 'Pay per hour or per month. Predictable costs, zero upfront investment.' },
+        { icon: 'mdi:clock-check-outline', title: '24/7 Availability', description: 'Robots do not take breaks, call in sick, or require shift rotations.' },
+        { icon: 'mdi:brain', title: 'Gets smarter every shift', description: 'Each deployment generates experience data. Your robots improve automatically.' },
+        { icon: 'mdi:domain', title: 'No facility modification', description: 'Operates in human-designed environments without retrofitting.' },
+      ],
+      verticals: { label: 'Verticals', items: ['Construction', 'Manufacturing', 'Logistics', 'Agriculture'] },
+    },
+    robonet: {
+      eyebrow: 'PHASE 2 — ROBONET PLATFORM',
+      title: 'A standalone robot learns from itself.\nAn Orboh robot learns from every robot in the network.',
+      subtitle: 'RoboNet is a shared intelligence network. Every deployment generates experience data. That data trains better models. Better models make every robot smarter — yours included.',
+      analogy: 'Slack became indispensable by being the place where teams communicate. RoboNet becomes indispensable by being the place where robots learn.',
+      layers: [
+        { number: '01', title: 'Social Feed', description: 'Real-time stream of robot experiences from sites worldwide. See what robots are doing, learning, and encountering across the network.', icon: 'mdi:rss' },
+        { number: '02', title: 'Data Registry', description: "Structured catalog of experience data organized by task type, environment, and robot model. The world's most comprehensive physical-AI dataset.", icon: 'mdi:database-outline' },
+        { number: '03', title: 'Model Marketplace', description: 'Trained models published, evaluated, and deployed. Buy, sell, or contribute specialized robot behaviors.', icon: 'mdi:store-outline' },
+      ],
+      pricing: {
+        label: 'Freemium SaaS',
+        tiers: [
+          { name: 'Free', detail: 'Up to 5 robots · Read-only access' },
+          { name: 'Pro', detail: 'Per robot / month · Full access' },
+          { name: 'Enterprise', detail: 'Custom · Dedicated support' },
+        ],
+      },
     },
     demoVideo: {
       eyebrow: 'DEMO VIDEO',
-      title: 'See the robot in action',
+      title: 'See Orboh robots at work',
       placeholder: 'Video embed will go here',
       placeholderHint: 'Set your YouTube URL',
     },
     whitepaper: {
       eyebrow: 'WHITEPAPER',
-      title: 'RoboNet: Humanoid Robotics for Construction',
-      subtitle: 'Learn about our approach to construction site automation, teleoperation, and human-robot collaboration.',
+      title: 'RoboNet White Paper',
+      subtitle: 'Our technical approach to VLA-powered humanoid robotics, the RoboNet shared intelligence network, and the physical labor market opportunity.',
       downloadButton: 'Download PDF',
     },
     cta: {
-      title: 'Bring robots to your construction site',
-      subtitle: 'We offer live demos and adoption support for construction teams.',
+      title: 'Ready to deploy intelligent robots?',
+      subtitle: 'We offer live demos for construction, manufacturing, and logistics teams. See RaaS pricing and RoboNet access.',
       button: 'Book a demo',
       whitepaper: 'Download Whitepaper',
     },
     footer: {
-      tagline: 'HUMANOID ROBOTICS FOR CONSTRUCTION.',
+      tagline: 'VLA-POWERED PHYSICAL LABOR PLATFORM.',
       columns: {
         company: {
           title: 'Company',
@@ -122,16 +147,16 @@ export const translations = {
   },
   ja: {
     hero: {
-      eyebrow: 'HUMANOID ROBOTICS FOR CONSTRUCTION',
-      title: '建築現場の未来を、\nロボットとつくる。',
+      eyebrow: 'VLA-POWERED PHYSICAL LABOR',
+      title: 'VLAを搭載したロボットで、\n労働の未来を\n再定義する。',
       subtitle:
-        '足場の組み立て、資材の運搬、点検作業。\n職人の負担を減らし、現場の立ち上げを加速する。',
+        '建設・製造・物流・農業。初期費用ゼロ。24時間稼働。\nシフトを重ねるたびに賢くなる。',
       scroll: 'Scroll',
       scrollAria: '次のセクションへスクロール',
     },
     caseStudy: {
-      eyebrow: 'Our Capabilities',
-      title: '建築現場で、何ができるか。',
+      eyebrow: 'CONSTRUCTION — FIRST VERTICAL',
+      title: '建設現場でロボットができること。',
       demos: [
         {
           number: '01',
@@ -191,32 +216,57 @@ export const translations = {
         },
       ],
     },
-    howItWorks: {
-      eyebrow: 'HOW IT WORKS',
-      title: 'テレオペレーション',
-      para:
-        'VRゴーグルとコントローラーを装着した人の動きを、リアルタイムでロボットに伝送します。同じ動きを繰り返し学習させることで、後から自動化できるパターンとして身につけていきます。',
+    raas: {
+      eyebrow: 'PHASE 1 — ロボット・アズ・ア・サービス',
+      title: 'ロボットを導入する。労働時間分だけ払う。それだけ。',
+      subtitle: 'ハードウェア購入不要。メンテナンス不要。設備改修不要。Orbohのロボットは、現場の既存環境のまま24時間稼働します。',
+      cards: [
+        { icon: 'mdi:clock-outline', title: '初期費用ゼロ', description: '時間単位または月単位の料金制。予測可能なコスト。' },
+        { icon: 'mdi:clock-check-outline', title: '24時間365日稼働', description: '休憩なし、欠勤なし、シフト管理不要。' },
+        { icon: 'mdi:brain', title: 'シフトを重ねるほど賢くなる', description: '稼働のたびに経験データを生成。ロボットは自動的に改善されます。' },
+        { icon: 'mdi:domain', title: '設備改修不要', description: '人間向けに設計された既存環境でそのまま動作します。' },
+      ],
+      verticals: { label: '対応業界', items: ['建設', '製造', '物流', '農業'] },
+    },
+    robonet: {
+      eyebrow: 'PHASE 2 — ROBONET プラットフォーム',
+      title: '単独のロボットは自分の経験から学ぶ。\nOrbohのロボットは、ネットワーク全体から学ぶ。',
+      subtitle: 'RoboNetは共有知能ネットワークです。稼働のたびに経験データが生成され、そのデータがより良いモデルを育て、すべてのロボットを賢くします。',
+      analogy: 'Slackはチームがコミュニケーションをとる場所として不可欠になった。RoboNetはロボットが学習する場所として不可欠になる。',
+      layers: [
+        { number: '01', title: 'ソーシャルフィード', description: '世界中の現場からロボットの経験をリアルタイムに配信。ネットワーク全体の動きをリアルタイムで把握。', icon: 'mdi:rss' },
+        { number: '02', title: 'データレジストリ', description: 'タスクタイプ・環境・ロボットモデル別に整理された経験データのカタログ。世界最大の物理AIデータセット。', icon: 'mdi:database-outline' },
+        { number: '03', title: 'モデルマーケットプレイス', description: 'トレーニング済みモデルを公開・評価・デプロイ。特定用途のロボット行動を売買・提供できます。', icon: 'mdi:store-outline' },
+      ],
+      pricing: {
+        label: 'フリーミアム SaaS',
+        tiers: [
+          { name: 'Free', detail: '最大5台 · 読み取り専用' },
+          { name: 'Pro', detail: '1台あたり / 月 · フルアクセス' },
+          { name: 'Enterprise', detail: 'カスタム · 専任サポート' },
+        ],
+      },
     },
     demoVideo: {
       eyebrow: 'DEMO VIDEO',
-      title: 'ロボットの動作を見てみましょう',
+      title: 'Orbohロボットの稼働映像',
       placeholder: '動画をここに埋め込み',
       placeholderHint: 'YouTube URLを設定してください',
     },
     whitepaper: {
       eyebrow: 'ホワイトペーパー',
-      title: 'RoboNet：建設現場のためのヒューマノイドロボティクス',
-      subtitle: '建設現場の自動化、テレオペレーション、人間とロボットの協働について詳しく学べます。',
+      title: 'RoboNet ホワイトペーパー',
+      subtitle: 'VLA搭載ヒューマノイドロボティクスの技術的アプローチ、RoboNet共有知能ネットワーク、および物理労働市場の機会についての詳細。',
       downloadButton: 'PDFをダウンロード',
     },
     cta: {
-      title: 'デモを見てみませんか？',
-      subtitle: 'ロボットの動作デモや、導入についてのご相談を承ります。',
+      title: 'インテリジェントなロボットを現場に導入しませんか？',
+      subtitle: '建設・製造・物流チーム向けにライブデモを提供しています。RaaS料金とRoboNetアクセスについてご相談ください。',
       button: 'デモを予約する',
       whitepaper: 'ホワイトペーパーをダウンロード',
     },
     footer: {
-      tagline: '建設現場のためのヒューマノイドロボティクス。',
+      tagline: 'VLAを搭載した物理労働プラットフォーム。',
       columns: {
         company: {
           title: 'Company',

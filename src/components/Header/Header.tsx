@@ -48,7 +48,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto w-full h-16 flex items-center justify-between">
         <a
           href="/"
-          className="text-stone-50 font-bold tracking-tight text-2xl hover:text-stone-100 transition-colors"
+          className="text-orange-50 font-bold tracking-tight text-2xl hover:text-orange-100 transition-colors"
         >
           Orboh
         </a>
@@ -58,7 +58,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
-              className="flex items-center gap-1.5 px-3 py-2 text-stone-300 hover:text-stone-50 text-sm transition-colors rounded-md hover:bg-stone-800/60"
+              className="flex items-center gap-1.5 px-3 py-2 text-orange-200 hover:text-orange-50 text-sm transition-colors rounded-md hover:bg-orange-900/60"
               aria-expanded={open}
               aria-haspopup="listbox"
               aria-label="Select language"
@@ -77,7 +77,7 @@ export function Header() {
             {open && (
               <ul
                 role="listbox"
-                className="absolute right-0 top-full mt-1 py-1 w-36 bg-stone-900 border border-stone-700 rounded-md shadow-lg z-10"
+                className="absolute right-0 top-full mt-1 py-1 w-36 bg-orange-950 border border-orange-800 rounded-md shadow-lg z-10"
               >
                 {(['en', 'ja'] as const).map((option) => (
                   <li key={option} role="option" aria-selected={locale === option}>
@@ -89,8 +89,8 @@ export function Header() {
                       }}
                       className={`w-full text-left px-4 py-2 text-sm transition-colors ${
                         locale === option
-                          ? 'bg-stone-800 text-stone-50 font-medium'
-                          : 'text-stone-300 hover:bg-stone-800/80 hover:text-stone-50'
+                          ? 'bg-stone-800 text-orange-50 font-medium'
+                          : 'text-orange-200 hover:bg-stone-800/80 hover:text-orange-50'
                       }`}
                     >
                       {langLabels[option]}
@@ -103,7 +103,7 @@ export function Header() {
           <button
             type="button"
             onClick={handleBookDemo}
-            className="px-4 py-2.5 border border-stone-400 text-stone-50 text-sm font-medium tracking-wide hover:border-stone-100 hover:bg-stone-50 hover:text-stone-900 transition-colors rounded-md"
+            className="px-4 py-2.5 border border-orange-400 text-orange-50 text-sm font-medium tracking-wide hover:border-orange-200 hover:bg-orange-50 hover:text-orange-950 transition-colors rounded-md"
           >
             Book a demo
           </button>

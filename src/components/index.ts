@@ -1,10 +1,11 @@
 export { Layout } from './Layout';
 export { Header } from './Header/Header';
 export { HeroSection } from './Hero';
+export { RaaSSection } from './RaaS';
 export { WhatWeCanDoSection } from './CaseStudy';
 export { CaseStudyCard } from './CaseStudyCard';
 export type { CaseStudyCardProps } from './CaseStudyCard';
-export { TeleoperationSection } from './HowItWorks';
+export { RoboNetSection } from './RoboNet';
 export { DemoVideoSection } from './DemoVideo';
 export { WhitepaperSection } from './Whitepaper';
 export { CTASection } from './CTA';

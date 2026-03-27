@@ -19,26 +19,26 @@ export function HeroSection() {
   return (
     <section
       id={HERO_SECTION_ID}
-      className="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 bg-stone-800 text-stone-50 relative overflow-hidden"
+      className="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 bg-orange-900 text-orange-50 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div>
-          <p className="text-stone-300 text-sm tracking-widest mb-4">
+          <p className="text-orange-200 text-sm tracking-widest mb-4">
             {t.eyebrow}
           </p>
           <h1
-            className="text-2xl md:text-4xl lg:text-5xl uppercase font-light leading-tight mb-6 whitespace-pre-line text-stone-50"
+            className="text-2xl md:text-4xl lg:text-5xl uppercase font-light leading-tight mb-6 whitespace-pre-line text-orange-50"
             style={{ letterSpacing: '-0.02em' }}
           >
             {t.title}
           </h1>
-          <p className="text-stone-400 text-md max-w-xl leading-relaxed mb-8 whitespace-pre-line">
+          <p className="text-orange-300 text-md max-w-xl leading-relaxed mb-8 whitespace-pre-line">
             {t.subtitle}
           </p>
           <button
             type="button"
             onClick={scrollToNextSection}
-            className="flex items-center gap-2 text-stone-400 animate-scroll-bounce hover:text-stone-200 transition-colors cursor-pointer text-md"
+            className="flex items-center gap-2 text-orange-300 animate-scroll-bounce hover:text-stone-200 transition-colors cursor-pointer text-md"
             aria-label={t.scrollAria}
           >
             <Icon
@@ -52,7 +52,7 @@ export function HeroSection() {
 
         <div className="relative flex justify-center md:justify-end items-center min-h-[250px] md:min-h-0 w-full">
           <div
-            className="relative z-10 w-full max-w-md md:max-w-lg lg:max-w-xl rounded-2xl overflow-hidden border border-stone-500/80 shadow-xl flex items-center justify-center aspect-square"
+            className="relative z-10 w-full max-w-md md:max-w-lg lg:max-w-xl rounded-2xl overflow-hidden border border-orange-400/80 shadow-xl flex items-center justify-center aspect-square"
             style={{
               backgroundImage:
                 'linear-gradient(to bottom, #44403c 0%, #292524 55%, #1c1917 100%)',

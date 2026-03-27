@@ -10,7 +10,7 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <div
-      className="min-h-screen bg-stone-100"
+      className="min-h-screen bg-orange-50"
       style={{ fontFamily }}
     >
       <Header />

@@ -12,8 +12,8 @@ export function CTASection({ meetingUrl = DEFAULT_MEETING_URL }: CTASectionProps
   const t = translations[locale].cta;
 
   return (
-    <section className="px-8 md:px-16 lg:px-24 py-28 bg-stone-100 text-stone-50">
-      <div className="max-w-4xl mx-auto w-full text-center relative overflow-hidden rounded-2xl border border-stone-800 bg-stone-800 px-6 sm:px-10 py-16 sm:py-20">
+    <section className="px-8 md:px-16 lg:px-24 py-28 bg-orange-50 text-orange-50">
+      <div className="max-w-4xl mx-auto w-full text-center relative overflow-hidden rounded-2xl border border-stone-800 bg-orange-900 px-6 sm:px-10 py-16 sm:py-20">
         {/* subtle background cross pattern */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.18]"
@@ -26,12 +26,12 @@ export function CTASection({ meetingUrl = DEFAULT_MEETING_URL }: CTASectionProps
 
         <div className="relative z-10">
           <h2
-            className="text-3xl md:text-4xl font-light mb-5 text-stone-50"
+            className="text-3xl md:text-4xl font-light mb-5 text-orange-50"
             style={{ letterSpacing: '-0.02em' }}
           >
             {t.title}
           </h2>
-          <p className="text-stone-300 text-sm md:text-base mb-10 max-w-2xl mx-auto">
+          <p className="text-orange-200 text-sm md:text-base mb-10 max-w-2xl mx-auto">
             {t.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -39,14 +39,14 @@ export function CTASection({ meetingUrl = DEFAULT_MEETING_URL }: CTASectionProps
               href={meetingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-stone-400 text-stone-50 text-sm font-medium tracking-wide hover:border-stone-100 hover:bg-stone-50 hover:text-stone-900 transition-colors rounded-md"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-orange-400 text-orange-50 text-sm font-medium tracking-wide hover:border-orange-200 hover:bg-orange-50 hover:text-orange-950 transition-colors rounded-md"
             >
               {t.button}
             </a>
             <a
               href="/RoboNet_WhitePaper.pdf"
               download
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-stone-400 text-stone-50 text-sm font-medium tracking-wide hover:border-stone-100 hover:bg-stone-50 hover:text-stone-900 transition-colors rounded-md"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-orange-400 text-orange-50 text-sm font-medium tracking-wide hover:border-orange-200 hover:bg-orange-50 hover:text-orange-950 transition-colors rounded-md"
             >
               {t.whitepaper}
             </a>

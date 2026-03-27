@@ -1,7 +1,7 @@
 import { Layout } from '@/components/Layout';
 import { HeroSection } from '@/components/Hero';
-import { WhatWeCanDoSection } from '@/components/CaseStudy';
-import { TeleoperationSection } from '@/components/HowItWorks';
+import { RaaSSection } from '@/components/RaaS';
+import { RoboNetSection } from '@/components/RoboNet';
 import { DemoVideoSection } from '@/components/DemoVideo';
 import { WhitepaperSection } from '@/components/Whitepaper';
 import { CTASection } from '@/components/CTA';
@@ -13,8 +13,8 @@ export function HomePage() {
   return (
     <Layout>
       <HeroSection />
-      <WhatWeCanDoSection />
-      <TeleoperationSection />
+      <RaaSSection />
+      <RoboNetSection />
       <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
       <WhitepaperSection />
       <CTASection />
