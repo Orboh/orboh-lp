@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Orboh LP Dev",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /Users/miyajimatsuyoshifutoshi/orboh-lp/.claude/worktrees/tender-chatterjee && /opt/homebrew/bin/node /Users/miyajimatsuyoshifutoshi/orboh-lp/node_modules/.bin/vite --port 5173"
+      ],
+      "port": 5173
+    },
+    {
+      "name": "Orboh LP Preview",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /Users/miyajimatsuyoshifutoshi/orboh-lp/.claude/worktrees/tender-chatterjee && /opt/homebrew/bin/node /Users/miyajimatsuyoshifutoshi/orboh-lp/node_modules/.bin/vite preview --port 4173"
+      ],
+      "port": 4173
+    }
+  ]
+}
