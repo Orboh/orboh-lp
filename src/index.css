@@ -51,3 +51,9 @@ body {
     animation: none;
   }
 }
+
+@layer base {
+  .font-mono {
+    font-family: 'Space Mono', 'Courier New', Courier, monospace;
+  }
+}
