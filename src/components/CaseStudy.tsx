@@ -87,14 +87,14 @@ export function WhatWeCanDoSection() {
   return (
     <section
       id={WHAT_WE_CAN_DO_SECTION_ID}
-      className="px-8 md:px-16 lg:px-24 py-24 bg-stone-100 text-stone-900"
+      className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-100 text-zinc-900"
     >
       <div className="max-w-5xl mx-auto w-full">
-        <p className="text-stone-500 text-sm tracking-widest mb-4">
+        <p className="text-zinc-500 text-sm tracking-widest mb-4">
           {t.eyebrow}
         </p>
         <h2
-          className="text-3xl md:text-4xl font-light text-stone-900 mb-12 md:mb-16"
+          className="font-mono text-3xl md:text-4xl font-normal text-zinc-900 mb-12 md:mb-16"
           style={{ letterSpacing: '-0.01em' }}
         >
           {t.title}
@@ -112,13 +112,13 @@ export function WhatWeCanDoSection() {
                 onMouseEnter={() => handleHover(index)}
                 onFocus={() => handleClick(index)}
                 onClick={() => handleClick(index)}
-                className={`whitespace-nowrap py-2 px-3 rounded-full md:rounded-md text-sm md:text-base transition-colors ${
+                className={`whitespace-nowrap py-2 px-3 rounded text-sm md:text-base transition-colors ${
                   activeIndex === index
-                    ? 'bg-stone-800 text-stone-50 font-medium'
-                    : 'text-stone-600 hover:bg-stone-200 hover:text-stone-900'
+                    ? 'bg-zinc-800 text-zinc-50 font-medium'
+                    : 'text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900'
                 }`}
               >
-                <span className="text-stone-400 text-sm mr-2">{demo.number}</span>
+                <span className="text-zinc-400 text-sm mr-2">{demo.number}</span>
                 {demo.title}
               </button>
             ))}
