@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export function RoboNetDiagram() {
+export function FleetSeekDiagram() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -112,7 +112,7 @@ export function RoboNetDiagram() {
       ctx.fillStyle = '#f4f4f5'; // zinc-100
       ctx.font = 'bold 24px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('RoboNet', centerX, 40);
+      ctx.fillText('FleetSeek', centerX, 40);
 
       ctx.font = '14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
       ctx.fillStyle = '#a1a1aa'; // zinc-400

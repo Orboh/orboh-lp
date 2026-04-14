@@ -89,13 +89,13 @@ export const translations = {
       ],
       verticals: { label: 'Verticals', items: ['Construction', 'Manufacturing', 'Logistics', 'Agriculture'] },
     },
-    robonet: {
-      eyebrow: 'PHASE 2 — ROBONET PLATFORM',
+    fleetseek: {
+      eyebrow: 'PHASE 2 — FLEETSEEK: THE SKILL MARKET FOR PHYSICAL AI',
       title: 'A standalone robot learns from itself.\nAn Orboh robot learns from every robot in the network.',
-      subtitle: 'RoboNet is a shared intelligence network. Every deployment generates experience data. That data trains better models. Better models make every robot smarter — yours included.',
-      analogy: 'Slack became indispensable by being the place where teams communicate. RoboNet becomes indispensable by being the place where robots learn.',
+      subtitle: 'FleetSeek is the skill market for physical AI — robots autonomously share the data they collect on-site. As more robots join from different worksites around the world, the system gets smarter for everyone.',
+      analogy: 'Slack became indispensable by being the place where teams communicate. FleetSeek becomes indispensable by being the place where robots learn.',
       layers: [
-        { number: '01', title: 'Social Feed', description: 'Real-time stream of robot experiences from sites worldwide. See what robots are doing, learning, and encountering across the network.', icon: 'mdi:rss' },
+        { number: '01', title: 'Skill Feed', description: 'Real-time stream of robot skill data from sites worldwide. See what robots are doing, learning, and encountering across the network.', icon: 'mdi:rss' },
         { number: '02', title: 'Data Registry', description: "Structured catalog of experience data organized by task type, environment, and robot model. The world's most comprehensive physical-AI dataset.", icon: 'mdi:database-outline' },
         { number: '03', title: 'Model Marketplace', description: 'Trained models published, evaluated, and deployed. Buy, sell, or contribute specialized robot behaviors.', icon: 'mdi:store-outline' },
       ],
@@ -116,13 +116,13 @@ export const translations = {
     },
     whitepaper: {
       eyebrow: 'WHITEPAPER',
-      title: 'RoboNet White Paper',
-      subtitle: 'Our technical approach to VLA-powered humanoid robotics, the RoboNet shared intelligence network, and the physical labor market opportunity.',
+      title: 'FleetSeek White Paper',
+      subtitle: 'Our technical approach to VLA-powered humanoid robotics, the FleetSeek shared intelligence network, and the physical labor market opportunity.',
       downloadButton: 'Download PDF',
     },
     cta: {
       title: 'Ready to deploy intelligent robots?',
-      subtitle: 'We offer live demos for construction, manufacturing, and logistics teams. See RaaS pricing and RoboNet access.',
+      subtitle: 'We offer live demos for construction, manufacturing, and logistics teams. See RaaS pricing and FleetSeek access.',
       button: 'Book a demo',
       whitepaper: 'Download Whitepaper',
     },
@@ -228,13 +228,13 @@ export const translations = {
       ],
       verticals: { label: '対応業界', items: ['建設', '製造', '物流', '農業'] },
     },
-    robonet: {
-      eyebrow: 'PHASE 2 — ROBONET プラットフォーム',
+    fleetseek: {
+      eyebrow: 'PHASE 2 — FLEETSEEK: PHYSICAL AIのスキルマーケット',
       title: '単独のロボットは自分の経験から学ぶ。\nOrbohのロボットは、ネットワーク全体から学ぶ。',
-      subtitle: 'RoboNetは共有知能ネットワークです。稼働のたびに経験データが生成され、そのデータがより良いモデルを育て、すべてのロボットを賢くします。',
-      analogy: 'Slackはチームがコミュニケーションをとる場所として不可欠になった。RoboNetはロボットが学習する場所として不可欠になる。',
+      subtitle: 'FleetSeekはPhysical AIのためのスキルマーケットです。ロボットが現場で収集したデータをロボット自身が自律的に共有します。世界中の多様な現場からロボットが参加するほど、システム全体がより賢くなります。',
+      analogy: 'Slackはチームがコミュニケーションをとる場所として不可欠になった。FleetSeekはロボットが学習する場所として不可欠になる。',
       layers: [
-        { number: '01', title: 'ソーシャルフィード', description: '世界中の現場からロボットの経験をリアルタイムに配信。ネットワーク全体の動きをリアルタイムで把握。', icon: 'mdi:rss' },
+        { number: '01', title: 'スキルフィード', description: '世界中の現場からロボットのスキルデータをリアルタイムに配信。ネットワーク全体の動きをリアルタイムで把握。', icon: 'mdi:rss' },
         { number: '02', title: 'データレジストリ', description: 'タスクタイプ・環境・ロボットモデル別に整理された経験データのカタログ。世界最大の物理AIデータセット。', icon: 'mdi:database-outline' },
         { number: '03', title: 'モデルマーケットプレイス', description: 'トレーニング済みモデルを公開・評価・デプロイ。特定用途のロボット行動を売買・提供できます。', icon: 'mdi:store-outline' },
       ],
@@ -255,13 +255,13 @@ export const translations = {
     },
     whitepaper: {
       eyebrow: 'ホワイトペーパー',
-      title: 'RoboNet ホワイトペーパー',
-      subtitle: 'VLA搭載ヒューマノイドロボティクスの技術的アプローチ、RoboNet共有知能ネットワーク、および物理労働市場の機会についての詳細。',
+      title: 'FleetSeek ホワイトペーパー',
+      subtitle: 'VLA搭載ヒューマノイドロボティクスの技術的アプローチ、FleetSeek共有知能ネットワーク、および物理労働市場の機会についての詳細。',
       downloadButton: 'PDFをダウンロード',
     },
     cta: {
       title: 'インテリジェントなロボットを現場に導入しませんか？',
-      subtitle: '建設・製造・物流チーム向けにライブデモを提供しています。RaaS料金とRoboNetアクセスについてご相談ください。',
+      subtitle: '建設・製造・物流チーム向けにライブデモを提供しています。RaaS料金とFleetSeekアクセスについてご相談ください。',
       button: 'デモを予約する',
       whitepaper: 'ホワイトペーパーをダウンロード',
     },

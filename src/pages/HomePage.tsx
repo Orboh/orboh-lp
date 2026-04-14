@@ -1,7 +1,7 @@
 import { Layout } from '@/components/Layout';
 import { HeroSection } from '@/components/Hero';
 import { RaaSSection } from '@/components/RaaS';
-import { RoboNetSection } from '@/components/RoboNet';
+import { FleetSeekSection } from '@/components/FleetSeek';
 import { DemoVideoSection } from '@/components/DemoVideo';
 import { WhitepaperSection } from '@/components/Whitepaper';
 import { CTASection } from '@/components/CTA';
@@ -14,7 +14,7 @@ export function HomePage() {
     <Layout>
       <HeroSection />
       <RaaSSection />
-      <RoboNetSection />
+      <FleetSeekSection />
       <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
       <WhitepaperSection />
       <CTASection />

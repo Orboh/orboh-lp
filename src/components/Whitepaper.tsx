@@ -22,7 +22,7 @@ export function WhitepaperSection() {
 
         <div className="rounded overflow-hidden shadow-lg bg-white border border-zinc-200">
           <embed
-            src="/RoboNet_WhitePaper.pdf"
+            src="/FleetSeek_WhitePaper.pdf"
             type="application/pdf"
             width="100%"
             height="800"
@@ -32,7 +32,7 @@ export function WhitepaperSection() {
 
         <div className="text-center mt-8">
           <a
-            href="/RoboNet_WhitePaper.pdf"
+            href="/FleetSeek_WhitePaper.pdf"
             download
             className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-zinc-800 text-zinc-900 text-xs font-medium tracking-widest uppercase hover:bg-zinc-900 hover:text-zinc-50 transition-colors rounded"
           >

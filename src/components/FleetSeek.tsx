@@ -1,16 +1,16 @@
 import { Icon } from '@iconify/react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
-import { RoboNetDiagram } from './RoboNetDiagram';
+import { FleetSeekDiagram } from './FleetSeekDiagram';
 
-export const ROBONET_SECTION_ID = 'robonet-section';
+export const FLEETSEEK_SECTION_ID = 'fleetseek-section';
 
-export function RoboNetSection() {
+export function FleetSeekSection() {
   const { locale } = useLocale();
-  const t = translations[locale].robonet;
+  const t = translations[locale].fleetseek;
 
   return (
-    <section id={ROBONET_SECTION_ID} className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-900 text-zinc-50">
+    <section id={FLEETSEEK_SECTION_ID} className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-900 text-zinc-50">
       <div className="max-w-7xl mx-auto w-full">
         <p className="text-orange-400 text-xs tracking-widest uppercase mb-4">{t.eyebrow}</p>
         <h2 className="font-mono text-3xl md:text-4xl font-normal mb-6 whitespace-pre-line" style={{ letterSpacing: '-0.02em' }}>
@@ -21,9 +21,9 @@ export function RoboNetSection() {
           {t.analogy}
         </blockquote>
 
-        {/* RoboNet Diagram */}
+        {/* FleetSeek Diagram */}
         <div className="my-14">
-          <RoboNetDiagram />
+          <FleetSeekDiagram />
         </div>
         <div className="grid md:grid-cols-3 gap-4 mb-12">
           {t.layers.map((layer) => (
