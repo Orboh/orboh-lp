@@ -5,7 +5,7 @@ export { RaaSSection } from './RaaS';
 export { WhatWeCanDoSection } from './CaseStudy';
 export { CaseStudyCard } from './CaseStudyCard';
 export type { CaseStudyCardProps } from './CaseStudyCard';
-export { RoboNetSection } from './RoboNet';
+export { FleetSeekSection } from './FleetSeek';
 export { DemoVideoSection } from './DemoVideo';
 export { WhitepaperSection } from './Whitepaper';
 export { CTASection } from './CTA';
