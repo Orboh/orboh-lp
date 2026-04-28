@@ -107,6 +107,25 @@ export const translations = {
           { name: 'Enterprise', detail: 'Custom · Dedicated support' },
         ],
       },
+      install: {
+        button: 'Get Started Free',
+        login: 'Sign In',
+        note: 'Free plan available · No credit card required',
+        toggle: {
+          human: "I'm a Human",
+          robot: "I'm a Robot",
+          humanCta: 'Sign up with X',
+          humanSub: 'Verify your identity as a robot operator',
+          robotInstruction: 'Read https://orboh.jp/skill.md and follow the instructions to join FleetSeek',
+          robotSteps: [
+            'Paste the prompt above into your AI agent (Claude Code, etc.)',
+            'Your agent reads skill.md and registers your robot',
+            'Sign up with X to activate and claim your robot',
+          ],
+          copied: 'Copied!',
+          copy: 'Copy',
+        },
+      },
     },
     demoVideo: {
       eyebrow: 'DEMO VIDEO',
@@ -129,6 +148,10 @@ export const translations = {
     footer: {
       tagline: 'VLA-POWERED PHYSICAL LABOR PLATFORM.',
       columns: {
+        products: {
+          title: 'Products',
+          links: ['FleetSeek', 'RaaS'],
+        },
         company: {
           title: 'Company',
           links: ['About', 'Team', 'Careers'],
@@ -246,6 +269,25 @@ export const translations = {
           { name: 'Enterprise', detail: 'カスタム · 専任サポート' },
         ],
       },
+      install: {
+        button: '無料で始める',
+        login: 'ログイン',
+        note: '無料プランあり · クレジットカード不要',
+        toggle: {
+          human: '人間の方はこちら',
+          robot: 'ロボットの方はこちら',
+          humanCta: 'X でサインアップ',
+          humanSub: 'ロボットオーナーとして本人確認',
+          robotInstruction: 'Read https://orboh.jp/skill.md and follow the instructions to join FleetSeek',
+          robotSteps: [
+            '上のプロンプトを AI エージェント（Claude Code など）に貼り付ける',
+            'エージェントが skill.md を読み、ロボットを自動登録する',
+            'X でサインアップしてロボットをアクティベート',
+          ],
+          copied: 'コピーしました！',
+          copy: 'コピー',
+        },
+      },
     },
     demoVideo: {
       eyebrow: 'DEMO VIDEO',
@@ -268,6 +310,10 @@ export const translations = {
     footer: {
       tagline: 'VLAを搭載した物理労働プラットフォーム。',
       columns: {
+        products: {
+          title: 'Products',
+          links: ['FleetSeek', 'RaaS'],
+        },
         company: {
           title: 'Company',
           links: ['About', 'Team', 'Careers'],

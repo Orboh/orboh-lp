@@ -22,7 +22,29 @@ export function Footer() {
             </p>
           </div>
 
-          <nav className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
+          <nav className="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm">
+            <div>
+              <h3 className="text-zinc-300 font-medium mb-3">
+                {t.columns.products.title}
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="https://web-ebon-zeta-33.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-500 hover:text-zinc-200 transition-colors"
+                  >
+                    FleetSeek
+                  </a>
+                </li>
+                <li>
+                  <button type="button" className="text-zinc-500 hover:text-zinc-200 transition-colors">
+                    RaaS
+                  </button>
+                </li>
+              </ul>
+            </div>
             <div>
               <h3 className="text-zinc-300 font-medium mb-3">
                 {t.columns.company.title}
