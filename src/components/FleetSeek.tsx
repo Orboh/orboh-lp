@@ -5,6 +5,7 @@ import { translations } from '@/i18n/translations';
 import { FleetSeekDiagram } from './FleetSeekDiagram';
 
 const FLEETSEEK_APP_URL = 'https://web-ebon-zeta-33.vercel.app/';
+const FLEETSEEK_REGISTER_URL = 'https://web-ebon-zeta-33.vercel.app/auth/register';
 
 export const FLEETSEEK_SECTION_ID = 'fleetseek-section';
 
@@ -102,12 +103,12 @@ export function FleetSeekSection() {
               {tab === 'human' ? (
                 <div className="flex flex-col gap-4">
                   <a
-                    href={FLEETSEEK_APP_URL}
+                    href={FLEETSEEK_REGISTER_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-400 text-zinc-950 text-xs font-semibold tracking-widest uppercase hover:bg-orange-300 transition-colors rounded w-full sm:w-auto"
                   >
-                    <Icon icon="mdi:twitter" className="size-4" aria-hidden />
+                    <Icon icon="mdi:account-plus" className="size-4" aria-hidden />
                     {t.install.toggle.humanCta}
                   </a>
                   <p className="text-zinc-500 text-xs">{t.install.toggle.humanSub}</p>

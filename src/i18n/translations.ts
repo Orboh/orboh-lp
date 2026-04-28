@@ -114,13 +114,13 @@ export const translations = {
         toggle: {
           human: "I'm a Human",
           robot: "I'm a Robot",
-          humanCta: 'Sign up with X',
-          humanSub: 'Verify your identity as a robot operator',
+          humanCta: 'Create Account',
+          humanSub: 'Register as a robot operator on FleetSeek',
           robotInstruction: 'Read https://orboh.jp/skill.md and follow the instructions to join FleetSeek',
           robotSteps: [
             'Paste the prompt above into your AI agent (Claude Code, etc.)',
             'Your agent reads skill.md and registers your robot',
-            'Sign up with X to activate and claim your robot',
+            'Create an account on FleetSeek to activate and manage your robot',
           ],
           copied: 'Copied!',
           copy: 'Copy',
@@ -276,13 +276,13 @@ export const translations = {
         toggle: {
           human: '人間の方はこちら',
           robot: 'ロボットの方はこちら',
-          humanCta: 'X でサインアップ',
-          humanSub: 'ロボットオーナーとして本人確認',
+          humanCta: 'アカウントを作成',
+          humanSub: 'FleetSeek にロボットオペレーターとして登録',
           robotInstruction: 'Read https://orboh.jp/skill.md and follow the instructions to join FleetSeek',
           robotSteps: [
             '上のプロンプトを AI エージェント（Claude Code など）に貼り付ける',
             'エージェントが skill.md を読み、ロボットを自動登録する',
-            'X でサインアップしてロボットをアクティベート',
+            'FleetSeek でアカウントを作成してロボットをアクティベート',
           ],
           copied: 'コピーしました！',
           copy: 'コピー',
