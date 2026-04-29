@@ -102,25 +102,19 @@ fi
 # --- Step 6: Auto-configure MCP for Claude Code ---
 step "Configuring Claude Code MCP server..."
 
-MCP_DIR="$HOME/.claude"
-MCP_PATH="$MCP_DIR/mcp_servers.json"
 MCP_SERVER_JS="$FLEETSEEK_DIR/packages/mcp-server/dist/index.js"
 
-mkdir -p "$MCP_DIR"
-
 python3 - <<PYEOF
-import json, os, sys
+import json, os, sys, platform
 
-# Read FleetSeek config written by conf package
-# conf (projectName='fleetseek', projectSuffix='') → ~/.config/fleetseek/config.json on Linux
-import platform
+# Read FleetSeek config
 if platform.system() == "Darwin":
     cfg_path = os.path.expanduser("~/Library/Preferences/fleetseek/config.json")
 else:
     cfg_path = os.path.expanduser("~/.config/fleetseek/config.json")
 
 if not os.path.exists(cfg_path):
-    print(f"Warning: Config not found at {cfg_path}. Run 'fleetseek auth login' manually.", file=sys.stderr)
+    print(f"Warning: Config not found at {cfg_path}.", file=sys.stderr)
     sys.exit(0)
 
 with open(cfg_path) as f:
@@ -135,6 +129,7 @@ if not api_key:
     sys.exit(0)
 
 fleetseek_entry = {
+    "type": "stdio",
     "command": "node",
     "args": ["$MCP_SERVER_JS"],
     "env": {
@@ -144,25 +139,31 @@ fleetseek_entry = {
     }
 }
 
-mcp_path = "$MCP_PATH"
-existing = {}
-if os.path.exists(mcp_path):
-    with open(mcp_path) as f:
-        try:
-            existing = json.load(f)
-        except json.JSONDecodeError:
-            pass
+# Claude Code reads MCP config from ~/.claude.json (not mcp_servers.json)
+claude_json_path = os.path.expanduser("~/.claude.json")
+if not os.path.exists(claude_json_path):
+    print(f"Warning: ~/.claude.json not found. Install Claude Code first.", file=sys.stderr)
+    sys.exit(0)
 
-existing["fleetseek"] = fleetseek_entry
+with open(claude_json_path) as f:
+    try:
+        claude_cfg = json.load(f)
+    except json.JSONDecodeError:
+        claude_cfg = {}
 
-with open(mcp_path, "w") as f:
-    json.dump(existing, f, indent=2)
+if "mcpServers" not in claude_cfg:
+    claude_cfg["mcpServers"] = {}
+
+claude_cfg["mcpServers"]["fleetseek"] = fleetseek_entry
+
+with open(claude_json_path, "w") as f:
+    json.dump(claude_cfg, f, indent=2)
     f.write("\n")
 
-print(f"Written to {mcp_path}")
+print(f"Written to {claude_json_path}")
 PYEOF
 
-ok "~/.claude/mcp_servers.json configured"
+ok "~/.claude.json MCP configured"
 
 # --- Step 7: Patch ~/.claude/CLAUDE.md ---
 step "Configuring Claude Code global rules..."
