@@ -12,11 +12,10 @@ export const FLEETSEEK_SECTION_ID = 'fleetseek-section';
 export function FleetSeekSection() {
   const { locale } = useLocale();
   const t = translations[locale].fleetseek;
-  const [tab, setTab] = useState<'human' | 'robot'>('human');
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(t.install.toggle.robotInstruction);
+    navigator.clipboard.writeText(t.install.instruction);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -68,78 +67,53 @@ export function FleetSeekSection() {
             ))}
           </div>
 
-          {/* Human / Robot toggle */}
-          <div className="rounded border border-zinc-700 overflow-hidden">
-            {/* Tab bar */}
-            <div className="flex border-b border-zinc-700">
-              <button
-                type="button"
-                onClick={() => setTab('human')}
-                className={`flex-1 flex items-center justify-center gap-2 px-5 py-3 text-xs font-medium tracking-widest uppercase transition-colors ${
-                  tab === 'human'
-                    ? 'bg-zinc-800 text-zinc-50'
-                    : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50'
-                }`}
-              >
-                <span>👤</span>
-                {t.install.toggle.human}
-              </button>
-              <button
-                type="button"
-                onClick={() => setTab('robot')}
-                className={`flex-1 flex items-center justify-center gap-2 px-5 py-3 text-xs font-medium tracking-widest uppercase transition-colors ${
-                  tab === 'robot'
-                    ? 'bg-zinc-800 text-zinc-50'
-                    : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50'
-                }`}
-              >
-                <span>🤖</span>
-                {t.install.toggle.robot}
-              </button>
+          {/* Claude Code integration — primary CTA */}
+          <div className="rounded border border-orange-400/30 bg-zinc-950/60 overflow-hidden mb-4">
+            <div className="flex items-center gap-2 px-5 py-3 border-b border-zinc-700 bg-zinc-800/60">
+              <Icon icon="simple-icons:claudeai" className="size-4 text-orange-400" aria-hidden />
+              <span className="text-xs font-medium tracking-widest uppercase text-orange-400">{t.install.claudeCodeLabel}</span>
             </div>
+            <div className="p-6 flex flex-col gap-4">
+              <p className="text-zinc-400 text-xs">{t.install.claudeCodeDesc}</p>
+              <div className="relative">
+                <pre className="bg-zinc-900 border border-zinc-700 rounded px-5 py-4 text-zinc-200 text-sm font-mono leading-relaxed whitespace-pre-wrap break-all pr-20">
+                  {t.install.instruction}
+                </pre>
+                <button
+                  type="button"
+                  onClick={handleCopy}
+                  className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-orange-400 hover:bg-orange-300 text-zinc-950 text-xs font-semibold rounded transition-colors"
+                >
+                  <Icon icon={copied ? 'mdi:check' : 'mdi:content-copy'} className="size-3.5" aria-hidden />
+                  {copied ? t.install.copied : t.install.copy}
+                </button>
+              </div>
+              <ol className="flex flex-col gap-2">
+                {t.install.steps.map((step, i) => (
+                  <li key={i} className="flex items-start gap-3 text-zinc-400 text-xs">
+                    <span className="text-orange-400 font-mono shrink-0">{i + 1}.</span>
+                    {step}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
 
-            {/* Tab content */}
-            <div className="p-6 bg-zinc-950/60">
-              {tab === 'human' ? (
-                <div className="flex flex-col gap-4">
-                  <a
-                    href={FLEETSEEK_REGISTER_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-400 text-zinc-950 text-xs font-semibold tracking-widest uppercase hover:bg-orange-300 transition-colors rounded w-full sm:w-auto"
-                  >
-                    <Icon icon="mdi:account-plus" className="size-4" aria-hidden />
-                    {t.install.toggle.humanCta}
-                  </a>
-                  <p className="text-zinc-500 text-xs">{t.install.toggle.humanSub}</p>
-                </div>
-              ) : (
-                <div className="flex flex-col gap-4">
-                  <p className="text-zinc-400 text-xs mb-1">Send this to your agent:</p>
-                  <div className="relative">
-                    <pre className="bg-zinc-900 border border-zinc-700 rounded px-5 py-4 text-zinc-200 text-sm font-mono leading-relaxed whitespace-pre-wrap break-all pr-20">
-                      {t.install.toggle.robotInstruction}
-                    </pre>
-                    <button
-                      type="button"
-                      onClick={handleCopy}
-                      className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 bg-zinc-700 hover:bg-zinc-600 text-zinc-200 text-xs rounded transition-colors"
-                    >
-                      <Icon icon={copied ? 'mdi:check' : 'mdi:content-copy'} className="size-3.5" aria-hidden />
-                      {copied ? t.install.toggle.copied : t.install.toggle.copy}
-                    </button>
-                  </div>
-                  <ol className="flex flex-col gap-2 mt-1">
-                    {t.install.toggle.robotSteps.map((step, i) => (
-                      <li key={i} className="flex items-start gap-3 text-zinc-400 text-xs">
-                        <span className="text-orange-400 font-mono shrink-0">{i + 1}.</span>
-                        {step}
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              )}
+          {/* Secondary: direct account creation */}
+          <div className="rounded border border-zinc-700 p-5 bg-zinc-950/40 flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="flex-1">
+              <p className="text-zinc-400 text-xs font-medium uppercase tracking-widest mb-1">{t.install.accountLabel}</p>
+              <p className="text-zinc-500 text-xs">{t.install.accountSub}</p>
             </div>
+            <a
+              href={FLEETSEEK_REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-zinc-600 text-zinc-300 text-xs font-medium tracking-widest uppercase hover:border-zinc-400 hover:text-zinc-100 transition-colors rounded shrink-0"
+            >
+              <Icon icon="mdi:account-plus" className="size-4" aria-hidden />
+              {t.install.accountCta}
+            </a>
           </div>
         </div>
       </div>
