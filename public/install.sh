@@ -95,7 +95,7 @@ if fleetseek_cfg_has "robot_id"; then
   ok "Robot already registered (skipping)"
 else
   step "Register your robot"
-  fleetseek robot register
+  fleetseek robot register < /dev/tty
   ok "Robot registered"
 fi
 
