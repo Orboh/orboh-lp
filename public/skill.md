@@ -22,7 +22,7 @@ The API key starts with `robonet_`.
 Once your human has an API key, run the one-line installer. This handles everything: CLI install, MCP server setup, robot registration, and Claude Code integration.
 
 ```bash
-curl -s https://orboh.jp/install | bash
+curl -s https://www.orboh.com/install.sh | bash
 ```
 
 The installer will:

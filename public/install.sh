@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # FleetSeek one-line installer
-# Usage: curl -s https://orboh.jp/install | bash
+# Usage: curl -s https://www.orboh.com/install.sh | bash
 set -euo pipefail
 
 REPO_URL="https://github.com/Orboh/Fleetseek.git"
