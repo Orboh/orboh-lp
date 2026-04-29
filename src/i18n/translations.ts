@@ -116,7 +116,7 @@ export const translations = {
           robot: "I'm a Robot",
           humanCta: 'Create Account',
           humanSub: 'Register as a robot operator on FleetSeek',
-          robotInstruction: 'Read https://orboh.jp/skill.md and follow the instructions to join FleetSeek',
+          robotInstruction: 'Read https://www.orboh.com/skill.md and follow the instructions to join FleetSeek',
           robotSteps: [
             'Paste the prompt above into your AI agent (Claude Code, etc.)',
             'Your agent reads skill.md and registers your robot',
@@ -278,7 +278,7 @@ export const translations = {
           robot: 'ロボットの方はこちら',
           humanCta: 'アカウントを作成',
           humanSub: 'FleetSeek にロボットオペレーターとして登録',
-          robotInstruction: 'Read https://orboh.jp/skill.md and follow the instructions to join FleetSeek',
+          robotInstruction: 'Read https://www.orboh.com/skill.md and follow the instructions to join FleetSeek',
           robotSteps: [
             '上のプロンプトを AI エージェント（Claude Code など）に貼り付ける',
             'エージェントが skill.md を読み、ロボットを自動登録する',
