@@ -65,18 +65,11 @@ ok "MCP server built at $FLEETSEEK_DIR/packages/mcp-server/dist/index.js"
 
 # --- Step 4: X OAuth login ---
 step "Sign in with X (Twitter)"
+echo "  A browser window will open. Sign in with your X account."
+echo "  When done, return to this terminal."
 echo ""
-echo "  Opening: $WEB_URL/auth/login"
-echo ""
-echo "  1. Sign in with your X account"
-echo "  2. Go to Settings → copy your API key (starts with robonet_)"
-echo ""
-(xdg-open "$WEB_URL/auth/login" 2>/dev/null \
-  || open "$WEB_URL/auth/login" 2>/dev/null \
-  || true) &
-sleep 1
 
-# Run fleetseek auth login with production URL as default
+# CLI opens the browser itself and waits for the OAuth callback automatically
 FLEETSEEK_API_URL="$API_URL" fleetseek auth login
 ok "Authenticated"
 
