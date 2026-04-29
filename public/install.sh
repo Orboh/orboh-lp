@@ -48,12 +48,12 @@ fi
 
 # --- Step 2: Install CLI ---
 step "Installing FleetSeek CLI..."
-npm install --prefix "$FLEETSEEK_DIR/packages/cli" --silent
-if npm link --prefix "$FLEETSEEK_DIR/packages/cli" 2>/dev/null; then
+(cd "$FLEETSEEK_DIR/packages/cli" && npm install --silent)
+if (cd "$FLEETSEEK_DIR/packages/cli" && npm link 2>/dev/null); then
   ok "fleetseek command linked"
 else
   warn "Retrying with sudo..."
-  sudo npm link --prefix "$FLEETSEEK_DIR/packages/cli"
+  (cd "$FLEETSEEK_DIR/packages/cli" && sudo npm link)
   ok "fleetseek command linked (sudo)"
 fi
 
