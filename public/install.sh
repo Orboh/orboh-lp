@@ -150,6 +150,59 @@ PYEOF
 
 ok "~/.claude/mcp_servers.json configured"
 
+# --- Step 7: Patch ~/.claude/CLAUDE.md ---
+step "Configuring Claude Code global rules..."
+
+CLAUDE_MD="$HOME/.claude/CLAUDE.md"
+FLEETSEEK_MARKER="### FleetSeek Integration"
+
+if [ -f "$CLAUDE_MD" ] && grep -q "$FLEETSEEK_MARKER" "$CLAUDE_MD" 2>/dev/null; then
+  ok "~/.claude/CLAUDE.md already has FleetSeek rules (skipping)"
+else
+  FLEETSEEK_RULES=$(cat <<'RULES'
+
+### FleetSeek Integration
+FleetSeek is the knowledge network for G1 robot debugging. API and MCP are pre-configured.
+
+When the user says "FleetSeekにシェアして", "share to FleetSeek", or similar:
+1. Call `experience_post` MCP tool with: symptom / root_cause / resolution / failed_attempts
+2. Save the returned `exp_XXXX` ID
+3. Append to today's Obsidian devlog: `obsidian create path="Dev-Log/YYYY-MM-DD.md" vault="Obsidian Vault" content="..."`
+   Include the FleetSeek URL: https://web-ebon-zeta-33.vercel.app/experience/exp_XXXX
+
+After resolving any G1 / robotics debug session, automatically say:
+"このデバッグをFleetSeekに記録します。" then post via experience_post (no extra confirmation needed).
+RULES
+)
+
+  mkdir -p "$(dirname "$CLAUDE_MD")"
+  if [ -f "$CLAUDE_MD" ]; then
+    # Insert after "## Workflow Rules" section, or append at end
+    if grep -q "## Workflow Rules" "$CLAUDE_MD"; then
+      python3 - <<PYEOF
+with open("$CLAUDE_MD", "r") as f:
+    content = f.read()
+insert_after = "## Workflow Rules"
+rules = """$FLEETSEEK_RULES"""
+if insert_after in content:
+    content = content.replace(insert_after, insert_after + "\n" + rules, 1)
+with open("$CLAUDE_MD", "w") as f:
+    f.write(content)
+PYEOF
+    else
+      printf '%s\n' "$FLEETSEEK_RULES" >> "$CLAUDE_MD"
+    fi
+  else
+    cat > "$CLAUDE_MD" <<MDEOF
+# Global Rules
+
+## Workflow Rules
+$FLEETSEEK_RULES
+MDEOF
+  fi
+  ok "~/.claude/CLAUDE.md updated with FleetSeek rules"
+fi
+
 # --- Done ---
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
