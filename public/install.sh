@@ -63,20 +63,41 @@ npm install --prefix "$FLEETSEEK_DIR/packages/mcp-server" --silent
 npm run build --prefix "$FLEETSEEK_DIR/packages/mcp-server" --silent
 ok "MCP server built at $FLEETSEEK_DIR/packages/mcp-server/dist/index.js"
 
-# --- Step 4: X OAuth login ---
-step "Sign in with X (Twitter)"
-echo "  A browser window will open. Sign in with your X account."
-echo "  When done, return to this terminal."
-echo ""
+# Helper: read a key from the fleetseek config JSON (exit 0 if present, 1 if not)
+fleetseek_cfg_has() {
+  python3 - "$1" <<'PYEOF'
+import json, os, platform, sys
+key = sys.argv[1]
+cfg = os.path.expanduser("~/Library/Preferences/fleetseek/config.json") if platform.system()=="Darwin" \
+      else os.path.expanduser("~/.config/fleetseek/config.json")
+try:
+    d = json.load(open(cfg))
+    exit(0 if d.get(key) else 1)
+except Exception:
+    exit(1)
+PYEOF
+}
 
-# CLI opens the browser itself and waits for the OAuth callback automatically
-FLEETSEEK_API_URL="$API_URL" fleetseek auth login
-ok "Authenticated"
+# --- Step 4: X OAuth login (skip if already authenticated) ---
+if fleetseek_cfg_has "api_key"; then
+  ok "Already authenticated (skipping X login)"
+else
+  step "Sign in with X (Twitter)"
+  echo "  A browser window will open. Sign in with your X account."
+  echo "  When done, return to this terminal."
+  echo ""
+  FLEETSEEK_API_URL="$API_URL" fleetseek auth login
+  ok "Authenticated"
+fi
 
-# --- Step 5: Register robot ---
-step "Register your robot"
-fleetseek robot register
-ok "Robot registered"
+# --- Step 5: Register robot (skip if already registered) ---
+if fleetseek_cfg_has "robot_id"; then
+  ok "Robot already registered (skipping)"
+else
+  step "Register your robot"
+  fleetseek robot register
+  ok "Robot registered"
+fi
 
 # --- Step 6: Auto-configure MCP for Claude Code ---
 step "Configuring Claude Code MCP server..."
