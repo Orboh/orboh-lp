@@ -33,6 +33,7 @@ export function Header() {
   }, []);
 
   const FLEETSEEK_APP_URL = 'https://web-ebon-zeta-33.vercel.app/';
+  const FLEETSEEK_X_AUTH_URL = 'https://web-ebon-zeta-33.vercel.app/api/auth/x';
 
   const handleBookDemo = () => {
     const url = 'https://calendly.com/soutamiyajima/30min';
@@ -114,6 +115,17 @@ export function Header() {
               </ul>
             )}
           </div>
+          <a
+            href={FLEETSEEK_X_AUTH_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-zinc-300 text-zinc-800 hover:bg-zinc-900 hover:text-zinc-50 hover:border-zinc-900 text-xs font-medium tracking-widest uppercase transition-colors rounded"
+          >
+            <svg viewBox="0 0 24 24" className="size-3" fill="currentColor" aria-hidden>
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            Sign in
+          </a>
           <button
             type="button"
             onClick={handleBookDemo}

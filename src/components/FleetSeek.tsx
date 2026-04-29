@@ -5,7 +5,7 @@ import { translations } from '@/i18n/translations';
 import { FleetSeekDiagram } from './FleetSeekDiagram';
 
 const FLEETSEEK_APP_URL = 'https://web-ebon-zeta-33.vercel.app/';
-const FLEETSEEK_REGISTER_URL = 'https://web-ebon-zeta-33.vercel.app/auth/register';
+const FLEETSEEK_X_AUTH_URL = 'https://web-ebon-zeta-33.vercel.app/api/auth/x';
 
 export const FLEETSEEK_SECTION_ID = 'fleetseek-section';
 
@@ -99,20 +99,22 @@ export function FleetSeekSection() {
             </div>
           </div>
 
-          {/* Secondary: direct account creation */}
+          {/* Secondary: Sign in with X */}
           <div className="rounded border border-zinc-700 p-5 bg-zinc-950/40 flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex-1">
-              <p className="text-zinc-400 text-xs font-medium uppercase tracking-widest mb-1">{t.install.accountLabel}</p>
-              <p className="text-zinc-500 text-xs">{t.install.accountSub}</p>
+              <p className="text-zinc-400 text-xs font-medium uppercase tracking-widest mb-1">{t.install.xLoginLabel}</p>
+              <p className="text-zinc-500 text-xs">{t.install.xLoginSub}</p>
             </div>
             <a
-              href={FLEETSEEK_REGISTER_URL}
+              href={FLEETSEEK_X_AUTH_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-zinc-600 text-zinc-300 text-xs font-medium tracking-widest uppercase hover:border-zinc-400 hover:text-zinc-100 transition-colors rounded shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-zinc-950 border border-zinc-600 text-zinc-100 text-xs font-semibold tracking-widest uppercase hover:bg-zinc-800 hover:border-zinc-400 transition-colors rounded shrink-0"
             >
-              <Icon icon="mdi:account-plus" className="size-4" aria-hidden />
-              {t.install.accountCta}
+              <svg viewBox="0 0 24 24" className="size-3.5 shrink-0" fill="currentColor" aria-hidden>
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              {t.install.xLoginCta}
             </a>
           </div>
         </div>
