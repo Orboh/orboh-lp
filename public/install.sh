@@ -3,8 +3,8 @@
 # Usage: curl -s https://www.orboh.com/install.sh | bash
 set -euo pipefail
 
-REPO_URL="https://github.com/Orboh/Fleetseek.git"
-FLEETSEEK_DIR="$HOME/FleetSeek"
+CLI_PKG="@orboh_jp/fleetseek-cli"
+MCP_PKG="@orboh_jp/fleetseek-mcp"
 API_URL="https://robonet-api-production.up.railway.app"
 WEB_URL="https://web-ebon-zeta-33.vercel.app"
 
@@ -33,35 +33,27 @@ NODE_VER=$(node -e "process.stdout.write(process.version.slice(1).split('.')[0])
 if [ "$NODE_VER" -lt 18 ]; then
   fail "Node.js v18+ required (found v$NODE_VER)"
 fi
-if ! command -v git &>/dev/null; then
-  fail "git is required but not installed."
+if ! command -v npm &>/dev/null; then
+  fail "npm is required but not installed."
+fi
+if ! command -v python3 &>/dev/null; then
+  fail "python3 is required for configuration."
 fi
 
-# --- Step 1: Clone or update repo ---
-step "Fetching FleetSeek..."
-if [ -d "$FLEETSEEK_DIR/.git" ]; then
-  git -C "$FLEETSEEK_DIR" pull --quiet 2>/dev/null && ok "Updated existing installation at $FLEETSEEK_DIR"
-else
-  git clone "$REPO_URL" "$FLEETSEEK_DIR" --quiet
-  ok "Cloned to $FLEETSEEK_DIR"
-fi
-
-# --- Step 2: Install CLI ---
-step "Installing FleetSeek CLI..."
-(cd "$FLEETSEEK_DIR/packages/cli" && npm install --silent)
-if (cd "$FLEETSEEK_DIR/packages/cli" && npm link 2>/dev/null); then
-  ok "fleetseek command linked"
+# --- Step 1: Install (or upgrade) CLI from npm ---
+step "Installing FleetSeek CLI ($CLI_PKG)..."
+if npm install -g "$CLI_PKG@latest" --silent 2>/dev/null; then
+  ok "fleetseek command installed"
 else
   warn "Retrying with sudo..."
-  (cd "$FLEETSEEK_DIR/packages/cli" && sudo npm link)
-  ok "fleetseek command linked (sudo)"
+  sudo npm install -g "$CLI_PKG@latest"
+  ok "fleetseek command installed (sudo)"
 fi
 
-# --- Step 3: Build MCP server ---
-step "Building MCP server..."
-npm install --prefix "$FLEETSEEK_DIR/packages/mcp-server" --silent
-npm run build --prefix "$FLEETSEEK_DIR/packages/mcp-server" --silent
-ok "MCP server built at $FLEETSEEK_DIR/packages/mcp-server/dist/index.js"
+# --- Step 2: Pre-fetch MCP server so the first Claude Code launch is instant ---
+step "Pre-fetching MCP server ($MCP_PKG)..."
+npx -y "$MCP_PKG@latest" --version > /dev/null 2>&1 || true
+ok "MCP server cached (auto-updates on each Claude Code restart)"
 
 # Helper: read a key from the fleetseek config JSON (exit 0 if present, 1 if not)
 fleetseek_cfg_has() {
@@ -78,7 +70,7 @@ except Exception:
 PYEOF
 }
 
-# --- Step 4: X OAuth login (skip if already authenticated) ---
+# --- Step 3: X OAuth login (skip if already authenticated) ---
 if fleetseek_cfg_has "api_key"; then
   ok "Already authenticated (skipping X login)"
 else
@@ -90,7 +82,7 @@ else
   ok "Authenticated"
 fi
 
-# --- Step 5: Register robot (skip if already registered) ---
+# --- Step 4: Register robot (skip if already registered) ---
 if fleetseek_cfg_has "robot_id"; then
   ok "Robot already registered (skipping)"
 else
@@ -99,15 +91,12 @@ else
   ok "Robot registered"
 fi
 
-# --- Step 6: Auto-configure MCP for Claude Code ---
+# --- Step 5: Auto-configure MCP for Claude Code (npx @latest = auto-update) ---
 step "Configuring Claude Code MCP server..."
-
-MCP_SERVER_JS="$FLEETSEEK_DIR/packages/mcp-server/dist/index.js"
 
 python3 - <<PYEOF
 import json, os, sys, platform
 
-# Read FleetSeek config
 if platform.system() == "Darwin":
     cfg_path = os.path.expanduser("~/Library/Preferences/fleetseek/config.json")
 else:
@@ -128,10 +117,11 @@ if not api_key:
     print("Warning: API key not found in config.", file=sys.stderr)
     sys.exit(0)
 
+# npx -y @orboh_jp/fleetseek-mcp@latest = auto-update on every Claude Code restart
 fleetseek_entry = {
     "type": "stdio",
-    "command": "node",
-    "args": ["$MCP_SERVER_JS"],
+    "command": "npx",
+    "args": ["-y", "$MCP_PKG@latest"],
     "env": {
         "FLEETSEEK_API_URL": api_url,
         "FLEETSEEK_API_KEY": api_key,
@@ -139,7 +129,6 @@ fleetseek_entry = {
     }
 }
 
-# Claude Code reads MCP config from ~/.claude.json (not mcp_servers.json)
 claude_json_path = os.path.expanduser("~/.claude.json")
 if not os.path.exists(claude_json_path):
     print(f"Warning: ~/.claude.json not found. Install Claude Code first.", file=sys.stderr)
@@ -151,9 +140,7 @@ with open(claude_json_path) as f:
     except json.JSONDecodeError:
         claude_cfg = {}
 
-if "mcpServers" not in claude_cfg:
-    claude_cfg["mcpServers"] = {}
-
+claude_cfg.setdefault("mcpServers", {})
 claude_cfg["mcpServers"]["fleetseek"] = fleetseek_entry
 
 with open(claude_json_path, "w") as f:
@@ -163,9 +150,9 @@ with open(claude_json_path, "w") as f:
 print(f"Written to {claude_json_path}")
 PYEOF
 
-ok "~/.claude.json MCP configured"
+ok "~/.claude.json MCP configured (auto-update enabled)"
 
-# --- Step 7: Patch ~/.claude/CLAUDE.md ---
+# --- Step 6: Patch ~/.claude/CLAUDE.md ---
 step "Configuring Claude Code global rules..."
 
 CLAUDE_MD="$HOME/.claude/CLAUDE.md"
@@ -192,7 +179,6 @@ RULES
 
   mkdir -p "$(dirname "$CLAUDE_MD")"
   if [ -f "$CLAUDE_MD" ]; then
-    # Insert after "## Workflow Rules" section, or append at end
     if grep -q "## Workflow Rules" "$CLAUDE_MD"; then
       python3 - <<PYEOF
 with open("$CLAUDE_MD", "r") as f:
@@ -224,13 +210,14 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo -e "${GREEN}  FleetSeek setup complete!${NC}"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
-echo "  Next steps:"
+echo "  Auto-update: enabled (Claude Code restart fetches latest MCP)"
 echo ""
-echo "  1. Restart Claude Code to activate MCP"
-echo "  2. In Claude Code, say:"
-echo "       'Search FleetSeek for arm oscillation'"
-echo "  3. When you solve a G1 bug, say:"
-echo "       'Share this debug to FleetSeek'"
+echo "  Next steps:"
+echo "    1. Restart Claude Code to activate MCP"
+echo "    2. In Claude Code, say:"
+echo "         'Search FleetSeek for arm oscillation'"
+echo "    3. When you solve a G1 bug, say:"
+echo "         'Share this debug to FleetSeek'"
 echo ""
 echo "  Every fix you share saves hours for your team."
 echo ""
