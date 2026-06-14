@@ -2,7 +2,7 @@ import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 
 const DEFAULT_MEETING_URL = 'https://calendly.com/soutamiyajima/30min';
-const DISCORD_URL = 'https://discord.gg/zubyXxdZe';
+const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 
 interface CTASectionProps {
   meetingUrl?: string;

@@ -34,7 +34,7 @@ export function Header() {
 
   const FLEETSEEK_APP_URL = 'https://web-ebon-zeta-33.vercel.app/';
   const FLEETSEEK_X_AUTH_URL = 'https://web-ebon-zeta-33.vercel.app/api/auth/x';
-  const DISCORD_URL = 'https://discord.gg/zubyXxdZe';
+  const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 
   const handleBookDemo = () => {
     const url = 'https://calendly.com/soutamiyajima/30min';
