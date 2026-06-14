@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocale } from '@/contexts/LocaleContext';
 import type { Locale } from '@/i18n/translations';
+import orbohLogo from '@/assets/orboh-logo.png';
 
 const langLabels: Record<Locale, string> = {
   en: 'English',
@@ -43,19 +44,19 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-8 md:px-16 lg:px-24 border-b border-zinc-200 transition-all duration-300 ease-out transform ${
+      className={`fixed top-0 left-0 right-0 z-50 px-8 md:px-16 lg:px-24 border-b border-zinc-200 dark:border-zinc-700 transition-all duration-300 ease-out transform ${
         scrolled
           ? '-translate-y-full opacity-0 pointer-events-none'
           : 'translate-y-0 opacity-100'
-      }`}
-      style={{ backgroundColor: '#f0ece6' }}
+      } bg-[#f0ece6] dark:bg-zinc-900`}
     >
       <div className="max-w-7xl mx-auto w-full h-16 flex items-center justify-between">
-        <a
-          href="/"
-          className="font-mono text-zinc-900 font-bold tracking-tight text-xl hover:text-zinc-600 transition-colors"
-        >
-          Orboh
+        <a href="/" className="flex items-center">
+          <img
+            src={orbohLogo}
+            alt="Orboh"
+            className="h-8 w-auto dark:brightness-125"
+          />
         </a>
 
         <nav className="flex items-center gap-6">
@@ -82,7 +83,7 @@ export function Header() {
             href={FLEETSEEK_APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-zinc-600 hover:text-zinc-900 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100"
+            className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >
             FleetSeek
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
@@ -93,7 +94,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
-              className="flex items-center gap-1.5 px-3 py-2 text-zinc-600 hover:text-zinc-900 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100"
+              className="flex items-center gap-1.5 px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
               aria-expanded={open}
               aria-haspopup="listbox"
               aria-label="Select language"
@@ -112,7 +113,7 @@ export function Header() {
             {open && (
               <ul
                 role="listbox"
-                className="absolute right-0 top-full mt-1 py-1 w-36 bg-white border border-zinc-200 rounded shadow-lg z-10"
+                className="absolute right-0 top-full mt-1 py-1 w-36 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded shadow-lg z-10"
               >
                 {(['en', 'ja'] as const).map((option) => (
                   <li key={option} role="option" aria-selected={locale === option}>
@@ -124,8 +125,8 @@ export function Header() {
                       }}
                       className={`w-full text-left px-4 py-2 text-sm transition-colors ${
                         locale === option
-                          ? 'bg-zinc-100 text-zinc-900 font-medium'
-                          : 'text-zinc-500 hover:bg-zinc-50 hover:text-zinc-900'
+                          ? 'bg-zinc-100 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-medium'
+                          : 'text-zinc-500 dark:text-zinc-400 hover:bg-zinc-50 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-zinc-100'
                       }`}
                     >
                       {langLabels[option]}
@@ -139,7 +140,7 @@ export function Header() {
             href={FLEETSEEK_X_AUTH_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-zinc-300 text-zinc-800 hover:bg-zinc-900 hover:text-zinc-50 hover:border-zinc-900 text-xs font-medium tracking-widest uppercase transition-colors rounded"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 border border-zinc-300 dark:border-zinc-600 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-900 hover:text-zinc-50 hover:border-zinc-900 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 text-xs font-medium tracking-widest uppercase transition-colors rounded"
           >
             <svg viewBox="0 0 24 24" className="size-3" fill="currentColor" aria-hidden>
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -149,7 +150,7 @@ export function Header() {
           <button
             type="button"
             onClick={handleBookDemo}
-            className="px-4 py-2.5 border border-zinc-800 text-zinc-900 text-xs font-medium tracking-widest uppercase hover:bg-zinc-900 hover:text-zinc-50 transition-colors rounded"
+            className="px-4 py-2.5 border border-zinc-800 dark:border-zinc-300 text-zinc-900 dark:text-zinc-100 text-xs font-medium tracking-widest uppercase hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors rounded"
           >
             Book a demo
           </button>
