@@ -1,7 +1,7 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 
-const DISCORD_URL = 'https://discord.gg/zubyXxdZe';
+const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 
 export function Footer() {
   const { locale } = useLocale();

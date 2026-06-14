@@ -3,7 +3,7 @@ import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 import { WHAT_WE_CAN_DO_SECTION_ID } from './CaseStudy';
 
-const DISCORD_URL = 'https://discord.gg/zubyXxdZe';
+const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 
 import unitreeRobotWebp from '@/assets/hero/unitree_robot_g1.webp';
 
