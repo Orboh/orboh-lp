@@ -1,5 +1,6 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
+import orbohLogo from '@/assets/orboh-logo.png';
 
 const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 
@@ -15,9 +16,9 @@ export function Footer() {
             <button
               type="button"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-block font-mono text-2xl font-bold text-zinc-200 transition-colors mb-3"
+              className="inline-block mb-3"
             >
-              Orboh
+              <img src={orbohLogo} alt="Orboh" className="h-8 w-auto brightness-150" />
             </button>
             <p className="text-zinc-500 max-w-sm">
               {t.tagline}
