@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useLocale } from '@/contexts/LocaleContext';
 import type { Locale } from '@/i18n/translations';
 import orbohLogo from '@/assets/orboh-logo.png';
@@ -51,15 +52,21 @@ export function Header() {
       } bg-[#f0ece6] dark:bg-zinc-900`}
     >
       <div className="max-w-7xl mx-auto w-full h-16 flex items-center justify-between">
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={orbohLogo}
             alt="Orboh"
             className="h-8 w-auto dark:brightness-125"
           />
-        </a>
+        </Link>
 
         <nav className="flex items-center gap-6">
+          <Link
+            to="/humanoidhack"
+            className="hidden md:inline-flex items-center px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >
+            Humanoid Hack
+          </Link>
           <a
             href={DISCORD_URL}
             target="_blank"
