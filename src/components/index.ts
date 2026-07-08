@@ -6,6 +6,7 @@ export { WhatWeCanDoSection } from './CaseStudy';
 export { CaseStudyCard } from './CaseStudyCard';
 export type { CaseStudyCardProps } from './CaseStudyCard';
 export { FleetSeekSection } from './FleetSeek';
+export { HumanoidHackPromoSection } from './HumanoidHackPromo';
 export { DemoVideoSection } from './DemoVideo';
 export { WhitepaperSection } from './Whitepaper';
 export { CTASection } from './CTA';

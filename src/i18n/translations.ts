@@ -204,6 +204,13 @@ export const translations = {
       galleryLabel: 'From the floor',
       galleryNote: 'Scenes from Humanoid Hack Tokyo Vol.01.',
     },
+    humanoidHackPromo: {
+      eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
+      title: 'Humanoid Hack Tokyo',
+      subtitle:
+        "Tokyo's humanoid hackathon. Developers from Japan and abroad build real apps on Unitree G1 humanoids — free to join.",
+      cta: 'Explore Humanoid Hack',
+    },
     footer: {
       tagline: 'VLA-POWERED PHYSICAL LABOR PLATFORM.',
       columns: {
@@ -424,6 +431,13 @@ export const translations = {
       ],
       galleryLabel: '当日の様子',
       galleryNote: 'Humanoid Hack Tokyo Vol.01 の会場より。',
+    },
+    humanoidHackPromo: {
+      eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
+      title: 'Humanoid Hack Tokyo',
+      subtitle:
+        '東京のヒューマノイドハッカソン。国内外の開発者が実機の Unitree G1 上でアプリを開発。参加費は無料。',
+      cta: 'Humanoid Hack を見る',
     },
     footer: {
       tagline: 'VLAを搭載した物理労働プラットフォーム。',
