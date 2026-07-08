@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 import orbohLogo from '@/assets/orboh-logo.png';
@@ -53,6 +54,14 @@ export function Footer() {
                 {t.columns.company.title}
               </h3>
               <ul className="space-y-2">
+                <li>
+                  <Link
+                    to="/humanoidhack"
+                    className="text-zinc-500 hover:text-zinc-200 transition-colors"
+                  >
+                    Humanoid Hack
+                  </Link>
+                </li>
                 {t.columns.company.links.map((label) => (
                   <li key={label}>
                     <button
