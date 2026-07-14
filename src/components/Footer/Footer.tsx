@@ -33,14 +33,12 @@ export function Footer() {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="https://web-ebon-zeta-33.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/fleetseek"
                     className="text-zinc-500 hover:text-zinc-200 transition-colors"
                   >
                     FleetSeek
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <button type="button" className="text-zinc-500 hover:text-zinc-200 transition-colors">

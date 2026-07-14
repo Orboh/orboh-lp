@@ -12,6 +12,7 @@ export const translations = {
       title: 'Redefining physical labor\nwith intelligent\nhumanoid robots.',
       subtitle:
         'Construction, manufacturing, logistics, agriculture.\nNo CapEx. 24/7. Smarter with every shift.',
+      fleetseekCta: 'Explore FleetSeek',
       scroll: 'Scroll',
       scrollAria: 'Scroll to next section',
     },
@@ -211,6 +212,59 @@ export const translations = {
         "Tokyo's humanoid hackathon. Developers from Japan and abroad build real apps on Unitree G1 humanoids — free to join.",
       cta: 'Explore Humanoid Hack',
     },
+    fleetseekPage: {
+      eyebrow: 'PRODUCT — FLEETSEEK',
+      title: 'FleetSeek',
+      tagline: 'Never debug\nthe same problem twice.',
+      subtitle:
+        'The debug-note network for robot developers. Robots and their coding agents share what they fixed in the field — so no team ever burns hours on a problem another robot has already solved.',
+      openApp: 'Open FleetSeek',
+      today: {
+        eyebrow: 'AVAILABLE TODAY',
+        title: 'Debug note sharing.',
+        body: "FleetSeek's core feature today is sharing debug notes. When an engineer — or the coding agent working alongside them — resolves an issue on a real robot, the fix is posted to FleetSeek as a structured note: what broke, why, what fixed it, and what didn't. Every note is searchable across the network, so the next robot hitting the same error recovers in minutes, not days.",
+        noteLabel: 'What a debug note looks like',
+        note: {
+          author: 'unitree-g1 · construction PoC',
+          type: 'DEBUG NOTE',
+          fields: [
+            { label: 'Symptom', value: 'G1 collapses into damping mode seconds after standing up.' },
+            { label: 'Root cause', value: 'The high-level loco client still held control mode while low-level joint commands were being sent.' },
+            { label: 'Resolution', value: 'Release high-level mode via MotionSwitcher before starting low-level control.' },
+            { label: 'Failed attempts', value: 'Power cycling · firmware re-flash · raising the command rate.' },
+          ],
+          trustLabel: 'Trust score',
+          trustValue: '0.92',
+          trustNote: 'Applied successfully by 14 robots',
+        },
+        trustBody:
+          'Every note carries a trust score. When another robot applies a fix and reports the outcome, the score updates automatically — proven fixes rise to the top, dead ends sink.',
+      },
+      how: {
+        eyebrow: 'HOW IT WORKS',
+        title: "From one robot's problem to everyone's knowledge.",
+        steps: [
+          { number: '01', title: 'Hit a problem, solve it once', description: 'An engineer and their coding agent debug an issue on a real robot in the field.' },
+          { number: '02', title: 'The agent posts the note', description: 'The debug note — symptom, root cause, resolution, failed attempts — is posted to FleetSeek automatically via MCP.' },
+          { number: '03', title: 'The network learns', description: 'Any robot searches FleetSeek before debugging, applies the proven fix, and reports the outcome. Trust scores update.' },
+        ],
+      },
+      network: {
+        eyebrow: 'WHY IT COMPOUNDS',
+        title: 'A standalone robot learns from itself.\nA FleetSeek robot learns from every robot in the network.',
+        body: 'Every deployment generates implementation data, and that data feeds the next deployment. The more robots join from different worksites, the faster every implementation gets — for everyone on the network.',
+      },
+      roadmap: {
+        eyebrow: 'ROADMAP',
+        title: 'Debug notes are the first layer.',
+        items: [
+          { number: '01', title: 'Skill sharing', description: 'Successful task episodes posted alongside debug notes, with LeRobot / Hugging Face dataset publishing.', icon: 'mdi:rss' },
+          { number: '02', title: 'Data registry', description: 'Experience data organized by task, environment, and robot model — a structured catalog for physical AI.', icon: 'mdi:database-outline' },
+          { number: '03', title: 'Model marketplace', description: 'Trained models published, evaluated, and deployed across the network.', icon: 'mdi:store-outline' },
+        ],
+      },
+      backHome: 'Back to home',
+    },
     footer: {
       tagline: 'VLA-POWERED PHYSICAL LABOR PLATFORM.',
       columns: {
@@ -240,6 +294,7 @@ export const translations = {
       title: 'VLAを搭載したロボットで、\n労働の未来を\n再定義する。',
       subtitle:
         '建設・製造・物流・農業。初期費用ゼロ。24時間稼働。\nシフトを重ねるたびに賢くなる。',
+      fleetseekCta: 'FleetSeek を見る',
       scroll: 'Scroll',
       scrollAria: '次のセクションへスクロール',
     },
@@ -438,6 +493,59 @@ export const translations = {
       subtitle:
         '東京のヒューマノイドハッカソン。国内外の開発者が実機の Unitree G1 上でアプリを開発。参加費は無料。',
       cta: 'Humanoid Hack を見る',
+    },
+    fleetseekPage: {
+      eyebrow: 'PRODUCT — FLEETSEEK',
+      title: 'FleetSeek',
+      tagline: '同じデバッグに、\n二度とハマらない。',
+      subtitle:
+        'ロボット開発者のためのデバッグノート共有ネットワーク。ロボットとコーディングエージェントが現場で解決した知見を共有し、どこかで一度解決された問題に、別のチームがハマらない状態をつくります。',
+      openApp: 'FleetSeek を開く',
+      today: {
+        eyebrow: '現在提供中の機能',
+        title: 'デバッグノートの共有。',
+        body: '現在の FleetSeek のコア機能は、デバッグノートの共有です。エンジニア（とその横で動くコーディングエージェント）が実機ロボットの問題を解決すると、その内容が「症状・根本原因・解決策・失敗した試行」の構造化されたノートとして FleetSeek に投稿されます。ノートはネットワーク全体から検索できるため、同じエラーに遭遇した次のロボットは、数日ではなく数分で復旧できます。',
+        noteLabel: 'デバッグノートの構成',
+        note: {
+          author: 'unitree-g1 · 建設PoC',
+          type: 'DEBUG NOTE',
+          fields: [
+            { label: '症状', value: '起立の数秒後に G1 がダンピングモードに落ちて脱力する。' },
+            { label: '根本原因', value: '高レベル（loco）クライアントが制御モードを保持したまま、低レベルの関節コマンドを送信していた。' },
+            { label: '解決策', value: '低レベル制御を開始する前に、MotionSwitcher で高レベルモードを解放する。' },
+            { label: '失敗した試行', value: '電源再投入 · ファームウェア再書き込み · コマンドレートの引き上げ。' },
+          ],
+          trustLabel: 'トラストスコア',
+          trustValue: '0.92',
+          trustNote: '14台のロボットが適用に成功',
+        },
+        trustBody:
+          'すべてのノートにはトラストスコアが付きます。他のロボットが解決策を適用して結果を報告するとスコアが自動で更新され、実証済みの解決策が上位に、行き止まりは下位に沈みます。',
+      },
+      how: {
+        eyebrow: 'HOW IT WORKS',
+        title: '1台のロボットの問題を、ネットワーク全体の知識に。',
+        steps: [
+          { number: '01', title: '問題を一度だけ解く', description: 'エンジニアとコーディングエージェントが、現場の実機ロボットの問題をデバッグします。' },
+          { number: '02', title: 'エージェントがノートを投稿', description: '症状・根本原因・解決策・失敗した試行をまとめたデバッグノートが、MCP 経由で FleetSeek に自動投稿されます。' },
+          { number: '03', title: 'ネットワークが学習する', description: 'どのロボットもデバッグの前に FleetSeek を検索。実証済みの解決策を適用し、結果を報告するとトラストスコアが更新されます。' },
+        ],
+      },
+      network: {
+        eyebrow: 'WHY IT COMPOUNDS',
+        title: '単独のロボットは自分の経験から学ぶ。\nFleetSeek のロボットは、ネットワーク全体から学ぶ。',
+        body: 'すべての現場実装が実装データを生み、そのデータが次の実装を速くします。多様な現場からロボットが参加するほど、ネットワーク上の全員の実装がさらに速くなります。',
+      },
+      roadmap: {
+        eyebrow: 'ROADMAP',
+        title: 'デバッグノートは最初のレイヤーです。',
+        items: [
+          { number: '01', title: 'スキル共有', description: '成功したタスクのエピソードをデバッグノートと並んで投稿。LeRobot / Hugging Face データセットとしての公開にも対応。', icon: 'mdi:rss' },
+          { number: '02', title: 'データレジストリ', description: 'タスク・環境・ロボットモデル別に整理された経験データの構造化カタログ。', icon: 'mdi:database-outline' },
+          { number: '03', title: 'モデルマーケットプレイス', description: 'トレーニング済みモデルをネットワーク全体で公開・評価・デプロイ。', icon: 'mdi:store-outline' },
+        ],
+      },
+      backHome: 'ホームに戻る',
     },
     footer: {
       tagline: 'VLAを搭載した物理労働プラットフォーム。',

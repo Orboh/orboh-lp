@@ -34,7 +34,6 @@ export function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const FLEETSEEK_APP_URL = 'https://web-ebon-zeta-33.vercel.app/';
   const FLEETSEEK_X_AUTH_URL = 'https://web-ebon-zeta-33.vercel.app/api/auth/x';
   const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 
@@ -86,17 +85,12 @@ export function Header() {
             </svg>
             Discord
           </a>
-          <a
-            href={FLEETSEEK_APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/fleetseek"
             className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >
             FleetSeek
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </a>
+          </Link>
           <div className="relative" ref={ref}>
             <button
               type="button"
