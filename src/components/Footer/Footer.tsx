@@ -5,6 +5,10 @@ import orbohLogo from '@/assets/orboh-logo.png';
 
 const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 
+const SOCIAL_URLS: Record<string, string> = {
+  GitHub: 'https://github.com/Orboh',
+};
+
 export function Footer() {
   const { locale } = useLocale();
   const t = translations[locale].footer;
@@ -81,7 +85,8 @@ export function Footer() {
                 {t.columns.social.links.map((label) => (
                   <li key={label}>
                     <a
-                      href="#"
+                      href={SOCIAL_URLS[label] ?? '#'}
+                      {...(SOCIAL_URLS[label] ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                       className="text-zinc-500 hover:text-zinc-200 transition-colors"
                     >
                       {label}
