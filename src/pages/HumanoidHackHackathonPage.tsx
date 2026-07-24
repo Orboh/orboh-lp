@@ -59,7 +59,6 @@ const partnerTiers = [
   { label: { ja: '主催', en: 'Organizer' }, names: ['Orboh', 'RobotMateHub'] },
   { label: { ja: '運営協力', en: 'Operational Support Partner' }, names: ['GMO AI & Robotics Corporation', 'Unitree Robotics'] },
   { label: { ja: 'メディアパートナー', en: 'Media Partner' }, names: ['thehype'] },
-  { label: { ja: '協賛', en: 'Sponsorship' }, names: ['AnimaNext'] },
 ];
 
 export function HumanoidHackHackathonPage() {

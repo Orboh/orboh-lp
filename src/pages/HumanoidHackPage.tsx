@@ -19,6 +19,10 @@ const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 
 // Event pages per edition (index-aligned with translations.humanoidHack.editions)
 const EDITION_URLS = ['https://luma.com/rqy67zpa', 'https://luma.com/m8k94z4o'];
+const PRESS_URLS: (string | null)[] = [
+  null,
+  'https://prtimes.jp/main/html/rd/p/000000001.000187244.html',
+];
 const EDITION_IMAGES = [teleopVr, floor];
 
 const GALLERY = [
@@ -179,21 +183,38 @@ export function HumanoidHackPage() {
                     {edition.partners}
                   </p>
 
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium tracking-widest uppercase rounded transition-colors ${
-                      dark
-                        ? 'bg-zinc-50 text-zinc-950 hover:bg-zinc-200'
-                        : 'border border-zinc-800 text-zinc-900 hover:bg-zinc-900 hover:text-zinc-50'
-                    }`}
-                  >
-                    {t.register}
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium tracking-widest uppercase rounded transition-colors ${
+                        dark
+                          ? 'bg-zinc-50 text-zinc-950 hover:bg-zinc-200'
+                          : 'border border-zinc-800 text-zinc-900 hover:bg-zinc-900 hover:text-zinc-50'
+                      }`}
+                    >
+                      {t.register}
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                    {PRESS_URLS[i] && (
+                      <a
+                        href={PRESS_URLS[i] ?? undefined}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 text-xs font-medium tracking-widest uppercase transition-colors ${
+                          dark ? 'text-orange-400 hover:text-orange-300' : 'text-orange-600 hover:text-orange-700'
+                        }`}
+                      >
+                        {t.pressLabel}
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
