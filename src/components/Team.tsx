@@ -1,13 +1,13 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
+import miyajima from '@/assets/team/miyajima.webp';
+import ueda from '@/assets/team/ueda.webp';
+import uchiyama from '@/assets/team/uchiyama.webp';
 
-// Drop portrait files into src/assets/team/ and register them here, e.g.:
-// import miyajima from '@/assets/team/miyajima.webp';
-// const PHOTOS: Record<string, string | undefined> = { CEO: miyajima, ... };
-const PHOTOS: Record<string, string | undefined> = {
-  CEO: undefined,
-  CTO: undefined,
-  COO: undefined,
+const PHOTOS: Record<string, { src: string; position: string } | undefined> = {
+  CEO: { src: miyajima, position: '50% 22%' },
+  CTO: { src: ueda, position: '50% 18%' },
+  COO: { src: uchiyama, position: '50% 30%' },
 };
 
 export function TeamSection() {
@@ -26,13 +26,14 @@ export function TeamSection() {
         <div className="grid md:grid-cols-3 gap-4">
           {t.members.map((member) => (
             <div key={member.role} className="rounded border border-zinc-200 overflow-hidden flex flex-col">
-              <div className="relative aspect-[4/3] bg-zinc-100">
+              <div className="relative aspect-[4/5] bg-zinc-100">
                 {PHOTOS[member.role] ? (
                   <img
-                    src={PHOTOS[member.role]}
+                    src={PHOTOS[member.role]!.src}
                     alt={member.name}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover"
+                    style={{ objectPosition: PHOTOS[member.role]!.position }}
                   />
                 ) : (
                   <span className="absolute inset-0 flex items-center justify-center font-mono text-5xl text-zinc-300">
