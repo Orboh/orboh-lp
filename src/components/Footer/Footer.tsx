@@ -66,6 +66,14 @@ export function Footer() {
                     Humanoid Hack
                   </Link>
                 </li>
+                <li>
+                  <a
+                    href="/#team"
+                    className="text-zinc-500 hover:text-zinc-200 transition-colors"
+                  >
+                    Team
+                  </a>
+                </li>
                 {t.columns.company.links.map((label) => (
                   <li key={label}>
                     <button

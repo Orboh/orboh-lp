@@ -153,6 +153,46 @@ export const translations = {
       formButton: 'Contact us',
       footerLink: 'Contact',
     },
+    team: {
+      eyebrow: 'TEAM',
+      title: 'Founding team',
+      lead: 'Founded by a team that spent four years building rockets together — integrating complex hardware and software end to end.',
+      members: [
+        {
+          role: 'CEO',
+          name: 'Sota Miyajima',
+          nameSub: '宮嶋 壯太',
+          initials: 'SM',
+          bullets: [
+            'Studied space systems engineering at Kyushu Institute of Technology.',
+            'Worked on the BIRDS-X microsatellite from mission definition through launch, leading the satellite operations software.',
+            'Thermal design and thermal testing of satellites at a satellite manufacturer.',
+          ],
+        },
+        {
+          role: 'CTO',
+          name: 'Kota Ueda',
+          nameSub: '上田 康太',
+          initials: 'KU',
+          bullets: [
+            'Studied mechanical and intelligent systems engineering at Kyushu Institute of Technology, researching legged robots.',
+            'Led three student rocket projects, owning systems-level design: organization, avionics, and mission requirements.',
+            'Finalist at an international quadruped-robot hackathon in Shanghai.',
+          ],
+        },
+        {
+          role: 'COO',
+          name: 'Kento Uchiyama',
+          nameSub: '内山 絢登',
+          initials: 'KU',
+          bullets: [
+            'Studied space systems engineering at Kyushu Institute of Technology, building rockets with the founding team for four years.',
+            'Built the safety management system for student rocket development — operations and safety design for high-risk hardware.',
+            'Runner-up at the LeRobot worldwide hackathon in San Francisco.',
+          ],
+        },
+      ],
+    },
     humanoidHack: {
       eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
       title: 'Humanoid Hack Tokyo',
@@ -284,7 +324,7 @@ export const translations = {
         },
         company: {
           title: 'Company',
-          links: ['About', 'Team', 'Careers'],
+          links: ['About', 'Careers'],
         },
         social: {
           title: 'Social',
@@ -445,6 +485,46 @@ export const translations = {
       formButton: 'お問い合わせ',
       footerLink: 'お問い合わせ',
     },
+    team: {
+      eyebrow: 'TEAM',
+      title: '創業チーム',
+      lead: '4年間のロケット開発を通して、複雑なハードウェア/ソフトウェアの統合を経験したチームが創業。',
+      members: [
+        {
+          role: 'CEO',
+          name: '宮嶋 壯太',
+          nameSub: 'Sota Miyajima',
+          initials: 'SM',
+          bullets: [
+            '九州工業大学で宇宙システム工学を専攻。',
+            '超小型人工衛星 BIRDS-X にミッション定義から打ち上げまで関与し、衛星オペレーションソフトを主担当。',
+            '人工衛星メーカーにて衛星の熱設計・熱試験に従事。',
+          ],
+        },
+        {
+          role: 'CTO',
+          name: '上田 康太',
+          nameSub: 'Kota Ueda',
+          initials: 'KU',
+          bullets: [
+            '九州工業大学で機械知能工学を専攻し、歩行ロボットの研究に従事。',
+            '3つの学生ロケットプロジェクトを統括。組織設計・アビオニクス設計・ミッション要求定義などの上流設計を担当。',
+            '犬型ロボットの国際ハッカソン(上海)でファイナリスト。',
+          ],
+        },
+        {
+          role: 'COO',
+          name: '内山 絢登',
+          nameSub: 'Kento Uchiyama',
+          initials: 'KU',
+          bullets: [
+            '九州工業大学で宇宙システム工学を専攻。創業メンバーとともに4年間ロケット開発に従事。',
+            '学生ロケット開発で安全管理システムの構築を担当。高リスクなハードウェア開発の運用設計・安全設計を経験。',
+            'サンフランシスコ開催の LeRobot ワールドワイドハッカソンで準優勝。',
+          ],
+        },
+      ],
+    },
     humanoidHack: {
       eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
       title: 'Humanoid Hack Tokyo',
@@ -576,7 +656,7 @@ export const translations = {
         },
         company: {
           title: 'Company',
-          links: ['About', 'Team', 'Careers'],
+          links: ['About', 'Careers'],
         },
         social: {
           title: 'Social',

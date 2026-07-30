@@ -9,5 +9,6 @@ export { FleetSeekSection } from './FleetSeek';
 export { HumanoidHackPromoSection } from './HumanoidHackPromo';
 export { DemoVideoSection } from './DemoVideo';
 export { WhitepaperSection } from './Whitepaper';
+export { TeamSection } from './Team';
 export { CTASection } from './CTA';
 export { Footer } from './Footer/Footer';

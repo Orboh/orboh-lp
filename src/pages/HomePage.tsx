@@ -5,6 +5,7 @@ import { FleetSeekSection } from '@/components/FleetSeek';
 import { HumanoidHackPromoSection } from '@/components/HumanoidHackPromo';
 import { DemoVideoSection } from '@/components/DemoVideo';
 import { WhitepaperSection } from '@/components/Whitepaper';
+import { TeamSection } from '@/components/Team';
 import { CTASection } from '@/components/CTA';
 import { Footer } from '@/components/Footer/Footer';
 
@@ -19,6 +20,7 @@ export function HomePage() {
       <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
       <HumanoidHackPromoSection />
       <WhitepaperSection />
+      <TeamSection />
       <CTASection />
       <Footer />
     </Layout>
