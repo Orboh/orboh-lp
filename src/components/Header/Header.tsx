@@ -36,6 +36,7 @@ export function Header() {
 
   const FLEETSEEK_X_AUTH_URL = 'https://web-ebon-zeta-33.vercel.app/api/auth/x';
   const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
+  const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
 
   const handleBookDemo = () => {
     const url = 'https://calendly.com/soutamiyajima/30min';
@@ -91,6 +92,14 @@ export function Header() {
           >
             FleetSeek
           </Link>
+          <a
+            href={CONTACT_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >
+            Contact
+          </a>
           <div className="relative" ref={ref}>
             <button
               type="button"
