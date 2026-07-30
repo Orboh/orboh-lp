@@ -145,6 +145,14 @@ export const translations = {
       button: 'Book a demo',
       whitepaper: 'Download Whitepaper',
     },
+    contact: {
+      eyebrow: 'COMMUNITY & CONTACT',
+      title: 'Join the community, or get in touch.',
+      body: 'To follow FleetSeek and talk with other robot developers, join our Discord community. For deployment, partnership, or press inquiries, reach us through the contact form — we reply by email.',
+      discordButton: 'Join Discord Community',
+      formButton: 'Contact us',
+      footerLink: 'Contact',
+    },
     humanoidHack: {
       eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
       title: 'Humanoid Hack Tokyo',
@@ -428,6 +436,14 @@ export const translations = {
       subtitle: '建設・製造・物流チーム向けにライブデモを提供しています。RaaS料金とFleetSeekアクセスについてご相談ください。',
       button: 'デモを予約する',
       whitepaper: 'ホワイトペーパーをダウンロード',
+    },
+    contact: {
+      eyebrow: 'COMMUNITY & CONTACT',
+      title: 'コミュニティに参加する。または、問い合わせる。',
+      body: 'FleetSeek の最新情報やロボット開発者との交流は Discord コミュニティへ。導入・協業・取材などのお問い合わせはフォームからご連絡ください。メールにてご返信します。',
+      discordButton: 'Discord に参加',
+      formButton: 'お問い合わせ',
+      footerLink: 'お問い合わせ',
     },
     humanoidHack: {
       eyebrow: 'COMMUNITY — HUMANOID HACKATHON',

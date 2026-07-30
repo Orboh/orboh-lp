@@ -4,6 +4,7 @@ import { translations } from '@/i18n/translations';
 import orbohLogo from '@/assets/orboh-logo.png';
 
 const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
+const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
 
 const SOCIAL_URLS: Record<string, string> = {
   GitHub: 'https://github.com/Orboh',
@@ -12,6 +13,7 @@ const SOCIAL_URLS: Record<string, string> = {
 export function Footer() {
   const { locale } = useLocale();
   const t = translations[locale].footer;
+  const contact = translations[locale].contact;
 
   return (
     <footer className="px-8 md:px-16 lg:px-24 py-14 bg-zinc-900 text-zinc-400 text-sm">
@@ -74,6 +76,16 @@ export function Footer() {
                     </button>
                   </li>
                 ))}
+                <li>
+                  <a
+                    href={CONTACT_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-500 hover:text-zinc-200 transition-colors"
+                  >
+                    {contact.footerLink}
+                  </a>
+                </li>
               </ul>
             </div>
 
