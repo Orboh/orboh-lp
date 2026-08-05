@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocale } from '@/contexts/LocaleContext';
-import type { Locale } from '@/i18n/translations';
+import { translations, type Locale } from '@/i18n/translations';
 import orbohLogo from '@/assets/orboh-logo.png';
 
 const langLabels: Record<Locale, string> = {
@@ -11,6 +11,7 @@ const langLabels: Record<Locale, string> = {
 
 export function Header() {
   const { locale, setLocale } = useLocale();
+  const contact = translations[locale].contact;
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -37,11 +38,6 @@ export function Header() {
   const FLEETSEEK_X_AUTH_URL = 'https://web-ebon-zeta-33.vercel.app/api/auth/x';
   const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
   const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
-
-  const handleBookDemo = () => {
-    const url = 'https://calendly.com/soutamiyajima/30min';
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
 
   return (
     <header
@@ -92,14 +88,6 @@ export function Header() {
           >
             FleetSeek
           </Link>
-          <a
-            href={CONTACT_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
-          >
-            Contact
-          </a>
           <div className="relative" ref={ref}>
             <button
               type="button"
@@ -157,13 +145,14 @@ export function Header() {
             </svg>
             Sign in
           </a>
-          <button
-            type="button"
-            onClick={handleBookDemo}
+          <a
+            href={CONTACT_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2.5 border border-zinc-800 dark:border-zinc-300 text-zinc-900 dark:text-zinc-100 text-xs font-medium tracking-widest uppercase hover:bg-zinc-900 hover:text-zinc-50 dark:hover:bg-zinc-100 dark:hover:text-zinc-900 transition-colors rounded"
           >
-            Book a demo
-          </button>
+            {contact.formButton}
+          </a>
         </nav>
       </div>
     </header>

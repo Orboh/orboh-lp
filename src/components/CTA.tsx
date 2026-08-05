@@ -1,15 +1,10 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 
-const DEFAULT_MEETING_URL = 'https://calendly.com/soutamiyajima/30min';
 const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
 
-interface CTASectionProps {
-  meetingUrl?: string;
-}
-
-export function CTASection({ meetingUrl = DEFAULT_MEETING_URL }: CTASectionProps) {
+export function CTASection() {
   const { locale } = useLocale();
   const t = translations[locale].cta;
   const contact = translations[locale].contact;
@@ -63,14 +58,6 @@ export function CTASection({ meetingUrl = DEFAULT_MEETING_URL }: CTASectionProps
               className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-zinc-400 text-zinc-50 text-xs font-medium tracking-widest uppercase hover:bg-zinc-50 hover:text-zinc-950 transition-colors rounded"
             >
               {contact.formButton}
-            </a>
-            <a
-              href={meetingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-zinc-400 text-zinc-50 text-xs font-medium tracking-widest uppercase hover:bg-zinc-50 hover:text-zinc-950 transition-colors rounded"
-            >
-              {t.button}
             </a>
             <a
               href="/FleetSeek_WhitePaper.pdf"

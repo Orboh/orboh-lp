@@ -5,6 +5,9 @@ node_modules/
 dist/
 *.local
 
+# Local working files (not part of the site)
+scratch/
+
 # Editor
 .vscode/*
 !.vscode/extensions.json

@@ -142,7 +142,6 @@ export const translations = {
     cta: {
       title: 'Ready to deploy intelligent robots?',
       subtitle: 'We offer live demos for construction, manufacturing, and logistics teams. See RaaS pricing and FleetSeek access.',
-      button: 'Book a demo',
       whitepaper: 'Download Whitepaper',
     },
     contact: {
@@ -475,7 +474,6 @@ export const translations = {
     cta: {
       title: 'インテリジェントなロボットを現場に導入しませんか？',
       subtitle: '建設・製造・物流チーム向けにライブデモを提供しています。RaaS料金とFleetSeekアクセスについてご相談ください。',
-      button: 'デモを予約する',
       whitepaper: 'ホワイトペーパーをダウンロード',
     },
     contact: {
