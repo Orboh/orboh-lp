@@ -257,6 +257,7 @@ export function FleetSeekPage() {
               {contact.formButton}
             </a>
           </div>
+          <p className="text-zinc-500 text-xs mt-6">{contact.noSolicitation}</p>
 
           <div className="mt-16">
             <Link

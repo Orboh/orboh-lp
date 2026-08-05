@@ -152,6 +152,7 @@ export const translations = {
       discordButton: 'Join Discord Community',
       formButton: 'Contact us',
       footerLink: 'Contact',
+      noSolicitation: 'Note: this form is not for sales solicitation.',
     },
     team: {
       eyebrow: 'TEAM',
@@ -484,6 +485,7 @@ export const translations = {
       discordButton: 'Discord に参加',
       formButton: 'お問い合わせ',
       footerLink: 'お問い合わせ',
+      noSolicitation: '※ 営業・商品提案のご連絡はお断りしております。',
     },
     team: {
       eyebrow: 'TEAM',
