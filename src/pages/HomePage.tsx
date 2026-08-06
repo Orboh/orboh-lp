@@ -1,10 +1,10 @@
 import { Layout } from '@/components/Layout';
 import { HeroSection } from '@/components/Hero';
+import { WhyFDESection, HowWeWorkSection } from '@/components/FDE';
+import { WhatWeCanDoSection } from '@/components/CaseStudy';
 import { RaaSSection } from '@/components/RaaS';
-import { FleetSeekSection } from '@/components/FleetSeek';
 import { HumanoidHackPromoSection } from '@/components/HumanoidHackPromo';
 import { DemoVideoSection } from '@/components/DemoVideo';
-import { WhitepaperSection } from '@/components/Whitepaper';
 import { TeamSection } from '@/components/Team';
 import { CTASection } from '@/components/CTA';
 import { Footer } from '@/components/Footer/Footer';
@@ -15,11 +15,12 @@ export function HomePage() {
   return (
     <Layout>
       <HeroSection />
+      <WhyFDESection />
+      <HowWeWorkSection />
+      <WhatWeCanDoSection />
       <RaaSSection />
-      <FleetSeekSection />
       <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
       <HumanoidHackPromoSection />
-      <WhitepaperSection />
       <TeamSection />
       <CTASection />
       <Footer />

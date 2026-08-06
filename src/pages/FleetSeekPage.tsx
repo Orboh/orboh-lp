@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import { Layout } from '@/components/Layout';
 import { Footer } from '@/components/Footer/Footer';
+import { WhitepaperSection } from '@/components/Whitepaper';
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 
@@ -219,6 +220,9 @@ export function FleetSeekPage() {
 
         </div>
       </section>
+
+      {/* White paper */}
+      <WhitepaperSection />
 
       {/* Community & contact */}
       <section className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-900 text-zinc-50 border-t border-zinc-800">

@@ -59,13 +59,6 @@ export function CTASection() {
             >
               {contact.formButton}
             </a>
-            <a
-              href="/FleetSeek_WhitePaper.pdf"
-              download
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-zinc-400 text-zinc-50 text-xs font-medium tracking-widest uppercase hover:bg-zinc-50 hover:text-zinc-950 transition-colors rounded"
-            >
-              {t.whitepaper}
-            </a>
           </div>
           <p className="text-zinc-500 text-xs mt-6">{contact.noSolicitation}</p>
         </div>

@@ -1,10 +1,10 @@
 import { Icon } from '@iconify/react';
-import { Link } from 'react-router-dom';
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
-import { WHAT_WE_CAN_DO_SECTION_ID } from './CaseStudy';
+import { WHY_FDE_SECTION_ID } from './FDE';
 
 const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
+const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
 
 import unitreeRobotWebp from '@/assets/hero/unitree_robot_g1.webp';
 
@@ -15,7 +15,7 @@ export function HeroSection() {
   const t = translations[locale].hero;
 
   const scrollToNextSection = () => {
-    const next = document.getElementById(WHAT_WE_CAN_DO_SECTION_ID);
+    const next = document.getElementById(WHY_FDE_SECTION_ID);
     next?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
@@ -58,18 +58,20 @@ export function HeroSection() {
           {t.subtitle}
         </p>
 
-        {/* Primary CTAs — FleetSeek + Discord */}
+        {/* Primary CTAs — contact form + Discord */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-        <Link
-          to="/fleetseek"
+        <a
+          href={CONTACT_FORM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-3 px-8 py-4 rounded-lg font-semibold text-base tracking-wide bg-zinc-50 text-zinc-950 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 hover:bg-zinc-200"
         >
-          <Icon icon="mdi:robot-outline" className="size-6 shrink-0" aria-hidden />
-          {t.fleetseekCta}
+          <Icon icon="mdi:account-wrench-outline" className="size-6 shrink-0" aria-hidden />
+          {t.primaryCta}
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </Link>
+        </a>
         <a
           href={DISCORD_URL}
           target="_blank"
