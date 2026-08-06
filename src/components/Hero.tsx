@@ -6,7 +6,7 @@ import { WHY_FDE_SECTION_ID } from './FDE';
 const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
 
-import unitreeRobotWebp from '@/assets/hero/unitree_robot_g1.webp';
+import heroTeleopWebp from '@/assets/hero/vr_teleop_workshop.webp';
 
 export const HERO_SECTION_ID = 'hero-section';
 
@@ -26,7 +26,7 @@ export function HeroSection() {
     >
       {/* Full-bleed robot image */}
       <img
-        src={unitreeRobotWebp}
+        src={heroTeleopWebp}
         alt=""
         aria-hidden
         className="absolute inset-0 w-full h-full object-cover object-center"
