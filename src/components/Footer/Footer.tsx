@@ -7,7 +7,10 @@ const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
 
 const SOCIAL_URLS: Record<string, string> = {
+  X: 'https://x.com/kotaueda999',
+  LinkedIn: 'https://www.linkedin.com/company/orboh',
   GitHub: 'https://github.com/Orboh',
+  YouTube: 'https://www.youtube.com/@Orboh2026',
 };
 
 export function Footer() {
