@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { Footer } from '@/components/Footer/Footer';
-import { useLocale } from '@/contexts/LocaleContext';
+import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
+import { useSeo } from '@/seo/useSeo';
 
 import heroGroup from '@/assets/hht/hero-group.webp';
 import teleopVr from '@/assets/hht/teleop-vr.webp';
@@ -36,16 +36,10 @@ const GALLERY = [
 
 export function HumanoidHackPage() {
   const { locale } = useLocale();
+  const l = useLocaleHref();
   const t = translations[locale].humanoidHack;
 
-  useEffect(() => {
-    const prev = document.title;
-    document.title = 'Humanoid Hack Tokyo — Orboh';
-    window.scrollTo(0, 0);
-    return () => {
-      document.title = prev;
-    };
-  }, []);
+  useSeo('humanoidhack', { scrollToTop: true });
 
   return (
     <Layout>
@@ -244,7 +238,7 @@ export function HumanoidHackPage() {
 
           <div className="mt-14 text-center">
             <Link
-              to="/"
+              to={l('/')}
               className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 text-xs tracking-widest uppercase transition-colors"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>

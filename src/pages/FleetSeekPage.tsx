@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import { Layout } from '@/components/Layout';
 import { Footer } from '@/components/Footer/Footer';
 import { WhitepaperSection } from '@/components/Whitepaper';
-import { useLocale } from '@/contexts/LocaleContext';
+import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
+import { useSeo } from '@/seo/useSeo';
 
 const FLEETSEEK_APP_URL = 'https://web-ebon-zeta-33.vercel.app/';
 const FLEETSEEK_X_AUTH_URL = 'https://web-ebon-zeta-33.vercel.app/api/auth/x';
@@ -18,15 +19,9 @@ export function FleetSeekPage() {
   const install = translations[locale].fleetseek.install;
   const contact = translations[locale].contact;
   const [copied, setCopied] = useState(false);
+  const l = useLocaleHref();
 
-  useEffect(() => {
-    const prev = document.title;
-    document.title = 'FleetSeek — Orboh';
-    window.scrollTo(0, 0);
-    return () => {
-      document.title = prev;
-    };
-  }, []);
+  useSeo('fleetseek', { scrollToTop: true });
 
   const handleCopy = () => {
     navigator.clipboard.writeText(install.instruction);
@@ -265,7 +260,7 @@ export function FleetSeekPage() {
 
           <div className="mt-16">
             <Link
-              to="/"
+              to={l('/')}
               className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 text-xs tracking-widest uppercase transition-colors"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>

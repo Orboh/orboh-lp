@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { Footer } from '@/components/Footer/Footer';
-import { useLocale } from '@/contexts/LocaleContext';
+import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
+import { useSeo } from '@/seo/useSeo';
 
 import poster from '@/assets/hht/hht2-poster.webp';
 import floor from '@/assets/hht/floor.webp';
@@ -63,18 +63,10 @@ const partnerTiers = [
 
 export function HumanoidHackHackathonPage() {
   const { locale } = useLocale();
+  const l = useLocaleHref();
   const ja = locale === 'ja';
 
-  useEffect(() => {
-    const prev = document.title;
-    document.title = ja
-      ? 'ハッカソン概要 — Humanoid Hack Tokyo'
-      : 'Hackathon Guide — Humanoid Hack Tokyo';
-    window.scrollTo(0, 0);
-    return () => {
-      document.title = prev;
-    };
-  }, [ja]);
+  useSeo('humanoidhack/hackathon', { scrollToTop: true });
 
   const T = (j: string, e: string) => (ja ? j : e);
 
@@ -382,7 +374,7 @@ export function HumanoidHackHackathonPage() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto w-full mt-12 text-center">
-          <Link to="/humanoidhack" className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 text-xs tracking-widest uppercase transition-colors">
+          <Link to={l('/humanoidhack')} className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 text-xs tracking-widest uppercase transition-colors">
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>

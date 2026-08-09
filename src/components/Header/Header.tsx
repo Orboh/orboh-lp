@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useLocale } from '@/contexts/LocaleContext';
+import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations, type Locale } from '@/i18n/translations';
 import orbohLogo from '@/assets/orboh-logo.png';
 
@@ -11,6 +11,7 @@ const langLabels: Record<Locale, string> = {
 
 export function Header() {
   const { locale, setLocale } = useLocale();
+  const l = useLocaleHref();
   const contact = translations[locale].contact;
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -48,7 +49,7 @@ export function Header() {
       } bg-[#f0ece6] dark:bg-zinc-900`}
     >
       <div className="max-w-7xl mx-auto w-full h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+        <Link to={l('/')} className="flex items-center">
           <img
             src={orbohLogo}
             alt="Orboh"
@@ -58,10 +59,16 @@ export function Header() {
 
         <nav className="flex items-center gap-6">
           <Link
-            to="/humanoidhack"
+            to={l('/humanoidhack')}
             className="hidden md:inline-flex items-center px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >
             Humanoid Hack
+          </Link>
+          <Link
+            to={l('/insights')}
+            className="hidden md:inline-flex items-center px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >
+            Insights
           </Link>
           <a
             href={DISCORD_URL}
@@ -83,7 +90,7 @@ export function Header() {
             Discord
           </a>
           <Link
-            to="/fleetseek"
+            to={l('/fleetseek')}
             className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >
             FleetSeek

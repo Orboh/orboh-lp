@@ -3,6 +3,7 @@ node_modules/
 
 # Build
 dist/
+dist-ssr/
 *.local
 
 # Local working files (not part of the site)

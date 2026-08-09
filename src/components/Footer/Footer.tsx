@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useLocale } from '@/contexts/LocaleContext';
+import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 import orbohLogo from '@/assets/orboh-logo.png';
 
@@ -15,6 +15,7 @@ const SOCIAL_URLS: Record<string, string> = {
 
 export function Footer() {
   const { locale } = useLocale();
+  const l = useLocaleHref();
   const t = translations[locale].footer;
   const contact = translations[locale].contact;
 
@@ -43,7 +44,7 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    to="/fleetseek"
+                    to={l('/fleetseek')}
                     className="text-zinc-500 hover:text-zinc-200 transition-colors"
                   >
                     FleetSeek
@@ -63,15 +64,23 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    to="/humanoidhack"
+                    to={l('/humanoidhack')}
                     className="text-zinc-500 hover:text-zinc-200 transition-colors"
                   >
                     Humanoid Hack
                   </Link>
                 </li>
                 <li>
+                  <Link
+                    to={l('/insights')}
+                    className="text-zinc-500 hover:text-zinc-200 transition-colors"
+                  >
+                    Insights
+                  </Link>
+                </li>
+                <li>
                   <a
-                    href="/#team"
+                    href={`${l('/')}#team`}
                     className="text-zinc-500 hover:text-zinc-200 transition-colors"
                   >
                     Team

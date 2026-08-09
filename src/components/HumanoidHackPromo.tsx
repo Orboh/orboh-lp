@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useLocale } from '@/contexts/LocaleContext';
+import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 import heroGroup from '@/assets/hht/hero-group.webp';
 
 export function HumanoidHackPromoSection() {
   const { locale } = useLocale();
+  const l = useLocaleHref();
   const t = translations[locale].humanoidHackPromo;
 
   return (
@@ -27,7 +28,7 @@ export function HumanoidHackPromoSection() {
           {t.subtitle}
         </p>
         <Link
-          to="/humanoidhack"
+          to={l('/humanoidhack')}
           className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-zinc-50 text-zinc-900 text-xs font-medium tracking-widest uppercase hover:bg-orange-400 hover:text-zinc-950 transition-colors rounded"
         >
           {t.cta}
