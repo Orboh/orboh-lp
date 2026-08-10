@@ -61,7 +61,7 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
   },
   ja: {
     '': {
-      title: 'Orboh（オルボー）| ヒューマノイドを現場に実装するFDE',
+      title: 'Orboh（オーボー）| ヒューマノイドを現場に実装するFDE',
       description: JA_HOME_DESCRIPTION,
     },
     fleetseek: {
