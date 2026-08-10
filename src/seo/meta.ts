@@ -1,7 +1,10 @@
 import type { Locale } from '@/i18n/translations';
 import { href, routeExists, LOCALES } from '@/i18n/routing';
 
-export const SITE_URL = 'https://orboh.com';
+// The apex 308-redirects to www, so www is the canonical host. Pointing
+// canonical/hreflang/sitemap at the apex would send every signal through a
+// redirect.
+export const SITE_URL = 'https://www.orboh.com';
 export const DEFAULT_OG_IMAGE = '/og-image-teleop.webp';
 
 export type PageMeta = {
