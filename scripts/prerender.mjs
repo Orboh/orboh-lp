@@ -131,6 +131,23 @@ for (const target of targets) {
   console.log(`prerendered ${target.url}`);
 }
 
+// Branded 404. Vercel serves dist/404.html for paths that match no file, which
+// keeps the real 404 status instead of the soft 404 an SPA shell would give.
+const notFoundHtml = template
+  .replace(
+    SEO_BLOCK,
+    () =>
+      [
+        '<!-- SEO:start -->',
+        '    <title>Page not found — Orboh</title>',
+        '    <meta name="robots" content="noindex, follow" />',
+        '    <!-- SEO:end -->',
+      ].join('\n')
+  )
+  .replace(ROOT_DIV, () => `<div id="root">${render('/404')}</div>`);
+await writeFile(join(distDir, '404.html'), notFoundHtml, 'utf8');
+console.log('prerendered 404.html');
+
 const lastmod = new Date().toISOString().slice(0, 10);
 const sitemap = [
   '<?xml version="1.0" encoding="UTF-8"?>',
