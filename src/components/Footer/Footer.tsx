@@ -169,9 +169,13 @@ export function Footer() {
         </div>
 
         <div className="border-t border-zinc-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-zinc-600 text-xs sm:text-sm">
-            {t.copyright}
-          </p>
+          <div className="flex flex-col items-center sm:items-start gap-1 text-zinc-600 text-xs sm:text-sm">
+            <p className="text-zinc-500">
+              {t.companyName}
+            </p>
+            <p>{t.address}</p>
+            <p>{t.copyright}</p>
+          </div>
           <p className="text-zinc-600 text-xs sm:text-sm">
             Built with humanoid robotics in mind.
           </p>
