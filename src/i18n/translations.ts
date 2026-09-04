@@ -23,6 +23,8 @@ export const translations = {
         'Humanoid hardware, AI models, and robot OS are all reaching the market. But combining them does not make a robot work on a real site. Every site has its own layout, its own workflow, its own edge cases — each robot has to be finished on-site, one deployment at a time.',
       body2:
         'Autonomous driving reached the real world first through Waymo — by narrowing the environment and fixing the workflow. We apply the same playbook to humanoids: instead of waiting for one giant model to solve everything, our engineers narrow the task, fix the workflow, and implement.',
+      definition:
+        'A humanoid is a machine that can do the same general-purpose work a human can, regardless of whether it walks on two legs.',
       diagram: {
         customer: 'Customer site',
         customerSub: 'Factories and construction sites — the robot has to work reliably. Buying one is not enough.',
@@ -390,6 +392,8 @@ export const translations = {
         'ヒューマノイドのハードウェア・AIモデル・ロボットOSは、市場に揃いつつあります。しかし、それらを組み合わせるだけでは、ロボットは現場で動きません。現場ごとにレイアウトも業務フローもエッジケースも異なり、1台ずつ現場で仕上げる必要があります。',
       body2:
         '自動運転をいち早く社会実装したのは、環境を絞り、ワークフローを固定したWaymoでした。私たちはこの戦略をヒューマノイドで再現します。巨大な単一モデルに任せるのではなく、エンジニアがタスクを絞り、ワークフローを固定して実装します。',
+      definition:
+        'ヒューマノイドとは、人と同じ汎用的な作業ができることであり、二足であるかどうかは問わない。',
       diagram: {
         customer: '顧客の現場',
         customerSub: '工場・建築 — 「確実に動く状態」で使いたい。機体を買うだけでは動かない。',

@@ -92,6 +92,9 @@ export function WhyFDESection() {
           <p className="text-zinc-600 text-sm md:text-base leading-relaxed">
             {t.body2}
           </p>
+          <p className="mt-6 border-l-2 border-orange-500 pl-4 text-zinc-800 text-sm md:text-base leading-relaxed">
+            {t.definition}
+          </p>
         </div>
 
         <GapDiagram />
