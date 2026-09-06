@@ -65,6 +65,12 @@ export function Header() {
             Humanoid Hack
           </Link>
           <Link
+            to={l('/hiring')}
+            className="hidden md:inline-flex items-center px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >
+            Hiring
+          </Link>
+          <Link
             to={l('/insights')}
             className="hidden md:inline-flex items-center px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >

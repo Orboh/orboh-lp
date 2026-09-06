@@ -72,6 +72,14 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
+                    to={l('/hiring')}
+                    className="text-zinc-500 hover:text-zinc-200 transition-colors"
+                  >
+                    {t.columns.company.hiring}
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to={l('/insights')}
                     className="text-zinc-500 hover:text-zinc-200 transition-colors"
                   >

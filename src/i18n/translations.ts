@@ -359,7 +359,8 @@ export const translations = {
         },
         company: {
           title: 'Company',
-          links: ['About', 'Careers'],
+          links: ['About'],
+          hiring: 'Hiring',
         },
         social: {
           title: 'Social',
@@ -728,7 +729,8 @@ export const translations = {
         },
         company: {
           title: 'Company',
-          links: ['About', 'Careers'],
+          links: ['About'],
+          hiring: '採用',
         },
         social: {
           title: 'Social',

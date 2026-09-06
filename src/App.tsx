@@ -6,6 +6,7 @@ import { HomePage } from '@/pages/HomePage';
 import { HumanoidHackPage } from '@/pages/HumanoidHackPage';
 import { HumanoidHackHackathonPage } from '@/pages/HumanoidHackHackathonPage';
 import { FleetSeekPage } from '@/pages/FleetSeekPage';
+import { HiringPage } from '@/pages/HiringPage';
 import { InsightsIndexPage } from '@/pages/InsightsIndexPage';
 import { ShenzhenRoboticsPage } from '@/pages/insights/ShenzhenRoboticsPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
@@ -23,6 +24,7 @@ function LocaleRoutes({ locale }: { locale: Locale }) {
         <Route path="fleetseek" element={<FleetSeekPage />} />
         <Route path="humanoidhack" element={<HumanoidHackPage />} />
         <Route path="humanoidhack/hackathon" element={<HumanoidHackHackathonPage />} />
+        <Route path="hiring" element={<HiringPage />} />
         <Route path="insights" element={<InsightsIndexPage />} />
         {locale === 'ja' && (
           <Route path="insights/shenzhen-robotics" element={<ShenzhenRoboticsPage />} />

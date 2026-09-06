@@ -51,6 +51,11 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       description:
         'Schedule, rules, hardware, judging criteria and sponsors for Humanoid Hack Tokyo. Everything participants need before the event.',
     },
+    hiring: {
+      title: 'Hiring — Open roles at Orboh',
+      description:
+        'Orboh is not listing open roles yet. Hiring updates are announced first in our Discord community — join to hear about positions as they open.',
+    },
     insights: {
       title: 'Insights — Field notes on humanoid robotics | Orboh',
       description:
@@ -78,6 +83,11 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       title: 'ハッカソン概要 — Humanoid Hack Tokyo',
       description:
         'Humanoid Hack Tokyoのスケジュール・ルール・使用機材・審査基準・協賛企業。参加前に確認しておく情報をまとめています。',
+    },
+    hiring: {
+      title: '採用情報 | Orboh（オーボー）',
+      description:
+        'Orbohの採用情報。現在このページに募集要項は掲載していません。募集開始のお知らせはDiscordコミュニティで最初に配信します。',
     },
     insights: {
       title: 'Insights — ヒューマノイド実装の現場レポート | Orboh',
