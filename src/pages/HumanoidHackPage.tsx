@@ -17,6 +17,11 @@ import quadruped from '@/assets/hht/quadruped.webp';
 
 const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
 
+// Series calendar on Luma — every edition, past and upcoming
+const CALENDAR_URL = 'https://luma.com/humanoidhack';
+// lt=light は Luma 埋め込みのライトテーマ。白背景のセクションに合わせる
+const CALENDAR_EMBED_URL = 'https://lu.ma/embed/calendar/cal-JmAbxMIliBGO4XB/events?lt=light';
+
 // Event pages per edition (index-aligned with translations.humanoidHack.editions)
 const EDITION_URLS = ['https://luma.com/rqy67zpa', 'https://luma.com/m8k94z4o'];
 const PRESS_URLS: (string | null)[] = [
@@ -100,6 +105,44 @@ export function HumanoidHackPage() {
           <p className="text-zinc-700 text-lg md:text-xl leading-relaxed">
             {t.intro}
           </p>
+        </div>
+      </section>
+
+      {/* Upcoming — Luma series calendar */}
+      <section className="px-8 md:px-16 lg:px-24 py-24 bg-white border-t border-zinc-200">
+        <div className="max-w-5xl mx-auto w-full">
+          <p className="text-orange-600 text-xs tracking-widest uppercase mb-4">{t.upcomingLabel}</p>
+          <h2
+            className="font-mono text-2xl md:text-3xl font-normal text-zinc-900 mb-4"
+            style={{ letterSpacing: '-0.01em' }}
+          >
+            {t.upcomingTitle}
+          </h2>
+          <p className="text-zinc-600 text-sm md:text-base max-w-2xl mb-10">{t.upcomingNote}</p>
+
+          <div className="overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50">
+            <iframe
+              src={CALENDAR_EMBED_URL}
+              title="Humanoid Hack series calendar on Luma"
+              loading="lazy"
+              allowFullScreen
+              className="block w-full h-[560px] md:h-[620px] border-0"
+            />
+          </div>
+
+          <div className="mt-8">
+            <a
+              href={CALENDAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-900 text-zinc-50 text-xs font-semibold tracking-widest uppercase rounded hover:bg-orange-500 transition-colors"
+            >
+              {t.calendarCta}
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 

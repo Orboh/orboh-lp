@@ -242,6 +242,11 @@ export const translations = {
       factsLabel: 'At a glance',
       partnersLabel: 'Partners',
       highlightsLabel: 'Highlights',
+      upcomingLabel: 'UPCOMING — SERIES CALENDAR',
+      upcomingTitle: 'Every edition, one calendar',
+      upcomingNote:
+        'Humanoid Hack runs across cities. Subscribe on Luma to hear when a new edition opens registration.',
+      calendarCta: 'Subscribe on Luma',
       editions: [
         {
           tag: 'VOL.01 · MAY 2026',
@@ -612,6 +617,11 @@ export const translations = {
       factsLabel: '概要',
       partnersLabel: 'パートナー',
       highlightsLabel: 'ハイライト',
+      upcomingLabel: '開催予定 — シリーズカレンダー',
+      upcomingTitle: '全開催をひとつのカレンダーで',
+      upcomingNote:
+        'Humanoid Hack は都市を移して開催しています。Luma でカレンダーを購読すると、新しい回の募集開始が通知されます。',
+      calendarCta: 'Luma でカレンダーを見る',
       editions: [
         {
           tag: 'VOL.01 · 2026年5月',
