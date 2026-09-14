@@ -248,6 +248,30 @@ export const translations = {
       upcomingNote:
         'Humanoid Hack runs across cities. Subscribe on Luma to hear when a new edition opens registration.',
       calendarCta: 'Subscribe on Luma',
+      upcomingItemsLabel: 'Scheduled editions',
+      upcomingItems: [
+        {
+          name: 'Humanoid Hack Tokyo 3',
+          dates: 'October 31 – November 3, 2026',
+          venue: 'GMO Humanoid Lab, Shibuya, Tokyo',
+          entry: 'Free · 8 teams / 40 hackers · Unitree G1 × 4',
+          cta: 'See the series calendar',
+        },
+        {
+          name: 'Humanoid Hack Singapore',
+          dates: 'October 31 – November 1, 2026',
+          venue: 'Singapore',
+          entry: 'Free · first edition outside Japan',
+          cta: 'View event page',
+        },
+        {
+          name: 'Humanoid Hack Logistics',
+          dates: 'December 5 – 6, 2026',
+          venue: 'GMO Humanoid Lab, Shibuya, Tokyo',
+          entry: 'Free · themed on problems from logistics sites',
+          cta: 'View event page',
+        },
+      ],
       editions: [
         {
           tag: 'VOL.01 · MAY 2026',
@@ -668,6 +692,30 @@ export const translations = {
       upcomingNote:
         'Humanoid Hack は都市を移して開催しています。Luma でカレンダーを購読すると、新しい回の募集開始が通知されます。',
       calendarCta: 'Luma でカレンダーを見る',
+      upcomingItemsLabel: '予定されている回',
+      upcomingItems: [
+        {
+          name: 'Humanoid Hack Tokyo 3',
+          dates: '2026年10月31日（土）〜11月3日（火・祝）',
+          venue: 'GMO ヒューマノイド・ラボ（東京・渋谷）',
+          entry: '参加費無料 ・ 8チーム40名 ・ Unitree G1 × 4台',
+          cta: 'シリーズカレンダーを見る',
+        },
+        {
+          name: 'Humanoid Hack Singapore',
+          dates: '2026年10月31日（土）〜11月1日（日）',
+          venue: 'シンガポール',
+          entry: '参加費無料 ・ シリーズ初の海外開催',
+          cta: 'イベントページを見る',
+        },
+        {
+          name: 'Humanoid Hack Logistics',
+          dates: '2026年12月5日（土）〜6日（日）',
+          venue: 'GMO ヒューマノイド・ラボ（東京・渋谷）',
+          entry: '参加費無料 ・ 物流の現場課題がテーマ',
+          cta: 'イベントページを見る',
+        },
+      ],
       editions: [
         {
           tag: 'VOL.01 · 2026年5月',

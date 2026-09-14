@@ -22,6 +22,9 @@ const CALENDAR_URL = 'https://luma.com/humanoidhack';
 // lt=light は Luma 埋め込みのライトテーマ。白背景のセクションに合わせる
 const CALENDAR_EMBED_URL = 'https://lu.ma/embed/calendar/cal-JmAbxMIliBGO4XB/events?lt=light';
 
+// Where each upcoming edition sends people (index-aligned with upcomingItems)
+const UPCOMING_URLS = [CALENDAR_URL, 'https://luma.com/8lqlwh2x', 'https://luma.com/7mkzd6d4'];
+
 // Event pages per edition (index-aligned with translations.humanoidHack.editions)
 const EDITION_URLS = ['https://luma.com/rqy67zpa', 'https://luma.com/m8k94z4o'];
 const PRESS_URLS: (string | null)[] = [
@@ -142,6 +145,41 @@ export function HumanoidHackPage() {
             {t.upcomingTitle}
           </h2>
           <p className="text-zinc-600 text-sm md:text-base max-w-2xl mb-10">{t.upcomingNote}</p>
+
+          <p className="text-zinc-400 text-[10px] tracking-widest uppercase mb-4">
+            {t.upcomingItemsLabel}
+          </p>
+          <ul className="mb-14 border-t border-zinc-200">
+            {t.upcomingItems.map((item, i) => (
+              <li
+                key={item.name}
+                className="flex flex-col gap-3 border-b border-zinc-200 py-6 md:flex-row md:items-center md:justify-between md:gap-8"
+              >
+                <div>
+                  <h3 className="font-mono text-lg md:text-xl font-normal text-zinc-900 mb-1">
+                    {item.name}
+                  </h3>
+                  <p className="text-zinc-700 text-sm">
+                    {item.dates}
+                    <span className="text-zinc-400"> / </span>
+                    {item.venue}
+                  </p>
+                  <p className="text-zinc-500 text-xs mt-1">{item.entry}</p>
+                </div>
+                <a
+                  href={UPCOMING_URLS[i] ?? CALENDAR_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center gap-2 self-start px-4 py-2 text-[11px] font-medium tracking-widest uppercase rounded border border-zinc-800 text-zinc-900 hover:bg-zinc-900 hover:text-zinc-50 transition-colors md:self-auto"
+                >
+                  {item.cta}
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
 
           <div className="overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50">
             <iframe
