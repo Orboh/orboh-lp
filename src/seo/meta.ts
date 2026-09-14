@@ -42,12 +42,12 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         'FleetSeek is the knowledge network for Physical AI. Robots and their engineers document what they debug once, so no other team gets stuck on the same problem twice.',
     },
     humanoidhack: {
-      title: 'Humanoid Hack — Humanoid robot hackathon series by Orboh',
+      title: 'Humanoid Hackathon — Humanoid Hack by Orboh',
       description:
-        'Humanoid Hack is a hackathon series where engineers build on real humanoid robots over a weekend. Editions, results, photos and how to join.',
+        'Humanoid Hack is a humanoid hackathon series: teams build on real Unitree G1 humanoids over a weekend. Free to enter. Past editions in Tokyo, winning projects, FAQ and how to join.',
     },
     'humanoidhack/hackathon': {
-      title: 'Hackathon Guide — Humanoid Hack Tokyo',
+      title: 'Hackathon Guide — Humanoid Hack Tokyo | Humanoid hackathon',
       description:
         'Schedule, rules, hardware, judging criteria and sponsors for Humanoid Hack Tokyo. Everything participants need before the event.',
     },
@@ -75,12 +75,12 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         'FleetSeekはPhysical AIのための知識ネットワークです。ロボットとエンジニアがデバッグの記録を共有し、同じ問題で二度詰まらない環境をつくります。',
     },
     humanoidhack: {
-      title: 'Humanoid Hack — Orbohが主催するヒューマノイドロボットのハッカソン',
+      title: 'ヒューマノイドハッカソン Humanoid Hack | Orboh主催・参加費無料',
       description:
-        'Humanoid Hackは、実機のヒューマノイドロボットを使って週末で開発するハッカソンシリーズです。開催実績・レポート・参加方法を掲載しています。',
+        'ヒューマノイドハッカソン「Humanoid Hack」はUnitree G1の実機で開発するハッカソンシリーズです。Orboh主催・参加費無料。東京・渋谷での開催実績、受賞テーマ、次回の開催予定と参加方法。',
     },
     'humanoidhack/hackathon': {
-      title: 'ハッカソン概要 — Humanoid Hack Tokyo',
+      title: 'ハッカソン概要 — ヒューマノイドハッカソン Humanoid Hack Tokyo',
       description:
         'Humanoid Hack Tokyoのスケジュール・ルール・使用機材・審査基準・協賛企業。参加前に確認しておく情報をまとめています。',
     },

@@ -230,9 +230,10 @@ export const translations = {
     },
     humanoidHack: {
       eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
-      title: 'Humanoid Hack Tokyo',
+      title: 'Humanoid Hack',
+      titleSub: 'The humanoid hackathon series',
       subtitle:
-        "Tokyo's humanoid hackathon. Developers from Japan and around the world build real applications on humanoid robots — one room, one weekend.",
+        "A humanoid hackathon series. Developers from Japan and around the world build real applications on real humanoid robots — one room, one weekend.",
       intro:
         'Hosted by Orboh, Humanoid Hack Tokyo brings engineers, students, and researchers together to prototype VLA, teleoperation, and motion-control apps on real Unitree G1 humanoids. Free to join, powered entirely by the organizers.',
       backHome: 'Back to home',
@@ -258,6 +259,7 @@ export const translations = {
             { label: 'Venue', value: 'GMO Humanoid Lab, Shibuya' },
             { label: 'Robots', value: 'Unitree G1 × 2' },
             { label: 'Format', value: '1.5-day / 26h hackathon' },
+            { label: 'Pre-registration', value: '100+' },
             { label: 'Teams', value: '4 teams · 16+ hackers' },
             { label: 'Prize pool', value: '¥150,000' },
             { label: 'Entry', value: 'Free' },
@@ -265,7 +267,7 @@ export const translations = {
           ],
           partners: 'GMO AIR (venue & robots) · Strike Robot (co-host, simulation)',
           highlights: [
-            '70+ waitlist, roughly one-third international engineers',
+            '100+ pre-registrations, roughly one-third international engineers',
             'Timed with Humanoid Summit week for global reach',
             'Live demos in VLA, teleoperation and motion control',
           ],
@@ -294,13 +296,56 @@ export const translations = {
       ],
       galleryLabel: 'From the floor',
       galleryNote: 'Scenes from Humanoid Hack Tokyo Vol.01.',
+      aboutLabel: 'ABOUT',
+      aboutTitle: 'What is a humanoid hackathon?',
+      aboutBody: [
+        'A humanoid hackathon is an event where teams build a working application on a real humanoid robot within a fixed time window. What separates it from an ordinary software hackathon is the requirement to finish on hardware: a result that only runs in simulation does not count.',
+        'At Humanoid Hack each team is allocated a Unitree G1 and builds over a single weekend. The approach is up to the team — teleoperation, VLA (Vision-Language-Action) policies, motion control, or any combination. Judging asks more than whether the robot moved: teams have to argue why this particular job belongs to a humanoid at all.',
+        'A humanoid costs millions of yen per unit, so it is not hardware an individual developer can experiment on. Orboh runs this series as a forward deployed engineering company: the point is to open up hands-on time with real humanoids to the developers who would otherwise never get near one. Entry is free.',
+      ],
+      faqLabel: 'FAQ',
+      faqTitle: 'Frequently asked questions',
+      faq: [
+        {
+          q: 'What is a humanoid hackathon?',
+          a: 'An event where teams build an application on a real humanoid robot over a fixed period — two days at Humanoid Hack — and demo the result. Every team works on physical hardware, not simulation alone.',
+        },
+        {
+          q: 'Is there an entry fee?',
+          a: 'No. Entry is free. The organizers provide the venue, the robots and meals during the event.',
+        },
+        {
+          q: 'Do participants get hands-on time with a real humanoid?',
+          a: 'Yes. Vol.01 ran on two Unitree G1 units and Vol.02 on three, with every team developing on hardware. Units are shared between two teams on a time-slot schedule.',
+        },
+        {
+          q: 'Can students or people new to robotics take part?',
+          a: 'Yes. Past participants have been engineers, students and researchers. Applications are made as a team and selected teams are invited to the event.',
+        },
+        {
+          q: 'What language is the event run in?',
+          a: 'Japanese and English. Roughly one-third of registrants for the first edition were engineers based outside Japan.',
+        },
+        {
+          q: 'Where is it held?',
+          a: 'Humanoid Hack Tokyo has been held at GMO Humanoid Lab in Shibuya, Tokyo. Further editions in other cities are planned.',
+        },
+        {
+          q: 'When is the next edition?',
+          a: 'Upcoming editions are listed on the series calendar on this page. Registration openings are announced on Luma and in the Discord community.',
+        },
+        {
+          q: 'Can a company sponsor or co-host an edition?',
+          a: 'Yes. Sponsorship, co-hosting, providing a venue or robots, and bringing a real-world problem as a challenge theme are all possible. Get in touch through the contact form.',
+        },
+      ],
     },
     humanoidHackPromo: {
       eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
-      title: 'Humanoid Hack Tokyo',
+      title: 'Humanoid Hack',
       subtitle:
-        "Tokyo's humanoid hackathon. Developers from Japan and abroad build real apps on Unitree G1 humanoids — free to join.",
-      cta: 'Explore Humanoid Hack',
+        'A humanoid hackathon series by Orboh. Developers from Japan and abroad build real apps on Unitree G1 humanoids — free to join.',
+      cta: 'Explore the humanoid hackathon',
     },
     fleetseekPage: {
       eyebrow: 'PRODUCT — FLEETSEEK',
@@ -604,10 +649,11 @@ export const translations = {
       ],
     },
     humanoidHack: {
-      eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
-      title: 'Humanoid Hack Tokyo',
+      eyebrow: 'コミュニティ — ヒューマノイドハッカソン',
+      title: 'Humanoid Hack',
+      titleSub: 'ヒューマノイドハッカソン・シリーズ',
       subtitle:
-        '東京のヒューマノイドハッカソン。国内外の開発者が集まり、実機のヒューマノイドロボット上でアプリケーションを作る。1つの会場で、1つの週末で。',
+        '実機のヒューマノイドで開発するハッカソン。国内外の開発者が集まり、ヒューマノイドロボットの上でアプリケーションを作る。1つの会場で、1つの週末で。',
       intro:
         'Orboh 主催。エンジニア・学生・研究者が集まり、実機の Unitree G1 上で VLA・テレオペレーション・モーションコントロールのアプリを開発します。参加費は無料、運営が全額負担します。',
       backHome: 'ホームに戻る',
@@ -633,6 +679,7 @@ export const translations = {
             { label: '会場', value: 'GMO ヒューマノイドラボ（渋谷）' },
             { label: '対象機', value: 'Unitree G1 × 2' },
             { label: '形式', value: '1.5日 / 26時間ハッカソン' },
+            { label: '事前登録', value: '100名超' },
             { label: 'チーム', value: '4チーム · ハッカー16名以上' },
             { label: '賞金プール', value: '¥150,000' },
             { label: '参加費', value: '無料' },
@@ -640,7 +687,7 @@ export const translations = {
           ],
           partners: 'GMO AIR（会場・機材）· Strike Robot（共催・シミュレーション）',
           highlights: [
-            'waitlist 70名以上、約3割が海外エンジニア',
+            '事前登録100名超、約3割が海外エンジニア',
             'Humanoid Summit 週に合わせて世界的に発信',
             'VLA・テレオペ・モーションコントロールのライブデモ',
           ],
@@ -669,13 +716,56 @@ export const translations = {
       ],
       galleryLabel: '当日の様子',
       galleryNote: 'Humanoid Hack Tokyo Vol.01 の会場より。',
+      aboutLabel: 'ABOUT',
+      aboutTitle: 'ヒューマノイドハッカソンとは',
+      aboutBody: [
+        'ヒューマノイドハッカソンとは、人型ロボットの実機を使って、限られた時間でアプリケーションを開発し、その成果を競うイベントです。シミュレーションだけで完結させず、実機の上で動かしきることを条件にしている点が、通常のソフトウェアハッカソンとの大きな違いです。',
+        'Humanoid Hack では Unitree G1 の実機を各チームに割り当て、週末の2日間で開発します。テレオペレーション、VLA（Vision-Language-Action）、モーションコントロールなど、アプローチは各チームが選びます。審査では動いたかどうかだけでなく、「なぜその作業をヒューマノイドにやらせるのか」という実装先の妥当性まで問います。',
+        'ヒューマノイドの実機は1台あたり数百万円で、個人が試行錯誤に使える機材ではありません。Orboh は現場にヒューマノイドを実装する FDE（Forward Deployed Engineer）として、実機に触れる時間を開発者に開くことを目的にこのシリーズを運営しています。参加費は無料です。',
+      ],
+      faqLabel: 'FAQ',
+      faqTitle: 'よくある質問',
+      faq: [
+        {
+          q: 'ヒューマノイドハッカソンとは何ですか？',
+          a: '実機のヒューマノイドロボットを使い、決められた期間（Humanoid Hack では2日間）でアプリケーションを開発し、デモで成果を競うイベントです。全チームがシミュレーションではなく実機の上で開発します。',
+        },
+        {
+          q: '参加費はかかりますか？',
+          a: '参加費は無料です。会場・ロボットの実機・開催中の食事は主催側で用意します。',
+        },
+        {
+          q: '実機のヒューマノイドに触れますか？',
+          a: '触れます。第1回は Unitree G1 を2台、第2回は3台用意し、全チームが実機で開発しました。1台を2チームで共有する時間割制です。',
+        },
+        {
+          q: '学生やロボット未経験でも参加できますか？',
+          a: '参加できます。これまでエンジニア・学生・研究者が参加しています。応募はチーム単位で、選考を通過したチームが参加します。',
+        },
+        {
+          q: '使用言語は何ですか？',
+          a: '日本語と英語の両方で運営しています。第1回では事前登録者の約3割が海外拠点のエンジニアでした。',
+        },
+        {
+          q: '開催地はどこですか？',
+          a: 'Humanoid Hack Tokyo はこれまで GMO ヒューマノイド・ラボ（東京・渋谷）で開催しました。今後は東京以外の都市での開催も予定しています。',
+        },
+        {
+          q: '次回の開催はいつですか？',
+          a: '開催予定はこのページのシリーズカレンダーに掲載しています。募集開始は Luma と Discord コミュニティでお知らせします。',
+        },
+        {
+          q: '企業として協賛・共催はできますか？',
+          a: '受け付けています。協賛・共同開催のほか、会場提供、ロボットや機材の提供、現場の課題をテーマとして持ち込む形での参加も可能です。お問い合わせフォームからご連絡ください。',
+        },
+      ],
     },
     humanoidHackPromo: {
-      eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
-      title: 'Humanoid Hack Tokyo',
+      eyebrow: 'コミュニティ — ヒューマノイドハッカソン',
+      title: 'ヒューマノイドハッカソン Humanoid Hack',
       subtitle:
-        '東京のヒューマノイドハッカソン。国内外の開発者が実機の Unitree G1 上でアプリを開発。参加費は無料。',
-      cta: 'Humanoid Hack を見る',
+        'Orboh主催のヒューマノイドハッカソン。国内外の開発者が実機の Unitree G1 上でアプリを開発。参加費は無料。',
+      cta: 'ヒューマノイドハッカソンを見る',
     },
     fleetseekPage: {
       eyebrow: 'PRODUCT — FLEETSEEK',

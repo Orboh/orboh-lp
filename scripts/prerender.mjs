@@ -29,31 +29,7 @@ function attr(value) {
 }
 
 function jsonLd(target) {
-  const { meta, url } = target;
-  const data = meta.article
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: meta.article.headline,
-        description: meta.description,
-        datePublished: meta.article.datePublished,
-        dateModified: meta.article.dateModified,
-        author: { '@type': 'Organization', name: meta.article.author },
-        publisher: { '@type': 'Organization', name: 'Orboh' },
-        mainEntityOfPage: `${SITE_URL}${url}`,
-        inLanguage: target.locale,
-      }
-    : target.path === ''
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          name: 'Orboh',
-          url: SITE_URL,
-          description: meta.description,
-          logo: `${SITE_URL}/favicon.svg`,
-        }
-      : null;
-
+  const data = target.structuredData;
   if (!data) return '';
   // '<' cannot appear raw inside a script element
   const json = JSON.stringify(data).replace(/</g, '\\u003c');

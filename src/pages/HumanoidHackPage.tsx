@@ -66,6 +66,9 @@ export function HumanoidHackPage() {
               style={{ letterSpacing: '-0.02em' }}
             >
               {t.title}
+              <span className="block mt-3 font-sans text-lg sm:text-xl md:text-2xl text-zinc-300 tracking-normal">
+                {t.titleSub}
+              </span>
             </h1>
             <p className="text-zinc-300 text-base md:text-lg max-w-2xl mb-8">
               {t.subtitle}
@@ -105,6 +108,26 @@ export function HumanoidHackPage() {
           <p className="text-zinc-700 text-lg md:text-xl leading-relaxed">
             {t.intro}
           </p>
+        </div>
+      </section>
+
+      {/* What a humanoid hackathon is — the page's topical body */}
+      <section className="px-8 md:px-16 lg:px-24 py-24 bg-white border-t border-zinc-200">
+        <div className="max-w-3xl mx-auto w-full">
+          <p className="text-orange-600 text-xs tracking-widest uppercase mb-4">{t.aboutLabel}</p>
+          <h2
+            className="font-mono text-2xl md:text-3xl font-normal text-zinc-900 mb-8"
+            style={{ letterSpacing: '-0.01em' }}
+          >
+            {t.aboutTitle}
+          </h2>
+          <div className="space-y-6">
+            {t.aboutBody.map((paragraph) => (
+              <p key={paragraph.slice(0, 24)} className="text-zinc-700 text-sm md:text-base leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -258,6 +281,27 @@ export function HumanoidHackPage() {
           </section>
         );
       })}
+
+      {/* FAQ */}
+      <section className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-50 border-t border-zinc-200">
+        <div className="max-w-3xl mx-auto w-full">
+          <p className="text-orange-600 text-xs tracking-widest uppercase mb-4">{t.faqLabel}</p>
+          <h2
+            className="font-mono text-2xl md:text-3xl font-normal text-zinc-900 mb-10"
+            style={{ letterSpacing: '-0.01em' }}
+          >
+            {t.faqTitle}
+          </h2>
+          <dl className="divide-y divide-zinc-200 border-t border-zinc-200">
+            {t.faq.map((item) => (
+              <div key={item.q} className="py-6">
+                <dt className="text-zinc-900 text-base font-medium mb-2">{item.q}</dt>
+                <dd className="text-zinc-600 text-sm md:text-base leading-relaxed">{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
 
       {/* Gallery */}
       <section className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-950">
