@@ -57,9 +57,9 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         'Orboh is not listing open roles yet. Hiring updates are announced first in our Discord community — join to hear about positions as they open.',
     },
     agri: {
-      title: 'Autonomous crop harvesting with humanoids | Orboh',
+      title: 'Humanoid Robots for Agriculture — Autonomous Harvesting | Orboh',
       description:
-        'Orboh trains humanoid robots to harvest crops from human demonstrations. Okra pods grasped 16 times out of 20 in an indoor test setup. No upfront investment, engineers on site — we are looking for farms to implement with.',
+        'Orboh puts humanoid robots into agriculture. The harvesting motion is trained from human demonstrations, not written as code — okra pods grasped 16 times out of 20 in an indoor test setup. No upfront investment and engineers on site: we are looking for farms to implement agricultural robotics with.',
       ogImage: '/og-image-agri.jpg',
     },
     insights: {
@@ -96,9 +96,9 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         'Orbohの採用情報。現在このページに募集要項は掲載していません。募集開始のお知らせはDiscordコミュニティで最初に配信します。',
     },
     agri: {
-      title: 'ヒューマノイドによる農作物の自律収穫 | Orboh（オーボー）',
+      title: '農業ヒューマノイド — 収穫の自動化と自律収穫の実装 | Orboh（オーボー）',
       description:
-        '人のお手本から学習したヒューマノイドが、オクラの実を把持します（屋内の検証環境で20回中16回）。初期投資なし、エンジニアが現場に入る形で自律収穫の実装を進めます。早期パートナーを募集しています。',
+        '農業の収穫工程にヒューマノイドを実装します。動作はプログラムではなく人のお手本から学習させる方式で、オクラの実の把持まで到達しました（屋内の検証環境で20回中16回）。初期投資なし、エンジニアが現場に入る農業ロボットの導入です。早期パートナーを募集しています。',
       ogImage: '/og-image-agri.jpg',
     },
     insights: {

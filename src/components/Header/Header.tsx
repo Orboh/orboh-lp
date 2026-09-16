@@ -59,6 +59,12 @@ export function Header() {
 
         <nav className="flex items-center gap-6">
           <Link
+            to={l('/agri')}
+            className="hidden md:inline-flex items-center px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >
+            {locale === 'ja' ? '農業' : 'Agriculture'}
+          </Link>
+          <Link
             to={l('/humanoidhack')}
             className="hidden md:inline-flex items-center px-3 py-2 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 text-xs uppercase tracking-widest transition-colors rounded hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >

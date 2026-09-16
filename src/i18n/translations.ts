@@ -430,6 +430,7 @@ export const translations = {
         products: {
           title: 'Products',
           links: ['FleetSeek', 'RaaS'],
+          agri: 'Agriculture',
         },
         company: {
           title: 'Company',
@@ -874,6 +875,7 @@ export const translations = {
         products: {
           title: 'Products',
           links: ['FleetSeek', 'RaaS'],
+          agri: '農業ヒューマノイド',
         },
         company: {
           title: 'Company',

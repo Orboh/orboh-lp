@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
 
 export interface CaseStudyFeature {
   icon: string;
@@ -14,6 +15,9 @@ export interface CaseStudyCardProps {
   imageSrc: string;
   imageAlt: string;
   features: readonly CaseStudyFeature[];
+  /** Route this case study has a full page for, if any */
+  linkTo?: string;
+  linkLabel?: string;
   /** Whether this card is the active (top) card in the stack */
   isActive?: boolean;
   /** Direction the card should animate from when changing */
@@ -27,6 +31,8 @@ export function CaseStudyCard({
   imageSrc,
   imageAlt,
   features,
+  linkTo,
+  linkLabel,
   isActive = false,
   transitionDirection = null,
   quote: _quote,
@@ -63,6 +69,18 @@ export function CaseStudyCard({
         <p className="text-zinc-300 leading-relaxed mb-8 max-w-2xl">
           {description}
         </p>
+
+        {linkTo && linkLabel && (
+          <p className="mb-8 -mt-4">
+            <Link
+              to={linkTo}
+              className="inline-flex items-center gap-1.5 text-orange-400 hover:text-orange-300 text-sm font-medium transition-colors"
+            >
+              {linkLabel}
+              <span aria-hidden>&rarr;</span>
+            </Link>
+          </p>
+        )}
 
         <div className="grid gap-6 sm:grid-cols-3">
           {features.map((feature, i) => (

@@ -1,12 +1,19 @@
 import { useState, useRef, useEffect } from 'react';
-import { useLocale } from '@/contexts/LocaleContext';
+import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 import { CaseStudyCard } from './CaseStudyCard';
 
 export const WHAT_WE_CAN_DO_SECTION_ID = 'what-we-can-do';
 
+/**
+ * Case studies that have grown into a page of their own, keyed by the demo
+ * number in translations.ts. Without this the okra work dead-ends in a card.
+ */
+const DEMO_PAGES: Record<string, string> = { '01': '/agri' };
+
 export function WhatWeCanDoSection() {
   const { locale } = useLocale();
+  const l = useLocaleHref();
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState<'up' | 'down' | null>(null);
   const activeIndexRef = useRef(0);
@@ -134,6 +141,18 @@ export function WhatWeCanDoSection() {
               imageSrc={demos[activeIndex].imageSrc}
               imageAlt={demos[activeIndex].imageAlt}
               features={demos[activeIndex].features}
+              linkTo={
+                DEMO_PAGES[demos[activeIndex].number]
+                  ? l(DEMO_PAGES[demos[activeIndex].number])
+                  : undefined
+              }
+              linkLabel={
+                DEMO_PAGES[demos[activeIndex].number]
+                  ? locale === 'ja'
+                    ? '農業でのヒューマノイド実装を見る'
+                    : 'See humanoid robots in agriculture'
+                  : undefined
+              }
               isActive
               transitionDirection={direction}
             />

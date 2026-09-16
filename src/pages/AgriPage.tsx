@@ -176,8 +176,8 @@ export function AgriPage() {
             </h1>
             <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-xl">
               {ja
-                ? '人のお手本から学習したヒューマノイドが、株についた実を掴みます。'
-                : 'A humanoid trained from human demonstrations grasps the pod on the plant.'}
+                ? '農業の収穫工程に、ヒューマノイドを実装します。人のお手本から学習した動作で、株についた実を掴みます。'
+                : 'We put humanoid robots into agricultural harvesting. Trained from human demonstrations, the robot grasps the pod on the plant.'}
             </p>
 
             <div className="mt-7 flex flex-wrap items-baseline gap-x-6 gap-y-2 border border-zinc-800 border-l-[3px] border-l-orange-400 px-6 py-4 max-w-xl">
@@ -248,6 +248,11 @@ export function AgriPage() {
           >
             {ja ? '機体を買う話ではありません。' : 'You are not buying a robot.'}
           </h2>
+          <p className="text-zinc-600 text-base leading-relaxed max-w-xl mt-4">
+            {ja
+              ? '農業ロボットを納品して終わりにはしません。その農園で動く収穫動作を作り、運用まで一緒に見ます。'
+              : 'We do not deliver an agricultural robot and leave. We build a harvesting motion that works on your farm, and stay through running it.'}
+          </p>
           <div className="grid gap-8 md:grid-cols-3 mt-10">
             {OFFER.map((item) => (
               <div key={item.tag}>
