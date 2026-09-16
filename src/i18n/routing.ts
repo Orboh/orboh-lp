@@ -17,6 +17,7 @@ export const ROUTE_PATHS = [
   'humanoidhack',
   'humanoidhack/hackathon',
   'hiring',
+  'agri',
   'insights',
   'insights/shenzhen-robotics',
 ] as const;

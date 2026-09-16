@@ -56,6 +56,12 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       description:
         'Orboh is not listing open roles yet. Hiring updates are announced first in our Discord community — join to hear about positions as they open.',
     },
+    agri: {
+      title: 'Autonomous crop harvesting with humanoids | Orboh',
+      description:
+        'Orboh trains humanoid robots to harvest crops from human demonstrations. Okra pods grasped 16 times out of 20 in an indoor test setup. No upfront investment, engineers on site — we are looking for farms to implement with.',
+      ogImage: '/og-image-agri.jpg',
+    },
     insights: {
       title: 'Insights — Field notes on humanoid robotics | Orboh',
       description:
@@ -88,6 +94,12 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       title: '採用情報 | Orboh（オーボー）',
       description:
         'Orbohの採用情報。現在このページに募集要項は掲載していません。募集開始のお知らせはDiscordコミュニティで最初に配信します。',
+    },
+    agri: {
+      title: 'ヒューマノイドによる農作物の自律収穫 | Orboh（オーボー）',
+      description:
+        '人のお手本から学習したヒューマノイドが、オクラの実を把持します（屋内の検証環境で20回中16回）。初期投資なし、エンジニアが現場に入る形で自律収穫の実装を進めます。早期パートナーを募集しています。',
+      ogImage: '/og-image-agri.jpg',
     },
     insights: {
       title: 'Insights — ヒューマノイド実装の現場レポート | Orboh',
