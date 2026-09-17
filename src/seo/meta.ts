@@ -117,6 +117,18 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         author: 'Orboh',
       },
     },
+    'insights/okra-harvest': {
+      title: 'ヒューマノイドに屋外でオクラを収穫させる — 70日のPoCで分かったこと | Orboh',
+      description:
+        'トヨタ車体研究所と共同で取り組んだ、ヒューマノイドによるオクラ収穫PoCの現場レポート。8工程のうちAIに任せたのはどこか、学習データの品質をどう管理したか、屋外という条件が実装に何を持ち込むかを、70日間の開発から整理しました。',
+      ogImage: '/og-image-agri.jpg',
+      article: {
+        headline: 'ヒューマノイドに屋外でオクラを収穫させる',
+        datePublished: '2026-09-17',
+        dateModified: '2026-09-17',
+        author: 'Orboh',
+      },
+    },
   },
 };
 

@@ -26,6 +26,15 @@ export const ARTICLES: readonly ArticleSummary[] = [
     date: '2026-08-09',
     tag: '産業レポート',
   },
+  {
+    path: 'insights/okra-harvest',
+    locale: 'ja',
+    title: 'ヒューマノイドに屋外でオクラを収穫させる',
+    excerpt:
+      'トヨタ車体研究所との共同PoC。屋外の圃場でオクラを掴むまでに到達した70日間で、収穫の8工程のうちAIに任せたのはどこか、学習データの品質をどう管理したかを整理しました。',
+    date: '2026-09-17',
+    tag: '現場レポート',
+  },
 ];
 
 export function articlesFor(locale: Locale): readonly ArticleSummary[] {

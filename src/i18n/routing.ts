@@ -20,17 +20,19 @@ export const ROUTE_PATHS = [
   'agri',
   'insights',
   'insights/shenzhen-robotics',
+  'insights/okra-harvest',
 ] as const;
 
 export type RoutePath = (typeof ROUTE_PATHS)[number];
 
 /**
- * Routes that deliberately exist in one locale only. The Shenzhen report is
+ * Routes that deliberately exist in one locale only. The insight reports are
  * written for Japanese search intent; we would rather have no English page
  * than a thin machine translation.
  */
 export const LOCALE_ONLY_ROUTES: Record<string, Locale> = {
   'insights/shenzhen-robotics': 'ja',
+  'insights/okra-harvest': 'ja',
 };
 
 export function routeExists(path: string, locale: Locale): boolean {
