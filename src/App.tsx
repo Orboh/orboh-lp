@@ -32,7 +32,7 @@ function LocaleRoutes({ locale }: { locale: Locale }) {
         {locale === 'ja' && (
           <Route path="insights/shenzhen-robotics" element={<ShenzhenRoboticsPage />} />
         )}
-        {locale === 'ja' && <Route path="insights/okra-harvest" element={<OkraHarvestPage />} />}
+        <Route path="insights/okra-harvest" element={<OkraHarvestPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </LocaleProvider>

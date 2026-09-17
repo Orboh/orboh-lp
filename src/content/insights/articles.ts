@@ -35,6 +35,15 @@ export const ARTICLES: readonly ArticleSummary[] = [
     date: '2026-09-17',
     tag: '現場レポート',
   },
+  {
+    path: 'insights/okra-harvest',
+    locale: 'en',
+    title: 'Making a humanoid harvest okra outdoors',
+    excerpt:
+      'A PoC with Toyota Auto Body Research. In the 70 days it took to grasp a pod in an open field: which of the eight harvest steps a learned policy drives, and how we kept the training data small enough to inspect.',
+    date: '2026-09-17',
+    tag: 'Field report',
+  },
 ];
 
 export function articlesFor(locale: Locale): readonly ArticleSummary[] {

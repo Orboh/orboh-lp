@@ -1,7 +1,7 @@
 import { Layout } from '@/components/Layout';
 import { Footer } from '@/components/Footer/Footer';
 import { CTASection } from '@/components/CTA';
-import { useLocaleHref } from '@/contexts/LocaleContext';
+import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { useSeo } from '@/seo/useSeo';
 import {
   ArticleBody,
@@ -19,7 +19,7 @@ import {
 const NOTE_REPORT_URL = 'https://note.com/lovely_camel67/n/n5650033a2d57';
 
 /** One harvest cycle, in the order the robot executes it. */
-const CYCLE = [
+const CYCLE_JA = [
   ['移動', 'オクラを探しながら畝に沿って横に歩く', '歩行ポリシーへの速度指令（LocoClient）'],
   ['検出', 'カメラ画像からオクラの実を検出・セグメントする', 'オクラ画像でファインチューニングしたYOLO'],
   ['3D化', '検出した実を点群として取得し、重心の座標を出す', 'ZED-Mステレオカメラの深度'],
@@ -30,12 +30,35 @@ const CYCLE = [
   ['収納', '左腕のカゴに実を入れ、次の株へ向かう', '固定モーション'],
 ] as const;
 
+const CYCLE_EN = [
+  ['Walk', 'Move sideways along the row, looking for pods', 'Velocity commands to the walking policy (LocoClient)'],
+  ['Detect', 'Find and segment okra pods in the camera image', 'YOLO fine-tuned on okra images'],
+  ['Locate', 'Turn the detection into a point cloud and take its centroid', 'Depth from the ZED-M stereo camera'],
+  ['Transform', 'Convert camera coordinates into right-arm coordinates', 'Geometry'],
+  ['Reach', 'Bring the hand close to the pod', 'Inverse kinematics (IK)'],
+  ['Align', 'Close the last centimeters until the cutter straddles the stem', 'Diffusion Policy'],
+  ['Cut and grasp', 'Change the hand aperture to cut the stem and hold the pod', 'Aperture control'],
+  ['Stow', 'Drop the pod in the basket on the left arm and move to the next plant', 'Fixed motion'],
+] as const;
+
 export function OkraHarvestPage() {
-  const l = useLocaleHref();
+  const { locale } = useLocale();
   useSeo('insights/okra-harvest', { scrollToTop: true });
 
   return (
     <Layout>
+      {locale === 'ja' ? <JaArticle /> : <EnArticle />}
+      <CTASection />
+      <Footer />
+    </Layout>
+  );
+}
+
+function JaArticle() {
+  const l = useLocaleHref();
+
+  return (
+    <>
       <ArticleHero
         eyebrow="現場レポート"
         title="ヒューマノイドに屋外でオクラを収穫させる"
@@ -65,8 +88,7 @@ export function OkraHarvestPage() {
 
         <H2>何を組んだか</H2>
         <P>
-          機体はUnitree
-          G1です。胸部にZED-Mステレオカメラを固定してオクラを検出し、右手にはハンドとカッター用のアタッチメント、左腕には収穫した実を入れるカゴを取り付けました。背中にJetson
+          機体はUnitree G1です。胸部にZED-Mステレオカメラを固定してオクラを検出し、右手にはハンドとカッター用のアタッチメント、左腕には収穫した実を入れるカゴを取り付けました。背中にJetson
           Orinとバッテリーを積み、推論はすべて機体の上で完結させています。
         </P>
         <P>
@@ -74,7 +96,7 @@ export function OkraHarvestPage() {
         </P>
         <Table
           head={['工程', 'やっていること', '使っている技術']}
-          rows={CYCLE.map((row) => [...row])}
+          rows={CYCLE_JA.map((row) => [...row])}
           caption="オクラ1本あたりの処理。この8工程をループさせる"
         />
 
@@ -165,9 +187,172 @@ export function OkraHarvestPage() {
           ]}
         />
       </ArticleBody>
+    </>
+  );
+}
 
-      <CTASection />
-      <Footer />
-    </Layout>
+function EnArticle() {
+  const l = useLocaleHref();
+
+  return (
+    <>
+      <ArticleHero
+        eyebrow="FIELD REPORT"
+        title="Making a humanoid harvest okra outdoors"
+        lead="From June to September 2026 we ran a humanoid okra harvesting PoC with Toyota Auto Body Research. In the 70 days it took to grasp a pod in an open field, here is what we handed to a learned policy and what we deliberately did not."
+        date="17 September 2026"
+      />
+
+      <ArticleBody>
+        <P>
+          Harvesting happens outdoors, and the target sits in a different place and a different shape every
+          time. Almost nobody has automated it with a humanoid, and there is little prior work to copy. We ran
+          this PoC to find out how far the current stack actually gets under those conditions.
+        </P>
+        <P>
+          It got to the point where the robot finds an okra pod in an open field, reaches for it and grasps it.
+          In an indoor test setup the grasp succeeded 16 times out of 20. Development took 70 days. We ran out
+          of time while building the cutter, so the full harvest cycle is not closed yet.
+        </P>
+        <Note>
+          This is a write-up of how the work was sequenced and where the design lines were drawn. The
+          engineering detail — models, data collection, training setup — is in the
+          <a
+            href={NOTE_REPORT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
+          >
+            {' '}
+            report by Ueda, who led the build
+          </a>
+          .
+        </Note>
+
+        <H2>What we put together</H2>
+        <P>
+          The robot is a Unitree G1. A ZED-M stereo camera is fixed to its chest to find the pods, the right
+          hand carries a gripper and a mount for the cutter, and a basket for the harvested pods hangs off the
+          left arm. A Jetson Orin and a battery ride on its back, so all inference runs on the machine itself.
+        </P>
+        <P>
+          The harvest is defined as a workflow on the robot OS, and one cycle is split into these eight steps.
+        </P>
+        <Table
+          head={['Step', 'What happens', 'How']}
+          rows={CYCLE_EN.map((row) => [...row])}
+          caption="One pod, start to finish. The eight steps run in a loop."
+        />
+
+        <H2>Decide what the model is allowed to do, first</H2>
+        <P>
+          Of those eight steps, a learned policy drives exactly one: the alignment. Walking, detection,
+          coordinate math and the reach itself are all classical control and geometry.
+        </P>
+        <P>
+          YOLO, a stereo camera and inverse kinematics are enough to put the hand near the pod. That path is
+          cheap to compute, fast to execute, and needs no training data at all. What needs a model is the last
+          few centimeters, where the plant moves in the wind, the contrast shifts with the sun and a leaf hides
+          the pod — the part you cannot write down in advance.
+        </P>
+        <P>
+          Every step you hand to a model adds uncertainty, and with it more data to collect and more failure
+          modes to debug. Fix the sequence of motions first, then carve out only the part that genuinely
+          requires a policy. That line is what sets your development time.
+        </P>
+
+        <H2>Keep the training data small enough to inspect</H2>
+        <P>
+          When a policy does not behave, the candidate causes are the data quality, the amount of data, or a
+          change between collection and execution. With conventional control you read the code to understand a
+          motion; with a learned policy the code tells you nothing. Checking what it was trained on is
+          effectively the only debugging method you have.
+        </P>
+        <P>
+          That turns data reviewability into a design constraint. We cut episodes at two seconds. Five hundred
+          episodes is then 1,000 seconds of footage, which a person can actually go through. Keep the same 500
+          episodes but make each one 60 seconds and you have thirty times the footage to inspect. The longer the
+          task you hand over, the faster debugging cost grows.
+        </P>
+        <P>
+          The cut is excluded from the policy for the same reason. Training the cut would mean dropping more
+          than 500 pods to collect it. Splitting the repeatable alignment from the deterministic cut gets far
+          more usable data out of the same field.
+        </P>
+
+        <H2>Small decisions that mattered</H2>
+        <Ul>
+          <Li>
+            Record actions as relative motion. &ldquo;Where to move from here&rdquo; does not depend on absolute
+            position, so data collected elsewhere stays usable
+          </Li>
+          <Li>
+            Use a fisheye lens on the gripper camera. With a normal lens the target fills the frame and none of
+            the surrounding context is captured
+          </Li>
+          <Li>
+            Mix your collection methods. Moving the robot directly gives precise data but costs hours; filming a
+            human hand trajectory is less precise and more than three times faster
+          </Li>
+          <Li>
+            Before going to the robot, 3D-scan the field and the indoor rig, load them into simulation and run
+            the whole flow there
+          </Li>
+        </Ul>
+
+        <H2>What outdoors adds to the problem</H2>
+        <P>
+          Outdoors is not only harder to perceive; it constrains the machine. Bipedal walking spends power on
+          staying upright and moving, and the G1 runs about two hours on a charge — less on a day with a lot of
+          walking. On top of that, a lower body that sways while the hand closes moves the camera with it, and
+          the grasp success rate drops.
+        </P>
+        <P>
+          For work like harvesting, which means covering ground outdoors for hours, a semi-humanoid on wheels
+          fits the conditions better: roughly six hours of battery and a steadier upper body. Legs earn their
+          keep somewhere else — crouching into the inside of a car body on a factory line, for instance.
+        </P>
+
+        <H2>What the PoC was really for</H2>
+        <P>
+          The goal was never okra alone. Detect the target, carry the arm most of the way with classical
+          control, close the last centimeters with a learned policy: that structure is not specific to
+          harvesting. It transfers to factory and construction tasks in the same shape. Building a software base
+          that carries to the next site is what this PoC was actually for.
+        </P>
+        <P>
+          Orboh puts engineers on site, narrows the task, fixes the workflow and implements the robot. The okra
+          harvest is that method tried in the least forgiving place we could find.
+        </P>
+
+        <H3>With</H3>
+        <Ul>
+          <Li>Toyota Auto Body Research</Li>
+          <Li>Kagoshima Prefectural Agricultural Development Support Center</Li>
+          <Li>Interns and faculty from Kyushu Institute of Technology</Li>
+        </Ul>
+
+        <Related
+          title="Related"
+          items={[
+            {
+              label: 'Humanoid robots for agriculture',
+              to: l('/agri'),
+              note: 'Putting humanoids into the harvest, and the farms we are looking for',
+            },
+            {
+              label: 'Orboh as a humanoid FDE',
+              to: l('/'),
+              note: 'How our engineers take a site from task to working robot',
+            },
+            {
+              label: 'The full technical report on the okra project',
+              href: NOTE_REPORT_URL,
+              note: 'Models, data collection and training setup, by the engineer who led the build',
+            },
+          ]}
+        />
+      </ArticleBody>
+    </>
   );
 }

@@ -66,8 +66,18 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       title: 'Insights — Field notes on humanoid robotics | Orboh',
       description:
         'Reports from the field by the Orboh engineering team: humanoid robot deployments, the supply chain behind them, and what actually works on real sites.',
-      // Nothing published in English yet. Drop this once the first EN article ships.
-      noindex: true,
+    },
+    'insights/okra-harvest': {
+      title: 'Making a Humanoid Harvest Okra Outdoors — A 70-Day PoC | Orboh',
+      description:
+        'A field report from our humanoid okra harvesting PoC with Toyota Auto Body Research. Which of the eight harvest steps a learned policy actually drives, how episode length caps the training data you can inspect, and what outdoor operation costs the machine.',
+      ogImage: '/og-image-agri.jpg',
+      article: {
+        headline: 'Making a humanoid harvest okra outdoors',
+        datePublished: '2026-09-17',
+        dateModified: '2026-09-17',
+        author: 'Orboh',
+      },
     },
   },
   ja: {
