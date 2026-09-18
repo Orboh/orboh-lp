@@ -5,6 +5,7 @@ import { WhatWeCanDoSection } from '@/components/CaseStudy';
 import { RaaSSection } from '@/components/RaaS';
 import { HumanoidHackPromoSection } from '@/components/HumanoidHackPromo';
 import { DemoVideoSection } from '@/components/DemoVideo';
+import { NotesSection } from '@/components/Notes';
 import { TeamSection } from '@/components/Team';
 import { CTASection } from '@/components/CTA';
 import { Footer } from '@/components/Footer/Footer';
@@ -24,6 +25,7 @@ export function HomePage() {
       <WhatWeCanDoSection />
       <RaaSSection />
       <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
+      <NotesSection />
       <HumanoidHackPromoSection />
       <TeamSection />
       <CTASection />

@@ -364,6 +364,19 @@ export const translations = {
         },
       ],
     },
+    notes: {
+      eyebrow: 'DEV LOG — NOTES FROM DEVELOPMENT',
+      title: 'The development log,\nkept as we go.',
+      lead:
+        'What we tried, what broke, and how we fixed it on the way to putting a humanoid to work on a real site. Kota Ueda, CTO of Orboh, writes it up on note as the work happens.',
+      read: 'Read on note',
+      more: 'Read every post on note',
+      japanese: 'Japanese',
+      byline: {
+        name: 'Kota Ueda',
+        role: 'CTO, Orboh, Inc.',
+      },
+    },
     humanoidHackPromo: {
       eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
       title: 'Humanoid Hack',
@@ -808,6 +821,19 @@ export const translations = {
           a: '受け付けています。協賛・共同開催のほか、会場提供、ロボットや機材の提供、現場の課題をテーマとして持ち込む形での参加も可能です。お問い合わせフォームからご連絡ください。',
         },
       ],
+    },
+    notes: {
+      eyebrow: 'DEV LOG — 開発の記録',
+      title: '現場に実装するまでの、\n開発の記録。',
+      lead:
+        '現場でヒューマノイドを動かすまでに、何を試して、何が壊れて、どう直したか。CTO 上田康太が note に書き残している開発の記録です。',
+      read: 'noteで読む',
+      more: 'noteで全ての記事を読む',
+      japanese: '日本語',
+      byline: {
+        name: '上田 康太',
+        role: 'CTO / Orboh, Inc.',
+      },
     },
     humanoidHackPromo: {
       eyebrow: 'コミュニティ — ヒューマノイドハッカソン',
