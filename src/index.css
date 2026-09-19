@@ -1,22 +1,84 @@
 @import 'tailwindcss';
 
+/*
+ * Design tokens.
+ *
+ * Direction synthesised from two Refero style references:
+ *  - robot.com  — warm off-white paper, ink-black type, a single chromatic
+ *                 accent, full-bleed photography, flat colour blocks.
+ *  - teenage engineering — 0px radius everywhere, 1px hairlines organising the
+ *                 page into ruled bands instead of cards, a five-neutral palette.
+ *
+ * Both reject drop shadows and gradients, so neither appears in this system.
+ */
+@theme {
+  --font-sans: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  /* Space Mono is demoted to small metadata labels only — never headings. */
+  --font-mono: 'Space Mono', ui-monospace, 'Courier New', monospace;
+
+  /* Five neutrals + one accent. Nothing else. */
+  --color-canvas: #f4f1eb;
+  --color-surface: #ffffff;
+  --color-hairline: #d7d2c8;
+  --color-muted: #6f6b62;
+  --color-ink: #1c1b18;
+  --color-carbon: #121210;
+  --color-accent: #c2461a;
+
+  /* Read on the dark bands */
+  --color-carbon-hairline: #343330;
+  --color-carbon-muted: #9b968c;
+}
+
 html,
 body {
   overscroll-behavior: none;
 }
 
-@keyframes scroll-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(0.25rem);
-  }
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.animate-scroll-bounce {
-  animation: scroll-bounce 2s ease-in-out infinite;
+/*
+ * Display type: one grotesque, medium weight, tracking that tightens as the
+ * size grows. `palt` gives the Japanese proportional metrics so mixed JA/EN
+ * headlines set without gaps around the punctuation.
+ */
+.type-display {
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  font-feature-settings: 'palt' 1;
+}
+
+.type-display-lg {
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  font-feature-settings: 'palt' 1;
+}
+
+/* Small mono metadata label sitting on a hairline. */
+.type-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Sharp edges are non-negotiable in this system. */
+img,
+button,
+a,
+input,
+article,
+section {
+  border-radius: 0;
 }
 
 @keyframes card-up {
@@ -38,11 +100,11 @@ body {
 }
 
 .animate-card-up {
-  animation: card-up 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: card-up 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .animate-card-down {
-  animation: card-down 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: card-down 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 @media (max-width: 767px) {
@@ -52,8 +114,9 @@ body {
   }
 }
 
-@layer base {
-  .font-mono {
-    font-family: 'Space Mono', 'Courier New', Courier, monospace;
+@media (prefers-reduced-motion: reduce) {
+  .animate-card-up,
+  .animate-card-down {
+    animation: none;
   }
 }

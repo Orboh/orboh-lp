@@ -1,7 +1,8 @@
-import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from './ui';
 
 export interface CaseStudyFeature {
+  /** Retained so translations.ts is untouched; this design shows no icons. */
   icon: string;
   title: string;
   description: string;
@@ -33,9 +34,9 @@ export function CaseStudyCard({
   features,
   linkTo,
   linkLabel,
-  isActive = false,
   transitionDirection = null,
   quote: _quote,
+  isActive: _isActive,
 }: CaseStudyCardProps) {
   const directionClass =
     transitionDirection === 'up'
@@ -45,57 +46,46 @@ export function CaseStudyCard({
         : '';
 
   return (
-    <article
-      className={`group rounded overflow-hidden bg-zinc-800 transition-all duration-300 ${directionClass} ${
-        isActive ? 'z-10 ring-1 ring-zinc-700' : 'z-0 opacity-95 scale-[0.99]'
-      }`}
-    >
-      {/* Top section: image only; grayscale lifts on hover (desktop only) */}
-      <div className="relative aspect-[21/9] w-full overflow-hidden p-4 bg-zinc-800">
-        <img
-          src={imageSrc}
-          alt={imageAlt}
-          className="h-full w-full object-cover rounded md:grayscale md:group-hover:grayscale-0 transition-[filter] duration-300"
-        />
-        <div className="pointer-events-none absolute inset-4 rounded bg-black/40 mix-blend-multiply md:group-hover:opacity-0 transition-opacity duration-300 max-md:opacity-0" />
+    <article className={directionClass}>
+      {/* Full bleed, shown as shot: no inset, no border, no grey filter that
+          lifts on hover. */}
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        className="block aspect-[21/9] w-full object-cover"
+      />
+
+      <div className="border-t border-ink pt-4">
+        <p className="type-label text-muted">{number}</p>
+        <h3 className="type-display text-xl md:text-2xl text-ink mt-3.5">{title}</h3>
       </div>
 
-      {/* Bottom section: heading, description, feature blocks */}
-      <div className="pt-0 pb-8 md:pb-10 px-8 md:px-10 bg-zinc-800">
-        <h3 className="font-mono text-xl md:text-2xl lg:text-3xl font-normal text-zinc-50 mb-4" style={{ letterSpacing: '-0.01em' }}>
-          <span className="text-zinc-500 mr-2">{number}</span>
-          {title}
-        </h3>
-        <p className="text-zinc-300 leading-relaxed mb-8 max-w-2xl">
-          {description}
+      <p className="mt-6 text-[15px] leading-[1.95] text-muted max-w-2xl">{description}</p>
+
+      {linkTo && linkLabel && (
+        <p className="mt-5">
+          <Link
+            to={linkTo}
+            className="inline-flex items-center gap-2 text-accent text-sm font-medium border-b border-accent pb-0.5"
+          >
+            {linkLabel}
+            <ArrowRight className="w-3.5 h-3.5 shrink-0" />
+          </Link>
         </p>
+      )}
 
-        {linkTo && linkLabel && (
-          <p className="mb-8 -mt-4">
-            <Link
-              to={linkTo}
-              className="inline-flex items-center gap-1.5 text-orange-400 hover:text-orange-300 text-sm font-medium transition-colors"
-            >
-              {linkLabel}
-              <span aria-hidden>&rarr;</span>
-            </Link>
-          </p>
-        )}
-
-        <div className="grid gap-6 sm:grid-cols-3">
-          {features.map((feature, i) => (
-            <div key={i} className="flex flex-col gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded bg-zinc-700 text-zinc-100">
-                <Icon icon={feature.icon} className="size-5" aria-hidden />
-              </div>
-              <h4 className="font-medium text-zinc-50">{feature.title}</h4>
-              <p className="text-sm text-zinc-400 leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Ruled columns, not icon tiles. */}
+      <dl className="mt-9 grid sm:grid-cols-3 border-t border-hairline">
+        {features.map((feature) => (
+          <div
+            key={feature.title}
+            className="py-5 sm:pr-7 border-b border-hairline sm:border-b-0 sm:border-r sm:last:border-r-0 sm:[&:not(:first-child)]:pl-7"
+          >
+            <dt className="text-sm font-medium text-ink">{feature.title}</dt>
+            <dd className="mt-2.5 text-[13px] leading-[1.85] text-muted">{feature.description}</dd>
+          </div>
+        ))}
+      </dl>
     </article>
   );
 }

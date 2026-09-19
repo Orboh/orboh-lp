@@ -1,5 +1,6 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
+import { SectionHeading, sectionPad, sectionInner } from './ui';
 import miyajima from '@/assets/team/miyajima.webp';
 import ueda from '@/assets/team/ueda.webp';
 import uchiyama from '@/assets/team/uchiyama.webp';
@@ -15,18 +16,15 @@ export function TeamSection() {
   const t = translations[locale].team;
 
   return (
-    <section id="team" className="px-8 md:px-16 lg:px-24 py-24 bg-white">
-      <div className="max-w-7xl mx-auto w-full">
-        <p className="text-orange-600 text-xs tracking-widest uppercase mb-4">{t.eyebrow}</p>
-        <h2 className="font-mono text-3xl md:text-4xl font-normal text-zinc-900 mb-5" style={{ letterSpacing: '-0.02em' }}>
-          {t.title}
-        </h2>
-        <p className="text-zinc-600 text-sm md:text-base max-w-2xl mb-12 leading-relaxed">{t.lead}</p>
+    <section id="team" className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
+      <div className={sectionInner}>
+        <SectionHeading label={t.eyebrow} title={t.title} lead={t.lead} className="mb-14" />
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-x-10 gap-y-12">
           {t.members.map((member) => (
-            <div key={member.role} className="rounded border border-zinc-200 overflow-hidden flex flex-col">
-              <div className="relative aspect-[4/5] bg-zinc-100">
+            <div key={member.role} className="flex flex-col">
+              {/* Portrait fills its cell edge to edge. */}
+              <div className="relative aspect-[4/5] bg-hairline overflow-hidden">
                 {PHOTOS[member.role] ? (
                   <img
                     src={PHOTOS[member.role]!.src}
@@ -36,26 +34,28 @@ export function TeamSection() {
                     style={{ objectPosition: PHOTOS[member.role]!.position }}
                   />
                 ) : (
-                  <span className="absolute inset-0 flex items-center justify-center font-mono text-5xl text-zinc-300">
+                  <span className="absolute inset-0 flex items-center justify-center font-mono text-4xl text-muted">
                     {member.initials}
                   </span>
                 )}
               </div>
-              <div className="p-7 flex flex-col gap-4 flex-1">
-                <div>
-                  <p className="text-orange-600 text-xs tracking-widest uppercase mb-2">{member.role}</p>
-                  <h3 className="text-lg font-medium text-zinc-900">{member.name}</h3>
-                  <p className="text-zinc-400 text-xs mt-0.5">{member.nameSub}</p>
-                </div>
-                <ul className="flex flex-col gap-2">
-                  {member.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-2 text-zinc-600 text-sm leading-relaxed">
-                      <span className="text-orange-600 shrink-0 mt-0.5">・</span>
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
+
+              <div className="border-t border-ink mt-5 pt-3.5">
+                <p className="type-label text-muted">{member.role}</p>
+                <h3 className="type-display text-lg text-ink mt-3">{member.name}</h3>
+                <p className="text-muted text-xs mt-1">{member.nameSub}</p>
               </div>
+
+              <ul className="mt-5 flex flex-col">
+                {member.bullets.map((bullet) => (
+                  <li
+                    key={bullet}
+                    className="text-muted text-[13px] leading-[1.85] py-2.5 border-b border-hairline"
+                  >
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 import { CaseStudyCard } from './CaseStudyCard';
+import { SectionHeading, sectionPad, sectionInner } from './ui';
 
 export const WHAT_WE_CAN_DO_SECTION_ID = 'what-we-can-do';
 
@@ -94,22 +95,14 @@ export function WhatWeCanDoSection() {
   return (
     <section
       id={WHAT_WE_CAN_DO_SECTION_ID}
-      className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-100 text-zinc-900"
+      className={`${sectionPad} py-20 md:py-24 bg-canvas`}
     >
-      <div className="max-w-5xl mx-auto w-full">
-        <p className="text-zinc-500 text-sm tracking-widest mb-4">
-          {t.eyebrow}
-        </p>
-        <h2
-          className="font-mono text-3xl md:text-4xl font-normal text-zinc-900 mb-12 md:mb-16"
-          style={{ letterSpacing: '-0.01em' }}
-        >
-          {t.title}
-        </h2>
+      <div className={sectionInner}>
+        <SectionHeading label={t.eyebrow} title={t.title} className="mb-14" />
 
-        <div className="grid md:grid-cols-[minmax(0,260px)_minmax(0,1fr)] gap-8 md:gap-16 items-start">
+        <div className="grid md:grid-cols-[minmax(0,220px)_minmax(0,1fr)] gap-10 md:gap-14 items-start">
           <aside
-            className="flex gap-2 md:flex-col md:gap-1 max-w-full md:max-w-xs overflow-x-auto pb-2 md:pb-0 -mx-2 md:mx-0 px-2 md:px-0"
+            className="flex gap-6 md:flex-col md:gap-0 max-w-full md:max-w-xs overflow-x-auto pb-2 md:pb-0"
             aria-label="Case study list"
           >
             {demos.map((demo, index) => (
@@ -119,13 +112,15 @@ export function WhatWeCanDoSection() {
                 onMouseEnter={() => handleHover(index)}
                 onFocus={() => handleClick(index)}
                 onClick={() => handleClick(index)}
-                className={`whitespace-nowrap py-2 px-3 rounded text-sm md:text-base transition-colors ${
+                className={`whitespace-nowrap text-left text-sm transition-colors pb-2.5 md:pb-0 md:py-3.5 md:pl-4 border-b-2 md:border-b-0 md:border-l-2 ${
                   activeIndex === index
-                    ? 'bg-zinc-800 text-zinc-50 font-medium'
-                    : 'text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900'
+                    ? 'border-accent text-ink font-medium'
+                    : 'border-hairline text-muted hover:text-ink'
                 }`}
               >
-                <span className="text-zinc-400 text-sm mr-2">{demo.number}</span>
+                <span className="font-mono text-[11px] tracking-[0.16em] text-muted mr-2.5">
+                  {demo.number}
+                </span>
                 {demo.title}
               </button>
             ))}

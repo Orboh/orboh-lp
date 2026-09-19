@@ -1,14 +1,15 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 import { FEATURED_NOTE, NOTE_PROFILE_URL, OTHER_NOTES } from '@/content/notes';
+import { ArrowOut, SectionHeading, sectionPad, sectionInner } from './ui';
 import ueda from '@/assets/team/ueda-avatar.webp';
 
 /** note's own mark, used small next to the byline so the source is obvious. */
 function NoteBadge({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
   return (
     <span
-      className={`inline-flex items-center rounded-sm border px-2 py-0.5 font-mono text-[10px] tracking-widest lowercase ${
-        tone === 'dark' ? 'border-zinc-600 text-zinc-300' : 'border-zinc-300 text-zinc-500'
+      className={`inline-flex items-center border px-2 py-0.5 font-mono text-[10px] tracking-[0.16em] lowercase ${
+        tone === 'dark' ? 'border-carbon-hairline text-carbon-muted' : 'border-hairline text-muted'
       }`}
     >
       note
@@ -16,16 +17,8 @@ function NoteBadge({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
   );
 }
 
-function ArrowOut({ className = 'w-3.5 h-3.5' }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7m0 0H8m9 0v9" />
-    </svg>
-  );
-}
-
 /**
- * The CTO's note posts, surfaced on the home page: one large featured card
+ * The CTO's note posts, surfaced on the home page: one large featured block
  * plus the rest of the robotics writing. Everything links out to note — the
  * articles live there, we only give them a front door.
  */
@@ -35,64 +28,55 @@ export function NotesSection() {
   const en = locale === 'en';
 
   return (
-    <section className="px-8 md:px-16 lg:px-24 py-24 bg-white text-zinc-950">
-      <div className="max-w-7xl mx-auto w-full">
-        <p className="text-orange-600 text-xs tracking-widest uppercase mb-4">{t.eyebrow}</p>
-        <h2
-          className="font-mono text-3xl md:text-4xl font-normal text-zinc-900 mb-5 whitespace-pre-line leading-tight"
-          style={{ letterSpacing: '-0.02em' }}
-        >
-          {t.title}
-        </h2>
-        <p className="text-zinc-600 text-sm md:text-base max-w-2xl mb-12 leading-relaxed">{t.lead}</p>
+    <section className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
+      <div className={sectionInner}>
+        <SectionHeading label={t.eyebrow} title={t.title} lead={t.lead} className="mb-14" />
 
-        {/* Featured post — dark card on a light section, so it carries the eye */}
+        {/* Featured post — a dark band inside a light section, which is how
+            both references carry the eye without a shadow or a gradient. */}
         <a
           href={FEATURED_NOTE.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group block rounded overflow-hidden bg-zinc-950 text-zinc-50 mb-6"
+          className="group block bg-carbon text-canvas mb-10"
         >
           <div className="grid lg:grid-cols-2">
-            <div className="relative aspect-[1.91/1] lg:aspect-auto lg:min-h-[440px] overflow-hidden">
+            <div className="relative aspect-[1.91/1] lg:aspect-auto lg:min-h-[420px] overflow-hidden">
               <img
                 src={FEATURED_NOTE.image}
                 alt={FEATURED_NOTE.imageAlt[locale]}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
-            <div className="flex flex-col justify-center gap-6 p-8 sm:p-12 lg:p-14">
-              <div className="flex flex-wrap items-center gap-3 text-xs tracking-widest uppercase">
-                <span className="text-orange-400">{FEATURED_NOTE.tag[locale]}</span>
-                <span className="text-zinc-500">{FEATURED_NOTE.date}</span>
-                {en && <span className="text-zinc-500">{t.japanese}</span>}
+            <div className="flex flex-col justify-center gap-6 p-8 sm:p-12">
+              <div className="flex flex-wrap items-center gap-4 type-label text-carbon-muted">
+                <span className="text-accent">{FEATURED_NOTE.tag[locale]}</span>
+                <span>{FEATURED_NOTE.date}</span>
+                {en && <span>{t.japanese}</span>}
               </div>
-              <h3
-                className="font-mono text-2xl sm:text-3xl lg:text-4xl font-normal leading-snug transition-colors group-hover:text-orange-400"
-                style={{ letterSpacing: '-0.02em' }}
-              >
+              <h3 className="type-display text-xl sm:text-2xl lg:text-[1.9rem] text-canvas">
                 {FEATURED_NOTE.title[locale]}
               </h3>
-              <p className="text-zinc-300 text-sm md:text-base leading-relaxed">
+              <p className="text-[15px] leading-[1.95] text-carbon-muted">
                 {FEATURED_NOTE.excerpt[locale]}
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 border-t border-carbon-hairline pt-5">
                 <img
                   src={ueda}
                   alt={t.byline.name}
                   loading="lazy"
-                  className="h-10 w-10 rounded-full object-cover"
+                  className="h-9 w-9 object-cover"
                 />
                 <div className="text-sm leading-tight">
-                  <p className="text-zinc-100">{t.byline.name}</p>
-                  <p className="text-zinc-500 text-xs mt-0.5">{t.byline.role}</p>
+                  <p className="text-canvas">{t.byline.name}</p>
+                  <p className="text-carbon-muted text-xs mt-0.5">{t.byline.role}</p>
                 </div>
                 <span className="ml-auto">
                   <NoteBadge />
                 </span>
               </div>
-              <span className="inline-flex items-center gap-2 self-start px-7 py-3.5 bg-zinc-50 text-zinc-900 text-xs font-medium tracking-widest rounded transition-colors group-hover:bg-orange-400 group-hover:text-zinc-950">
+              <span className="inline-flex items-center gap-2.5 self-start px-7 py-3.5 bg-canvas text-ink text-sm font-medium transition-colors duration-150 group-hover:bg-accent group-hover:text-canvas">
                 {t.read}
                 <ArrowOut />
               </span>
@@ -100,42 +84,38 @@ export function NotesSection() {
           </div>
         </a>
 
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {OTHER_NOTES.map((article) => (
             <li key={article.key}>
               <a
                 href={article.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full flex-col rounded border border-zinc-200 bg-white overflow-hidden transition-colors hover:border-zinc-400"
+                className="group flex h-full flex-col"
               >
-                <div className="relative aspect-[1.91/1] overflow-hidden bg-zinc-100">
+                <div className="relative aspect-[1.91/1] overflow-hidden bg-hairline">
                   <img
                     src={article.image}
                     alt={article.imageAlt[locale]}
                     loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                 </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="mb-3 flex flex-wrap items-center gap-2.5 text-[11px] tracking-widest uppercase">
-                    <span className="text-orange-600">{article.tag[locale]}</span>
-                    <span className="text-zinc-400">{article.date}</span>
+                <div className="flex flex-1 flex-col border-t border-ink mt-4 pt-3.5">
+                  <div className="mb-3.5 flex flex-wrap items-center gap-3 type-label">
+                    <span className="text-accent">{article.tag[locale]}</span>
+                    <span className="text-muted">{article.date}</span>
                   </div>
-                  <h3 className="font-mono text-base font-normal text-zinc-900 leading-snug mb-3 transition-colors group-hover:text-orange-600">
+                  <h3 className="type-display text-[15px] text-ink mb-3 transition-colors group-hover:text-accent">
                     {article.title[locale]}
                   </h3>
-                  <p className="text-sm text-zinc-600 leading-relaxed line-clamp-3">
+                  <p className="text-[13px] text-muted leading-[1.85] line-clamp-3">
                     {article.excerpt[locale]}
                   </p>
-                  <div className="mt-5 flex items-center gap-2 pt-1">
+                  <div className="mt-5 flex items-center gap-2.5 pt-1">
                     <NoteBadge tone="light" />
-                    {en && (
-                      <span className="text-[11px] tracking-widest uppercase text-zinc-400">
-                        {t.japanese}
-                      </span>
-                    )}
-                    <ArrowOut className="ml-auto w-3.5 h-3.5 text-zinc-400 transition-colors group-hover:text-orange-600" />
+                    {en && <span className="type-label text-muted">{t.japanese}</span>}
+                    <ArrowOut className="ml-auto w-3.5 h-3.5 text-muted transition-colors group-hover:text-accent" />
                   </div>
                 </div>
               </a>
@@ -143,12 +123,12 @@ export function NotesSection() {
           ))}
         </ul>
 
-        <p className="mt-10">
+        <p className="mt-12">
           <a
             href={NOTE_PROFILE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-orange-600 hover:text-orange-500 text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-accent text-sm font-medium border-b border-accent pb-0.5"
           >
             {t.more}
             <ArrowOut />

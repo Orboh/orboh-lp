@@ -1,6 +1,6 @@
-import { Icon } from '@iconify/react';
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
+import { SectionHeading, sectionPad, sectionInner } from './ui';
 
 import embedFieldImage from '@/assets/fde/embed_field.webp';
 import implementSetupImage from '@/assets/fde/implement_setup.webp';
@@ -10,53 +10,60 @@ export const WHY_FDE_SECTION_ID = 'why-fde';
 
 const STEP_IMAGES = [embedFieldImage, implementSetupImage, operateSiteImage];
 
+function Caret({ up = false }: { up?: boolean }) {
+  return (
+    <svg viewBox="0 0 12 8" className="w-2.5 h-1.5 fill-accent shrink-0" aria-hidden>
+      <path d={up ? 'M6 0l6 8H0z' : 'M6 8L0 0h12z'} />
+    </svg>
+  );
+}
+
 /**
  * The implementation-gap diagram from the pitch deck, rebuilt natively:
  * customer site on top, the hardware/AI/OS stack at the bottom, and Orboh
- * bridging the gap between them.
+ * bridging the gap between them. Drawn as ruled bands rather than rounded
+ * cards, per the teenage engineering reference.
  */
 function GapDiagram() {
   const { locale } = useLocale();
   const d = translations[locale].whyFde.diagram;
 
   return (
-    <div className="grid grid-cols-[auto_1fr] gap-x-3 sm:gap-x-4">
+    <div className="grid grid-cols-[auto_1fr] gap-x-4 sm:gap-x-5">
       {/* Bridge rail: Orboh spanning from the customer down to the stack */}
       <div className="flex flex-col items-center">
-        <Icon icon="mdi:arrow-up" className="size-4 text-orange-500 shrink-0" aria-hidden />
-        <div className="w-px flex-1 bg-orange-500" />
-        <div className="my-1 rounded bg-orange-500 text-white px-3 py-3 sm:px-4 text-center max-w-28 sm:max-w-40">
-          <p className="font-mono text-sm sm:text-base leading-none">{d.bridgeLabel}</p>
-          <p className="text-[10px] sm:text-xs mt-1.5 leading-snug text-orange-50">{d.bridgeSub}</p>
+        <Caret up />
+        <div className="w-px flex-1 bg-accent" />
+        <div className="my-2 border border-accent px-3 py-3.5 sm:px-4 text-center max-w-28 sm:max-w-36">
+          <p className="type-display text-sm sm:text-base text-accent">{d.bridgeLabel}</p>
+          <p className="text-[10px] sm:text-[11px] mt-2 leading-relaxed text-muted">{d.bridgeSub}</p>
         </div>
-        <div className="w-px flex-1 bg-orange-500" />
-        <Icon icon="mdi:arrow-down" className="size-4 text-orange-500 shrink-0" aria-hidden />
+        <div className="w-px flex-1 bg-accent" />
+        <Caret />
       </div>
 
       {/* Customer / gap / stack */}
       <div className="flex flex-col">
-        <div className="rounded bg-zinc-900 text-zinc-50 px-4 py-3.5 sm:px-5">
+        <div className="bg-carbon text-canvas px-5 py-4">
           <p className="text-sm font-medium">{d.customer}</p>
-          <p className="text-xs text-zinc-400 mt-1 leading-snug">{d.customerSub}</p>
+          <p className="text-xs text-carbon-muted mt-1.5 leading-relaxed">{d.customerSub}</p>
         </div>
 
-        <div className="my-2.5 rounded border-2 border-dashed border-orange-400/70 bg-orange-50 px-4 py-5 sm:px-5">
-          <p className="font-mono text-xs tracking-widest uppercase text-orange-600">{d.gapLabel}</p>
-          <p className="text-xs text-zinc-600 mt-1 leading-snug">{d.gapNote}</p>
+        <div className="my-3 border-y border-dashed border-accent/55 px-5 py-5">
+          <p className="type-label text-accent">{d.gapLabel}</p>
+          <p className="text-xs text-muted mt-2.5 leading-relaxed">{d.gapNote}</p>
         </div>
 
-        <div className="relative rounded border border-zinc-200 bg-zinc-50 px-3 pt-5 pb-3 sm:px-4">
-          <p className="absolute -top-2 left-3 bg-zinc-50 px-1 text-[10px] tracking-widest uppercase text-zinc-400">
-            {d.stackLabel}
-          </p>
-          <div className="flex flex-col gap-1.5">
+        <div className="border-t border-ink pt-3">
+          <p className="type-label text-muted mb-1">{d.stackLabel}</p>
+          <div className="flex flex-col">
             {d.layers.map((layer) => (
               <div
                 key={layer.name}
-                className="rounded border border-zinc-200 bg-white px-3 py-2 sm:px-4 flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3"
+                className="py-3.5 border-b border-hairline flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
               >
-                <p className="text-sm font-medium text-zinc-800 shrink-0">{layer.name}</p>
-                <p className="text-xs text-zinc-500 leading-snug sm:text-right">{layer.note}</p>
+                <p className="text-sm font-medium text-ink shrink-0">{layer.name}</p>
+                <p className="text-xs text-muted leading-relaxed sm:text-right">{layer.note}</p>
               </div>
             ))}
           </div>
@@ -71,33 +78,22 @@ export function WhyFDESection() {
   const t = translations[locale].whyFde;
 
   return (
-    <section
-      id={WHY_FDE_SECTION_ID}
-      className="px-8 md:px-16 lg:px-24 py-24 bg-white text-zinc-950"
-    >
-      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section id={WHY_FDE_SECTION_ID} className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
+      <div className={`${sectionInner} grid lg:grid-cols-[1fr_minmax(0,440px)] gap-14 lg:gap-20 items-start`}>
         <div>
-          <p className="text-orange-600 text-xs tracking-widest uppercase mb-4">
-            {t.eyebrow}
-          </p>
-          <h2
-            className="font-mono text-3xl md:text-4xl font-normal text-zinc-900 mb-8 whitespace-pre-line"
-            style={{ letterSpacing: '-0.02em' }}
-          >
-            {t.title}
-          </h2>
-          <p className="text-zinc-600 text-sm md:text-base leading-relaxed mb-6">
-            {t.body1}
-          </p>
-          <p className="text-zinc-600 text-sm md:text-base leading-relaxed">
-            {t.body2}
-          </p>
-          <p className="mt-6 border-l-2 border-orange-500 pl-4 text-zinc-800 text-sm md:text-base leading-relaxed">
+          <SectionHeading label={t.eyebrow} title={t.title} />
+          <div className="mt-8 flex flex-col gap-5 max-w-xl">
+            <p className="text-[15px] leading-[1.95] text-muted">{t.body1}</p>
+            <p className="text-[15px] leading-[1.95] text-muted">{t.body2}</p>
+          </div>
+          <p className="mt-9 max-w-xl border-l-2 border-accent pl-5 text-[15px] md:text-base leading-[1.9] text-ink">
             {t.definition}
           </p>
         </div>
 
-        <GapDiagram />
+        <div className="lg:pt-12">
+          <GapDiagram />
+        </div>
       </div>
     </section>
   );
@@ -108,51 +104,34 @@ export function HowWeWorkSection() {
   const t = translations[locale].howWeWork;
 
   return (
-    <section className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-950 text-zinc-50">
-      <div className="max-w-7xl mx-auto w-full">
-        <p className="text-orange-400 text-xs tracking-widest uppercase mb-4">
-          {t.eyebrow}
-        </p>
-        <h2
-          className="font-mono text-3xl md:text-4xl font-normal mb-6 whitespace-pre-line"
-          style={{ letterSpacing: '-0.02em' }}
-        >
-          {t.title}
-        </h2>
-        <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-3xl mb-16">
-          {t.subtitle}
-        </p>
+    <section className={`${sectionPad} py-20 md:py-24 bg-carbon text-canvas`}>
+      <div className={sectionInner}>
+        <SectionHeading label={t.eyebrow} title={t.title} lead={t.subtitle} tone="dark" />
 
-        <div className="flex flex-col">
+        <div className="mt-16 flex flex-col">
           {t.steps.map((step, index) => (
-            <div key={step.number}>
-              {index > 0 && (
-                <div className="hidden lg:block w-px h-16 bg-orange-400/30 mx-auto" />
-              )}
-              <div
-                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-                  index > 0 ? 'mt-16 lg:mt-0' : ''
-                }`}
-              >
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <img
-                    src={STEP_IMAGES[index]}
-                    alt={step.imageAlt}
-                    loading="lazy"
-                    className="w-full aspect-[4/3] object-cover rounded border border-zinc-800"
-                  />
-                </div>
-                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <span className="block font-mono text-5xl md:text-6xl text-orange-400 mb-4">
-                    {step.number}
-                  </span>
-                  <h3 className="text-xl md:text-2xl font-medium text-zinc-100 mb-4">
-                    {step.title}
-                  </h3>
-                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-xl">
-                    {step.description}
-                  </p>
-                </div>
+            <div
+              key={step.number}
+              className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center py-12 border-t border-carbon-hairline first:border-t-0 first:pt-0"
+            >
+              {/* No padding, no frame, no rounding — the photograph runs to
+                  the edge of its cell. */}
+              <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                <img
+                  src={STEP_IMAGES[index]}
+                  alt={step.imageAlt}
+                  loading="lazy"
+                  className="block w-full aspect-[4/3] object-cover"
+                />
+              </div>
+              <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                <p className="type-label text-accent">{step.number}</p>
+                <h3 className="type-display text-xl md:text-2xl text-canvas mt-4 mb-5">
+                  {step.title}
+                </h3>
+                <p className="text-[15px] leading-[1.95] text-carbon-muted max-w-xl">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}

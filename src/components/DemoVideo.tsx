@@ -1,5 +1,6 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
+import { SectionHeading, sectionPad, sectionInner } from './ui';
 
 // Autoplay, muted (browser policy), no visible controls/branding, and loop
 const DEFAULT_VIDEO_URL =
@@ -18,24 +19,16 @@ export function DemoVideoSection({
   const t = translations[locale].demoVideo;
 
   return (
-    <section className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-900">
-      <div className="max-w-7xl mx-auto w-full">
-        <p className="text-orange-400 text-xs tracking-widest uppercase mb-4">
-          {t.eyebrow}
-        </p>
-        <h2
-          className="font-mono text-3xl md:text-4xl font-normal text-zinc-100 mb-12"
-          style={{ letterSpacing: '-0.01em' }}
-        >
-          {t.title}
-        </h2>
+    <section className={`${sectionPad} py-20 md:py-24 bg-carbon`}>
+      <div className={sectionInner}>
+        <SectionHeading label={t.eyebrow} title={t.title} tone="dark" className="mb-12" />
 
-        <div className="aspect-video bg-zinc-950 relative overflow-hidden rounded">
+        <div className="aspect-video bg-black relative overflow-hidden">
           {showPlaceholder ? (
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-zinc-500 mb-4">{t.placeholder}</p>
-                <p className="text-zinc-600 text-sm">{t.placeholderHint}</p>
+              <div className="text-left">
+                <p className="text-carbon-muted mb-3">{t.placeholder}</p>
+                <p className="text-carbon-muted/70 text-sm">{t.placeholderHint}</p>
               </div>
             </div>
           ) : (
