@@ -2,6 +2,7 @@ import { Layout } from '@/components/Layout';
 import { Footer } from '@/components/Footer/Footer';
 import { useLocale } from '@/contexts/LocaleContext';
 import { useSeo } from '@/seo/useSeo';
+import { SectionHeading, btnSolidOnDark, sectionInner, sectionPad } from '@/components/ui';
 
 const WAITLIST_URL = 'https://tally.so/r/0QKz8P';
 
@@ -144,11 +145,6 @@ const NEXT = {
   ],
 };
 
-const EYEBROW = 'text-orange-400 text-xs tracking-widest uppercase mb-4';
-const EYEBROW_LIGHT = 'text-orange-700 text-xs tracking-widest uppercase mb-4';
-const BUTTON =
-  'inline-flex items-center justify-center px-8 py-4 bg-orange-400 text-zinc-950 text-sm font-bold tracking-wide rounded hover:bg-orange-300 transition-colors';
-
 /**
  * Agriculture page. The claim stops at grasping — the robot picks the pod off
  * the plant in an indoor rig, and the field work is still ahead. "Where we are"
@@ -164,37 +160,34 @@ export function AgriPage() {
   return (
     <Layout>
       {/* Hero — the clip carries this page, so it gets half the width */}
-      <section className="px-8 md:px-16 lg:px-24 pt-32 pb-20 md:pb-28 bg-zinc-950 text-zinc-50">
-        <div className="max-w-7xl mx-auto w-full grid gap-10 lg:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] items-center">
+      <section className={`${sectionPad} pt-32 pb-20 md:pb-24 bg-carbon text-canvas`}>
+        <div className={`${sectionInner} grid gap-10 lg:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] items-center`}>
           <div>
-            <p className={EYEBROW}>Autonomous harvesting</p>
-            <h1
-              className="font-mono text-3xl sm:text-4xl md:text-5xl font-normal mb-5"
-              style={{ letterSpacing: '-0.02em' }}
-            >
+            <div className="border-t border-carbon-hairline pt-3.5"><p className="type-label text-carbon-muted">Autonomous harvesting</p></div>
+            <h1 className="type-display-lg text-[2.4rem] sm:text-[3.4rem] lg:text-[4.2rem] mt-7 mb-5">
               {ja ? '収穫の手を、増やします。' : 'More hands at harvest.'}
             </h1>
-            <p className="text-zinc-300 text-base md:text-lg leading-relaxed max-w-xl">
+            <p className="text-carbon-muted text-[19px] leading-[1.95] max-w-xl">
               {ja
                 ? '農業の収穫工程に、ヒューマノイドを実装します。人のお手本から学習した動作で、株についた実を掴みます。'
                 : 'We put humanoid robots into agricultural harvesting. Trained from human demonstrations, the robot grasps the pod on the plant.'}
             </p>
 
-            <div className="mt-7 flex flex-wrap items-baseline gap-x-6 gap-y-2 border border-zinc-800 border-l-[3px] border-l-orange-400 px-6 py-4 max-w-xl">
-              <p className="font-mono text-4xl md:text-5xl leading-none tabular-nums">
-                16<span className="text-zinc-700 px-1">/</span>
-                <span className="text-zinc-500">20</span>
+            <div className="mt-7 flex flex-wrap items-baseline gap-x-6 gap-y-2 border-y border-carbon-hairline border-l-2 border-l-accent px-6 py-4 max-w-xl">
+              <p className="type-display text-4xl md:text-5xl leading-none tabular-nums">
+                16<span className="text-carbon-hairline px-1">/</span>
+                <span className="text-carbon-muted">20</span>
               </p>
-              <p className="font-mono text-xs leading-relaxed text-zinc-400 flex-1 min-w-[12rem]">
+              <p className="text-xs leading-relaxed text-carbon-muted flex-1 min-w-0 sm:min-w-[12rem]">
                 {ja ? 'オクラの実の把持。屋内の検証環境。' : 'Okra pods grasped. Indoor test setup.'}
               </p>
             </div>
 
             <div className="mt-8">
-              <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className={BUTTON}>
+              <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className={btnSolidOnDark}>
                 {ja ? '早期パートナーに登録する' : 'Join the early partner list'}
               </a>
-              <p className="text-zinc-500 text-xs mt-3">
+              <p className="text-carbon-muted text-xs mt-3">
                 {ja ? '1分で登録できます。' : 'It takes about a minute.'}
               </p>
             </div>
@@ -210,9 +203,9 @@ export function AgriPage() {
               playsInline
               controls
               preload="metadata"
-              className="block w-full max-w-[560px] aspect-[9/16] object-cover bg-zinc-900 border border-zinc-800 rounded"
+              className="block w-full max-w-[560px] aspect-[9/16] object-cover bg-carbon border border-carbon-hairline"
             />
-            <figcaption className="font-mono text-[11px] text-zinc-500 mt-3 max-w-[560px]">
+            <figcaption className="type-label text-carbon-muted mt-3 max-w-[560px]">
               {ja ? '2026年9月・屋内の検証環境' : 'September 2026, indoor test setup'}
             </figcaption>
           </figure>
@@ -220,17 +213,17 @@ export function AgriPage() {
       </section>
 
       {/* Photo strip */}
-      <section className="px-8 md:px-16 lg:px-24 py-10 md:py-14 bg-white">
-        <div className="max-w-7xl mx-auto w-full grid gap-3 sm:grid-cols-3">
+      <section className={`${sectionPad} py-20 md:py-24 bg-surface`}>
+        <div className={`${sectionInner} grid gap-3 sm:grid-cols-3`}>
           {PHOTOS.map((photo) => (
             <figure key={photo.src} className="m-0">
               <img
                 src={photo.src}
                 alt={ja ? photo.alt.ja : photo.alt.en}
                 loading="lazy"
-                className="block w-full aspect-[4/5] object-cover bg-zinc-200 rounded"
+                className="block w-full aspect-[4/5] object-cover bg-hairline"
               />
-              <figcaption className="font-mono text-[11px] text-zinc-500 mt-2">
+              <figcaption className="type-label text-muted mt-2">
                 {ja ? photo.caption.ja : photo.caption.en}
               </figcaption>
             </figure>
@@ -239,30 +232,23 @@ export function AgriPage() {
       </section>
 
       {/* What you get */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 md:py-24 bg-zinc-100">
-        <div className="max-w-7xl mx-auto w-full">
-          <p className={EYEBROW_LIGHT}>What you get</p>
-          <h2
-            className="font-mono text-2xl md:text-3xl font-normal text-zinc-900"
-            style={{ letterSpacing: '-0.01em' }}
-          >
-            {ja ? '機体を買う話ではありません。' : 'You are not buying a robot.'}
-          </h2>
-          <p className="text-zinc-600 text-base leading-relaxed max-w-xl mt-4">
-            {ja
-              ? '農業ロボットを納品して終わりにはしません。その農園で動く収穫動作を作り、運用まで一緒に見ます。'
-              : 'We do not deliver an agricultural robot and leave. We build a harvesting motion that works on your farm, and stay through running it.'}
-          </p>
+      <section className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
+        <div className={sectionInner}>
+          <SectionHeading
+            label="What you get"
+            title={ja ? '機体を買う話ではありません。' : 'You are not buying a robot.'}
+            lead={ja ? '農業ロボットを納品して終わりにはしません。その農園で動く収穫動作を作り、運用まで一緒に見ます。' : 'We do not deliver an agricultural robot and leave. We build a harvesting motion that works on your farm, and stay through running it.'}
+          />
           <div className="grid gap-8 md:grid-cols-3 mt-10">
             {OFFER.map((item) => (
               <div key={item.tag}>
-                <span className="block font-mono text-[11px] tracking-widest uppercase text-orange-700 pb-3 mb-4 border-b border-zinc-300">
+                <span className="block type-label text-accent pb-3 mb-4 border-b border-hairline">
                   {item.tag}
                 </span>
-                <h3 className="text-base font-bold text-zinc-900 mb-1.5">
+                <h3 className="type-display text-base text-ink mb-1.5">
                   {ja ? item.title.ja : item.title.en}
                 </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed">
+                <p className="text-sm text-muted leading-relaxed">
                   {ja ? item.body.ja : item.body.en}
                 </p>
               </div>
@@ -272,25 +258,19 @@ export function AgriPage() {
       </section>
 
       {/* How it is built */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 md:py-24 bg-zinc-950">
-        <div className="max-w-7xl mx-auto w-full">
-          <p className={EYEBROW}>How it is built</p>
-          <h2
-            className="font-mono text-2xl md:text-3xl font-normal text-zinc-50"
-            style={{ letterSpacing: '-0.01em' }}
-          >
-            {ja ? '人の動きから、覚えさせます。' : 'Trained from human motion, not written as code.'}
-          </h2>
+      <section className={`${sectionPad} py-20 md:py-24 bg-carbon text-canvas`}>
+        <div className={sectionInner}>
+          <SectionHeading label="How it is built" title={ja ? '人の動きから、覚えさせます。' : 'Trained from human motion, not written as code.'} tone="dark" />
           <div className="grid gap-8 md:grid-cols-3 mt-10">
             {STEPS.map((step) => (
               <div key={step.tag.en}>
-                <span className="block font-mono text-[11px] tracking-widest uppercase text-orange-400 pb-3 mb-4 border-b border-zinc-800">
+                <span className="block type-label text-accent pb-3 mb-4 border-b border-carbon-hairline">
                   {ja ? step.tag.ja : step.tag.en}
                 </span>
-                <h3 className="text-base font-bold text-zinc-50 mb-1.5">
+                <h3 className="type-display text-base text-canvas mb-1.5">
                   {ja ? step.title.ja : step.title.en}
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">
+                <p className="text-sm text-carbon-muted leading-relaxed">
                   {ja ? step.body.ja : step.body.en}
                 </p>
               </div>
@@ -300,25 +280,19 @@ export function AgriPage() {
       </section>
 
       {/* Crops */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto w-full">
-          <p className={EYEBROW_LIGHT}>Crops</p>
-          <h2
-            className="font-mono text-2xl md:text-3xl font-normal text-zinc-900"
-            style={{ letterSpacing: '-0.01em' }}
-          >
-            {ja ? 'オクラの次を、一緒に決めてください。' : 'Tell us which crop comes after okra.'}
-          </h2>
-          <dl className="mt-8 grid lg:grid-cols-2 lg:gap-x-14 border-t border-zinc-300">
+      <section className={`${sectionPad} py-20 md:py-24 bg-surface`}>
+        <div className={sectionInner}>
+          <SectionHeading label="Crops" title={ja ? 'オクラの次を、一緒に決めてください。' : 'Tell us which crop comes after okra.'} />
+          <dl className="mt-8 grid lg:grid-cols-2 lg:gap-x-14 border-t border-ink">
             {CROPS.map((crop) => (
               <div
                 key={crop.name.en}
-                className="grid sm:grid-cols-[13rem_minmax(0,1fr)] gap-x-5 gap-y-0.5 py-4 border-b border-zinc-300"
+                className="grid sm:grid-cols-[13rem_minmax(0,1fr)] gap-x-5 gap-y-0.5 py-4 border-b border-hairline"
               >
-                <dt className={`text-sm font-bold ${crop.proven ? 'text-orange-700' : 'text-zinc-900'}`}>
+                <dt className={`text-sm font-bold ${crop.proven ? 'text-accent' : 'text-ink'}`}>
                   {ja ? crop.name.ja : crop.name.en}
                 </dt>
-                <dd className="m-0 text-sm text-zinc-500 leading-relaxed">
+                <dd className="m-0 text-sm text-muted leading-relaxed">
                   {ja ? crop.note.ja : crop.note.en}
                 </dd>
               </div>
@@ -328,41 +302,35 @@ export function AgriPage() {
       </section>
 
       {/* Where we are */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 md:py-24 bg-zinc-100">
-        <div className="max-w-7xl mx-auto w-full">
-          <p className={EYEBROW_LIGHT}>Where we are</p>
-          <h2
-            className="font-mono text-2xl md:text-3xl font-normal text-zinc-900"
-            style={{ letterSpacing: '-0.01em' }}
-          >
-            {ja ? '実装の現在地' : 'Where the implementation stands'}
-          </h2>
+      <section className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
+        <div className={sectionInner}>
+          <SectionHeading label="Where we are" title={ja ? '実装の現在地' : 'Where the implementation stands'} />
 
-          <div className="mt-7 grid sm:grid-cols-2 border border-zinc-300 bg-white">
+          <div className="mt-7 grid sm:grid-cols-2 border-y border-hairline bg-surface">
             <div className="p-6 sm:p-8">
-              <h3 className="font-mono text-[10.5px] tracking-widest uppercase text-orange-700 mb-4">
+              <h3 className="type-label text-accent mb-4">
                 {ja ? '動いていること' : 'Working now'}
               </h3>
               <ul className="m-0 p-0 list-none">
                 {(ja ? WORKING.ja : WORKING.en).map((item, i) => (
                   <li
                     key={item}
-                    className={`text-sm text-zinc-900 leading-relaxed py-2 ${i === 0 ? 'pt-0' : 'border-t border-zinc-100'}`}
+                    className={`text-sm text-ink leading-relaxed py-2 ${i === 0 ? 'pt-0' : 'border-t border-hairline'}`}
                   >
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="p-6 sm:p-8 border-t sm:border-t-0 sm:border-l border-zinc-300">
-              <h3 className="font-mono text-[10.5px] tracking-widest uppercase text-zinc-500 mb-4">
+            <div className="p-6 sm:p-8 border-t sm:border-t-0 sm:border-l border-hairline">
+              <h3 className="type-label text-muted mb-4">
                 {ja ? 'これから' : 'Still ahead'}
               </h3>
               <ul className="m-0 p-0 list-none">
                 {(ja ? NEXT.ja : NEXT.en).map((item, i) => (
                   <li
                     key={item}
-                    className={`text-sm text-zinc-500 leading-relaxed py-2 ${i === 0 ? 'pt-0' : 'border-t border-zinc-100'}`}
+                    className={`text-sm text-muted leading-relaxed py-2 ${i === 0 ? 'pt-0' : 'border-t border-hairline'}`}
                   >
                     {item}
                   </li>
@@ -371,7 +339,7 @@ export function AgriPage() {
             </div>
           </div>
 
-          <p className="text-xs text-zinc-500 leading-relaxed mt-5 max-w-2xl">
+          <p className="text-xs text-muted leading-relaxed mt-5 max-w-2xl">
             {ja
               ? '16/20 は、株を固定した屋内環境で測った数字です。圃場での成功率はまだ測れていません。'
               : '16 of 20 was measured indoors, with the plant fixed in place. We have no field success rate yet.'}
@@ -380,26 +348,20 @@ export function AgriPage() {
       </section>
 
       {/* Register */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 md:py-28 bg-zinc-950">
-        <div className="max-w-7xl mx-auto w-full">
-          <p className={EYEBROW}>Register</p>
-          <h2
-            className="font-mono text-2xl md:text-3xl font-normal text-zinc-50 mb-4"
-            style={{ letterSpacing: '-0.01em' }}
-          >
-            {ja ? '早期パートナーを募集しています。' : 'We are looking for early partners.'}
-          </h2>
-          <p className="text-zinc-300 text-base leading-relaxed max-w-xl">
-            {ja
-              ? '進捗と、実証の枠が空いたタイミングをお送りします。いま導入を決める必要はありません。'
-              : 'We will send you progress, and let you know when a trial slot opens. Nothing to commit to now.'}
-          </p>
+      <section className={`${sectionPad} py-20 md:py-24 bg-carbon text-canvas`}>
+        <div className={sectionInner}>
+          <SectionHeading
+            label="Register"
+            title={ja ? '早期パートナーを募集しています。' : 'We are looking for early partners.'}
+            lead={ja ? '進捗と、実証の枠が空いたタイミングをお送りします。いま導入を決める必要はありません。' : 'We will send you progress, and let you know when a trial slot opens. Nothing to commit to now.'}
+            tone="dark"
+          />
           <div className="mt-8">
-            <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className={BUTTON}>
+            <a href={WAITLIST_URL} target="_blank" rel="noopener noreferrer" className={btnSolidOnDark}>
               {ja ? '早期パートナーに登録する' : 'Join the early partner list'}
             </a>
           </div>
-          <p className="text-xs text-zinc-500 leading-relaxed mt-6 max-w-2xl">
+          <p className="text-xs text-carbon-muted leading-relaxed mt-6 max-w-2xl">
             {ja
               ? 'ご記入いただいた情報は本件のご連絡にのみ利用し、第三者には提供しません。'
               : 'What you submit is used only to contact you about this, and is never shared with third parties.'}

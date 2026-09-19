@@ -48,6 +48,8 @@ export const btnSolid = `${btnBase} bg-ink text-canvas hover:bg-accent`;
 export const btnOutline = `${btnBase} border border-ink text-ink hover:bg-ink hover:text-canvas`;
 export const btnSolidOnDark = `${btnBase} bg-canvas text-ink hover:bg-accent hover:text-canvas`;
 export const btnOutlineOnDark = `${btnBase} border border-canvas/40 text-canvas hover:bg-canvas hover:text-ink`;
+/* The accent band can't hover to accent, so the solid button inverts instead. */
+export const btnSolidOnAccent = `${btnBase} bg-ink text-canvas hover:bg-canvas hover:text-ink`;
 
 /** Standard outer padding for a full-width section. */
 export const sectionPad = 'px-6 sm:px-10 lg:px-16';
@@ -65,8 +67,12 @@ interface SectionHeadingProps {
   title: string;
   /** Intro paragraph under the heading, when the section has one. */
   lead?: string;
-  /** Dark bands invert the hairline and the muted tones. */
-  tone?: 'light' | 'dark';
+  /**
+   * Dark bands invert the hairline and the muted tones. `photo` is a dark band
+   * laid over a tinted photograph: the carbon hairline disappears against the
+   * image, so the rule and the lead lift to the light neutral instead.
+   */
+  tone?: 'light' | 'dark' | 'photo';
   className?: string;
   children?: ReactNode;
 }
@@ -79,28 +85,22 @@ export function SectionHeading({
   className = '',
   children,
 }: SectionHeadingProps) {
-  const dark = tone === 'dark';
+  const onDark = tone !== 'light';
+  const rule = tone === 'photo' ? 'border-canvas/25' : onDark ? 'border-carbon-hairline' : 'border-hairline';
+  const leadTone = tone === 'photo' ? 'text-carbon-muted' : onDark ? 'text-carbon-muted' : 'text-muted';
   return (
     <div className={className}>
-      <div className={`border-t pt-3.5 ${dark ? 'border-carbon-hairline' : 'border-hairline'}`}>
-        <p className={`type-label ${dark ? 'text-carbon-muted' : 'text-muted'}`}>{label}</p>
+      <div className={`border-t pt-3.5 ${rule}`}>
+        <p className={`type-label ${onDark ? 'text-carbon-muted' : 'text-muted'}`}>{label}</p>
       </div>
       <h2
-        className={`type-display text-[1.6rem] sm:text-[2rem] lg:text-[2.4rem] mt-6 whitespace-pre-line ${
-          dark ? 'text-canvas' : 'text-ink'
+        className={`type-display text-[1.95rem] sm:text-[2.4rem] lg:text-[2.9rem] mt-6 whitespace-pre-line ${
+          onDark ? 'text-canvas' : 'text-ink'
         }`}
       >
         {title}
       </h2>
-      {lead && (
-        <p
-          className={`mt-6 text-[15px] leading-[1.9] max-w-2xl ${
-            dark ? 'text-carbon-muted' : 'text-muted'
-          }`}
-        >
-          {lead}
-        </p>
-      )}
+      {lead && <p className={`mt-6 text-[19px] leading-[1.95] max-w-2xl ${leadTone}`}>{lead}</p>}
       {children}
     </div>
   );

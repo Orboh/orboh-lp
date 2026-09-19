@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer/Footer';
 import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 import { useSeo } from '@/seo/useSeo';
+import { ArrowOut, ArrowRight, DiscordMark, SectionHeading, btnOutline, btnOutlineOnDark, btnSolid, btnSolidOnDark, sectionInner, sectionPad } from '@/components/ui';
 
 import heroGroup from '@/assets/hht/hero-group.webp';
 import teleopVr from '@/assets/hht/teleop-vr.webp';
@@ -52,28 +53,22 @@ export function HumanoidHackPage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[88vh] flex items-end overflow-hidden bg-zinc-950">
+      <section className={`relative min-h-[88vh] flex items-end overflow-hidden bg-carbon ${sectionPad}`}>
         <img
           src={heroGroup}
           alt="Humanoid Hack Tokyo group photo"
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-zinc-950/30" />
-        <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 pb-16 pt-32">
-          <div className="max-w-7xl mx-auto w-full">
-            <p className="text-orange-400 text-xs tracking-widest uppercase mb-5">
-              {t.eyebrow}
-            </p>
-            <h1
-              className="font-mono text-4xl sm:text-5xl md:text-6xl font-normal text-zinc-50 mb-6"
-              style={{ letterSpacing: '-0.02em' }}
-            >
+        <div className="absolute inset-0 bg-carbon/72" />
+        <div className={`relative z-10 w-full ${sectionInner} pb-16 pt-32`}>
+            <div className="border-t border-canvas/25 pt-3.5"><p className="type-label text-carbon-muted">{t.eyebrow}</p></div>
+            <h1 className="type-display-lg text-[2.4rem] sm:text-[3.4rem] lg:text-[4.2rem] text-canvas mt-7 mb-6">
               {t.title}
-              <span className="block mt-3 font-sans text-lg sm:text-xl md:text-2xl text-zinc-300 tracking-normal">
+              <span className="block mt-3 text-lg sm:text-xl md:text-2xl text-carbon-muted">
                 {t.titleSub}
               </span>
             </h1>
-            <p className="text-zinc-300 text-base md:text-lg max-w-2xl mb-8">
+            <p className="text-carbon-muted text-[19px] leading-[1.95] max-w-2xl mb-8">
               {t.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -81,52 +76,40 @@ export function HumanoidHackPage() {
                 href={EDITION_URLS[1]}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-50 text-zinc-950 text-xs font-semibold tracking-widest uppercase rounded hover:bg-zinc-200 transition-colors"
+                className={btnSolidOnDark}
               >
                 {t.register}
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
+                <ArrowOut />
               </a>
               <a
                 href={DISCORD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-semibold tracking-widest uppercase text-white rounded transition-all hover:scale-105"
-                style={{ backgroundColor: '#5865F2' }}
+                className={btnOutlineOnDark}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 shrink-0" aria-hidden>
-                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.042.033.055a19.83 19.83 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.07 13.07 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
-                </svg>
+                <DiscordMark />
                 {t.joinDiscord}
               </a>
             </div>
-          </div>
         </div>
       </section>
 
       {/* Intro */}
-      <section className="px-8 md:px-16 lg:px-24 py-20 bg-zinc-50">
-        <div className="max-w-3xl mx-auto w-full">
-          <p className="text-zinc-700 text-lg md:text-xl leading-relaxed">
+      <section className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
+        <div className={sectionInner}>
+          <p className="text-ink text-lg md:text-xl leading-[1.9] max-w-3xl">
             {t.intro}
           </p>
         </div>
       </section>
 
       {/* What a humanoid hackathon is — the page's topical body */}
-      <section className="px-8 md:px-16 lg:px-24 py-24 bg-white border-t border-zinc-200">
-        <div className="max-w-3xl mx-auto w-full">
-          <p className="text-orange-600 text-xs tracking-widest uppercase mb-4">{t.aboutLabel}</p>
-          <h2
-            className="font-mono text-2xl md:text-3xl font-normal text-zinc-900 mb-8"
-            style={{ letterSpacing: '-0.01em' }}
-          >
-            {t.aboutTitle}
-          </h2>
+      <section className={`${sectionPad} py-20 md:py-24 bg-surface border-t border-hairline`}>
+        <div className={sectionInner}>
+          <SectionHeading label={t.aboutLabel} title={t.aboutTitle} className="mb-8" />
           <div className="space-y-6">
             {t.aboutBody.map((paragraph) => (
-              <p key={paragraph.slice(0, 24)} className="text-zinc-700 text-sm md:text-base leading-relaxed">
+              <p key={paragraph.slice(0, 24)} className="text-muted text-sm md:text-base leading-[1.95] max-w-3xl">
                 {paragraph}
               </p>
             ))}
@@ -135,53 +118,44 @@ export function HumanoidHackPage() {
       </section>
 
       {/* Upcoming — Luma series calendar */}
-      <section className="px-8 md:px-16 lg:px-24 py-24 bg-white border-t border-zinc-200">
-        <div className="max-w-5xl mx-auto w-full">
-          <p className="text-orange-600 text-xs tracking-widest uppercase mb-4">{t.upcomingLabel}</p>
-          <h2
-            className="font-mono text-2xl md:text-3xl font-normal text-zinc-900 mb-4"
-            style={{ letterSpacing: '-0.01em' }}
-          >
-            {t.upcomingTitle}
-          </h2>
-          <p className="text-zinc-600 text-sm md:text-base max-w-2xl mb-10">{t.upcomingNote}</p>
+      <section className={`${sectionPad} py-20 md:py-24 bg-surface border-t border-hairline`}>
+        <div className={sectionInner}>
+          <SectionHeading label={t.upcomingLabel} title={t.upcomingTitle} lead={t.upcomingNote} className="mb-10" />
 
-          <p className="text-zinc-400 text-[10px] tracking-widest uppercase mb-4">
+          <p className="type-label text-muted mb-4">
             {t.upcomingItemsLabel}
           </p>
-          <ul className="mb-14 border-t border-zinc-200">
+          <ul className="mb-14 border-t border-ink">
             {t.upcomingItems.map((item, i) => (
               <li
                 key={item.name}
-                className="flex flex-col gap-3 border-b border-zinc-200 py-6 md:flex-row md:items-center md:justify-between md:gap-8"
+                className="flex flex-col gap-3 border-b border-hairline py-6 md:flex-row md:items-center md:justify-between md:gap-8"
               >
                 <div>
-                  <h3 className="font-mono text-lg md:text-xl font-normal text-zinc-900 mb-1">
+                  <h3 className="type-display text-lg md:text-xl text-ink mb-1">
                     {item.name}
                   </h3>
-                  <p className="text-zinc-700 text-sm">
+                  <p className="text-ink text-sm">
                     {item.dates}
-                    <span className="text-zinc-400"> / </span>
+                    <span className="text-muted"> / </span>
                     {item.venue}
                   </p>
-                  <p className="text-zinc-500 text-xs mt-1">{item.entry}</p>
+                  <p className="text-muted text-xs mt-1">{item.entry}</p>
                 </div>
                 <a
                   href={UPCOMING_URLS[i] ?? CALENDAR_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex shrink-0 items-center gap-2 self-start px-4 py-2 text-[11px] font-medium tracking-widest uppercase rounded border border-zinc-800 text-zinc-900 hover:bg-zinc-900 hover:text-zinc-50 transition-colors md:self-auto"
+                  className={`${btnOutline} shrink-0 self-start md:self-auto`}
                 >
                   {item.cta}
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
+                  <ArrowOut />
                 </a>
               </li>
             ))}
           </ul>
 
-          <div className="overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50">
+          <div className="overflow-hidden border border-hairline bg-canvas">
             <iframe
               src={CALENDAR_EMBED_URL}
               title="Humanoid Hack series calendar on Luma"
@@ -196,12 +170,10 @@ export function HumanoidHackPage() {
               href={CALENDAR_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-900 text-zinc-50 text-xs font-semibold tracking-widest uppercase rounded hover:bg-orange-500 transition-colors"
+              className={btnSolid}
             >
               {t.calendarCta}
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
+              <ArrowOut />
             </a>
           </div>
         </div>
@@ -215,51 +187,46 @@ export function HumanoidHackPage() {
         return (
           <section
             key={edition.name + i}
-            className={`px-8 md:px-16 lg:px-24 py-24 ${dark ? 'bg-zinc-900' : 'bg-white'}`}
+            className={`${sectionPad} py-20 md:py-24 ${dark ? 'bg-carbon text-canvas' : 'bg-surface'}`}
           >
-            <div className="max-w-7xl mx-auto w-full">
+            <div className={sectionInner}>
               <div
                 className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
                   i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''
                 }`}
               >
                 {/* Image */}
-                <div className="relative overflow-hidden rounded-lg aspect-[4/3] bg-zinc-800">
+                <div className="relative overflow-hidden aspect-[4/3] bg-hairline">
                   <img src={image} alt={edition.name} className="absolute inset-0 w-full h-full object-cover" />
                 </div>
 
                 {/* Content */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className={`text-xs tracking-widest uppercase ${dark ? 'text-orange-400' : 'text-orange-600'}`}>
+                    <span className="type-label text-accent">
                       {edition.tag}
                     </span>
                     <span
-                      className={`inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wider uppercase ${
-                        dark ? 'bg-orange-500/15 text-orange-300' : 'bg-zinc-900 text-zinc-50'
-                      }`}
+                      className={`type-label ${dark ? 'text-carbon-muted' : 'text-muted'}`}
                     >
                       {edition.status}
                     </span>
                   </div>
-                  <h2
-                    className={`font-mono text-3xl md:text-4xl font-normal mb-4 ${dark ? 'text-zinc-50' : 'text-zinc-900'}`}
-                    style={{ letterSpacing: '-0.01em' }}
-                  >
+                  <h2 className={`type-display text-[1.95rem] sm:text-[2.4rem] lg:text-[2.9rem] mb-4 ${dark ? 'text-canvas' : 'text-ink'}`}>
                     {edition.name}
                   </h2>
-                  <p className={`text-sm md:text-base mb-8 ${dark ? 'text-zinc-400' : 'text-zinc-600'}`}>
+                  <p className={`text-sm md:text-base leading-[1.95] mb-8 ${dark ? 'text-carbon-muted' : 'text-muted'}`}>
                     {edition.lead}
                   </p>
 
                   {/* Facts */}
-                  <dl className={`grid grid-cols-2 gap-x-6 gap-y-4 mb-8 border-t pt-6 ${dark ? 'border-zinc-700' : 'border-zinc-200'}`}>
+                  <dl className={`grid grid-cols-2 gap-x-6 gap-y-4 mb-8 border-t pt-6 ${dark ? 'border-carbon-hairline' : 'border-hairline'}`}>
                     {edition.facts.map((f) => (
                       <div key={f.label}>
-                        <dt className={`text-[10px] tracking-widest uppercase mb-1 ${dark ? 'text-zinc-500' : 'text-zinc-400'}`}>
+                        <dt className={`type-label mb-1 ${dark ? 'text-carbon-muted' : 'text-muted'}`}>
                           {f.label}
                         </dt>
-                        <dd className={`text-sm font-medium ${dark ? 'text-zinc-100' : 'text-zinc-900'}`}>
+                        <dd className={`text-sm font-medium ${dark ? 'text-canvas' : 'text-ink'}`}>
                           {f.value}
                         </dd>
                       </div>
@@ -267,16 +234,15 @@ export function HumanoidHackPage() {
                   </dl>
 
                   {/* Highlights */}
-                  <ul className="space-y-2 mb-6">
-                    {edition.highlights.map((h) => (
-                      <li key={h} className={`flex items-start gap-2.5 text-sm ${dark ? 'text-zinc-300' : 'text-zinc-700'}`}>
-                        <span className="mt-1.5 size-1.5 rounded-full bg-orange-500 shrink-0" />
-                        {h}
+                  <ul className={`mb-6 border-t ${dark ? 'border-carbon-hairline' : 'border-hairline'}`}>
+                    {edition.highlights.map((h, hi) => (
+                      <li key={h} className={`grid grid-cols-[auto_1fr] gap-4 py-2.5 border-b text-sm ${dark ? 'text-carbon-muted border-carbon-hairline' : 'text-muted border-hairline'}`}>
+                        <span className="type-label text-accent">{String(hi + 1).padStart(2, '0')}</span>{h}
                       </li>
                     ))}
                   </ul>
 
-                  <p className={`text-xs mb-8 ${dark ? 'text-zinc-500' : 'text-zinc-500'}`}>
+                  <p className={`text-xs mb-8 ${dark ? 'text-carbon-muted' : 'text-muted'}`}>
                     <span className="uppercase tracking-widest mr-2">{t.partnersLabel}</span>
                     {edition.partners}
                   </p>
@@ -286,30 +252,20 @@ export function HumanoidHackPage() {
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium tracking-widest uppercase rounded transition-colors ${
-                        dark
-                          ? 'bg-zinc-50 text-zinc-950 hover:bg-zinc-200'
-                          : 'border border-zinc-800 text-zinc-900 hover:bg-zinc-900 hover:text-zinc-50'
-                      }`}
+                      className={dark ? btnSolidOnDark : btnOutline}
                     >
                       {t.register}
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
+                      <ArrowOut />
                     </a>
                     {PRESS_URLS[i] && (
                       <a
                         href={PRESS_URLS[i] ?? undefined}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`inline-flex items-center gap-2 text-xs font-medium tracking-widest uppercase transition-colors ${
-                          dark ? 'text-orange-400 hover:text-orange-300' : 'text-orange-600 hover:text-orange-700'
-                        }`}
+                        className={`type-label inline-flex items-center gap-2 text-accent transition-colors duration-150 ${dark ? 'hover:text-canvas' : 'hover:text-ink'}`}
                       >
                         {t.pressLabel}
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
+                        <ArrowOut />
                       </a>
                     )}
                   </div>
@@ -321,20 +277,14 @@ export function HumanoidHackPage() {
       })}
 
       {/* FAQ */}
-      <section className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-50 border-t border-zinc-200">
-        <div className="max-w-3xl mx-auto w-full">
-          <p className="text-orange-600 text-xs tracking-widest uppercase mb-4">{t.faqLabel}</p>
-          <h2
-            className="font-mono text-2xl md:text-3xl font-normal text-zinc-900 mb-10"
-            style={{ letterSpacing: '-0.01em' }}
-          >
-            {t.faqTitle}
-          </h2>
-          <dl className="divide-y divide-zinc-200 border-t border-zinc-200">
+      <section className={`${sectionPad} py-20 md:py-24 bg-canvas border-t border-hairline`}>
+        <div className={sectionInner}>
+          <SectionHeading label={t.faqLabel} title={t.faqTitle} className="mb-10" />
+          <dl className="divide-y divide-hairline border-t border-ink max-w-3xl">
             {t.faq.map((item) => (
               <div key={item.q} className="py-6">
-                <dt className="text-zinc-900 text-base font-medium mb-2">{item.q}</dt>
-                <dd className="text-zinc-600 text-sm md:text-base leading-relaxed">{item.a}</dd>
+                <dt className="type-display text-ink text-base mb-2">{item.q}</dt>
+                <dd className="text-muted text-sm md:text-base leading-relaxed">{item.a}</dd>
               </div>
             ))}
           </dl>
@@ -342,33 +292,28 @@ export function HumanoidHackPage() {
       </section>
 
       {/* Gallery */}
-      <section className="px-8 md:px-16 lg:px-24 py-24 bg-zinc-950">
-        <div className="max-w-7xl mx-auto w-full">
-          <p className="text-orange-400 text-xs tracking-widest uppercase mb-4">{t.galleryLabel}</p>
-          <h2 className="font-mono text-2xl md:text-3xl font-normal text-zinc-100 mb-3" style={{ letterSpacing: '-0.01em' }}>
-            {t.galleryNote}
-          </h2>
+      <section className={`${sectionPad} py-20 md:py-24 bg-carbon text-canvas`}>
+        <div className={sectionInner}>
+          <SectionHeading label={t.galleryLabel} title={t.galleryNote} tone="dark" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mt-10">
             {GALLERY.map((g) => (
-              <div key={g.alt} className="relative overflow-hidden rounded-lg aspect-[4/3] bg-zinc-800 group">
+              <div key={g.alt} className="relative overflow-hidden aspect-[4/3] bg-carbon-hairline">
                 <img
                   src={g.src}
                   alt={g.alt}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
             ))}
           </div>
 
-          <div className="mt-14 text-center">
+          <div className="mt-14">
             <Link
               to={l('/')}
-              className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 text-xs tracking-widest uppercase transition-colors"
+              className="type-label inline-flex items-center gap-2 text-carbon-muted hover:text-canvas transition-colors duration-150"
             >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
+              <ArrowRight className="w-3.5 h-3.5 rotate-180" />
               {t.backHome}
             </Link>
           </div>

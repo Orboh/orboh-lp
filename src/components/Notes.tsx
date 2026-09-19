@@ -8,7 +8,7 @@ import ueda from '@/assets/team/ueda-avatar.webp';
 function NoteBadge({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
   return (
     <span
-      className={`inline-flex items-center border px-2 py-0.5 font-mono text-[10px] tracking-[0.16em] lowercase ${
+      className={`type-label inline-flex items-center border px-2 py-0.5 text-[12px] lowercase ${
         tone === 'dark' ? 'border-carbon-hairline text-carbon-muted' : 'border-hairline text-muted'
       }`}
     >
@@ -55,10 +55,10 @@ export function NotesSection() {
                 <span>{FEATURED_NOTE.date}</span>
                 {en && <span>{t.japanese}</span>}
               </div>
-              <h3 className="type-display text-xl sm:text-2xl lg:text-[1.9rem] text-canvas">
+              <h3 className="type-display text-xl sm:text-2xl lg:text-[2.25rem] text-canvas">
                 {FEATURED_NOTE.title[locale]}
               </h3>
-              <p className="text-[15px] leading-[1.95] text-carbon-muted">
+              <p className="text-[19px] leading-[1.95] text-carbon-muted">
                 {FEATURED_NOTE.excerpt[locale]}
               </p>
               <div className="flex items-center gap-3 border-t border-carbon-hairline pt-5">
@@ -76,7 +76,7 @@ export function NotesSection() {
                   <NoteBadge />
                 </span>
               </div>
-              <span className="inline-flex items-center gap-2.5 self-start px-7 py-3.5 bg-canvas text-ink text-sm font-medium transition-colors duration-150 group-hover:bg-accent group-hover:text-canvas">
+              <span className="inline-flex items-center gap-2.5 self-start px-7 py-4 bg-canvas text-ink text-sm font-medium transition-colors duration-150 group-hover:bg-accent group-hover:text-canvas">
                 {t.read}
                 <ArrowOut />
               </span>
@@ -106,10 +106,10 @@ export function NotesSection() {
                     <span className="text-accent">{article.tag[locale]}</span>
                     <span className="text-muted">{article.date}</span>
                   </div>
-                  <h3 className="type-display text-[15px] text-ink mb-3 transition-colors group-hover:text-accent">
+                  <h3 className="type-display text-[19px] text-ink mb-3 transition-colors group-hover:text-accent">
                     {article.title[locale]}
                   </h3>
-                  <p className="text-[13px] text-muted leading-[1.85] line-clamp-3">
+                  <p className="text-[17px] text-muted leading-[1.85] line-clamp-3">
                     {article.excerpt[locale]}
                   </p>
                   <div className="mt-5 flex items-center gap-2.5 pt-1">

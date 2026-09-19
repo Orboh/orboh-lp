@@ -118,7 +118,7 @@ export function WhatWeCanDoSection() {
                     : 'border-hairline text-muted hover:text-ink'
                 }`}
               >
-                <span className="font-mono text-[11px] tracking-[0.16em] text-muted mr-2.5">
+                <span className="type-label text-muted mr-2.5">
                   {demo.number}
                 </span>
                 {demo.title}
@@ -126,7 +126,7 @@ export function WhatWeCanDoSection() {
             ))}
           </aside>
 
-          <div className="case-study-card-container overflow-hidden">
+          <div className="overflow-hidden">
             <CaseStudyCard
               key={demos[activeIndex].number}
               number={demos[activeIndex].number}

@@ -20,14 +20,51 @@
   --color-canvas: #f4f1eb;
   --color-surface: #ffffff;
   --color-hairline: #d7d2c8;
-  --color-muted: #6f6b62;
+  /* Body copy. Was #6f6b62, which cleared AA against canvas by only 0.2 and
+     read as washed out at the 13-15px this system sets body text in. */
+  --color-muted: #5e5b53;
   --color-ink: #1c1b18;
   --color-carbon: #121210;
-  --color-accent: #c2461a;
+  /* Was #c2461a — 4.45 against canvas, i.e. under AA for body text, and the
+     accent carries eyebrows, list numbers and links at 11-14px. */
+  --color-accent: #b34118;
 
   /* Read on the dark bands */
   --color-carbon-hairline: #343330;
   --color-carbon-muted: #9b968c;
+
+  /*
+   * The two small steps carry buttons, nav links, table cells and fine print.
+   * Tailwind ships them at 14px/12px, which sat below this site's reading
+   * sizes once the body copy moved up.
+   */
+  --text-sm: 0.9375rem; /* 15px */
+  --text-sm--line-height: 1.4rem;
+  --text-xs: 0.8125rem; /* 13px */
+  --text-xs--line-height: 1.15rem;
+  /* Body copy is 19px, so base and the two heading steps have to clear it —
+     `text-lg` at Tailwind's 18px would have set a heading smaller than its
+     own paragraph. */
+  --text-base: 1.1875rem; /* 19px */
+  --text-base--line-height: 1.85rem;
+  --text-lg: 1.35rem; /* 21.6px */
+  --text-lg--line-height: 1.9rem;
+  --text-xl: 1.5rem; /* 24px */
+  --text-xl--line-height: 2rem;
+  --text-2xl: 1.75rem; /* 28px */
+  --text-2xl--line-height: 2.2rem;
+}
+
+/*
+ * One accent, two values. #b34118 is tuned to sit on canvas; against carbon it
+ * falls to 3.7:1, too thin for an 11px label. Rather than introduce a second
+ * chromatic colour, the dark bands re-tune the same hue — exactly what
+ * `carbon-hairline` and `carbon-muted` already do for the neutrals. Because
+ * custom properties inherit, every `text-accent` inside a carbon band picks
+ * this up with no change at the call site.
+ */
+.bg-carbon {
+  --color-accent: #da4f1d;
 }
 
 html,
@@ -47,28 +84,34 @@ body {
  * Display type: one grotesque, medium weight, tracking that tightens as the
  * size grows. `palt` gives the Japanese proportional metrics so mixed JA/EN
  * headlines set without gaps around the punctuation.
+ *
+ * These live in `components` so a utility can still override one property of
+ * the recipe. Unlayered, they outrank every Tailwind utility, which is why
+ * call sites used to retype the whole recipe instead of adjusting one value.
  */
-.type-display {
-  font-weight: 500;
-  line-height: 1.18;
-  letter-spacing: -0.03em;
-  font-feature-settings: 'palt' 1;
-}
+@layer components {
+  .type-display {
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    font-feature-settings: 'palt' 1;
+  }
 
-.type-display-lg {
-  font-weight: 500;
-  line-height: 1.12;
-  letter-spacing: -0.04em;
-  font-feature-settings: 'palt' 1;
-}
+  .type-display-lg {
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    font-feature-settings: 'palt' 1;
+  }
 
-/* Small mono metadata label sitting on a hairline. */
-.type-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  line-height: 1.2;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  /* Small mono metadata label sitting on a hairline. */
+  .type-label {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
 }
 
 /* Sharp edges are non-negotiable in this system. */

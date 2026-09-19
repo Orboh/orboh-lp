@@ -31,12 +31,12 @@ export function RaaSSection() {
               key={i}
               className="grid grid-cols-[auto_1fr] gap-x-5 sm:gap-x-8 py-6 border-b border-hairline"
             >
-              <dt className="font-mono text-[11px] tracking-[0.16em] text-accent pt-1">
+              <dt className="type-label text-accent pt-1">
                 {String(i + 1).padStart(2, '0')}
               </dt>
               <div>
                 <p className="type-display text-base text-ink">{card.title}</p>
-                <dd className="mt-2.5 text-[13px] leading-[1.9] text-muted max-w-md">
+                <dd className="mt-2.5 text-[17px] leading-[1.9] text-muted max-w-md">
                   {card.description}
                 </dd>
               </div>

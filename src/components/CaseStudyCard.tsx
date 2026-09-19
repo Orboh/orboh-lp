@@ -60,7 +60,7 @@ export function CaseStudyCard({
         <h3 className="type-display text-xl md:text-2xl text-ink mt-3.5">{title}</h3>
       </div>
 
-      <p className="mt-6 text-[15px] leading-[1.95] text-muted max-w-2xl">{description}</p>
+      <p className="mt-6 text-[19px] leading-[1.95] text-muted max-w-2xl">{description}</p>
 
       {linkTo && linkLabel && (
         <p className="mt-5">
@@ -82,7 +82,7 @@ export function CaseStudyCard({
             className="py-5 sm:pr-7 border-b border-hairline sm:border-b-0 sm:border-r sm:last:border-r-0 sm:[&:not(:first-child)]:pl-7"
           >
             <dt className="text-sm font-medium text-ink">{feature.title}</dt>
-            <dd className="mt-2.5 text-[13px] leading-[1.85] text-muted">{feature.description}</dd>
+            <dd className="mt-2.5 text-[17px] leading-[1.85] text-muted">{feature.description}</dd>
           </div>
         ))}
       </dl>

@@ -34,7 +34,7 @@ export function TeamSection() {
                     style={{ objectPosition: PHOTOS[member.role]!.position }}
                   />
                 ) : (
-                  <span className="absolute inset-0 flex items-center justify-center font-mono text-4xl text-muted">
+                  <span className="absolute inset-0 flex items-center justify-center type-display text-4xl text-muted">
                     {member.initials}
                   </span>
                 )}
@@ -50,7 +50,7 @@ export function TeamSection() {
                 {member.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="text-muted text-[13px] leading-[1.85] py-2.5 border-b border-hairline"
+                    className="text-muted text-[17px] leading-[1.85] py-2.5 border-b border-hairline"
                   >
                     {bullet}
                   </li>

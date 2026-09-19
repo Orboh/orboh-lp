@@ -79,7 +79,7 @@ function JaArticle() {
             href={NOTE_REPORT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
+            className="text-accent underline underline-offset-4 hover:text-ink transition-colors duration-150"
           >
             noteの記事
           </a>
@@ -221,7 +221,7 @@ function EnArticle() {
             href={NOTE_REPORT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
+            className="text-accent underline underline-offset-4 hover:text-ink transition-colors duration-150"
           >
             {' '}
             report by Ueda, who led the build

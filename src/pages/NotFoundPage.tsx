@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { Footer } from '@/components/Footer/Footer';
 import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
+import { btnSolidOnDark, sectionInner, sectionPad } from '@/components/ui';
 
 export function NotFoundPage() {
   const { locale } = useLocale();
@@ -10,23 +11,20 @@ export function NotFoundPage() {
 
   return (
     <Layout>
-      <section className="px-8 md:px-16 lg:px-24 pt-40 pb-32 bg-zinc-950 text-zinc-50 min-h-[70vh] flex items-center">
-        <div className="max-w-3xl mx-auto w-full">
-          <p className="text-orange-400 text-xs tracking-widest uppercase mb-5">404</p>
-          <h1
-            className="font-mono text-3xl md:text-4xl font-normal mb-6"
-            style={{ letterSpacing: '-0.02em' }}
-          >
+      <section className={`${sectionPad} pt-40 pb-32 bg-carbon text-canvas min-h-[70vh] flex items-center`}>
+        <div className={sectionInner}>
+          <div className="border-t border-carbon-hairline pt-3.5"><p className="type-label text-carbon-muted">404</p></div>
+          <h1 className="type-display-lg text-[2.4rem] sm:text-[3.4rem] lg:text-[4.2rem] mt-7 mb-6">
             {ja ? 'ページが見つかりませんでした' : 'Page not found'}
           </h1>
-          <p className="text-zinc-400 mb-10 max-w-xl">
+          <p className="text-carbon-muted mb-10 max-w-xl leading-[1.95]">
             {ja
               ? 'お探しのページは移動または削除された可能性があります。'
               : 'The page you are looking for may have been moved or removed.'}
           </p>
           <Link
             to={l('/')}
-            className="inline-flex items-center justify-center px-6 py-3 bg-zinc-50 text-zinc-950 text-xs font-semibold tracking-widest uppercase rounded hover:bg-zinc-200 transition-colors"
+            className={btnSolidOnDark}
           >
             {ja ? 'トップへ戻る' : 'Back to home'}
           </Link>

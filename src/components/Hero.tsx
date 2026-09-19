@@ -49,11 +49,11 @@ export function HeroSection() {
             <p className="type-label text-carbon-muted">{t.eyebrow}</p>
           </div>
 
-          <h1 className="type-display-lg text-[2rem] sm:text-[2.9rem] lg:text-[3.6rem] mt-7 mb-7 whitespace-pre-line text-canvas">
+          <h1 className="type-display-lg text-[2.4rem] sm:text-[3.4rem] lg:text-[4.2rem] mt-7 mb-7 whitespace-pre-line text-canvas">
             {t.title}
           </h1>
 
-          <p className="text-[15px] leading-[1.95] text-canvas/72 max-w-xl mb-10 whitespace-pre-line">
+          <p className="text-[19px] leading-[1.95] text-carbon-muted max-w-xl mb-10 whitespace-pre-line">
             {t.subtitle}
           </p>
 
@@ -86,7 +86,7 @@ export function HeroSection() {
         <button
           type="button"
           onClick={scrollToNextSection}
-          className="type-label text-canvas/45 hover:text-canvas transition-colors cursor-pointer"
+          className="type-label text-carbon-muted hover:text-canvas transition-colors cursor-pointer"
           aria-label={t.scrollAria}
         >
           {t.scroll} ↓

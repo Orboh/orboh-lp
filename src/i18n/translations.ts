@@ -167,7 +167,13 @@ export const translations = {
       eyebrow: 'DEMO VIDEO',
       title: 'See Orboh robots at work',
       placeholder: 'Video embed will go here',
-      placeholderHint: 'Set your YouTube URL',
+      placeholderHint: 'Set the video URL',
+      clips: {
+        sealing: 'Putty and sealing work, teleoperated',
+        sealingField: 'CONSTRUCTION SITE',
+        okra: 'Okra harvest in the field, September 2026',
+        okraField: 'TRIAL FIELD',
+      },
     },
     whitepaper: {
       eyebrow: 'WHITEPAPER',
@@ -625,7 +631,13 @@ export const translations = {
       eyebrow: 'DEMO VIDEO',
       title: 'Orbohロボットの稼働映像',
       placeholder: '動画をここに埋め込み',
-      placeholderHint: 'YouTube URLを設定してください',
+      placeholderHint: '動画URLを設定してください',
+      clips: {
+        sealing: 'パテ塗り・シーリング作業（遠隔操作）',
+        sealingField: '建設現場',
+        okra: 'オクラの収穫（2026年9月・実証圃場）',
+        okraField: '実証圃場',
+      },
     },
     whitepaper: {
       eyebrow: 'ホワイトペーパー',

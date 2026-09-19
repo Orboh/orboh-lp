@@ -5,6 +5,7 @@ import { CTASection } from '@/components/CTA';
 import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { articlesFor } from '@/content/insights/articles';
 import { useSeo } from '@/seo/useSeo';
+import { sectionInner, sectionPad } from '@/components/ui';
 
 export function InsightsIndexPage() {
   const { locale } = useLocale();
@@ -16,16 +17,13 @@ export function InsightsIndexPage() {
 
   return (
     <Layout>
-      <section className="px-8 md:px-16 lg:px-24 pt-36 pb-16 md:pb-20 bg-zinc-950 text-zinc-50">
-        <div className="max-w-5xl mx-auto w-full">
-          <p className="text-orange-400 text-xs tracking-widest uppercase mb-5">INSIGHTS</p>
-          <h1
-            className="font-mono text-3xl sm:text-4xl md:text-5xl font-normal mb-6"
-            style={{ letterSpacing: '-0.02em' }}
-          >
+      <section className={`${sectionPad} pt-36 pb-20 md:pb-24 bg-carbon text-canvas`}>
+        <div className={sectionInner}>
+          <div className="border-t border-carbon-hairline pt-3.5"><p className="type-label text-carbon-muted">INSIGHTS</p></div>
+          <h1 className="type-display-lg text-[2.4rem] sm:text-[3.4rem] lg:text-[4.2rem] mt-7 mb-6">
             {ja ? '現場からのレポート' : 'Field notes'}
           </h1>
-          <p className="text-zinc-300 text-base md:text-lg max-w-2xl leading-relaxed">
+          <p className="text-carbon-muted text-[19px] max-w-2xl leading-[1.95]">
             {ja
               ? 'ヒューマノイドを現場に実装する過程で見えたこと、その裏側にあるサプライチェーン、実際に機能した方法を記録しています。'
               : 'What we learn putting humanoids to work on real sites, the supply chain behind them, and the approaches that actually hold up.'}
@@ -33,31 +31,28 @@ export function InsightsIndexPage() {
         </div>
       </section>
 
-      <section className="px-8 md:px-16 lg:px-24 py-16 md:py-24 bg-zinc-50">
-        <div className="max-w-5xl mx-auto w-full">
+      <section className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
+        <div className={sectionInner}>
           {articles.length === 0 ? (
-            <p className="text-zinc-500">
+            <p className="text-muted">
               {ja ? '記事を準備しています。' : 'Articles are on the way.'}
             </p>
           ) : (
-            <ul className="grid gap-6 sm:grid-cols-2">
+            <ul className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
               {articles.map((article) => (
                 <li key={article.path}>
                   <Link
                     to={l(article.path)}
-                    className="group flex h-full flex-col rounded border border-zinc-200 bg-white p-7 transition-colors hover:border-zinc-400"
+                    className="group flex h-full flex-col border-t border-ink pt-4"
                   >
-                    <div className="mb-4 flex items-center gap-3 text-xs tracking-widest uppercase">
-                      <span className="text-orange-600">{article.tag}</span>
-                      <span className="text-zinc-400">{article.date}</span>
+                    <div className="mb-4 flex items-center gap-3 type-label">
+                      <span className="text-accent">{article.tag}</span>
+                      <span className="text-muted">{article.date}</span>
                     </div>
-                    <h2
-                      className="font-mono text-xl md:text-2xl font-normal text-zinc-900 mb-4 group-hover:text-orange-600 transition-colors"
-                      style={{ letterSpacing: '-0.01em' }}
-                    >
+                    <h2 className="type-display text-xl md:text-2xl text-ink mb-4 group-hover:text-accent transition-colors duration-150">
                       {article.title}
                     </h2>
-                    <p className="text-sm text-zinc-600 leading-relaxed">{article.excerpt}</p>
+                    <p className="text-sm text-muted leading-[1.9]">{article.excerpt}</p>
                   </Link>
                 </li>
               ))}

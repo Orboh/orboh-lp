@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { sectionPad } from '@/components/ui';
 
 /**
  * Long-form reading primitives for /insights. Kept as explicit components
  * rather than a typography plugin so the article surface matches the rest of
- * the site (font-mono headings, zinc palette, orange accent).
+ * the site design system.
  */
 
 export function ArticleHero({
@@ -19,17 +20,14 @@ export function ArticleHero({
   date: string;
 }) {
   return (
-    <section className="px-8 md:px-16 lg:px-24 pt-36 pb-16 md:pb-20 bg-zinc-950 text-zinc-50">
-      <div className="max-w-3xl mx-auto w-full">
-        <p className="text-orange-400 text-xs tracking-widest uppercase mb-5">{eyebrow}</p>
-        <h1
-          className="font-mono text-3xl sm:text-4xl md:text-5xl font-normal mb-6 leading-tight"
-          style={{ letterSpacing: '-0.02em' }}
-        >
+    <section className={`${sectionPad} pt-36 pb-20 md:pb-24 bg-carbon text-canvas`}>
+      <div className="max-w-[720px] mx-auto w-full">
+        <div className="border-t border-carbon-hairline pt-3.5"><p className="type-label text-carbon-muted">{eyebrow}</p></div>
+        <h1 className="type-display-lg text-[2.4rem] sm:text-[3.4rem] lg:text-[4.2rem] mt-7 mb-6">
           {title}
         </h1>
-        <p className="text-zinc-300 text-base md:text-lg leading-relaxed mb-8">{lead}</p>
-        <p className="text-zinc-500 text-xs tracking-widest uppercase">{date}</p>
+        <p className="text-carbon-muted text-[19px] leading-[1.95] mb-8">{lead}</p>
+        <p className="type-label text-carbon-muted">{date}</p>
       </div>
     </section>
   );
@@ -37,29 +35,26 @@ export function ArticleHero({
 
 export function ArticleBody({ children }: { children: ReactNode }) {
   return (
-    <section className="px-8 md:px-16 lg:px-24 py-16 md:py-24 bg-zinc-50">
-      <article className="max-w-3xl mx-auto w-full">{children}</article>
+    <section className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
+      <article className="max-w-[720px] mx-auto w-full">{children}</article>
     </section>
   );
 }
 
 export function H2({ children }: { children: ReactNode }) {
   return (
-    <h2
-      className="font-mono text-2xl md:text-3xl font-normal text-zinc-900 mt-16 first:mt-0 mb-6 scroll-mt-24"
-      style={{ letterSpacing: '-0.01em' }}
-    >
+    <h2 className="type-display text-[1.95rem] sm:text-[2.4rem] lg:text-[2.9rem] text-ink mt-16 first:mt-0 mb-6 pt-4 border-t border-hairline scroll-mt-24">
       {children}
     </h2>
   );
 }
 
 export function H3({ children }: { children: ReactNode }) {
-  return <h3 className="text-lg md:text-xl font-semibold text-zinc-900 mt-10 mb-4">{children}</h3>;
+  return <h3 className="type-display text-lg md:text-xl text-ink mt-10 mb-4">{children}</h3>;
 }
 
 export function P({ children }: { children: ReactNode }) {
-  return <p className="text-zinc-700 leading-loose mb-6">{children}</p>;
+  return <p className="text-muted text-[19px] leading-loose mb-6">{children}</p>;
 }
 
 export function Ul({ children }: { children: ReactNode }) {
@@ -68,8 +63,8 @@ export function Ul({ children }: { children: ReactNode }) {
 
 export function Li({ children }: { children: ReactNode }) {
   return (
-    <li className="text-zinc-700 leading-loose pl-5 relative">
-      <span className="absolute left-0 top-[0.85em] w-2 h-px bg-orange-500" aria-hidden />
+    <li className="text-muted text-[19px] leading-loose pl-5 relative">
+      <span className="absolute left-0 top-[0.85em] w-2 h-px bg-accent" aria-hidden />
       {children}
     </li>
   );
@@ -78,8 +73,8 @@ export function Li({ children }: { children: ReactNode }) {
 /** Set-aside context: caveats, dates, sourcing notes. */
 export function Note({ children }: { children: ReactNode }) {
   return (
-    <aside className="mb-6 border-l-2 border-orange-500 bg-white px-6 py-5 rounded-r">
-      <p className="text-zinc-600 text-sm leading-loose">{children}</p>
+    <aside className="mb-6 border-l-2 border-accent bg-surface px-6 py-5">
+      <p className="text-muted text-[17px] leading-loose">{children}</p>
     </aside>
   );
 }
@@ -95,12 +90,12 @@ export function Table({
 }) {
   return (
     <figure className="mb-8">
-      <div className="overflow-x-auto rounded border border-zinc-200 bg-white">
+      <div className="overflow-x-auto border border-hairline bg-surface">
         <table className="w-full text-sm text-left border-collapse">
           <thead>
-            <tr className="border-b border-zinc-200 bg-zinc-100">
+            <tr className="border-b border-hairline bg-canvas">
               {head.map((cell) => (
-                <th key={cell} className="px-4 py-3 font-semibold text-zinc-900 whitespace-nowrap">
+                <th key={cell} className="px-4 py-3 font-semibold text-ink whitespace-nowrap">
                   {cell}
                 </th>
               ))}
@@ -108,9 +103,9 @@ export function Table({
           </thead>
           <tbody>
             {rows.map((row, i) => (
-              <tr key={i} className="border-b border-zinc-100 last:border-0 align-top">
+              <tr key={i} className="border-b border-hairline last:border-0 align-top">
                 {row.map((cell, j) => (
-                  <td key={j} className="px-4 py-3 text-zinc-700 leading-relaxed">
+                  <td key={j} className="px-4 py-3 text-muted leading-relaxed">
                     {cell}
                   </td>
                 ))}
@@ -119,7 +114,7 @@ export function Table({
           </tbody>
         </table>
       </div>
-      {caption && <figcaption className="mt-3 text-xs text-zinc-500">{caption}</figcaption>}
+      {caption && <figcaption className="mt-3 text-xs text-muted">{caption}</figcaption>}
     </figure>
   );
 }
@@ -129,15 +124,15 @@ export type RelatedItem = { label: string; to?: string; href?: string; note: str
 /** Internal cross-links. The cluster grows by adding entries here. */
 export function Related({ title, items }: { title: string; items: readonly RelatedItem[] }) {
   return (
-    <nav className="mt-16 pt-10 border-t border-zinc-200">
-      <h2 className="text-xs tracking-widest uppercase text-zinc-500 mb-5">{title}</h2>
+    <nav className="mt-16 pt-10 border-t border-hairline">
+      <h2 className="type-label text-muted mb-5">{title}</h2>
       <ul className="space-y-4">
         {items.map((item) => (
           <li key={item.label}>
             {item.to ? (
               <Link
                 to={item.to}
-                className="text-zinc-900 font-medium hover:text-orange-600 transition-colors"
+                className="text-ink font-medium hover:text-accent transition-colors duration-150"
               >
                 {item.label}
               </Link>
@@ -146,12 +141,12 @@ export function Related({ title, items }: { title: string; items: readonly Relat
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-900 font-medium hover:text-orange-600 transition-colors"
+                className="text-ink font-medium hover:text-accent transition-colors duration-150"
               >
                 {item.label}
               </a>
             )}
-            <p className="text-sm text-zinc-500 mt-1">{item.note}</p>
+            <p className="text-sm text-muted mt-1">{item.note}</p>
           </li>
         ))}
       </ul>

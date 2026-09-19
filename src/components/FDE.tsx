@@ -36,7 +36,7 @@ function GapDiagram() {
         <div className="w-px flex-1 bg-accent" />
         <div className="my-2 border border-accent px-3 py-3.5 sm:px-4 text-center max-w-28 sm:max-w-36">
           <p className="type-display text-sm sm:text-base text-accent">{d.bridgeLabel}</p>
-          <p className="text-[10px] sm:text-[11px] mt-2 leading-relaxed text-muted">{d.bridgeSub}</p>
+          <p className="text-[12px] sm:text-[13px] mt-2 leading-relaxed text-muted">{d.bridgeSub}</p>
         </div>
         <div className="w-px flex-1 bg-accent" />
         <Caret />
@@ -83,10 +83,10 @@ export function WhyFDESection() {
         <div>
           <SectionHeading label={t.eyebrow} title={t.title} />
           <div className="mt-8 flex flex-col gap-5 max-w-xl">
-            <p className="text-[15px] leading-[1.95] text-muted">{t.body1}</p>
-            <p className="text-[15px] leading-[1.95] text-muted">{t.body2}</p>
+            <p className="text-[19px] leading-[1.95] text-muted">{t.body1}</p>
+            <p className="text-[19px] leading-[1.95] text-muted">{t.body2}</p>
           </div>
-          <p className="mt-9 max-w-xl border-l-2 border-accent pl-5 text-[15px] md:text-base leading-[1.9] text-ink">
+          <p className="mt-9 max-w-xl border-l-2 border-accent pl-5 text-[19px] md:text-base leading-[1.9] text-ink">
             {t.definition}
           </p>
         </div>
@@ -129,7 +129,7 @@ export function HowWeWorkSection() {
                 <h3 className="type-display text-xl md:text-2xl text-canvas mt-4 mb-5">
                   {step.title}
                 </h3>
-                <p className="text-[15px] leading-[1.95] text-carbon-muted max-w-xl">
+                <p className="text-[19px] leading-[1.95] text-carbon-muted max-w-xl">
                   {step.description}
                 </p>
               </div>

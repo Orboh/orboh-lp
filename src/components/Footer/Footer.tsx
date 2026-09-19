@@ -177,14 +177,14 @@ export function Footer() {
         </div>
 
         <div className="border-t border-carbon-hairline pt-6 flex flex-col sm:flex-row items-start justify-between gap-4">
-          <div className="flex flex-col items-start gap-1 text-carbon-muted/80 text-xs">
+          <div className="flex flex-col items-start gap-1 text-carbon-muted text-xs">
             <p className="text-carbon-muted">
               {t.companyName}
             </p>
             <p>{t.address}</p>
             <p>{t.copyright}</p>
           </div>
-          <p className="text-carbon-muted/80 text-xs">
+          <p className="text-carbon-muted text-xs">
             Built with humanoid robotics in mind.
           </p>
         </div>

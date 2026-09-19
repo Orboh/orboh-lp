@@ -4,6 +4,7 @@ import { Layout } from '@/components/Layout';
 import { Footer } from '@/components/Footer/Footer';
 import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { useSeo } from '@/seo/useSeo';
+import { ArrowOut, ArrowRight, DiscordMark, SectionHeading, btnSolidOnDark, sectionInner, sectionPad } from '@/components/ui';
 
 import poster from '@/assets/hht/hht2-poster.webp';
 import floor from '@/assets/hht/floor.webp';
@@ -73,20 +74,18 @@ export function HumanoidHackHackathonPage() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-zinc-950 pt-28 pb-16 md:pt-36 md:pb-20 px-8 md:px-16 lg:px-24">
+      <section className={`relative overflow-hidden bg-carbon text-canvas pt-28 pb-20 md:pt-36 md:pb-24 ${sectionPad}`}>
         <div className="absolute inset-0">
-          <img src={floor} alt="" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/85 to-zinc-950/70" />
+          <img src={floor} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-carbon/78" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className={`relative z-10 ${sectionInner} grid lg:grid-cols-2 gap-10 lg:gap-16 items-center`}>
           <div>
-            <p className="text-orange-400 text-xs tracking-widest uppercase mb-5">
-              {T('参加者向け — ハッカソン概要', 'For participants — Hackathon guide')}
-            </p>
-            <h1 className="font-mono text-4xl sm:text-5xl font-normal text-zinc-50 mb-6" style={{ letterSpacing: '-0.02em' }}>
+            <div className="border-t border-canvas/25 pt-3.5"><p className="type-label text-carbon-muted">{T('参加者向け — ハッカソン概要', 'For participants — Hackathon guide')}</p></div>
+            <h1 className="type-display-lg text-[2.4rem] sm:text-[3.4rem] lg:text-[4.2rem] mt-7 mb-6">
               Humanoid Hack Tokyo Vol.2
             </h1>
-            <p className="text-zinc-300 text-base md:text-lg max-w-xl mb-8">
+            <p className="text-carbon-muted text-[19px] leading-[1.95] max-w-xl mb-8">
               {T(
                 '2026年7月11日（土）–12日（日）、渋谷。当日の進め方・ルール・G1 の割り当てをここにまとめます。参加チームは必ず目を通してください。',
                 'July 11–12, 2026, Shibuya. Everything you need for the two days — schedule, rules, and your G1 assignment. Required reading for all teams.'
@@ -97,12 +96,9 @@ export function HumanoidHackHackathonPage() {
                 href={DISCORD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-semibold tracking-widest uppercase text-white rounded transition-all hover:scale-105"
-                style={{ backgroundColor: '#5865F2' }}
+                className={btnSolidOnDark}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 shrink-0" aria-hidden>
-                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.042.033.055a19.83 19.83 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.07 13.07 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
-                </svg>
+                <DiscordMark />
                 {T('Discord に参加', 'Join Discord')}
               </a>
             </div>
@@ -111,15 +107,15 @@ export function HumanoidHackHackathonPage() {
             <img
               src={poster}
               alt="Humanoid Hack Tokyo Vol.2 — Jul 11–12, 2026, Shibuya"
-              className="w-full max-w-md mx-auto rounded-xl shadow-2xl ring-1 ring-white/10"
+              className="w-full max-w-md mx-auto border border-canvas/25"
             />
           </div>
         </div>
       </section>
 
       {/* At a glance */}
-      <section className="px-8 md:px-16 lg:px-24 py-16 bg-zinc-50">
-        <div className="max-w-7xl mx-auto w-full">
+      <section className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
+        <div className={sectionInner}>
           <dl className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
             {[
               { l: T('日程', 'Dates'), v: T('7月11日（土）– 12日（日）', 'Jul 11 (Sat) – 12 (Sun)') },
@@ -127,9 +123,9 @@ export function HumanoidHackHackathonPage() {
               { l: T('受付', 'Check-in'), v: T('セルリアンタワー 1F（Luma QR 照合）', 'Cerulean Tower 1F (Luma QR)') },
               { l: T('ロボット', 'Robots'), v: 'Unitree G1 EDU (29DOF) × 3' },
             ].map((f) => (
-              <div key={f.l} className="border-t border-zinc-300 pt-4">
-                <dt className="text-[10px] tracking-widest uppercase text-zinc-400 mb-2">{f.l}</dt>
-                <dd className="text-sm font-medium text-zinc-900">{f.v}</dd>
+              <div key={f.l} className="border-t border-hairline pt-4">
+                <dt className="type-label text-muted mb-2">{f.l}</dt>
+                <dd className="text-sm font-medium text-ink">{f.v}</dd>
               </div>
             ))}
           </dl>
@@ -138,7 +134,7 @@ export function HumanoidHackHackathonPage() {
 
       {/* Schedule */}
       <Section dark title={T('スケジュール', 'Schedule')} label={T('2日間', 'Two days')}>
-        <p className="text-sm text-zinc-400 mb-8">
+        <p className="text-sm text-carbon-muted mb-8">
           {T('発表は各チーム7分（発表5分＋質疑2分）。日英どちらでも可、スライドは任意です。', 'Presentations are 7 min per team (5 min talk + 2 min Q&A). Japanese or English; slides optional.')}
         </p>
         <div className="grid lg:grid-cols-2 gap-8">
@@ -149,37 +145,37 @@ export function HumanoidHackHackathonPage() {
 
       {/* Teams */}
       <Section title={T('参加チーム', 'Teams')} label={T('6チーム', '6 teams')}>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <dl className="grid md:grid-cols-3 md:gap-x-8 border-t border-ink">
           {teams.map((t, i) => (
-            <div key={t} className="flex items-center gap-3 border border-zinc-200 rounded-lg px-4 py-3">
-              <span className="font-mono text-xs text-orange-600">{String(i + 1).padStart(2, '0')}</span>
-              <span className="text-sm font-medium text-zinc-900">{t}</span>
+            <div key={t} className="grid grid-cols-[auto_1fr] gap-4 border-b border-hairline py-4">
+              <dt className="type-label text-accent">{String(i + 1).padStart(2, '0')}</dt>
+              <dd className="text-sm font-medium text-ink">{t}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </Section>
 
       {/* G1 allocation */}
       <Section dark title={T('G1 割り当て', 'G1 assignment')} label={T('運営が割り当て', 'Assigned by organizers')}>
-        <p className="text-sm text-zinc-400 mb-6 max-w-2xl">
+        <p className="text-sm text-carbon-muted mb-6 max-w-2xl">
           {T(
             'G1 EDU は全3台。2チームで1台を共有します。時間帯ごとの割り当ては運営が決定し、下記の割り当て表で管理します。実機を使わない開発（シミュレーション・コーディング）はいつでも進められます。',
             'Three G1 EDU units, each shared by two teams. Time-slot assignments are set by the organizers and tracked in the sheet below. Non-robot work (simulation, coding) can proceed at any time.'
           )}
         </p>
-        <div className="overflow-x-auto rounded-lg border border-zinc-700">
+        <div className="overflow-x-auto border border-carbon-hairline">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-zinc-800 text-zinc-300">
-                <th className="text-left font-medium px-4 py-3 tracking-wider uppercase text-[11px]">{T('機体', 'Unit')}</th>
-                <th className="text-left font-medium px-4 py-3 tracking-wider uppercase text-[11px]">{T('共有チーム', 'Shared by')}</th>
+              <tr className="border-b border-carbon-hairline text-carbon-muted">
+                <th className="text-left font-medium px-4 py-3 tracking-wider uppercase text-[13px]">{T('機体', 'Unit')}</th>
+                <th className="text-left font-medium px-4 py-3 tracking-wider uppercase text-[13px]">{T('共有チーム', 'Shared by')}</th>
               </tr>
             </thead>
             <tbody>
               {allocation.map((a) => (
-                <tr key={a.unit} className="border-t border-zinc-800">
-                  <td className="px-4 py-3 font-mono text-orange-400">{a.unit}</td>
-                  <td className="px-4 py-3 text-zinc-200">{a.teams}</td>
+                <tr key={a.unit} className="border-t border-carbon-hairline">
+                  <td className="px-4 py-3 type-label text-accent">{a.unit}</td>
+                  <td className="px-4 py-3 text-carbon-muted">{a.teams}</td>
                 </tr>
               ))}
             </tbody>
@@ -189,18 +185,16 @@ export function HumanoidHackHackathonPage() {
           href={ALLOCATION_SHEET_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 text-xs font-medium tracking-widest uppercase rounded bg-zinc-50 text-zinc-950 hover:bg-zinc-200 transition-colors"
+          className={`${btnSolidOnDark} mt-6`}
         >
           {T('時間帯別の割り当て表を開く', 'Open the time-slot assignment sheet')}
-          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
+          <ArrowOut />
         </a>
       </Section>
 
       {/* G1 handling rules */}
       <Section title={T('Unitree G1 取り扱いルール', 'Unitree G1 handling rules')}>
-        <ul className="space-y-3 max-w-3xl">
+        <ul className="border-t border-hairline max-w-3xl">
           {[
             T('稼働範囲は 1台あたり半径 1.5m 以内。アプリケーションはこの制約内で動作する前提で設計してください。', 'Keep each robot within a 1.5m radius. Applications must be designed to run within this constraint.'),
             T('ダンスなど大きく激しい全身モーションの開発は禁止です。', 'No large or violent whole-body motions (e.g. dancing).'),
@@ -209,10 +203,9 @@ export function HumanoidHackHackathonPage() {
             T('開発用 PC は Linux または Windows を持参してください。Mac は SDK・ネットワーク制約により使用できません。', 'Bring a Linux or Windows dev PC. Mac cannot be used due to SDK and network constraints.'),
             T('SDK・クイックスタート・PC2 アクセス方法は当日レクチャーと Discord で共有します。', 'SDK, quick-start, and PC2 access details are shared at the lecture and on Discord.'),
             T('転倒・異常時はすぐに運営スタッフを呼んでください。', 'Call a staff member immediately if a robot falls or behaves abnormally.'),
-          ].map((r) => (
-            <li key={r} className="flex items-start gap-2.5 text-sm text-zinc-700">
-              <span className="mt-1.5 size-1.5 rounded-full bg-orange-500 shrink-0" />
-              {r}
+          ].map((r, i) => (
+            <li key={r} className="grid grid-cols-[auto_1fr] gap-4 py-3 border-b border-hairline text-sm text-muted">
+              <span className="type-label text-accent">{String(i + 1).padStart(2, '0')}</span>{r}
             </li>
           ))}
         </ul>
@@ -222,29 +215,28 @@ export function HumanoidHackHackathonPage() {
       <Section dark title={T('審査・賞', 'Judging & prizes')}>
         <div className="grid md:grid-cols-2 gap-10">
           <div>
-            <h3 className="text-zinc-100 text-sm font-semibold tracking-wider uppercase mb-4">{T('審査基準', 'Judging')}</h3>
-            <p className="text-sm text-zinc-400 mb-4">
+            <h3 className="type-display text-canvas text-base mb-4">{T('審査基準', 'Judging')}</h3>
+            <p className="text-sm text-carbon-muted mb-4">
               {T('審査員が全6チームのデモを見て、以下の観点を参考に順位をつけます。', 'Judges watch all six demos and rank the teams, guided by these criteria:')}
             </p>
-            <ul className="space-y-2">
+            <ul className="border-t border-carbon-hairline">
               {[
                 T('実機完成度（実機でどこまで動くか）', 'Robot execution (how much runs on the real robot)'),
                 T('創造性', 'Creativity'),
                 T('実用性', 'Practicality'),
                 T('プレゼンテーション', 'Presentation'),
-              ].map((c) => (
-                <li key={c} className="flex items-start gap-2.5 text-sm text-zinc-300">
-                  <span className="mt-1.5 size-1.5 rounded-full bg-orange-500 shrink-0" />
-                  {c}
+              ].map((c, i) => (
+                <li key={c} className="grid grid-cols-[auto_1fr] gap-4 py-2.5 border-b border-carbon-hairline text-sm text-carbon-muted">
+                  <span className="type-label text-accent">{String(i + 1).padStart(2, '0')}</span>{c}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-zinc-100 text-sm font-semibold tracking-wider uppercase mb-4">{T('賞', 'Prizes')}</h3>
-            <ul className="space-y-3 text-sm text-zinc-300">
-              <li className="flex items-start gap-2.5"><span className="mt-1.5 size-1.5 rounded-full bg-orange-500 shrink-0" />{T('1位 / 2位 — 表彰と賞（詳細は当日発表）', '1st / 2nd place — awards announced on the day')}</li>
-              <li className="flex items-start gap-2.5"><span className="mt-1.5 size-1.5 rounded-full bg-orange-500 shrink-0" />{T('スポンサー特別賞', 'Sponsor special awards')}</li>
+            <h3 className="type-display text-canvas text-base mb-4">{T('賞', 'Prizes')}</h3>
+            <ul className="border-t border-carbon-hairline text-sm text-carbon-muted">
+              <li className="grid grid-cols-[auto_1fr] gap-4 py-2.5 border-b border-carbon-hairline"><span className="type-label text-accent">01</span>{T('1位 / 2位 — 表彰と賞（詳細は当日発表）', '1st / 2nd place — awards announced on the day')}</li>
+              <li className="grid grid-cols-[auto_1fr] gap-4 py-2.5 border-b border-carbon-hairline"><span className="type-label text-accent">02</span>{T('スポンサー特別賞', 'Sponsor special awards')}</li>
             </ul>
           </div>
         </div>
@@ -255,10 +247,10 @@ export function HumanoidHackHackathonPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {partnerTiers.map((tier) => (
             <div key={tier.label.en}>
-              <p className="text-[10px] tracking-widest uppercase text-zinc-400 mb-3">{ja ? tier.label.ja : tier.label.en}</p>
+              <p className="type-label text-muted mb-3">{ja ? tier.label.ja : tier.label.en}</p>
               <ul className="space-y-1.5">
                 {tier.names.map((n) => (
-                  <li key={n} className="text-sm font-medium text-zinc-900">{n}</li>
+                  <li key={n} className="text-sm font-medium text-ink">{n}</li>
                 ))}
               </ul>
             </div>
@@ -268,7 +260,7 @@ export function HumanoidHackHackathonPage() {
 
       {/* FleetSeek */}
       <Section dark title={T('Orboh FleetSeek について', 'About Orboh FleetSeek')}>
-        <div className="max-w-3xl space-y-4 text-zinc-300 text-sm md:text-base leading-relaxed">
+        <div className="max-w-3xl space-y-4 text-carbon-muted text-sm md:text-base leading-relaxed">
           <p>
             {T(
               'FleetSeek は Orboh が開発する、ロボットたちの「経験」を持ち寄って蓄積・共有するネットワークです。',
@@ -355,29 +347,27 @@ export function HumanoidHackHackathonPage() {
       </Section>
 
       {/* Discord + wifi footer strip */}
-      <section className="px-8 md:px-16 lg:px-24 py-16 bg-zinc-950">
-        <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-8">
-          <div className="rounded-lg border border-zinc-800 p-6">
-            <p className="text-[10px] tracking-widest uppercase text-zinc-500 mb-2">Discord</p>
-            <p className="text-sm text-zinc-300 mb-4">
+      <section className={`${sectionPad} py-20 md:py-24 bg-carbon text-canvas`}>
+        <div className={`${sectionInner} grid md:grid-cols-2 gap-8`}>
+          <div className="border-t border-carbon-hairline pt-6">
+            <p className="type-label text-carbon-muted mb-2">Discord</p>
+            <p className="text-sm text-carbon-muted mb-4">
               {T('質問・チームアップ・運営への連絡はすべて公式 Discord で。', 'Questions, team-up, and staff contact all happen on the official Discord.')}
             </p>
-            <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-orange-400 hover:text-orange-300 break-all">
+            <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-accent hover:text-canvas transition-colors duration-150 break-all">
               {DISCORD_URL}
             </a>
           </div>
-          <div className="rounded-lg border border-zinc-800 p-6">
-            <p className="text-[10px] tracking-widest uppercase text-zinc-500 mb-2">Wi-Fi</p>
-            <p className="text-sm text-zinc-300">
+          <div className="border-t border-carbon-hairline pt-6">
+            <p className="type-label text-carbon-muted mb-2">Wi-Fi</p>
+            <p className="text-sm text-carbon-muted">
               {T('会場 Wi-Fi の SSID・パスワードは当日、各テーブルの案内用紙でご案内します。', 'Venue Wi-Fi SSID and password are provided on the day via cards at each table.')}
             </p>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto w-full mt-12 text-center">
-          <Link to={l('/humanoidhack')} className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 text-xs tracking-widest uppercase transition-colors">
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
+        <div className={`${sectionInner} mt-12`}>
+          <Link to={l('/humanoidhack')} className="type-label inline-flex items-center gap-2 text-carbon-muted hover:text-canvas transition-colors duration-150">
+            <ArrowRight className="w-3.5 h-3.5 rotate-180" />
             {T('Humanoid Hack Tokyo に戻る', 'Back to Humanoid Hack Tokyo')}
           </Link>
         </div>
@@ -400,14 +390,15 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <section className={`px-8 md:px-16 lg:px-24 py-20 ${dark ? 'bg-zinc-900' : 'bg-white'}`}>
-      <div className="max-w-7xl mx-auto w-full">
-        {label && (
-          <p className={`text-xs tracking-widest uppercase mb-3 ${dark ? 'text-orange-400' : 'text-orange-600'}`}>{label}</p>
+    <section className={`${sectionPad} py-20 md:py-24 ${dark ? 'bg-carbon text-canvas' : 'bg-surface'}`}>
+      <div className={sectionInner}>
+        {label ? (
+          <SectionHeading label={label} title={title} tone={dark ? 'dark' : 'light'} className="mb-8" />
+        ) : (
+          <div className={`border-t pt-6 mb-8 ${dark ? 'border-carbon-hairline' : 'border-hairline'}`}>
+            <h2 className={`type-display text-[1.95rem] sm:text-[2.4rem] lg:text-[2.9rem] ${dark ? 'text-canvas' : 'text-ink'}`}>{title}</h2>
+          </div>
         )}
-        <h2 className={`font-mono text-2xl md:text-3xl font-normal mb-8 ${dark ? 'text-zinc-50' : 'text-zinc-900'}`} style={{ letterSpacing: '-0.01em' }}>
-          {title}
-        </h2>
         {children}
       </div>
     </section>
@@ -416,16 +407,16 @@ function Section({
 
 function ScheduleTable({ heading, rows, ja }: { heading: string; rows: Row[]; ja: boolean }) {
   return (
-    <div className="rounded-lg border border-zinc-700 overflow-hidden">
-      <div className="bg-zinc-800 px-4 py-3">
-        <p className="font-mono text-sm text-zinc-100">{heading}</p>
+    <div className="border border-carbon-hairline overflow-x-auto">
+      <div className="border-b border-carbon-hairline px-4 py-3">
+        <p className="type-display text-sm text-canvas">{heading}</p>
       </div>
       <table className="w-full text-sm">
         <tbody>
           {rows.map((r) => (
-            <tr key={r.time + r.cols[0]} className="border-t border-zinc-800 align-top">
-              <td className="px-4 py-2.5 font-mono text-orange-400 whitespace-nowrap w-28">{r.time}</td>
-              <td className="px-4 py-2.5 text-zinc-200">{ja ? r.cols[0] : r.cols[1]}</td>
+            <tr key={r.time + r.cols[0]} className="border-t border-carbon-hairline align-top">
+              <td className="px-4 py-2.5 type-label text-accent whitespace-nowrap w-28">{r.time}</td>
+              <td className="px-4 py-2.5 text-carbon-muted">{ja ? r.cols[0] : r.cols[1]}</td>
             </tr>
           ))}
         </tbody>
@@ -437,12 +428,11 @@ function ScheduleTable({ heading, rows, ja }: { heading: string; rows: Row[]; ja
 function NoticeGroup({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <h3 className="text-zinc-900 text-sm font-semibold tracking-wider uppercase mb-4">{title}</h3>
-      <ul className="space-y-2.5">
-        {items.map((it) => (
-          <li key={it} className="flex items-start gap-2.5 text-sm text-zinc-700">
-            <span className="mt-1.5 size-1.5 rounded-full bg-orange-500 shrink-0" />
-            {it}
+      <h3 className="type-display text-ink text-base mb-4">{title}</h3>
+      <ul className="border-t border-hairline">
+        {items.map((it, i) => (
+          <li key={it} className="grid grid-cols-[auto_1fr] gap-4 py-2.5 border-b border-hairline text-sm text-muted">
+            <span className="type-label text-accent">{String(i + 1).padStart(2, '0')}</span>{it}
           </li>
         ))}
       </ul>

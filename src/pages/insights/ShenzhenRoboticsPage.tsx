@@ -56,7 +56,7 @@ export function ShenzhenRoboticsPage() {
             href={NOTE_REPORT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-orange-600 underline underline-offset-4 hover:text-orange-700"
+            className="text-accent underline underline-offset-4 hover:text-ink transition-colors duration-150"
           >
             上田による視察レポート
           </a>
