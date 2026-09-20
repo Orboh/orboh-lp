@@ -22,8 +22,8 @@ export function HomePage() {
   return (
     <Layout>
       <HeroSection />
-      <WhyFDESection />
       <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
+      <WhyFDESection />
       <HowWeWorkSection />
       <WhatWeCanDoSection />
       <RaaSSection />
