@@ -9,6 +9,7 @@ export type { CaseStudyCardProps } from './CaseStudyCard';
 export { HumanoidHackPromoSection } from './HumanoidHackPromo';
 export { DemoVideoSection } from './DemoVideo';
 export { NotesSection } from './Notes';
+export { NewsSection } from './News';
 export { WhitepaperSection } from './Whitepaper';
 export { TeamSection } from './Team';
 export { CTASection } from './CTA';

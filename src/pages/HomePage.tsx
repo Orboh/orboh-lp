@@ -6,6 +6,7 @@ import { RaaSSection } from '@/components/RaaS';
 import { HumanoidHackPromoSection } from '@/components/HumanoidHackPromo';
 import { DemoVideoSection } from '@/components/DemoVideo';
 import { NotesSection } from '@/components/Notes';
+import { NewsSection } from '@/components/News';
 import { TeamSection } from '@/components/Team';
 import { CTASection } from '@/components/CTA';
 import { Footer } from '@/components/Footer/Footer';
@@ -28,6 +29,7 @@ export function HomePage() {
       <WhatWeCanDoSection />
       <RaaSSection />
       <NotesSection />
+      <NewsSection />
       <HumanoidHackPromoSection />
       <TeamSection />
       <CTASection />

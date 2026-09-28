@@ -383,6 +383,11 @@ export const translations = {
         role: 'CTO, Orboh, Inc.',
       },
     },
+    news: {
+      eyebrow: 'NEWS',
+      title: 'News',
+      visit: 'Event site',
+    },
     humanoidHackPromo: {
       eyebrow: 'COMMUNITY — HUMANOID HACKATHON',
       title: 'Humanoid Hack',
@@ -846,6 +851,11 @@ export const translations = {
         name: '上田 康太',
         role: 'CTO / Orboh, Inc.',
       },
+    },
+    news: {
+      eyebrow: 'NEWS — お知らせ',
+      title: 'ニュース',
+      visit: 'イベントサイト',
     },
     humanoidHackPromo: {
       eyebrow: 'コミュニティ — ヒューマノイドハッカソン',
