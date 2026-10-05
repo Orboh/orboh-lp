@@ -25,9 +25,9 @@ export const NEWS_ITEMS: readonly NewsItem[] = [
       en: 'Our CTO Kota Ueda served as a judge at JunctionX Kyutech 2026',
     },
     body: {
-      ja: '国際的なハッカソンブランド JunctionX の九州工業大学版として、2026年9月25日から27日まで九工大戸畑キャンパスで開催された JunctionX Kyutech 2026 に、CTO 上田康太が審査員として参加しました。',
-      en: 'JunctionX is an international hackathon brand. Its Kyushu Institute of Technology edition ran September 25–27, 2026 on the Tobata campus, and Kota Ueda, CTO of Orboh, sat on the judging panel.',
+      ja: 'フィンランド発祥の国際ハッカソン JUNCTION の九州工業大学版として、2026年9月25日から27日まで九工大戸畑キャンパスで開催された JunctionX Kyutech 2026 に、CTO 上田康太が審査員として参加しました。日本・中国・韓国・マレーシア・インドなどから47人が参加して13チームを編成し、「Hack the Physical World」トラックではヒューマノイドロボット Unitree G1 を使って農作業の支援に取り組みました。',
+      en: 'JUNCTION is an international hackathon that started in Finland. Its Kyushu Institute of Technology edition ran September 25–27, 2026 on the Tobata campus, and Kota Ueda, CTO of Orboh, sat on the judging panel. 47 participants from Japan, China, Korea, Malaysia, India and elsewhere formed 13 teams, and the "Hack the Physical World" track had them work on agricultural tasks with a Unitree G1 humanoid.',
     },
-    url: 'https://kyutech.hackjunction.com/',
+    url: 'https://www.kyutech.ac.jp/whats-new/topics/entry-12396.html',
   },
 ];
