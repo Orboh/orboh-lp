@@ -56,6 +56,11 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       description:
         'Orboh is not listing open roles yet. Hiring updates are announced first in our Discord community — join to hear about positions as they open.',
     },
+    company: {
+      title: 'Company — Orboh, Inc.',
+      description:
+        'Company profile of Orboh, Inc.: founded May 2026, headquartered in Kitakyushu, Fukuoka, with a Kitakyushu office at Mirai Terrace, the Kyushu Institute of Technology incubation facility.',
+    },
     agri: {
       title: 'Humanoid Robots for Agriculture — Autonomous Harvesting | Orboh',
       description:
@@ -104,6 +109,11 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       title: '採用情報 | Orboh（オーボー）',
       description:
         'Orbohの採用情報。現在このページに募集要項は掲載していません。募集開始のお知らせはDiscordコミュニティで最初に配信します。',
+    },
+    company: {
+      title: '会社概要 | 株式会社Orboh（オーボー）',
+      description:
+        '株式会社Orbohの会社概要。2026年5月設立、本店は福岡県北九州市戸畑区。北九州オフィスは九州工業大学のインキュベーション施設「未来テラス」にあります。',
     },
     agri: {
       title: '農業ヒューマノイド — 収穫の自動化と自律収穫の実装 | Orboh（オーボー）',

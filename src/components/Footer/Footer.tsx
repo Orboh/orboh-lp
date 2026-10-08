@@ -103,16 +103,14 @@ export function Footer() {
                     Team
                   </a>
                 </li>
-                {t.columns.company.links.map((label) => (
-                  <li key={label}>
-                    <button
-                      type="button"
-                      className="text-carbon-muted hover:text-canvas transition-colors"
-                    >
-                      {label}
-                    </button>
-                  </li>
-                ))}
+                <li>
+                  <Link
+                    to={l('/company')}
+                    className="text-carbon-muted hover:text-canvas transition-colors"
+                  >
+                    {t.columns.company.about}
+                  </Link>
+                </li>
                 <li>
                   <a
                     href={CONTACT_FORM_URL}
