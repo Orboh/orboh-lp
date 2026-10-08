@@ -17,16 +17,16 @@ export type NewsItem = {
 /** Hand-curated, newest first. Static so the prerenderer bakes it into the HTML. */
 export const NEWS_ITEMS: readonly NewsItem[] = [
   {
-    key: 'kyutech-office-2026',
+    key: 'kitakyushu-office-2026',
     date: '2026-10-08',
     tag: { ja: 'お知らせ', en: 'Company' },
     title: {
-      ja: '九州工業大学 戸畑キャンパスに開発拠点を開設しました',
-      en: 'We have opened a development office on the Kyushu Institute of Technology Tobata campus',
+      ja: '北九州オフィスを開設しました',
+      en: 'We have opened our Kitakyushu office',
     },
     body: {
-      ja: '九州工業大学のインキュベーション施設「未来テラス」（福岡県北九州市戸畑区）に入居し、開発拠点を開設しました。創業メンバー3人の出身校でもある九工大のそばで、ヒューマノイドロボットのハードウェア開発と現場実装を進めます。',
-      en: 'Orboh has moved into Mirai Terrace, the incubation facility of Kyushu Institute of Technology in Tobata, Kitakyushu, Fukuoka. All three founders are Kyutech graduates, and the new office is where we will build humanoid robot hardware and prepare it for deployment in the field.',
+      ja: '福岡県北九州市戸畑区、九州工業大学のインキュベーション施設「未来テラス」に北九州オフィスを開設しました。創業メンバー3人の出身校でもある九工大のそばで、ヒューマノイドロボットのハードウェア開発と現場実装を進めます。',
+      en: 'Orboh has opened its Kitakyushu office at Mirai Terrace, the incubation facility of Kyushu Institute of Technology in Tobata, Kitakyushu, Fukuoka. All three founders are Kyutech graduates, and the new office is where we will build humanoid robot hardware and prepare it for deployment in the field.',
     },
   },
   {
