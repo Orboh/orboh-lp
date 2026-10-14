@@ -12,6 +12,8 @@ export type PageMeta = {
   description: string;
   /** Absolute path under the site root, e.g. '/og-image-teleop.webp' */
   ogImage?: string;
+  /** 'summary' shows the image as a small square thumbnail, e.g. a logo; defaults to 'summary_large_image' */
+  twitterCard?: 'summary' | 'summary_large_image';
   /** Keep the page reachable but out of the index — used for pages with no content yet */
   noindex?: boolean;
   /** Emitted as an Article JSON-LD block instead of the site-wide Organization one */
@@ -52,9 +54,10 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         'Schedule, rules, hardware, judging criteria and sponsors for Humanoid Hack Tokyo. Everything participants need before the event.',
     },
     hiring: {
-      title: 'Hiring — Open roles at Orboh',
-      description:
-        'Open roles at Orboh: Hardware Engineer (System Integration) and Field Deployment Engineer for legged robots on industrial waste sites. Full-time, Kitakyushu and Tokyo.',
+      title: 'All open roles at Orboh, Inc.',
+      description: 'All open roles at Orboh, Inc.',
+      ogImage: '/og-image-hiring.png',
+      twitterCard: 'summary',
     },
     company: {
       title: 'Company — Orboh, Inc.',
@@ -106,9 +109,10 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         'Humanoid Hack Tokyoのスケジュール・ルール・使用機材・審査基準・協賛企業。参加前に確認しておく情報をまとめています。',
     },
     hiring: {
-      title: '採用情報 | Orboh（オーボー）',
-      description:
-        'Orbohの採用情報。産業廃棄物用の歩行ロボットのハードウェア開発エンジニア（システム統合）と現場実装エンジニアを募集中。正社員・北九州／東京。',
+      title: '株式会社Orboh の全ての求人一覧',
+      description: '株式会社Orboh の全ての求人一覧です。',
+      ogImage: '/og-image-hiring.png',
+      twitterCard: 'summary',
     },
     company: {
       title: '会社概要 | 株式会社Orboh（オーボー）',

@@ -45,6 +45,7 @@ export function useSeo(path: string, options: { scrollToTop?: boolean } = {}) {
     setMeta('property', 'og:description', meta.description);
     setMeta('property', 'og:url', url);
     setMeta('property', 'og:image', image);
+    setMeta('name', 'twitter:card', meta.twitterCard ?? 'summary_large_image');
     setMeta('name', 'twitter:title', meta.title);
     setMeta('name', 'twitter:description', meta.description);
     setMeta('name', 'twitter:url', url);
