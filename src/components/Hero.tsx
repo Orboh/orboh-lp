@@ -44,7 +44,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-carbon/72" />
 
       <div className={`relative z-10 ${sectionInner}`}>
-        <div className="max-w-3xl">
+        <div className="max-w-5xl">
           <div className="border-t border-canvas/25 pt-3.5">
             <p className="type-label text-carbon-muted">{t.eyebrow}</p>
           </div>

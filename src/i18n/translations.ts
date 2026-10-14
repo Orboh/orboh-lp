@@ -9,7 +9,7 @@ export const translations = {
   en: {
     hero: {
       eyebrow: 'ROBOTS FOR HEAVY WORK',
-      title: 'Heavy, hard work.\nLet robots\ntake it on.',
+      title: 'Leave the heavy work to robots.',
       subtitle:
         'Orboh builds robots that take on the heaviest work on the site. Our focus today is sorting industrial waste. We have also put robots to work in construction and agriculture — our engineers go on-site and implement them for the job.',
       primaryCta: 'Talk to us about your site',
@@ -474,7 +474,7 @@ export const translations = {
   ja: {
     hero: {
       eyebrow: 'ROBOTS FOR HEAVY WORK',
-      title: '重く、きつい仕事を、\nロボットが\n引き受ける。',
+      title: '重労働は、ロボットに任せる。',
       subtitle:
         'Orbohは、労働負荷の高い現場の仕事をロボットで助ける会社です。いま最も力を入れているのは、産業廃棄物の選別です。建設や農業の現場でも、エンジニアが現場に入り込んでロボットを実装してきました。',
       primaryCta: '現場の作業を相談する',
