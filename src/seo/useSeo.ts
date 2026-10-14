@@ -45,15 +45,11 @@ export function useSeo(path: string, options: { scrollToTop?: boolean } = {}) {
     setMeta('property', 'og:description', meta.description);
     setMeta('property', 'og:url', url);
     setMeta('property', 'og:image', image);
-    if (meta.ogOnly) {
-      document.head.querySelectorAll('meta[name^="twitter:"]').forEach((el) => el.remove());
-    } else {
-      setMeta('name', 'twitter:card', 'summary_large_image');
-      setMeta('name', 'twitter:title', meta.title);
-      setMeta('name', 'twitter:description', meta.description);
-      setMeta('name', 'twitter:url', url);
-      setMeta('name', 'twitter:image', image);
-    }
+    setMeta('name', 'twitter:card', meta.twitterCard ?? 'summary_large_image');
+    setMeta('name', 'twitter:title', meta.title);
+    setMeta('name', 'twitter:description', meta.description);
+    setMeta('name', 'twitter:url', url);
+    setMeta('name', 'twitter:image', image);
 
     if (scrollToTop) window.scrollTo(0, 0);
   }, [path, locale, scrollToTop]);
