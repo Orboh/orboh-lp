@@ -129,7 +129,7 @@ export const translations = {
     },
     raas: {
       eyebrow: 'COMMERCIAL MODEL — ROBOT-AS-A-SERVICE',
-      title: 'Deploy robots. Pay for labor hours. Nothing else.',
+      title: 'You do not buy the robot. You pay for the hours it works.',
       subtitle: 'No hardware purchase. No maintenance overhead. No facility modification. Orboh robots operate in the same human-designed environments your workers already use — scaffolding, stairs, and passageways.',
       cards: [
         { icon: 'mdi:clock-outline', title: 'No CapEx', description: 'Pay per hour or per month. Predictable costs, zero upfront investment.' },
@@ -594,7 +594,7 @@ export const translations = {
     },
     raas: {
       eyebrow: 'COMMERCIAL MODEL — ロボット・アズ・ア・サービス',
-      title: 'ロボットを導入する。労働時間分だけ払う。それだけ。',
+      title: 'ロボットは購入せず、働いた時間の分だけお支払いいただきます。',
       subtitle: 'ハードウェア購入不要。メンテナンス不要。設備改修不要。Orbohのロボットは、人間向けに設計された既存環境のまま稼働します。',
       cards: [
         { icon: 'mdi:clock-outline', title: '初期費用ゼロ', description: '時間単位または月単位の料金制。予測可能なコスト。' },
