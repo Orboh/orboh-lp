@@ -54,7 +54,7 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
     hiring: {
       title: 'Hiring — Open roles at Orboh',
       description:
-        'Orboh is not listing open roles yet. Hiring updates are announced first in our Discord community — join to hear about positions as they open.',
+        'Open roles at Orboh: Hardware Engineer (System Integration) and Field Deployment Engineer for legged robots on industrial waste sites. Full-time, Kitakyushu and Tokyo.',
     },
     company: {
       title: 'Company — Orboh, Inc.',
@@ -108,7 +108,7 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
     hiring: {
       title: '採用情報 | Orboh（オーボー）',
       description:
-        'Orbohの採用情報。現在このページに募集要項は掲載していません。募集開始のお知らせはDiscordコミュニティで最初に配信します。',
+        'Orbohの採用情報。産業廃棄物用の歩行ロボットのハードウェア開発エンジニア（システム統合）と現場実装エンジニアを募集中。正社員・北九州／東京。',
     },
     company: {
       title: '会社概要 | 株式会社Orboh（オーボー）',
