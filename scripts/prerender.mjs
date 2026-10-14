@@ -60,11 +60,15 @@ function buildHead(target) {
     `    <meta property="og:image" content="${attr(image)}" />`,
     `    <meta property="og:locale" content="${target.locale === 'ja' ? 'ja_JP' : 'en_US'}" />`,
     `    <meta property="og:site_name" content="${target.locale === 'ja' ? '株式会社Orboh' : 'Orboh, Inc.'}" />`,
-    `    <meta name="twitter:card" content="${attr(meta.twitterCard ?? 'summary_large_image')}" />`,
-    `    <meta name="twitter:url" content="${attr(canonical)}" />`,
-    `    <meta name="twitter:title" content="${attr(meta.title)}" />`,
-    `    <meta name="twitter:description" content="${attr(meta.description)}" />`,
-    `    <meta name="twitter:image" content="${attr(image)}" />`,
+    ...(meta.ogOnly
+      ? []
+      : [
+          `    <meta name="twitter:card" content="summary_large_image" />`,
+          `    <meta name="twitter:url" content="${attr(canonical)}" />`,
+          `    <meta name="twitter:title" content="${attr(meta.title)}" />`,
+          `    <meta name="twitter:description" content="${attr(meta.description)}" />`,
+          `    <meta name="twitter:image" content="${attr(image)}" />`,
+        ]),
     jsonLd(target),
     '    <!-- SEO:end -->',
   ]

@@ -12,8 +12,12 @@ export type PageMeta = {
   description: string;
   /** Absolute path under the site root, e.g. '/og-image-teleop.webp' */
   ogImage?: string;
-  /** 'summary' shows the image as a small square thumbnail, e.g. a logo; defaults to 'summary_large_image' */
-  twitterCard?: 'summary' | 'summary_large_image';
+  /**
+   * Leave out the twitter:* tags so Slack and X build the preview from Open
+   * Graph alone, matching the HERP job board's tags. With twitter:card=summary
+   * Slack showed /hiring as a text-only line with no image.
+   */
+  ogOnly?: boolean;
   /** Keep the page reachable but out of the index — used for pages with no content yet */
   noindex?: boolean;
   /** Emitted as an Article JSON-LD block instead of the site-wide Organization one */
@@ -57,7 +61,7 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       title: 'All open roles at Orboh, Inc.',
       description: 'All open roles at Orboh, Inc.',
       ogImage: '/og-image-hiring.png',
-      twitterCard: 'summary',
+      ogOnly: true,
     },
     company: {
       title: 'Company — Orboh, Inc.',
@@ -112,7 +116,7 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       title: '株式会社Orboh の全ての求人一覧',
       description: '株式会社Orboh の全ての求人一覧です。',
       ogImage: '/og-image-hiring.png',
-      twitterCard: 'summary',
+      ogOnly: true,
     },
     company: {
       title: '会社概要 | 株式会社Orboh（オーボー）',
