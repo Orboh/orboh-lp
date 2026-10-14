@@ -1,7 +1,8 @@
 export { Layout } from './Layout';
 export { Header } from './Header/Header';
 export { HeroSection } from './Hero';
-export { WhyFDESection, HowWeWorkSection } from './FDE';
+export { HowWeWorkSection } from './FDE';
+export { LaborBurdenSection, WasteFocusSection } from './Industry';
 export { RaaSSection } from './RaaS';
 export { WhatWeCanDoSection } from './CaseStudy';
 export { CaseStudyCard } from './CaseStudyCard';

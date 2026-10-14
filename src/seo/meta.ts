@@ -26,16 +26,16 @@ export type PageMeta = {
 };
 
 const EN_HOME_DESCRIPTION =
-  'Orboh is the humanoid FDE (Forward Deployed Engineer). Our engineers embed at construction and manufacturing sites, narrow the task, fix the workflow, and implement humanoid robots — as a service, with no CapEx.';
+  'Orboh builds robots that take on heavy, hard work. Our focus is sorting industrial waste; we have also put robots to work in construction and agriculture. Our engineers go on-site and implement robots for the job, as a service.';
 
 const JA_HOME_DESCRIPTION =
-  'Orbohはヒューマノイド版FDE（Forward Deployed Engineer）の会社です。エンジニアが建設・製造の現場に入り込み、タスクを絞り、ワークフローを固定してヒューマノイドを実装します。初期投資なしのサービス提供です。';
+  'Orbohは、労働負荷の高い現場の仕事をロボットで助ける会社です。いま最も力を入れているのは産業廃棄物の選別。建設・農業の現場でも、エンジニアが現場に入り込んでロボットを実装しています。';
 
 /** Route path (locale-free, '' = home) -> meta, per locale. */
 export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
   en: {
     '': {
-      title: 'Orboh – Forward Deployed Engineers for Humanoid Robots',
+      title: 'Orboh – Robots for Heavy Work, Starting with Industrial Waste',
       description: EN_HOME_DESCRIPTION,
     },
     fleetseek: {
@@ -90,7 +90,7 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
   },
   ja: {
     '': {
-      title: 'Orboh（オーボー）| ヒューマノイドを現場に実装するFDE',
+      title: 'Orboh（オーボー）| 重労働の現場をロボットで — 産業廃棄物の選別から',
       description: JA_HOME_DESCRIPTION,
     },
     fleetseek: {

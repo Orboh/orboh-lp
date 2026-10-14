@@ -8,37 +8,75 @@ export type Locale = 'en' | 'ja';
 export const translations = {
   en: {
     hero: {
-      eyebrow: 'THE HUMANOID FDE — FORWARD DEPLOYED ENGINEERS',
-      title: 'Engineers on-site.\nHumanoids\nat work.',
+      eyebrow: 'ROBOTS FOR HEAVY WORK',
+      title: 'Heavy, hard work.\nLet robots\ntake it on.',
       subtitle:
-        'Orboh is the humanoid FDE (Forward Deployed Engineer). Our engineers embed at your site, narrow the task, fix the workflow, and implement a humanoid for that specific job. Every deployment becomes data that makes the next one faster and cheaper.',
-      primaryCta: 'Talk to our engineers',
+        'Orboh builds robots that take on the heaviest work on the site. Our focus today is sorting industrial waste. We have also put robots to work in construction and agriculture — our engineers go on-site and implement them for the job.',
+      primaryCta: 'Talk to us about your site',
       scroll: 'Scroll',
       scrollAria: 'Scroll to next section',
     },
-    whyFde: {
-      eyebrow: 'WHY FDE',
-      title: 'Hardware, models, and OS\nare not enough.',
-      body1:
-        'Humanoid hardware, AI models, and robot OS are all reaching the market. But combining them does not make a robot work on a real site. Every site has its own layout, its own workflow, its own edge cases — each robot has to be finished on-site, one deployment at a time.',
-      body2:
-        'Autonomous driving reached the real world first through Waymo — by narrowing the environment and fixing the workflow. We apply the same playbook to humanoids: instead of waiting for one giant model to solve everything, our engineers narrow the task, fix the workflow, and implement.',
-      definition:
-        'A humanoid is a machine that can do the same general-purpose work a human can, regardless of whether it walks on two legs.',
-      diagram: {
-        customer: 'Customer site',
-        customerSub: 'Factories and construction sites — the robot has to work reliably. Buying one is not enough.',
-        gapLabel: 'THE IMPLEMENTATION GAP',
-        gapNote: 'Site-specific workflow design, implementation, and operation',
-        bridgeLabel: 'Orboh',
-        bridgeSub: 'FDE — we bridge this gap',
-        stackLabel: 'Available on the market',
-        layers: [
-          { name: 'OS', note: 'Robot software stacks' },
-          { name: 'AI models (VLA)', note: 'General-purpose motor intelligence' },
-          { name: 'Hardware', note: 'Commercial humanoid robots' },
-        ],
+    laborBurden: {
+      eyebrow: 'THE PROBLEM — HEAVY WORK',
+      title: 'The sites short of people\nare the ones with\nthe heaviest work.',
+      lead:
+        'Lifting heavy loads, working in dust, working through the summer heat. Fewer people want this work every year, but the work itself does not shrink.',
+      burdens: [
+        { title: 'Heavy', description: 'Lifting and carrying by hand, all day, on uneven ground.' },
+        { title: 'Dirty and hot', description: 'Dust, odour and summer heat, often outdoors or under a roof with no air conditioning.' },
+        { title: 'Dangerous', description: 'Sharp objects, hazardous materials mixed in, and heavy machinery working nearby.' },
+        { title: 'Short of people', description: 'Hard to hire and hard to keep, while the volume of work keeps coming.' },
+      ],
+      stat: {
+        label: 'LOST-TIME INJURY FREQUENCY RATE, 2025',
+        waste: '7.65',
+        wasteLabel: 'Waste processing',
+        all: '2.01',
+        allLabel: 'All industries',
+        note: 'Workers in waste processing are injured at nearly four times the all-industry rate. 1,470 people in the industry were injured badly enough to miss four or more days of work in 2025.',
+        source: 'Source: Japan Industrial Waste Management Association (Zensanpairen), compiled from the MHLW Survey on Industrial Accidents. Frequency rate = injuries per one million working hours, establishments with 100+ employees.',
       },
+    },
+    wasteFocus: {
+      eyebrow: 'OUR FOCUS — INDUSTRIAL WASTE',
+      title: 'Sorting industrial waste,\nwith robots.',
+      lead:
+        'At construction-waste processing plants, people still pick through piles spread on the floor, pulling out each type of material by hand. We keep the existing equipment as it is, and have the robot take over the picking and sorting that people do today.',
+      taskHeader: 'THE WORK TODAY',
+      robotHeader: 'WHAT THE ROBOT TAKES ON',
+      tasks: [
+        {
+          task: 'Floor sorting',
+          today: 'Picking items one by one out of a mixed pile on the floor.',
+          robot: 'Grasps the target items out of an overlapping pile, one at a time, and puts each type in its place.',
+        },
+        {
+          task: 'Pulling out long items',
+          today: 'Dragging pipes and other long pieces out of the pile.',
+          robot: 'Pulls long items such as PVC pipe out of the pile and sets them aside.',
+        },
+        {
+          task: 'Site-specific targets',
+          today: 'Each plant sorts a different set of materials.',
+          robot: 'Learns the materials each site sorts from data collected on that site, instead of a fixed rule set.',
+        },
+      ],
+      statusLabel: 'WHERE WE ARE',
+      status: [
+        {
+          when: 'AUG 2026',
+          what: 'At the sorting floor of a waste recycling facility, we demonstrated picking items from waste spread on the floor and pulling out long items such as PVC pipe, by teleoperation.',
+        },
+        {
+          when: 'NOW',
+          what: 'Building an AI model that grasps items one by one out of a pile of waste, and testing it in a mock-up of the sorting floor.',
+        },
+        {
+          when: 'NEXT',
+          what: 'Designing our own legged robot for waste sites — off-the-shelf humanoids hit their limits on how much they can lift and where the cameras sit.',
+        },
+      ],
+      hiringLink: 'We are hiring engineers for this robot',
     },
     howWeWork: {
       eyebrow: 'HOW WE WORK — THE FDE MODEL',
@@ -70,8 +108,8 @@ export const translations = {
       ],
     },
     caseStudy: {
-      eyebrow: 'FIELD WORK — WHAT WE HAVE IMPLEMENTED',
-      title: 'What our engineers have done on-site.',
+      eyebrow: 'OTHER FIELDS — CONSTRUCTION AND AGRICULTURE',
+      title: 'Also at work in construction and agriculture.',
       demos: [
         {
           number: '01',
@@ -182,8 +220,8 @@ export const translations = {
       downloadButton: 'Download PDF',
     },
     cta: {
-      title: 'Ready to put a humanoid to work on your site?',
-      subtitle: 'We offer live demos for construction and manufacturing teams. Talk to us about on-site deployment and RaaS.',
+      title: 'Is there heavy work on your site a robot could take on?',
+      subtitle: 'Industrial waste, construction, agriculture — tell us about the work that is hardest to staff. Our engineers come to the site and work out which tasks a robot can take over.',
     },
     contact: {
       eyebrow: 'COMMUNITY & CONTACT',
@@ -477,37 +515,75 @@ export const translations = {
   },
   ja: {
     hero: {
-      eyebrow: 'THE HUMANOID FDE — FORWARD DEPLOYED ENGINEERS',
-      title: 'エンジニアが現場に入り、\nヒューマノイドを\n実装する。',
+      eyebrow: 'ROBOTS FOR HEAVY WORK',
+      title: '重く、きつい仕事を、\nロボットが\n引き受ける。',
       subtitle:
-        'Orbohはヒューマノイド版FDE（Forward Deployed Engineer）の会社です。エンジニアが現場に入り込み、タスクを絞り、ワークフローを固定してヒューマノイドを実装します。実装ごとに溜まるデータが、次の一台を速く・安くします。',
-      primaryCta: 'エンジニアに相談する',
+        'Orbohは、労働負荷の高い現場の仕事をロボットで助ける会社です。いま最も力を入れているのは、産業廃棄物の選別です。建設や農業の現場でも、エンジニアが現場に入り込んでロボットを実装してきました。',
+      primaryCta: '現場の作業を相談する',
       scroll: 'Scroll',
       scrollAria: '次のセクションへスクロール',
     },
-    whyFde: {
-      eyebrow: 'WHY FDE',
-      title: 'ハードもAIモデルもOSも、\n組み合わせるだけでは\n現場で動かない。',
-      body1:
-        'ヒューマノイドのハードウェア・AIモデル・ロボットOSは、市場に揃いつつあります。しかし、それらを組み合わせるだけでは、ロボットは現場で動きません。現場ごとにレイアウトも業務フローもエッジケースも異なり、1台ずつ現場で仕上げる必要があります。',
-      body2:
-        '自動運転をいち早く社会実装したのは、環境を絞り、ワークフローを固定したWaymoでした。私たちはこの戦略をヒューマノイドで再現します。巨大な単一モデルに任せるのではなく、エンジニアがタスクを絞り、ワークフローを固定して実装します。',
-      definition:
-        'ヒューマノイドとは、人と同じ汎用的な作業ができることであり、二足であるかどうかは問わない。',
-      diagram: {
-        customer: '顧客の現場',
-        customerSub: '工場・建築 — 「確実に動く状態」で使いたい。機体を買うだけでは動かない。',
-        gapLabel: '実装ギャップ',
-        gapNote: '現場ごとのワークフロー設計・実装・運用が必要',
-        bridgeLabel: 'Orboh',
-        bridgeSub: 'FDEがこのギャップを繋ぐ',
-        stackLabel: '市場に揃いつつあるもの',
-        layers: [
-          { name: 'OS', note: 'ロボットソフトウェア' },
-          { name: 'AIモデル（VLA）', note: '汎用の動作知能' },
-          { name: 'ハードウェア', note: '市販のヒューマノイド機体' },
-        ],
+    laborBurden: {
+      eyebrow: 'THE PROBLEM — HEAVY WORK',
+      title: '人が集まらない現場ほど、\n仕事が重い。',
+      lead:
+        '重い物を持つ、粉じんの中で働く、夏の暑さの中で働く。こうした仕事は、担い手が減っても量は減りません。',
+      burdens: [
+        { title: '重い', description: '足場の悪い場所で、一日中、手で持ち上げて運ぶ。' },
+        { title: '汚れる・暑い', description: '粉じんやにおい、夏の暑さ。屋外や空調のない屋根の下での作業が多い。' },
+        { title: '危ない', description: '鋭利な物や危険物の混入、すぐ横で動く重機。' },
+        { title: '人が来ない', description: '採用しても定着しにくい。それでも仕事は毎日入ってくる。' },
+      ],
+      stat: {
+        label: '労働災害の度数率（2025年）',
+        waste: '7.65',
+        wasteLabel: '廃棄物処理業',
+        all: '2.01',
+        allLabel: '全産業',
+        note: '廃棄物処理業の労働災害の起きやすさは、全産業の約4倍です。2025年に休業4日以上の労働災害にあった人は1,470人でした。',
+        source: '出典: 全国産業資源循環連合会（厚生労働省「労働災害動向調査」をもとに作成）。度数率は100万延べ実労働時間あたりの死傷者数、事業所規模100人以上。',
       },
+    },
+    wasteFocus: {
+      eyebrow: 'OUR FOCUS — INDUSTRIAL WASTE',
+      title: '産業廃棄物の選別を、\nロボットで。',
+      lead:
+        '建設廃棄物の中間処理では、床に広げた廃棄物の山から品目ごとに取り分ける作業を、今も人が手で行っています。既存の設備はそのままに、人が行っている取り出し・仕分けをロボットで担います。',
+      taskHeader: '今の作業',
+      robotHeader: 'ロボットが担うこと',
+      tasks: [
+        {
+          task: '土間選別',
+          today: '床に広げた混合廃棄物から、品目を1つずつ拾い出す。',
+          robot: '重なった廃棄物の山から、決まった品目を1つずつ掴み出し、品目ごとの置き場へ移す。',
+        },
+        {
+          task: '長尺物の引き出し',
+          today: '塩ビ管などの長い物を、山から引き抜く。',
+          robot: '塩ビ管などの長尺物を山から引き出し、脇へ取り分ける。',
+        },
+        {
+          task: '現場ごとの選別対象',
+          today: '工場ごとに、取り分ける品目が違う。',
+          robot: '固定のルールではなく、その現場で集めたデータで、その現場の品目を学習させる。',
+        },
+      ],
+      statusLabel: 'いまの段階',
+      status: [
+        {
+          when: '2026年8月',
+          what: '廃棄物リサイクル施設の選別場で、床に広げた廃棄物からの取り出しと、塩ビ管などの長尺物の引き出しを遠隔操作で実証しました。',
+        },
+        {
+          when: '現在',
+          what: '重なった廃棄物の山から1つずつ掴み出すAIモデルを作り、選別場を模した環境で検証しています。',
+        },
+        {
+          when: '次',
+          what: '産業廃棄物の現場に合わせた自社の歩行ロボットを開発します。市販の汎用ヒューマノイドでは、持てる重さやカメラの位置に限界がありました。',
+        },
+      ],
+      hiringLink: 'このロボットを作るエンジニアを募集しています',
     },
     howWeWork: {
       eyebrow: 'HOW WE WORK — THE FDE MODEL',
@@ -539,8 +615,8 @@ export const translations = {
       ],
     },
     caseStudy: {
-      eyebrow: 'FIELD WORK — WHAT WE HAVE IMPLEMENTED',
-      title: 'エンジニアが現場で実装してきたこと。',
+      eyebrow: 'OTHER FIELDS — CONSTRUCTION AND AGRICULTURE',
+      title: '建設・農業の現場でも。',
       demos: [
         {
           number: '01',
@@ -651,8 +727,8 @@ export const translations = {
       downloadButton: 'PDFをダウンロード',
     },
     cta: {
-      title: 'ヒューマノイドを、あなたの現場で働かせませんか？',
-      subtitle: '建設・製造チーム向けにライブデモを提供しています。現場導入とRaaSについてご相談ください。',
+      title: 'その重労働、ロボットに任せられるか一緒に確かめませんか。',
+      subtitle: '産業廃棄物・建設・農業など、人が集まらない重い作業についてご相談ください。エンジニアが現場を見て、ロボットで担える作業を切り出します。',
     },
     contact: {
       eyebrow: 'COMMUNITY & CONTACT',

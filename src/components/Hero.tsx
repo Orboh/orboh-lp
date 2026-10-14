@@ -1,6 +1,6 @@
 import { useLocale } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
-import { WHY_FDE_SECTION_ID } from './FDE';
+import { LABOR_BURDEN_SECTION_ID } from './Industry';
 import {
   ArrowRight,
   DiscordMark,
@@ -22,7 +22,7 @@ export function HeroSection() {
   const t = translations[locale].hero;
 
   const scrollToNextSection = () => {
-    const next = document.getElementById(WHY_FDE_SECTION_ID);
+    const next = document.getElementById(LABOR_BURDEN_SECTION_ID);
     next?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 

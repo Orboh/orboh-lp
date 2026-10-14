@@ -1,6 +1,7 @@
 import { Layout } from '@/components/Layout';
 import { HeroSection } from '@/components/Hero';
-import { WhyFDESection, HowWeWorkSection } from '@/components/FDE';
+import { HowWeWorkSection } from '@/components/FDE';
+import { LaborBurdenSection, WasteFocusSection } from '@/components/Industry';
 import { WhatWeCanDoSection } from '@/components/CaseStudy';
 import { RaaSSection } from '@/components/RaaS';
 import { HumanoidHackPromoSection } from '@/components/HumanoidHackPromo';
@@ -23,10 +24,11 @@ export function HomePage() {
   return (
     <Layout>
       <HeroSection />
-      <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
-      <WhyFDESection />
-      <HowWeWorkSection />
+      <LaborBurdenSection />
+      <WasteFocusSection />
       <WhatWeCanDoSection />
+      <HowWeWorkSection />
+      <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
       <RaaSSection />
       <NotesSection />
       <NewsSection />
