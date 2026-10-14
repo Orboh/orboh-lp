@@ -41,8 +41,8 @@ export function Header() {
   const navItems = [
     { to: '/agri', label: locale === 'ja' ? '農業' : 'Agriculture' },
     { to: '/humanoidhack', label: 'Humanoid Hack' },
-    { to: '/hiring', label: 'Hiring' },
-    { to: '/insights', label: 'Insights' },
+    { to: '/hiring', label: locale === 'ja' ? '採用' : 'Hiring' },
+    { to: '/insights', label: locale === 'ja' ? 'インサイト' : 'Insights' },
     { to: '/fleetseek', label: 'FleetSeek' },
   ];
 
@@ -104,7 +104,7 @@ export function Header() {
             href={DISCORD_URL}
             target="_blank"
             rel="noopener noreferrer"
-            title="Join our Discord"
+            title={locale === 'ja' ? 'Discord に参加' : 'Join our Discord'}
             className="hidden sm:inline-flex items-center gap-2 whitespace-nowrap px-3 py-2 text-muted hover:text-ink type-label transition-colors"
           >
             <DiscordMark className="size-3.5 shrink-0" />
@@ -118,7 +118,7 @@ export function Header() {
               className="flex items-center gap-1.5 whitespace-nowrap px-3 py-2 text-muted hover:text-ink type-label transition-colors"
               aria-expanded={open}
               aria-haspopup="listbox"
-              aria-label="Select language"
+              aria-label={locale === 'ja' ? '言語を選択' : 'Select language'}
             >
               <span>{langLabels[locale]}</span>
               <svg
@@ -165,7 +165,7 @@ export function Header() {
             className="hidden sm:inline-flex items-center gap-2 whitespace-nowrap px-3 py-2 border border-hairline text-ink hover:bg-ink hover:text-canvas hover:border-ink type-label transition-colors"
           >
             <XMark />
-            Sign in
+            {locale === 'ja' ? 'ログイン' : 'Sign in'}
           </a>
           <a
             href={CONTACT_FORM_URL}
@@ -229,7 +229,7 @@ export function Header() {
               className="sm:hidden flex items-center gap-2 py-4 text-ink hover:text-accent type-label transition-colors"
             >
               <XMark />
-              Sign in
+              {locale === 'ja' ? 'ログイン' : 'Sign in'}
             </a>
             <a
               href={CONTACT_FORM_URL}
