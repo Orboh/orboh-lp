@@ -24,11 +24,11 @@ export function HomePage() {
   return (
     <Layout>
       <HeroSection />
+      <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
       <LaborBurdenSection />
       <WasteFocusSection />
       <WhatWeCanDoSection />
       <HowWeWorkSection />
-      <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
       <RaaSSection />
       <NotesSection />
       <NewsSection />

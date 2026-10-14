@@ -17,6 +17,8 @@ const OKRA_CLIP_POSTER = '/okra-harvest-poster.jpg';
 const SEALING_ASPECT = 9 / 16;
 const OKRA_ASPECT = 16 / 9;
 
+export const DEMO_VIDEO_SECTION_ID = 'demo-video';
+
 interface DemoVideoSectionProps {
   videoUrl?: string;
   showPlaceholder?: boolean;
@@ -30,7 +32,7 @@ export function DemoVideoSection({
   const t = translations[locale].demoVideo;
 
   return (
-    <section className={`${sectionPad} py-20 md:py-24 bg-carbon border-b border-carbon-hairline`}>
+    <section id={DEMO_VIDEO_SECTION_ID} className={`${sectionPad} py-20 md:py-24 bg-carbon border-b border-carbon-hairline`}>
       <div className="w-full">
         {/* The heading stays on the page's 1200px grid like every other section;
             only the media below it breaks out to the full padded width. */}

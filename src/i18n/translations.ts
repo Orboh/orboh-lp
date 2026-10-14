@@ -19,63 +19,21 @@ export const translations = {
     laborBurden: {
       eyebrow: 'THE PROBLEM — HEAVY WORK',
       title: 'The sites short of people\nare the ones with\nthe heaviest work.',
-      lead:
-        'Lifting heavy loads, working in dust, working through the summer heat. Fewer people want this work every year, but the work itself does not shrink.',
-      burdens: [
-        { title: 'Heavy', description: 'Lifting and carrying by hand, all day, on uneven ground.' },
-        { title: 'Dirty and hot', description: 'Dust, odour and summer heat, often outdoors or under a roof with no air conditioning.' },
-        { title: 'Dangerous', description: 'Sharp objects, hazardous materials mixed in, and heavy machinery working nearby.' },
-        { title: 'Short of people', description: 'Hard to hire and hard to keep, while the volume of work keeps coming.' },
-      ],
+      lead: 'Fewer people want this work every year. The work itself does not shrink.',
       stat: {
-        label: 'LOST-TIME INJURY FREQUENCY RATE, 2025',
+        label: 'INJURY FREQUENCY RATE, 2025',
         waste: '7.65',
         wasteLabel: 'Waste processing',
         all: '2.01',
         allLabel: 'All industries',
-        note: 'Workers in waste processing are injured at nearly four times the all-industry rate. 1,470 people in the industry were injured badly enough to miss four or more days of work in 2025.',
-        source: 'Source: Japan Industrial Waste Management Association (Zensanpairen), compiled from the MHLW Survey on Industrial Accidents. Frequency rate = injuries per one million working hours, establishments with 100+ employees.',
+        source: 'Source: Japan Industrial Waste Management Association, from the MHLW Survey on Industrial Accidents (2025).',
       },
     },
     wasteFocus: {
       eyebrow: 'OUR FOCUS — INDUSTRIAL WASTE',
       title: 'Sorting industrial waste,\nwith robots.',
       lead:
-        'At construction-waste processing plants, people still pick through piles spread on the floor, pulling out each type of material by hand. We keep the existing equipment as it is, and have the robot take over the picking and sorting that people do today.',
-      taskHeader: 'THE WORK TODAY',
-      robotHeader: 'WHAT THE ROBOT TAKES ON',
-      tasks: [
-        {
-          task: 'Floor sorting',
-          today: 'Picking items one by one out of a mixed pile on the floor.',
-          robot: 'Grasps the target items out of an overlapping pile, one at a time, and puts each type in its place.',
-        },
-        {
-          task: 'Pulling out long items',
-          today: 'Dragging pipes and other long pieces out of the pile.',
-          robot: 'Pulls long items such as PVC pipe out of the pile and sets them aside.',
-        },
-        {
-          task: 'Site-specific targets',
-          today: 'Each plant sorts a different set of materials.',
-          robot: 'Learns the materials each site sorts from data collected on that site, instead of a fixed rule set.',
-        },
-      ],
-      statusLabel: 'WHERE WE ARE',
-      status: [
-        {
-          when: 'AUG 2026',
-          what: 'At the sorting floor of a waste recycling facility, we demonstrated picking items from waste spread on the floor and pulling out long items such as PVC pipe, by teleoperation.',
-        },
-        {
-          when: 'NOW',
-          what: 'Building an AI model that grasps items one by one out of a pile of waste, and testing it in a mock-up of the sorting floor.',
-        },
-        {
-          when: 'NEXT',
-          what: 'Designing our own legged robot for waste sites — off-the-shelf humanoids hit their limits on how much they can lift and where the cameras sit.',
-        },
-      ],
+        'Sorting industrial waste still relies heavily on human hands. We keep the existing equipment as it is, and have robots take on the picking and sorting people do today.',
       hiringLink: 'We are hiring engineers for this robot',
     },
     howWeWork: {
@@ -526,63 +484,21 @@ export const translations = {
     laborBurden: {
       eyebrow: 'THE PROBLEM — HEAVY WORK',
       title: '人が集まらない現場ほど、\n仕事が重い。',
-      lead:
-        '重い物を持つ、粉じんの中で働く、夏の暑さの中で働く。こうした仕事は、担い手が減っても量は減りません。',
-      burdens: [
-        { title: '重い', description: '足場の悪い場所で、一日中、手で持ち上げて運ぶ。' },
-        { title: '汚れる・暑い', description: '粉じんやにおい、夏の暑さ。屋外や空調のない屋根の下での作業が多い。' },
-        { title: '危ない', description: '鋭利な物や危険物の混入、すぐ横で動く重機。' },
-        { title: '人が来ない', description: '採用しても定着しにくい。それでも仕事は毎日入ってくる。' },
-      ],
+      lead: '担い手は年々減っています。それでも、仕事の量は減りません。',
       stat: {
         label: '労働災害の度数率（2025年）',
         waste: '7.65',
         wasteLabel: '廃棄物処理業',
         all: '2.01',
         allLabel: '全産業',
-        note: '廃棄物処理業の労働災害の起きやすさは、全産業の約4倍です。2025年に休業4日以上の労働災害にあった人は1,470人でした。',
-        source: '出典: 全国産業資源循環連合会（厚生労働省「労働災害動向調査」をもとに作成）。度数率は100万延べ実労働時間あたりの死傷者数、事業所規模100人以上。',
+        source: '出典: 全国産業資源循環連合会（2025年、厚生労働省「労働災害動向調査」より）',
       },
     },
     wasteFocus: {
       eyebrow: 'OUR FOCUS — INDUSTRIAL WASTE',
       title: '産業廃棄物の選別を、\nロボットで。',
       lead:
-        '建設廃棄物の中間処理では、床に広げた廃棄物の山から品目ごとに取り分ける作業を、今も人が手で行っています。既存の設備はそのままに、人が行っている取り出し・仕分けをロボットで担います。',
-      taskHeader: '今の作業',
-      robotHeader: 'ロボットが担うこと',
-      tasks: [
-        {
-          task: '土間選別',
-          today: '床に広げた混合廃棄物から、品目を1つずつ拾い出す。',
-          robot: '重なった廃棄物の山から、決まった品目を1つずつ掴み出し、品目ごとの置き場へ移す。',
-        },
-        {
-          task: '長尺物の引き出し',
-          today: '塩ビ管などの長い物を、山から引き抜く。',
-          robot: '塩ビ管などの長尺物を山から引き出し、脇へ取り分ける。',
-        },
-        {
-          task: '現場ごとの選別対象',
-          today: '工場ごとに、取り分ける品目が違う。',
-          robot: '固定のルールではなく、その現場で集めたデータで、その現場の品目を学習させる。',
-        },
-      ],
-      statusLabel: 'いまの段階',
-      status: [
-        {
-          when: '2026年8月',
-          what: '廃棄物リサイクル施設の選別場で、床に広げた廃棄物からの取り出しと、塩ビ管などの長尺物の引き出しを遠隔操作で実証しました。',
-        },
-        {
-          when: '現在',
-          what: '重なった廃棄物の山から1つずつ掴み出すAIモデルを作り、選別場を模した環境で検証しています。',
-        },
-        {
-          when: '次',
-          what: '産業廃棄物の現場に合わせた自社の歩行ロボットを開発します。市販の汎用ヒューマノイドでは、持てる重さやカメラの位置に限界がありました。',
-        },
-      ],
+        '産業廃棄物の選別は、今も多くを人の手に頼っています。既存の設備はそのままに、人が担っている取り出し・仕分けをロボットが引き受けます。',
       hiringLink: 'このロボットを作るエンジニアを募集しています',
     },
     howWeWork: {
