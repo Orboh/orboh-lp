@@ -29,13 +29,13 @@ export function HiringPage() {
           <div className="text-carbon-muted text-[19px] leading-[1.95] max-w-2xl space-y-6">
             <p>
               {ja
-                ? '産業廃棄物の現場で動く歩行ロボットを、一緒に作るエンジニアを募集しています。'
-                : 'We are hiring engineers to build legged robots that work on industrial waste sites.'}
+                ? '世の中の Physical AI ロボットの多くは、まだラボのデモに留まっています。私たちはクライアントの現場に朝から晩まで入り、動かない理由が AI モデルにあるのかハードウェアにあるのかを突き止めながら、現場で役に立つロボットを作ってきました。'
+                : 'Most physical AI robots are still lab demos. We have spent whole days on client sites, working out whether a failure comes from the AI model or the hardware, and building robots that are actually useful there.'}
             </p>
             <p>
               {ja
-                ? '世の中の Physical AI ロボットの多くは、まだラボのデモに留まっています。私たちはクライアントの現場に朝から晩まで入り、動かない理由が AI モデルにあるのかハードウェアにあるのかを突き止めながら、現場で役に立つロボットを作ってきました。'
-                : 'Most physical AI robots are still lab demos. We have spent whole days on client sites, working out whether a failure comes from the AI model or the hardware, and building robots that are actually useful there.'}
+                ? '産業廃棄物の現場で動く歩行ロボットを、一緒に作るエンジニアを募集しています。'
+                : 'We are hiring engineers to build legged robots that work on industrial waste sites.'}
             </p>
           </div>
         </div>
