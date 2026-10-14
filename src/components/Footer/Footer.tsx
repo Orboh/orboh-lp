@@ -92,7 +92,7 @@ export function Footer() {
                     to={l('/insights')}
                     className="text-carbon-muted hover:text-canvas transition-colors"
                   >
-                    Insights
+                    {t.columns.company.insights}
                   </Link>
                 </li>
                 <li>
@@ -100,7 +100,7 @@ export function Footer() {
                     href={`${l('/')}#team`}
                     className="text-carbon-muted hover:text-canvas transition-colors"
                   >
-                    Team
+                    {t.columns.company.team}
                   </a>
                 </li>
                 <li>
@@ -183,7 +183,7 @@ export function Footer() {
             <p>{t.copyright}</p>
           </div>
           <p className="text-carbon-muted text-xs">
-            Built with humanoid robotics in mind.
+            {t.builtWith}
           </p>
         </div>
       </div>

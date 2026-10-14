@@ -455,6 +455,8 @@ export const translations = {
         company: {
           title: 'Company',
           about: 'About',
+          insights: 'Insights',
+          team: 'Team',
           hiring: 'Hiring',
         },
         social: {
@@ -469,6 +471,7 @@ export const translations = {
       companyName: 'Orboh, Inc.',
       address: 'Tobata-ku, Kitakyushu, Fukuoka, Japan',
       copyright: '© Orboh 2026',
+      builtWith: 'Built with humanoid robotics in mind.',
     },
   },
   ja: {
@@ -913,27 +916,30 @@ export const translations = {
       tagline: 'ヒューマノイド版FDE（Forward Deployed Engineer）カンパニー。',
       columns: {
         products: {
-          title: 'Products',
+          title: 'サービス',
           links: ['FleetSeek', 'RaaS'],
           agri: '農業ヒューマノイド',
         },
         company: {
-          title: 'Company',
+          title: '会社',
           about: '会社概要',
+          insights: 'インサイト',
+          team: 'チーム',
           hiring: '採用',
         },
         social: {
-          title: 'Social',
+          title: 'ソーシャル',
           links: ['X', 'LinkedIn', 'GitHub', 'YouTube'],
         },
         legal: {
-          title: 'Legal',
+          title: '規約',
           links: ['利用規約', 'プライバシーとクッキー', 'サポート'],
         },
       },
       companyName: '株式会社Orboh',
       address: '福岡県北九州市戸畑区',
       copyright: '© Orboh 2026',
+      builtWith: 'ヒューマノイドロボットとともに。',
     },
   },
 } as const;
