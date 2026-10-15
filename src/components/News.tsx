@@ -1,7 +1,8 @@
-import { useLocale } from '@/contexts/LocaleContext';
+import { Link } from 'react-router-dom';
+import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
 import { NEWS_ITEMS } from '@/content/news';
-import { ArrowOut, SectionHeading, sectionPad, sectionInner } from './ui';
+import { ArrowOut, ArrowRight, SectionHeading, sectionPad, sectionInner } from './ui';
 
 /**
  * Company news as a plain dated list: date and tag on the left, the headline
@@ -9,7 +10,9 @@ import { ArrowOut, SectionHeading, sectionPad, sectionInner } from './ui';
  */
 export function NewsSection() {
   const { locale } = useLocale();
+  const l = useLocaleHref();
   const t = translations[locale].news;
+  const items = NEWS_ITEMS.filter((item) => !item.locale || item.locale === locale);
 
   return (
     <section className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
@@ -17,7 +20,7 @@ export function NewsSection() {
         <SectionHeading label={t.eyebrow} title={t.title} className="mb-12" />
 
         <ul className="border-t border-ink">
-          {NEWS_ITEMS.map((item) => {
+          {items.map((item) => {
             const content = (
               <div className="grid gap-3 py-7 md:grid-cols-[200px_1fr] md:gap-10">
                 <div className="flex flex-wrap items-center gap-3 type-label md:flex-col md:items-start md:gap-2">
@@ -31,10 +34,10 @@ export function NewsSection() {
                   <p className="mt-3 text-[17px] leading-[1.85] text-muted max-w-3xl">
                     {item.body[locale]}
                   </p>
-                  {item.url && (
+                  {(item.url || item.path) && (
                     <span className="mt-4 inline-flex items-center gap-2 text-accent text-sm font-medium">
-                      {t.visit}
-                      <ArrowOut />
+                      {item.linkLabel?.[locale] ?? t.visit}
+                      {item.path ? <ArrowRight className="w-3.5 h-3.5 shrink-0" /> : <ArrowOut />}
                     </span>
                   )}
                 </div>
@@ -43,7 +46,11 @@ export function NewsSection() {
 
             return (
               <li key={item.key} className="border-b border-hairline">
-                {item.url ? (
+                {item.path ? (
+                  <Link to={l(item.path)} className="group block">
+                    {content}
+                  </Link>
+                ) : item.url ? (
                   <a href={item.url} target="_blank" rel="noopener noreferrer" className="group block">
                     {content}
                   </a>

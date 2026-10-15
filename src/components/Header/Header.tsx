@@ -36,9 +36,11 @@ export function Header() {
   const ref = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
 
-  // The four section links, shared by the desktop bar and the mobile panel so
-  // the two navigations cannot drift apart.
+  // The section links, shared by the desktop bar and the mobile panel so the
+  // two navigations cannot drift apart. The field trial plan exists in
+  // Japanese only, so it joins the list only there.
   const navItems = [
+    ...(locale === 'ja' ? [{ to: '/field-trial', label: '現場実証プラン' }] : []),
     { to: '/humanoidhack', label: 'Humanoid Hack' },
     { to: '/hiring', label: locale === 'ja' ? '採用' : 'Hiring' },
     { to: '/insights', label: locale === 'ja' ? 'インサイト' : 'Insights' },
