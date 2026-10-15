@@ -11,6 +11,7 @@ import { CompanyPage } from '@/pages/CompanyPage';
 import { InsightsIndexPage } from '@/pages/InsightsIndexPage';
 import { ShenzhenRoboticsPage } from '@/pages/insights/ShenzhenRoboticsPage';
 import { OkraHarvestPage } from '@/pages/insights/OkraHarvestPage';
+import { FieldTrialPage } from '@/pages/FieldTrialPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
 /**
@@ -33,6 +34,7 @@ function LocaleRoutes({ locale }: { locale: Locale }) {
           <Route path="insights/shenzhen-robotics" element={<ShenzhenRoboticsPage />} />
         )}
         <Route path="insights/okra-harvest" element={<OkraHarvestPage />} />
+        {locale === 'ja' && <Route path="field-trial" element={<FieldTrialPage />} />}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </LocaleProvider>
