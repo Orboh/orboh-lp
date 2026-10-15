@@ -9,13 +9,12 @@ import { useSeo } from '@/seo/useSeo';
 import { SectionHeading, sectionInner, sectionPad } from '@/components/ui';
 
 /**
- * Field trial plan (noindex for now).
+ * Field trial plan.
  *
  * The plan itself was settled in the founders' Slack thread on 2026-10-15:
  * up to three free meetings, then either a paid field trial or an advisory
- * contract. The advisory fee is still undecided between two options, which is
- * why the page stays out of the index until that is settled. Prices stay in
- * yen in both locales.
+ * contract. The advisory contract comes in two plans (weekly or twice weekly).
+ * Prices stay in yen in both locales.
  * Source of truth: orboh-company-vault 02Strategy/strategy/discussion/2026-10-14-founder-slack-orboh-plan.md
  */
 
@@ -100,7 +99,7 @@ const COPY: Record<Locale, Copy> = {
       advisory: {
         title: '顧問',
         body: '実証には入らず、対象作業の選び方や現場の条件を定例の打ち合わせで詰めていきます。',
-        price: '月15万円〜（週1回の定例）',
+        price: '月15万円（週1回）／月25万円（週2回）',
       },
     },
     pricing: {
@@ -218,7 +217,7 @@ const COPY: Record<Locale, Copy> = {
       advisory: {
         title: 'Advisory',
         body: 'Without a trial, we work through which tasks to start with and what the site needs, in regular meetings.',
-        price: 'From ¥150,000 a month (weekly meeting)',
+        price: '¥150,000 a month (weekly) / ¥250,000 a month (twice weekly)',
       },
     },
     pricing: {

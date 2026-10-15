@@ -85,8 +85,6 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       title: 'Field Trial Plan — Put a Humanoid to Work on Your Site for Three Days | Orboh',
       description:
         'Orboh’s field trial plan: up to three free meetings, then either a full-body teleoperation trial on your site (¥100,000 a day + ¥100,000 preparation) or an advisory contract. The trial report lets you decide the next step within two weeks.',
-      // Out of the index until the advisory fee is settled (two options still on the table).
-      noindex: true,
     },
   },
   ja: {
@@ -152,8 +150,6 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       title: '現場実証プラン — ヒューマノイドをあなたの現場で3日動かす | Orboh',
       description:
         'Orbohの現場実証プラン。無料の打ち合わせは最大3回、その後は全身テレオペによる現場実証（人日10万円＋準備10万円）か顧問契約。実証後のレポートで次の一手を2週間以内に決めます。',
-      // Out of the index until the advisory fee is settled (two options still on the table).
-      noindex: true,
     },
   },
 };
