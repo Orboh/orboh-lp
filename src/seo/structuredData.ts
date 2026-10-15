@@ -257,7 +257,6 @@ const CRUMBS: Record<Locale, Record<string, string>> = {
     'humanoidhack/hackathon': 'Hackathon guide',
     hiring: 'Hiring',
     company: 'Company',
-    agri: 'Agriculture',
     insights: 'Insights',
     'insights/shenzhen-robotics': 'Robotics in Shenzhen',
   },
@@ -268,7 +267,6 @@ const CRUMBS: Record<Locale, Record<string, string>> = {
     'humanoidhack/hackathon': 'ハッカソン概要',
     hiring: '採用情報',
     company: '会社概要',
-    agri: '農業ヒューマノイド',
     insights: 'Insights',
     'insights/shenzhen-robotics': '深圳のロボット産業',
   },
@@ -286,34 +284,6 @@ function breadcrumbs(path: string, locale: Locale): Json | null {
       name: CRUMBS[locale][crumbPath] ?? getMeta(crumbPath, locale).title,
       item: `${SITE_URL}${href(crumbPath, locale)}`,
     })),
-  };
-}
-
-/**
- * The agriculture page as a Service. A query like "農業 ヒューマノイド" is asking
- * who does this and for whom — prose answers that for a reader, not a crawler.
- */
-function agriService(locale: Locale): Json {
-  const url = `${SITE_URL}${href('agri', locale)}`;
-  const ja = locale === 'ja';
-  return {
-    '@type': 'Service',
-    '@id': `${url}#service`,
-    name: ja
-      ? '農業ヒューマノイドによる収穫の自動化'
-      : 'Humanoid robots for agricultural harvesting',
-    alternateName: ja ? '農業ロボット・自律収穫の実装' : 'Agricultural robotics deployment',
-    serviceType: ja ? '農業ロボットの実装' : 'Agricultural robotics',
-    description: getMeta('agri', locale).description,
-    url,
-    image: [`${SITE_URL}/og-image-agri.jpg`],
-    inLanguage: locale,
-    provider: { '@id': ORG_ID },
-    areaServed: { '@type': 'Country', name: ja ? '日本' : 'Japan' },
-    audience: {
-      '@type': 'BusinessAudience',
-      name: ja ? '農家・農業法人' : 'Farms and agricultural businesses',
-    },
   };
 }
 
@@ -347,10 +317,6 @@ export function getStructuredData(path: string, locale: Locale): Json | null {
 
   if (clean === 'humanoidhack') {
     graph.push(eventSeries(locale), ...events(locale), faqPage(locale));
-  }
-
-  if (clean === 'agri') {
-    graph.push(agriService(locale));
   }
 
   const articleNode = article(clean, locale);

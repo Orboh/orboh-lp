@@ -165,11 +165,6 @@ function JaArticle() {
           title="関連"
           items={[
             {
-              label: '農業ヒューマノイド — 収穫の自動化',
-              to: l('/agri'),
-              note: '収穫工程へのヒューマノイド実装と、早期パートナーの募集',
-            },
-            {
               label: 'Orbohのヒューマノイド実装（FDE）',
               to: l('/'),
               note: 'エンジニアが現場に入り、ヒューマノイドを実装するまでの進め方',
@@ -335,11 +330,6 @@ function EnArticle() {
         <Related
           title="Related"
           items={[
-            {
-              label: 'Humanoid robots for agriculture',
-              to: l('/agri'),
-              note: 'Putting humanoids into the harvest, and the farms we are looking for',
-            },
             {
               label: 'Orboh as a humanoid FDE',
               to: l('/'),

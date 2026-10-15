@@ -8,9 +8,9 @@ export const WHAT_WE_CAN_DO_SECTION_ID = 'what-we-can-do';
 
 /**
  * Case studies that have grown into a page of their own, keyed by the demo
- * number in translations.ts. Without this the okra work dead-ends in a card.
+ * number in translations.ts. Empty while the agriculture page (01) is archived.
  */
-const DEMO_PAGES: Record<string, string> = { '01': '/agri' };
+const DEMO_PAGES: Record<string, string> = {};
 
 export function WhatWeCanDoSection() {
   const { locale } = useLocale();

@@ -1,3 +1,9 @@
+/**
+ * ARCHIVED 2026-10-15: the /agri page is off the site — no route, no nav or
+ * footer link, not in the sitemap; /agri redirects to home (vercel.json).
+ * To bring it back, re-add 'agri' to ROUTE_PATHS, the <Route> in App.tsx, its
+ * meta in seo/meta.ts, and the links removed in the same commit.
+ */
 import { Layout } from '@/components/Layout';
 import { Footer } from '@/components/Footer/Footer';
 import { useLocale } from '@/contexts/LocaleContext';

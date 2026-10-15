@@ -45,14 +45,6 @@ export function Footer() {
               <ul className="space-y-2.5">
                 <li>
                   <Link
-                    to={l('/agri')}
-                    className="text-carbon-muted hover:text-canvas transition-colors"
-                  >
-                    {t.columns.products.agri}
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to={l('/fleetseek')}
                     className="text-carbon-muted hover:text-canvas transition-colors"
                   >

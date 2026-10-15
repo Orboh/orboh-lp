@@ -64,12 +64,6 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       description:
         'Company profile of Orboh, Inc.: founded May 2026, headquartered in Kitakyushu, Fukuoka, with a Kitakyushu office at Mirai Terrace, the Kyushu Institute of Technology incubation facility.',
     },
-    agri: {
-      title: 'Humanoid Robots for Agriculture — Autonomous Harvesting | Orboh',
-      description:
-        'Orboh puts humanoid robots into agriculture. The harvesting motion is trained from human demonstrations, not written as code — okra pods grasped 16 times out of 20 in an indoor test setup. No upfront investment and engineers on site: we are looking for farms to implement agricultural robotics with.',
-      ogImage: '/og-image-agri.jpg',
-    },
     insights: {
       title: 'Insights — Field notes on humanoid robotics | Orboh',
       description:
@@ -118,12 +112,6 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
       title: '会社概要 | 株式会社Orboh（オーボー）',
       description:
         '株式会社Orbohの会社概要。2026年5月設立、本店は福岡県北九州市戸畑区。北九州オフィスは九州工業大学のインキュベーション施設「未来テラス」にあります。',
-    },
-    agri: {
-      title: '農業ヒューマノイド — 収穫の自動化と自律収穫の実装 | Orboh（オーボー）',
-      description:
-        '農業の収穫工程にヒューマノイドを実装します。動作はプログラムではなく人のお手本から学習させる方式で、オクラの実の把持まで到達しました（屋内の検証環境で20回中16回）。初期投資なし、エンジニアが現場に入る農業ロボットの導入です。早期パートナーを募集しています。',
-      ogImage: '/og-image-agri.jpg',
     },
     insights: {
       title: 'Insights — ヒューマノイド実装の現場レポート | Orboh',

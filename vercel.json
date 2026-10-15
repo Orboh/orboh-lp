@@ -1,5 +1,22 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "redirects": [
+    {
+      "source": "/agri",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/ja/agri",
+      "destination": "/ja",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
