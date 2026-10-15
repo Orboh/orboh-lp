@@ -45,6 +45,14 @@ export function Footer() {
               <ul className="space-y-2.5">
                 <li>
                   <Link
+                    to={l('/field-trial')}
+                    className="text-carbon-muted hover:text-canvas transition-colors"
+                  >
+                    {locale === 'ja' ? '現場実証プラン' : 'Field Trial Plan'}
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to={l('/fleetseek')}
                     className="text-carbon-muted hover:text-canvas transition-colors"
                   >

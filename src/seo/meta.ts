@@ -81,6 +81,13 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         author: 'Orboh',
       },
     },
+    'field-trial': {
+      title: 'Field Trial Plan — Put a Humanoid to Work on Your Site for Three Days | Orboh',
+      description:
+        'Orboh’s field trial plan: up to three free meetings, then either a full-body teleoperation trial on your site (¥100,000 a day + ¥100,000 preparation) or an advisory contract. The trial report lets you decide the next step within two weeks.',
+      // Out of the index until the advisory fee is settled (two options still on the table).
+      noindex: true,
+    },
   },
   ja: {
     '': {

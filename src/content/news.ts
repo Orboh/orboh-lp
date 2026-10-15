@@ -12,10 +12,29 @@ export type NewsItem = {
   body: Localized;
   /** Outbound link for the item, when there is one. */
   url?: string;
+  /** Link to a page on this site, as a locale-less path (e.g. '/field-trial'). */
+  path?: string;
+  /** Label for the link, when the default ("Event site") does not fit. */
+  linkLabel?: Localized;
 };
 
 /** Hand-curated, newest first. Static so the prerenderer bakes it into the HTML. */
 export const NEWS_ITEMS: readonly NewsItem[] = [
+  {
+    key: 'field-trial-plan-2026',
+    date: '2026-10-15',
+    tag: { ja: 'お知らせ', en: 'Company' },
+    title: {
+      ja: '現場実証プランを公開しました',
+      en: 'We have published our field trial plan',
+    },
+    body: {
+      ja: 'ヒューマノイドをあなたの現場で短期間動かし、何ができるかを全身テレオペで確かめる現場実証プランを公開しました。無料の打ち合わせは最大3回、その後の進め方と料金、実証後にお渡しするレポートの中身をまとめています。',
+      en: 'We have published our field trial plan: a short trial in which we run a humanoid on your site by full-body teleoperation to see what it can do there. It sets out the up-to-three free meetings, the options and prices that follow, and what the report you receive after the trial contains.',
+    },
+    path: '/field-trial',
+    linkLabel: { ja: 'プランを見る', en: 'See the plan' },
+  },
   {
     key: 'kitakyushu-office-2026',
     date: '2026-10-08',

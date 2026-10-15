@@ -36,9 +36,10 @@ export function Header() {
   const ref = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
 
-  // The four section links, shared by the desktop bar and the mobile panel so
-  // the two navigations cannot drift apart.
+  // The section links, shared by the desktop bar and the mobile panel so the
+  // two navigations cannot drift apart.
   const navItems = [
+    { to: '/field-trial', label: locale === 'ja' ? '現場実証プラン' : 'Field Trial' },
     { to: '/humanoidhack', label: 'Humanoid Hack' },
     { to: '/hiring', label: locale === 'ja' ? '採用' : 'Hiring' },
     { to: '/insights', label: locale === 'ja' ? 'インサイト' : 'Insights' },

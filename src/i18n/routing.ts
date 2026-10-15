@@ -33,8 +33,6 @@ export type RoutePath = (typeof ROUTE_PATHS)[number];
  */
 export const LOCALE_ONLY_ROUTES: Record<string, Locale> = {
   'insights/shenzhen-robotics': 'ja',
-  // Field trial plan: written for Japanese prospects, priced in yen.
-  'field-trial': 'ja',
 };
 
 export function routeExists(path: string, locale: Locale): boolean {
