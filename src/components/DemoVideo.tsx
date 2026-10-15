@@ -10,12 +10,17 @@ const DEFAULT_VIDEO_URL =
 const OKRA_CLIP_SRC = '/okra-harvest-2026-09.mp4';
 const OKRA_CLIP_POSTER = '/okra-harvest-poster.jpg';
 
-// The two clips sit side by side at equal height: flex-grow is set to each
+// Dual-arm multi-object picking run by a VLA model, shot in-house in October 2026 (portrait).
+const VLA_CLIP_SRC = '/vla-multi-pick-2026-10.mp4';
+const VLA_CLIP_POSTER = '/vla-multi-pick-poster.jpg';
+
+// The clips sit side by side at equal height: flex-grow is set to each
 // clip's aspect ratio, so the widths come out proportional and the heights match.
 // Loom's oembed reports a 4:3 canvas, but the recording itself is portrait
 // (the thumbnail is 576x1024) — a 4:3 frame pillarboxes it with black bars.
 const SEALING_ASPECT = 9 / 16;
 const OKRA_ASPECT = 16 / 9;
+const VLA_ASPECT = 9 / 16;
 
 export const DEMO_VIDEO_SECTION_ID = 'demo-video';
 
@@ -96,6 +101,30 @@ export function DemoVideoSection({
             />
             <figcaption className="border-b border-carbon-hairline py-3 text-[17px] leading-relaxed text-canvas">
               {t.clips.okra}
+            </figcaption>
+          </figure>
+
+          <figure
+            className="m-0 min-w-0 w-full md:w-auto md:basis-0"
+            style={{ flexGrow: VLA_ASPECT }}
+          >
+            <div className="flex items-baseline justify-between gap-4 border-t border-carbon-hairline py-3">
+              <p className="type-label text-accent">03</p>
+              <p className="type-label text-carbon-muted text-right">{t.clips.vlaField}</p>
+            </div>
+            <video
+              src={VLA_CLIP_SRC}
+              poster={VLA_CLIP_POSTER}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="block w-full bg-carbon object-cover"
+              style={{ aspectRatio: String(VLA_ASPECT) }}
+            />
+            <figcaption className="border-b border-carbon-hairline py-3 text-[17px] leading-relaxed text-canvas">
+              {t.clips.vla}
             </figcaption>
           </figure>
         </div>

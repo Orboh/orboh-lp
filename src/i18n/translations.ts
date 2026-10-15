@@ -169,6 +169,8 @@ export const translations = {
         sealingField: 'CONSTRUCTION SITE',
         okra: 'Okra harvest in the field, September 2026',
         okraField: 'TRIAL FIELD',
+        vla: 'Automated multi-object picking with a VLA model',
+        vlaField: 'IN-HOUSE TEST',
       },
     },
     whitepaper: {
@@ -636,6 +638,8 @@ export const translations = {
         sealingField: '建設現場',
         okra: 'オクラの収穫（2026年9月・実証圃場）',
         okraField: '実証圃場',
+        vla: 'VLAによる複数ピッキングの自動化',
+        vlaField: '社内検証',
       },
     },
     whitepaper: {
