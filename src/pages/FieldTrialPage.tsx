@@ -7,12 +7,11 @@ import { useSeo } from '@/seo/useSeo';
 import { SectionHeading, sectionInner, sectionPad } from '@/components/ui';
 
 /**
- * Field trial plan (Japanese only, noindex for now).
+ * Field trial plan (Japanese only).
  *
  * The plan itself was settled in the founders' Slack thread on 2026-10-15:
  * up to three free meetings, then either a paid field trial or an advisory
- * contract. The advisory fee is still undecided between two options, which is
- * why the page stays out of the index and the nav until that is settled.
+ * contract. The advisory contract comes in two plans (weekly or twice weekly).
  * Source of truth: orboh-company-vault 02Strategy/strategy/discussion/2026-10-14-founder-slack-orboh-plan.md
  */
 
@@ -203,7 +202,7 @@ export function FieldTrialPage() {
                 <p className="text-sm text-muted leading-[1.85]">
                   実証には入らず、対象作業の選び方や現場の条件を定例の打ち合わせで詰めていきます。
                 </p>
-                <p className="mt-auto pt-4 text-lg font-medium text-ink">月15万円〜（週1回の定例）</p>
+                <p className="mt-auto pt-4 text-lg font-medium text-ink">月15万円（週1回）／月25万円（週2回）</p>
               </div>
             </div>
           </div>
