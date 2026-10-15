@@ -12,7 +12,6 @@ export function NewsSection() {
   const { locale } = useLocale();
   const l = useLocaleHref();
   const t = translations[locale].news;
-  const items = NEWS_ITEMS.filter((item) => !item.locale || item.locale === locale);
 
   return (
     <section className={`${sectionPad} py-20 md:py-24 bg-canvas`}>
@@ -20,7 +19,7 @@ export function NewsSection() {
         <SectionHeading label={t.eyebrow} title={t.title} className="mb-12" />
 
         <ul className="border-t border-ink">
-          {items.map((item) => {
+          {NEWS_ITEMS.map((item) => {
             const content = (
               <div className="grid gap-3 py-7 md:grid-cols-[200px_1fr] md:gap-10">
                 <div className="flex flex-wrap items-center gap-3 type-label md:flex-col md:items-start md:gap-2">

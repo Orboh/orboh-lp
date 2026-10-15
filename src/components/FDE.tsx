@@ -48,18 +48,13 @@ export function HowWeWorkSection() {
           ))}
         </div>
 
-        {/* The field trial plan is written for Japanese prospects only. */}
-        {locale === 'ja' && (
-          <div className="mt-4 border-t border-carbon-hairline pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-            <p className="text-[17px] leading-[1.85] text-carbon-muted max-w-xl">
-              まずはあなたの現場で、全身テレオペによる短い実証から。料金と進め方をまとめています。
-            </p>
-            <Link to={l('/field-trial')} className={`${btnOutlineOnDark} shrink-0`}>
-              現場実証プランを見る
-              <ArrowRight />
-            </Link>
-          </div>
-        )}
+        <div className="mt-4 border-t border-carbon-hairline pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <p className="text-[17px] leading-[1.85] text-carbon-muted max-w-xl">{t.trialLead}</p>
+          <Link to={l('/field-trial')} className={`${btnOutlineOnDark} shrink-0`}>
+            {t.trialButton}
+            <ArrowRight />
+          </Link>
+        </div>
       </div>
     </section>
   );

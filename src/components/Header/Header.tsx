@@ -37,10 +37,9 @@ export function Header() {
   const headerRef = useRef<HTMLElement>(null);
 
   // The section links, shared by the desktop bar and the mobile panel so the
-  // two navigations cannot drift apart. The field trial plan exists in
-  // Japanese only, so it joins the list only there.
+  // two navigations cannot drift apart.
   const navItems = [
-    ...(locale === 'ja' ? [{ to: '/field-trial', label: '現場実証プラン' }] : []),
+    { to: '/field-trial', label: locale === 'ja' ? '現場実証プラン' : 'Field Trial' },
     { to: '/humanoidhack', label: 'Humanoid Hack' },
     { to: '/hiring', label: locale === 'ja' ? '採用' : 'Hiring' },
     { to: '/insights', label: locale === 'ja' ? 'インサイト' : 'Insights' },

@@ -38,6 +38,8 @@ export const translations = {
     },
     howWeWork: {
       eyebrow: 'HOW WE WORK — THE FDE MODEL',
+      trialLead: 'Start with a short trial on your site, by full-body teleoperation. The plan sets out the price and how it works.',
+      trialButton: 'See the field trial plan',
       title: 'Engineers embed.\nRobots deliver.',
       subtitle:
         'FDE (Forward Deployed Engineer) is the model that made complex software work inside real organizations. We bring it to humanoid robots.',
@@ -507,6 +509,8 @@ export const translations = {
     },
     howWeWork: {
       eyebrow: 'HOW WE WORK — THE FDE MODEL',
+      trialLead: 'まずはあなたの現場で、全身テレオペによる短い実証から。料金と進め方をまとめています。',
+      trialButton: '現場実証プランを見る',
       title: 'エンジニアが入り込み、\nロボットが働く。',
       subtitle:
         'FDE（Forward Deployed Engineer）は、エンジニアが顧客の中に入り込んで実装をやり切ることで、複雑なソフトウェアを現実の組織で動かしてきたモデルです。私たちはこのモデルをヒューマノイドに持ち込みます。',

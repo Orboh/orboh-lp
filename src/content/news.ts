@@ -16,8 +16,6 @@ export type NewsItem = {
   path?: string;
   /** Label for the link, when the default ("Event site") does not fit. */
   linkLabel?: Localized;
-  /** Show the item only in this locale, for news about a single-locale page. */
-  locale?: Locale;
 };
 
 /** Hand-curated, newest first. Static so the prerenderer bakes it into the HTML. */
@@ -32,11 +30,10 @@ export const NEWS_ITEMS: readonly NewsItem[] = [
     },
     body: {
       ja: 'ヒューマノイドをあなたの現場で短期間動かし、何ができるかを全身テレオペで確かめる現場実証プランを公開しました。無料の打ち合わせは最大3回、その後の進め方と料金、実証後にお渡しするレポートの中身をまとめています。',
-      en: 'A short on-site trial in which we teleoperate a humanoid at your site to see what it can do there.',
+      en: 'We have published our field trial plan: a short trial in which we run a humanoid on your site by full-body teleoperation to see what it can do there. It sets out the up-to-three free meetings, the options and prices that follow, and what the report you receive after the trial contains.',
     },
     path: '/field-trial',
     linkLabel: { ja: 'プランを見る', en: 'See the plan' },
-    locale: 'ja',
   },
   {
     key: 'kitakyushu-office-2026',
