@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLocale, useLocaleHref } from '@/contexts/LocaleContext';
 import { translations } from '@/i18n/translations';
-import { ArrowRight, SectionHeading, btnOutlineOnDark, sectionPad, sectionInner } from './ui';
+import { ArrowRight, SectionHeading, btnOutlineOnDark, btnSolid, sectionPad, sectionInner } from './ui';
 
 import embedFieldImage from '@/assets/fde/embed_field.webp';
 import implementSetupImage from '@/assets/fde/implement_setup.webp';
@@ -52,6 +52,37 @@ export function HowWeWorkSection() {
           <p className="text-[17px] leading-[1.85] text-carbon-muted max-w-xl">{t.trialLead}</p>
           <Link to={l('/field-trial')} className={`${btnOutlineOnDark} shrink-0`}>
             {t.trialButton}
+            <ArrowRight />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * Entry to the field trial service, placed straight under the hero so a
+ * visitor sees the service by name before scrolling into the story.
+ */
+export function FieldTrialPromoSection() {
+  const { locale } = useLocale();
+  const l = useLocaleHref();
+  const t = translations[locale].fieldTrialPromo;
+
+  return (
+    <section className={`${sectionPad} py-16 md:py-20 bg-canvas border-b border-hairline`}>
+      <div className={`${sectionInner} grid lg:grid-cols-[3fr_2fr] gap-10 lg:gap-16 items-end`}>
+        <SectionHeading label={t.eyebrow} title={t.title} lead={t.lead} className="[&_h2]:[word-break:keep-all]" />
+        <div className="flex flex-col gap-8">
+          <ul className="flex flex-col border-t border-hairline">
+            {t.points.map((point) => (
+              <li key={point} className="py-3.5 border-b border-hairline text-[17px] text-ink">
+                {point}
+              </li>
+            ))}
+          </ul>
+          <Link to={l('/field-trial')} className={`${btnSolid} self-start`}>
+            {t.button}
             <ArrowRight />
           </Link>
         </div>
