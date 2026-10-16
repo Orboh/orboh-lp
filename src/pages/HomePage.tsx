@@ -1,6 +1,6 @@
 import { Layout } from '@/components/Layout';
 import { HeroSection } from '@/components/Hero';
-import { HowWeWorkSection } from '@/components/FDE';
+import { FieldTrialPromoSection, HowWeWorkSection } from '@/components/FDE';
 import { LaborBurdenSection, WasteFocusSection } from '@/components/Industry';
 import { WhatWeCanDoSection } from '@/components/CaseStudy';
 import { RaaSSection } from '@/components/RaaS';
@@ -24,6 +24,7 @@ export function HomePage() {
   return (
     <Layout>
       <HeroSection />
+      <FieldTrialPromoSection />
       <DemoVideoSection videoUrl={LOOM_VIDEO_URL} />
       <LaborBurdenSection />
       <WasteFocusSection />

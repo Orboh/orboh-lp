@@ -48,7 +48,7 @@ export function Footer() {
                     to={l('/field-trial')}
                     className="text-carbon-muted hover:text-canvas transition-colors"
                   >
-                    {locale === 'ja' ? '現場実証プラン' : 'Field Trial Plan'}
+                    {locale === 'ja' ? '現場実証サービス' : 'Field Trial Service'}
                   </Link>
                 </li>
                 <li>

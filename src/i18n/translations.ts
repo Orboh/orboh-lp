@@ -36,10 +36,17 @@ export const translations = {
         'Sorting industrial waste still relies heavily on human hands. We keep the existing equipment as it is, and have robots take on the picking and sorting people do today.',
       hiringLink: 'We are hiring engineers for this robot',
     },
+    fieldTrialPromo: {
+      eyebrow: 'SERVICE — HUMANOID FIELD TRIAL',
+      title: 'Humanoid Field Trial Service',
+      lead: 'We bring a humanoid to your site and run it on your actual work by full-body teleoperation, so you can see what a robot can do there before you invest.',
+      points: ['Up to 3 free meetings', 'Trials from ¥100,000 a day', 'Next step decided within 2 weeks'],
+      button: 'See the field trial service',
+    },
     howWeWork: {
       eyebrow: 'HOW WE WORK — THE FDE MODEL',
-      trialLead: 'Start with a short trial on your site, by full-body teleoperation. The plan sets out the price and how it works.',
-      trialButton: 'See the field trial plan',
+      trialLead: 'Start with a short trial on your site, by full-body teleoperation. The service page sets out the price and how it works.',
+      trialButton: 'See the field trial service',
       title: 'Engineers embed.\nRobots deliver.',
       subtitle:
         'FDE (Forward Deployed Engineer) is the model that made complex software work inside real organizations. We bring it to humanoid robots.',
@@ -507,10 +514,17 @@ export const translations = {
         '産業廃棄物の選別は、今も多くを人の手に頼っています。既存の設備はそのままに、人が担っている取り出し・仕分けをロボットが引き受けます。',
       hiringLink: 'このロボットを作るエンジニアを募集しています',
     },
+    fieldTrialPromo: {
+      eyebrow: 'SERVICE — HUMANOID FIELD TRIAL',
+      title: 'ヒューマノイド 現場実証サービス',
+      lead: 'ヒューマノイドをあなたの現場に持ち込み、実際の作業を全身テレオペで動かします。導入を決める前に、その現場でロボットに何ができるかを確かめられます。',
+      points: ['無料相談は最大3回', '実証は人日10万円から', '2週間以内に次の一手を決める'],
+      button: '現場実証サービスを見る',
+    },
     howWeWork: {
       eyebrow: 'HOW WE WORK — THE FDE MODEL',
       trialLead: 'まずはあなたの現場で、全身テレオペによる短い実証から。料金と進め方をまとめています。',
-      trialButton: '現場実証プランを見る',
+      trialButton: '現場実証サービスを見る',
       title: 'エンジニアが入り込み、\nロボットが働く。',
       subtitle:
         'FDE（Forward Deployed Engineer）は、エンジニアが顧客の中に入り込んで実装をやり切ることで、複雑なソフトウェアを現実の組織で動かしてきたモデルです。私たちはこのモデルをヒューマノイドに持ち込みます。',

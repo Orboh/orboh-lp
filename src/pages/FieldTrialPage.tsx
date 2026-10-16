@@ -30,7 +30,7 @@ function yen(amount: number, locale: Locale): string {
 type Item = { title: string; body: string };
 
 type Copy = {
-  hero: { title: [string, string]; lead: string; points: string[] };
+  hero: { service: string; title: [string, string]; lead: string; points: string[] };
   how: {
     title: string;
     lead: string;
@@ -78,6 +78,7 @@ type Copy = {
 const COPY: Record<Locale, Copy> = {
   ja: {
     hero: {
+      service: 'ヒューマノイド 現場実証サービス',
       title: ['ヒューマノイドを、', 'あなたの現場で3日動かしてみる'],
       lead: 'Orbohは建設現場や農場、産業廃棄物の選別現場で、ヒューマノイドを動かしてきました。あなたの現場でロボットに何ができるかを、全身テレオペによる短い実証で確かめます。',
       points: ['無料相談は最大3回', '実証は人日10万円から', '2週間以内に次の一手を決める'],
@@ -196,6 +197,7 @@ const COPY: Record<Locale, Copy> = {
   },
   en: {
     hero: {
+      service: 'Humanoid Field Trial Service',
       title: ['Put a humanoid to work', 'on your site for three days'],
       lead: 'Orboh has run humanoid robots on construction sites, on farms and at industrial waste sorting sites. A short trial with full-body teleoperation shows what a robot can do on yours.',
       points: ['Up to 3 free meetings', 'Trials from ¥100,000 a day', 'Next step decided within 2 weeks'],
@@ -381,13 +383,18 @@ export function FieldTrialPage() {
       <section className={`${sectionPad} pt-36 pb-20 md:pb-24 bg-carbon text-canvas`}>
         <div className={sectionInner}>
           <div className="border-t border-carbon-hairline pt-3.5">
-            <p className="type-label text-carbon-muted">FIELD TRIAL</p>
+            <p className="type-label text-accent">HUMANOID FIELD TRIAL SERVICE</p>
           </div>
-          <h1 className="type-display-lg text-[2.4rem] sm:text-[3.4rem] lg:text-[4.2rem] mt-7 mb-6">
+          {/* The service name is the h1 so a visitor knows what this page offers
+              before reading anything else; the pitch sits under it. */}
+          <h1 className="type-display-lg text-[2.4rem] sm:text-[3.4rem] lg:text-[4.2rem] mt-7 mb-6 [word-break:keep-all]">
+            {t.hero.service}
+          </h1>
+          <p className="type-display text-[1.5rem] sm:text-[1.9rem] lg:text-[2.2rem] text-canvas mb-6">
             {t.hero.title[0]}
             <br />
             {t.hero.title[1]}
-          </h1>
+          </p>
           <p className="text-carbon-muted text-[19px] leading-[1.95] max-w-2xl">{t.hero.lead}</p>
           <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-canvas">
             {t.hero.points.map((point) => (
