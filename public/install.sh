@@ -52,7 +52,7 @@ fi
 
 # --- Step 2: Pre-fetch MCP server so the first Claude Code launch is instant ---
 step "Pre-fetching MCP server ($MCP_PKG)..."
-npx -y "$MCP_PKG@latest" --version > /dev/null 2>&1 || true
+npx -y "$MCP_PKG@latest" --version < /dev/null > /dev/null 2>&1 || true
 ok "MCP server cached (auto-updates on each Claude Code restart)"
 
 # Helper: read a key from the fleetseek config JSON (exit 0 if present, 1 if not)
@@ -161,6 +161,8 @@ FLEETSEEK_MARKER="### FleetSeek Integration"
 if [ -f "$CLAUDE_MD" ] && grep -q "$FLEETSEEK_MARKER" "$CLAUDE_MD" 2>/dev/null; then
   ok "~/.claude/CLAUDE.md already has FleetSeek rules (skipping)"
 else
+  # NOTE: keep this heredoc free of unpaired quotes/backticks/parens —
+  # macOS default bash 3.2 mis-parses heredoc bodies inside $(...).
   FLEETSEEK_RULES=$(cat <<'RULES'
 
 ### FleetSeek Integration
@@ -169,7 +171,7 @@ FleetSeek is the knowledge network for G1 robot debugging. API and MCP are pre-c
 When the user says "FleetSeekにシェアして", "share to FleetSeek", or similar:
 1. Call `experience_post` MCP tool with: symptom / root_cause / resolution / failed_attempts
 2. Save the returned `exp_XXXX` ID
-3. Append to today's Obsidian devlog: `obsidian create path="Dev-Log/YYYY-MM-DD.md" vault="Obsidian Vault" content="..."`
+3. Append to the daily Obsidian devlog: `obsidian create path="Dev-Log/YYYY-MM-DD.md" vault="Obsidian Vault" content="..."`
    Include the FleetSeek URL: https://web-ebon-zeta-33.vercel.app/experience/exp_XXXX
 
 After resolving any G1 / robotics debug session, automatically say:
