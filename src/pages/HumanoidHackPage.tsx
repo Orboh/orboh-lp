@@ -24,7 +24,12 @@ const CALENDAR_URL = 'https://luma.com/humanoidhack';
 const CALENDAR_EMBED_URL = 'https://lu.ma/embed/calendar/cal-JmAbxMIliBGO4XB/events?lt=light';
 
 // Where each upcoming edition sends people (index-aligned with upcomingItems)
-const UPCOMING_URLS = [CALENDAR_URL, 'https://luma.com/8lqlwh2x', 'https://luma.com/7mkzd6d4'];
+const UPCOMING_URLS = [
+  CALENDAR_URL,
+  'https://luma.com/8lqlwh2x',
+  'https://prtimes.jp/main/html/rd/p/000002219.000026157.html',
+  'https://luma.com/7mkzd6d4',
+];
 
 // Event pages per edition (index-aligned with translations.humanoidHack.editions)
 const EDITION_URLS = ['https://luma.com/rqy67zpa', 'https://luma.com/m8k94z4o'];

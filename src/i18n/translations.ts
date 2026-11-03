@@ -278,6 +278,13 @@ export const translations = {
           cta: 'View event page',
         },
         {
+          name: 'Humanoid Hack Showcase',
+          dates: 'November 11, 2026',
+          venue: 'NexTech Week 2026 Autumn, Makuhari Messe, Chiba',
+          entry: 'Five teams from across the series demo on real humanoids · audience award',
+          cta: 'Read the press release',
+        },
+        {
           name: 'Humanoid Hack Logistics',
           dates: 'December 5 – 6, 2026',
           venue: 'GMO Humanoid Lab, Shibuya, Tokyo',
@@ -754,6 +761,13 @@ export const translations = {
           venue: 'シンガポール',
           entry: '参加費無料 ・ シリーズ初の海外開催',
           cta: 'イベントページを見る',
+        },
+        {
+          name: 'Humanoid Hack Showcase',
+          dates: '2026年11月11日（水）',
+          venue: 'NexTech Week 2026【秋】（千葉・幕張メッセ）',
+          entry: 'シリーズ各回から選ばれた5チームが実機デモ ・ オーディエンス賞',
+          cta: 'プレスリリースを見る',
         },
         {
           name: 'Humanoid Hack Logistics',
