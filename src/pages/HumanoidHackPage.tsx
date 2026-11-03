@@ -25,10 +25,9 @@ const CALENDAR_EMBED_URL = 'https://lu.ma/embed/calendar/cal-JmAbxMIliBGO4XB/eve
 
 // Where each upcoming edition sends people (index-aligned with upcomingItems)
 const UPCOMING_URLS = [
-  CALENDAR_URL,
-  'https://luma.com/8lqlwh2x',
   'https://prtimes.jp/main/html/rd/p/000002219.000026157.html',
-  'https://luma.com/7mkzd6d4',
+  'https://luma.com/929bbo10',
+  'https://luma.com/wbrzxhmc',
 ];
 
 // Event pages per edition (index-aligned with translations.humanoidHack.editions)

@@ -72,70 +72,25 @@ const EDITIONS = [
     slug: 'tokyo-vol-03',
     venue: 'tokyo',
     past: false,
-    startDate: '2026-10-31T10:00:00+09:00',
-    endDate: '2026-11-03T17:00:00+09:00',
-    // Registration runs through a private, approval-gated Luma page, so the
-    // public pointer is the series calendar rather than that link.
-    eventUrl: null,
+    startDate: '2026-12-19T10:00:00+09:00',
+    endDate: '2026-12-20T18:30:00+09:00',
+    eventUrl: 'https://luma.com/929bbo10',
     ja: {
       name: 'Humanoid Hack Tokyo 3',
       description:
-        'GMO ヒューマノイド・ラボのグランドオープンに合わせて開催する第3回。Unitree G1 の実機4台を使い、8チーム40名が10月31日から11月3日までヒューマノイドの実装に取り組みます。参加費は無料です。',
+        'GMO ヒューマノイド・ラボの開幕を記念して開催する第3回。テーマは物流で、6チーム30名が Unitree G1 の実機を使い、12月19日・20日の2日間で物流の現場の作業に取り組みます。参加費は無料です。',
     },
     en: {
       name: 'Humanoid Hack Tokyo 3',
       description:
-        'The third Tokyo edition, marking the grand opening of GMO Humanoid Lab. Eight teams and 40 hackers build on four Unitree G1 units from October 31 to November 3. Free to enter.',
-    },
-  },
-  {
-    slug: 'singapore-vol-01',
-    venue: 'singapore',
-    past: false,
-    startDate: '2026-10-31T10:00:00+08:00',
-    endDate: '2026-11-01T18:30:00+08:00',
-    eventUrl: 'https://luma.com/8lqlwh2x',
-    ja: {
-      name: 'Humanoid Hack Singapore',
-      description:
-        'Humanoid Hack シリーズ初のシンガポール開催。実機のヒューマノイドを使い、2日間でアプリケーションを開発します。参加費は無料です。',
-    },
-    en: {
-      name: 'Humanoid Hack Singapore',
-      description:
-        'The first Humanoid Hack edition outside Japan. Teams build applications on real humanoid robots over two days in Singapore. Free to enter.',
-    },
-  },
-  {
-    slug: 'logistics-vol-01',
-    venue: 'tokyo',
-    past: false,
-    startDate: '2026-12-05T10:00:00+09:00',
-    endDate: '2026-12-06T18:00:00+09:00',
-    eventUrl: 'https://luma.com/7mkzd6d4',
-    ja: {
-      name: 'Humanoid Hack Logistics',
-      description:
-        '物流の現場課題をテーマにした Humanoid Hack。実機のヒューマノイドを使い、12月5日・6日の2日間で開発します。12月6日午後の発表・デモは観覧できます。参加費は無料です。',
-    },
-    en: {
-      name: 'Humanoid Hack Logistics',
-      description:
-        'A Humanoid Hack edition themed on real problems from logistics sites. Teams build on real humanoids across December 5-6; the demos on the afternoon of December 6 are open to viewers. Free to enter.',
+        'The third Tokyo edition, marking the opening of GMO Humanoid Lab. Themed on logistics: six teams and 30 hackers work on tasks from logistics sites with Unitree G1 humanoids over December 19-20. Free to enter.',
     },
   },
 ] as const;
 
-type VenueKey = 'tokyo' | 'singapore';
+type VenueKey = 'tokyo';
 
-function venue(key: VenueKey, locale: Locale): Json {
-  if (key === 'singapore') {
-    return {
-      '@type': 'Place',
-      name: 'Singapore',
-      address: { '@type': 'PostalAddress', addressCountry: 'SG' },
-    };
-  }
+function venue(_key: VenueKey, locale: Locale): Json {
   return {
     '@type': 'Place',
     name: locale === 'ja' ? 'GMO ヒューマノイド・ラボ' : 'GMO Humanoid Lab',
@@ -203,7 +158,7 @@ function events(locale: Locale): Json[] {
       event.offers = {
         '@type': 'Offer',
         price: '0',
-        priceCurrency: edition.venue === 'singapore' ? 'SGD' : 'JPY',
+        priceCurrency: 'JPY',
         availability: edition.past
           ? 'https://schema.org/SoldOut'
           : 'https://schema.org/InStock',

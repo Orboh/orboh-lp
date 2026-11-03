@@ -264,20 +264,6 @@ export const translations = {
       upcomingItemsLabel: 'Scheduled editions',
       upcomingItems: [
         {
-          name: 'Humanoid Hack Tokyo 3',
-          dates: 'October 31 – November 3, 2026',
-          venue: 'GMO Humanoid Lab, Shibuya, Tokyo',
-          entry: 'Free · 8 teams / 40 hackers · Unitree G1 × 4',
-          cta: 'See the series calendar',
-        },
-        {
-          name: 'Humanoid Hack Singapore',
-          dates: 'October 31 – November 1, 2026',
-          venue: 'Singapore',
-          entry: 'Free · first edition outside Japan',
-          cta: 'View event page',
-        },
-        {
           name: 'Humanoid Hack Showcase',
           dates: 'November 11, 2026',
           venue: 'NexTech Week 2026 Autumn, Makuhari Messe, Chiba',
@@ -285,10 +271,17 @@ export const translations = {
           cta: 'Read the press release',
         },
         {
-          name: 'Humanoid Hack Logistics',
-          dates: 'December 5 – 6, 2026',
+          name: 'Humanoid Hack Tokyo 3',
+          dates: 'December 19 – 20, 2026',
           venue: 'GMO Humanoid Lab, Shibuya, Tokyo',
-          entry: 'Free · themed on problems from logistics sites',
+          entry: 'Free · 6 teams / 30 hackers · theme: logistics · team applications close December 6',
+          cta: 'View event page',
+        },
+        {
+          name: 'Humanoid Hack Countdown',
+          dates: 'December 31, 2026 – January 1, 2027',
+          venue: 'Tokyo (venue to be announced)',
+          entry: "A New Year's Eve hardware hackathon on Orboh's first in-house humanoid · details to be announced",
           cta: 'View event page',
         },
       ],
@@ -749,20 +742,6 @@ export const translations = {
       upcomingItemsLabel: '予定されている回',
       upcomingItems: [
         {
-          name: 'Humanoid Hack Tokyo 3',
-          dates: '2026年10月31日（土）〜11月3日（火・祝）',
-          venue: 'GMO ヒューマノイド・ラボ（東京・渋谷）',
-          entry: '参加費無料 ・ 8チーム40名 ・ Unitree G1 × 4台',
-          cta: 'シリーズカレンダーを見る',
-        },
-        {
-          name: 'Humanoid Hack Singapore',
-          dates: '2026年10月31日（土）〜11月1日（日）',
-          venue: 'シンガポール',
-          entry: '参加費無料 ・ シリーズ初の海外開催',
-          cta: 'イベントページを見る',
-        },
-        {
           name: 'Humanoid Hack Showcase',
           dates: '2026年11月11日（水）',
           venue: 'NexTech Week 2026【秋】（千葉・幕張メッセ）',
@@ -770,10 +749,17 @@ export const translations = {
           cta: 'プレスリリースを見る',
         },
         {
-          name: 'Humanoid Hack Logistics',
-          dates: '2026年12月5日（土）〜6日（日）',
+          name: 'Humanoid Hack Tokyo 3',
+          dates: '2026年12月19日（土）〜20日（日）',
           venue: 'GMO ヒューマノイド・ラボ（東京・渋谷）',
-          entry: '参加費無料 ・ 物流の現場課題がテーマ',
+          entry: '参加費無料 ・ 6チーム30名 ・ テーマは物流 ・ チーム応募締切 12月6日',
+          cta: 'イベントページを見る',
+        },
+        {
+          name: 'Humanoid Hack Countdown 年越しハッカソン',
+          dates: '2026年12月31日（木）〜2027年1月1日（金・祝）',
+          venue: '東京（会場は調整中）',
+          entry: 'Orboh 自社開発ヒューマノイド初号機を使うハードウェアハッカソン ・ 詳細は確定次第公開',
           cta: 'イベントページを見る',
         },
       ],
