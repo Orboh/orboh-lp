@@ -16,12 +16,15 @@ import judge from '@/assets/hht/judge.webp';
 import humanoid from '@/assets/hht/humanoid.webp';
 import quadruped from '@/assets/hht/quadruped.webp';
 
-const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
+const DISCORD_URL = 'https://discord.gg/2kScQ8tWqf';
 
 // Series calendar on Luma — every edition, past and upcoming
 const CALENDAR_URL = 'https://luma.com/humanoidhack';
 // lt=light は Luma 埋め込みのライトテーマ。白背景のセクションに合わせる
 const CALENDAR_EMBED_URL = 'https://lu.ma/embed/calendar/cal-JmAbxMIliBGO4XB/events?lt=light';
+
+// The hero button sends people to the next edition that takes registrations
+const NEXT_EDITION_URL = 'https://luma.com/929bbo10';
 
 // Where each upcoming edition sends people (index-aligned with upcomingItems)
 const UPCOMING_URLS = [
@@ -77,7 +80,7 @@ export function HumanoidHackPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={EDITION_URLS[1]}
+                href={NEXT_EDITION_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={btnSolidOnDark}

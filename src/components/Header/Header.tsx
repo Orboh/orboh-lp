@@ -11,7 +11,7 @@ const langLabels: Record<Locale, string> = {
 };
 
 const FLEETSEEK_X_AUTH_URL = 'https://web-ebon-zeta-33.vercel.app/api/auth/x';
-const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
+const DISCORD_URL = 'https://discord.gg/QHbmfRush2';
 const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
 
 const navLink =

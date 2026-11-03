@@ -29,6 +29,7 @@ const ROWS: Record<'ja' | 'en', readonly Row[]> = {
     {
       label: '事業内容',
       value: [
+        'ヒューマノイド 現場実証サービス',
         'ヒューマノイドロボットの現場実装（Forward Deployed Engineer）',
         'ヒューマノイドロボットのサービス提供（RaaS）',
         'ヒューマノイドハッカソン「Humanoid Hack」の企画・運営',
@@ -54,6 +55,7 @@ const ROWS: Record<'ja' | 'en', readonly Row[]> = {
     {
       label: 'Business',
       value: [
+        'Humanoid field trial service',
         'Deploying humanoid robots on site (Forward Deployed Engineers)',
         'Humanoid robots as a service (RaaS)',
         'Organizing the Humanoid Hack hackathon series',

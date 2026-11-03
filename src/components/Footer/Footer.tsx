@@ -4,7 +4,7 @@ import { translations } from '@/i18n/translations';
 import { DiscordMark, sectionPad, sectionInner } from '@/components/ui';
 import orbohLogo from '@/assets/orboh-logo.png';
 
-const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
+const DISCORD_URL = 'https://discord.gg/QHbmfRush2';
 const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
 
 const SOCIAL_URLS: Record<string, string> = {

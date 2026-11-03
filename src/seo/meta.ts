@@ -49,9 +49,9 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         'Humanoid Hack is a humanoid hackathon series: teams build on real Unitree G1 humanoids over a weekend. Free to enter. Past editions in Tokyo, winning projects, FAQ and how to join.',
     },
     'humanoidhack/hackathon': {
-      title: 'Hackathon Guide — Humanoid Hack Tokyo | Humanoid hackathon',
+      title: 'Hackathon Guide — Humanoid Hack Tokyo 3 | Humanoid hackathon',
       description:
-        'Schedule, rules, hardware, judging criteria and sponsors for Humanoid Hack Tokyo. Everything participants need before the event.',
+        'Humanoid Hack Tokyo 3, December 19–20, 2026 at GMO Humanoid Lab, Shibuya: the logistics theme, how to apply as a team, the two-day schedule, submissions and rules.',
     },
     hiring: {
       title: 'All open roles at Orboh, Inc.',
@@ -105,9 +105,9 @@ export const PAGE_META: Record<Locale, Record<string, PageMeta>> = {
         'ヒューマノイドハッカソン「Humanoid Hack」はUnitree G1の実機で開発するハッカソンシリーズです。Orboh主催・参加費無料。東京・渋谷での開催実績、受賞テーマ、次回の開催予定と参加方法。',
     },
     'humanoidhack/hackathon': {
-      title: 'ハッカソン概要 — ヒューマノイドハッカソン Humanoid Hack Tokyo',
+      title: 'ハッカソン概要 — ヒューマノイドハッカソン Humanoid Hack Tokyo 3',
       description:
-        'Humanoid Hack Tokyoのスケジュール・ルール・使用機材・審査基準・協賛企業。参加前に確認しておく情報をまとめています。',
+        'Humanoid Hack Tokyo 3（2026年12月19日・20日、GMO ヒューマノイド・ラボ）のテーマ・チームでの応募方法・2日間のスケジュール・成果物の提出・ルールをまとめています。',
     },
     hiring: {
       title: '株式会社Orboh の全ての求人一覧',

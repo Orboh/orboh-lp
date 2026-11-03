@@ -9,7 +9,7 @@ import {
   btnOutlineOnDark,
 } from './ui';
 
-const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
+const DISCORD_URL = 'https://discord.gg/QHbmfRush2';
 const CONTACT_FORM_URL = 'https://tally.so/r/2EzoQg';
 
 /**

@@ -4,7 +4,7 @@ import { useLocale } from '@/contexts/LocaleContext';
 import { useSeo } from '@/seo/useSeo';
 import { ArrowOut, DiscordMark, btnSolid, sectionInner, sectionPad } from '@/components/ui';
 
-const DISCORD_URL = 'https://discord.gg/fDAWmeTV6f';
+const DISCORD_URL = 'https://discord.gg/QHbmfRush2';
 
 /**
  * HERP's job board top. It lists every open role with the full posting and the
