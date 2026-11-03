@@ -21,6 +21,21 @@ export type NewsItem = {
 /** Hand-curated, newest first. Static so the prerenderer bakes it into the HTML. */
 export const NEWS_ITEMS: readonly NewsItem[] = [
   {
+    key: 'nextech-week-2026-autumn-showcase',
+    date: '2026-10-29',
+    tag: { ja: 'イベント', en: 'Event' },
+    title: {
+      ja: 'NexTech Week 2026【秋】で Humanoid Hack Showcase を主催します',
+      en: 'We are hosting the Humanoid Hack Showcase at NexTech Week 2026 Autumn',
+    },
+    body: {
+      ja: '2026年11月11日から13日まで幕張メッセで開かれる NexTech Week 2026【秋】の共創企画「The Circle」で、11月11日に Humanoid Hack Showcase を主催します。ヒューマノイドハッカソン「Humanoid Hack」シリーズの各回から選ばれた5チームが、ハッカソンで開発した成果をヒューマノイドの実機でデモします。来場者投票によるオーディエンス賞、登壇チームによるパネルディスカッション、ネットワーキングもあわせて行います。主催の RX Japan がプレスリリースで発表しました。',
+      en: 'On November 11 we are hosting the Humanoid Hack Showcase in "The Circle", the co-creation program of NexTech Week 2026 Autumn at Makuhari Messe (November 11–13, 2026). Five teams selected from across the Humanoid Hack hackathon series will demo what they built on real humanoid robots. The day also includes an audience award decided by visitor vote, a panel discussion with the presenting teams, and networking. RX Japan, the organizer of NexTech Week, announced the program in a press release.',
+    },
+    url: 'https://prtimes.jp/main/html/rd/p/000002219.000026157.html',
+    linkLabel: { ja: 'プレスリリースを見る', en: 'Read the press release' },
+  },
+  {
     key: 'field-trial-plan-2026',
     date: '2026-10-15',
     tag: { ja: 'お知らせ', en: 'Company' },
