@@ -16,10 +16,54 @@ export type NewsItem = {
   path?: string;
   /** Label for the link, when the default ("Event site") does not fit. */
   linkLabel?: Localized;
+  /** Photo shown under the body, served from public/ (e.g. '/news/x.jpg'). */
+  image?: { src: string; alt: Localized };
 };
 
 /** Hand-curated, newest first. Static so the prerenderer bakes it into the HTML. */
 export const NEWS_ITEMS: readonly NewsItem[] = [
+  {
+    key: 'nextech-week-2026-autumn-booth',
+    date: '2026-11-13',
+    tag: { ja: 'イベント', en: 'Event' },
+    title: {
+      ja: 'NexTech Week 2026【秋】に出展しました',
+      en: 'We exhibited at NexTech Week 2026 Autumn',
+    },
+    body: {
+      ja: '2026年11月11日から13日まで幕張メッセで開かれた NexTech Week 2026【秋】に出展し、産業廃棄物の選別とオクラの収穫にロボットを使う取り組みを紹介しました。12日と13日は Humanoid Hack Showcase に登壇した5チームと共同で出展し、13日にはブースでヒューマノイドの実機を動かしました。ブースにお越しいただいた皆さま、ありがとうございました。',
+      en: 'We exhibited at NexTech Week 2026 Autumn at Makuhari Messe (November 11–13, 2026), showing our work on using robots to sort industrial waste and to harvest okra. On November 12 and 13 we shared the booth with the five teams that presented at the Humanoid Hack Showcase, and on November 13 we ran a humanoid robot live at the booth. Thank you to everyone who came by.',
+    },
+    image: {
+      src: '/news/nextech-2026-11-booth.jpg',
+      alt: {
+        ja: 'NexTech Week 2026【秋】の Orboh のブース。産業廃棄物の選別のポスターとヒューマノイドの実機の前に来場者が集まっている',
+        en: 'The Orboh booth at NexTech Week 2026 Autumn, with visitors gathered by the industrial waste sorting poster and a humanoid robot',
+      },
+    },
+  },
+  {
+    key: 'humanoid-hack-showcase-2026-11-report',
+    date: '2026-11-11',
+    tag: { ja: 'イベント', en: 'Event' },
+    title: {
+      ja: 'NexTech Week 2026【秋】で Humanoid Hack Showcase を開催しました',
+      en: 'We held the Humanoid Hack Showcase at NexTech Week 2026 Autumn',
+    },
+    body: {
+      ja: '11月11日、幕張メッセの NexTech Week 2026【秋】の共創企画「The Circle」で Humanoid Hack Showcase を開催しました。ヒューマノイドハッカソン「Humanoid Hack」の各回から選ばれた5チームが、ハッカソンで作ったものをヒューマノイドの実機でデモしました。BLACK AI は餅つき、WAZA は家具の組み立て、MotionLink は介護施設での集団体操のリード、Rescue G1 は瓦礫の中での被災者の捜索、Arvione AI は介護施設での見守りです。登壇チームによるパネルディスカッションと、来場者投票によるオーディエンス賞もあわせて行いました。ご協賛いただいた GA Robotics 様、ゼアーレボ様、ライフタイムサポート様、会場をご提供いただいた RX Japan の皆さま、ありがとうございました。次回の Humanoid Hack Tokyo 3 は12月19日・20日に物流をテーマに開催します。',
+      en: 'On November 11 we held the Humanoid Hack Showcase in "The Circle", the co-creation program of NexTech Week 2026 Autumn at Makuhari Messe. Five teams selected from across the Humanoid Hack hackathon series demoed what they built on real humanoid robots: BLACK AI pounded mochi, WAZA assembled furniture, MotionLink led group exercises for a care home, Rescue G1 searched rubble for disaster victims, and Arvione AI watched over care home residents. The program also included a panel discussion with the presenting teams and an audience award decided by visitor vote. Thank you to our sponsors GA Robotics, There Rebo and Lifetime Support, and to RX Japan for providing the venue. The next edition, Humanoid Hack Tokyo 3, takes place on December 19–20 with logistics as its theme.',
+    },
+    url: 'https://www.nextech-week.jp/autumn/ja-jp/visit/circle.html',
+    linkLabel: { ja: 'The Circle のページを見る', en: 'See The Circle page' },
+    image: {
+      src: '/news/showcase-2026-11-teams.jpg',
+      alt: {
+        ja: 'Humanoid Hack Showcase の登壇チームと運営メンバーが、イベントの横断幕を持って並んだ集合写真',
+        en: 'The presenting teams and organizers of the Humanoid Hack Showcase holding the event banner',
+      },
+    },
+  },
   {
     key: 'nextech-week-2026-autumn-showcase',
     date: '2026-10-29',
