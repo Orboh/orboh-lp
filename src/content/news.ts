@@ -34,6 +34,13 @@ export const NEWS_ITEMS: readonly NewsItem[] = [
       ja: '2026年11月11日から13日まで幕張メッセで開かれた NexTech Week 2026【秋】に出展し、産業廃棄物の選別とオクラの収穫にロボットを使う取り組みを紹介しました。12日と13日は Humanoid Hack Showcase に登壇した5チームと共同で出展し、13日にはブースでヒューマノイドの実機を動かしました。ブースにお越しいただいた皆さま、ありがとうございました。',
       en: 'We exhibited at NexTech Week 2026 Autumn at Makuhari Messe (November 11–13, 2026), showing our work on using robots to sort industrial waste and to harvest okra. On November 12 and 13 we shared the booth with the five teams that presented at the Humanoid Hack Showcase, and on November 13 we ran a humanoid robot live at the booth. Thank you to everyone who came by.',
     },
+    image: {
+      src: '/news/nextech-2026-11-booth.jpg',
+      alt: {
+        ja: 'NexTech Week 2026【秋】の Orboh のブース。産業廃棄物の選別のポスターとヒューマノイドの実機の前に来場者が集まっている',
+        en: 'The Orboh booth at NexTech Week 2026 Autumn, with visitors gathered by the industrial waste sorting poster and a humanoid robot',
+      },
+    },
   },
   {
     key: 'humanoid-hack-showcase-2026-11-report',
@@ -50,10 +57,10 @@ export const NEWS_ITEMS: readonly NewsItem[] = [
     url: 'https://www.nextech-week.jp/autumn/ja-jp/visit/circle.html',
     linkLabel: { ja: 'The Circle のページを見る', en: 'See The Circle page' },
     image: {
-      src: '/news/showcase-2026-11-stage.jpg',
+      src: '/news/showcase-2026-11-teams.jpg',
       alt: {
-        ja: 'Humanoid Hack Showcase の会場。客席の来場者が、BLACK AI の発表スライドを映したモニターとステージを見ている',
-        en: 'The Humanoid Hack Showcase stage, with the audience watching BLACK AI present on a monitor',
+        ja: 'Humanoid Hack Showcase の登壇チームと運営メンバーが、イベントの横断幕を持って並んだ集合写真',
+        en: 'The presenting teams and organizers of the Humanoid Hack Showcase holding the event banner',
       },
     },
   },
