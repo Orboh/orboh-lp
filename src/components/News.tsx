@@ -33,6 +33,14 @@ export function NewsSection() {
                   <p className="mt-3 text-[17px] leading-[1.85] text-muted max-w-3xl">
                     {item.body[locale]}
                   </p>
+                  {item.image && (
+                    <img
+                      src={item.image.src}
+                      alt={item.image.alt[locale]}
+                      loading="lazy"
+                      className="mt-5 block w-full max-w-3xl aspect-[4/3] object-cover"
+                    />
+                  )}
                   {(item.url || item.path) && (
                     <span className="mt-4 inline-flex items-center gap-2 text-accent text-sm font-medium">
                       {item.linkLabel?.[locale] ?? t.visit}
