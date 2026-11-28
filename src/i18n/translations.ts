@@ -471,7 +471,7 @@ export const translations = {
         },
         social: {
           title: 'Social',
-          links: ['X', 'LinkedIn', 'GitHub', 'YouTube'],
+          links: ['X', 'LinkedIn', 'GitHub'],
         },
         legal: {
           title: 'Legal',
@@ -949,7 +949,7 @@ export const translations = {
         },
         social: {
           title: 'ソーシャル',
-          links: ['X', 'LinkedIn', 'GitHub', 'YouTube'],
+          links: ['X', 'LinkedIn', 'GitHub'],
         },
         legal: {
           title: '規約',

@@ -21,7 +21,6 @@ const SOCIAL = [
   'https://x.com/kotaueda999',
   'https://www.linkedin.com/company/orboh',
   'https://github.com/Orboh',
-  'https://www.youtube.com/@Orboh2026',
 ];
 
 type Json = Record<string, unknown>;
